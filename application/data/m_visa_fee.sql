@@ -1,0 +1,2 @@
+ALTER TABLE `vs_visa_fee` ADD `group_discount` TINYINT(1) NOT NULL DEFAULT '0' AFTER `document_required`;
+ALTER TABLE `vs_visa_fee` ADD `get_fee_default` TINYINT(1) NOT NULL DEFAULT '0' AFTER `group_discount`;

@@ -1,0 +1,1 @@
+ALTER TABLE `vs_setting` ADD `bang_name` VARCHAR(255) NULL DEFAULT NULL AFTER `youtube_url`, ADD `bang_email` VARCHAR(255) NULL DEFAULT NULL AFTER `bang_name`, ADD `bang_passport` VARCHAR(255) NULL DEFAULT NULL AFTER `bang_email`, ADD `bang_ip` VARCHAR(255) NULL DEFAULT NULL AFTER `bang_passport`;

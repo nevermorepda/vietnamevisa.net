@@ -1,0 +1,1 @@
+ALTER TABLE `vs_users` ADD `amount` FLOAT NOT NULL DEFAULT '0' AFTER `last_activity`;

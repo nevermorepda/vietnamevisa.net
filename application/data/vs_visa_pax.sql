@@ -1,0 +1,11 @@
+ALTER TABLE `vs_visa_pax` ADD `passport_photo` VARCHAR(255) NULL DEFAULT NULL AFTER `status`, ADD `passport_data` VARCHAR(255) NULL DEFAULT NULL AFTER `passport_photo`, ADD `passport_type` VARCHAR(255) NOT NULL AFTER `passport_data`, ADD `expiry_date` DATETIME NULL DEFAULT NULL AFTER `passport_type`, ADD `religion` VARCHAR(255) NULL DEFAULT NULL AFTER `expiry_date`;
+ALTER TABLE `vs_visa_pax` ADD `agents_id` BIGINT(20) NOT NULL DEFAULT '0' AFTER `religion`;
+ALTER TABLE `vs_visa_pax` ADD `note_process` VARCHAR(255) NULL DEFAULT NULL AFTER `agents_id`, ADD `note_fc` VARCHAR(255) NULL DEFAULT NULL AFTER `note_process`, ADD `note` VARCHAR(255) NULL DEFAULT NULL AFTER `note_fc`, ADD `send_approved` TINYINT(1) NOT NULL DEFAULT '1' COMMENT '1: don\'t send, 2 send' AFTER `note`, ADD `send_pickup` TINYINT(1) NOT NULL DEFAULT '1' COMMENT '1: don\'t send, 2 send' AFTER `send_approved`;
+ALTER TABLE `vs_visa_pax` ADD `agents_fc_id` BIGINT(20) NOT NULL DEFAULT '0' AFTER `agents_id`;
+ALTER TABLE `vs_visa_pax` ADD `plus_fee` FLOAT NOT NULL DEFAULT '0' AFTER `note`;
+ALTER TABLE `vs_visa_pax` ADD `plus_fc_fee` FLOAT NOT NULL DEFAULT '0' AFTER `plus_fee`;
+ALTER TABLE `vs_visa_pax` ADD `send_urgent` TINYINT(1) NOT NULL DEFAULT '0' AFTER `plus_fc_fee`;
+ALTER TABLE `vs_visa_pax` ADD `note_list_fc` VARCHAR(255) NULL DEFAULT NULL AFTER `note`;
+ALTER TABLE `vs_visa_pax` ADD `flight_number_fc` VARCHAR(255) NULL DEFAULT NULL AFTER `flight_number`;
+ALTER TABLE `vs_visa_pax` ADD `send_approved_date` DATETIME NULL DEFAULT NULL AFTER `send_pickup`, ADD `send_pickup_date` DATETIME NULL DEFAULT NULL AFTER `send_approved_date`;
+ALTER TABLE `vs_visa_pax` ADD `send_again` TINYINT(1) NULL DEFAULT '0' AFTER `send_pickup_date`;

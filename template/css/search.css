@@ -1,0 +1,72 @@
+#cse {
+    font-family: Arial;
+    font-size: 15px;
+    min-height: 60px;
+    width: 100%;
+}
+#cse, #search td {
+    width: 100%;
+}
+#cse .gsc-cursor-page {
+    color: #004383;
+    font-size: 14px;
+}
+#cse .gsc-trailing-more-results * {
+    color: #004383;
+}
+#cse .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    color: #4D4D4D;
+    font-size: 16px;
+}
+#cse .gs-result .gs-title, .gs-result .gs-title * {
+    color: #004383;
+}
+#cse .gs-result a.gs-visibleUrl, .gs-result .gs-visibleUrl {
+    color: #BC5015;
+}
+#cse input.gsc-search-button {
+    background: url("http://i.travelpn.com.edgesuite.net/images/i/homepage/btn_search.gif") no-repeat scroll left top transparent;
+    border: 0 none;
+    color: #FE3FFF;
+    display: block;
+    font-size: 0;
+    height: 29px;
+    line-height: 0;
+    margin-left: 2px;
+    margin-top: 4px;
+    text-indent: -999px;
+    width: 68px;
+}
+#cse .gsc-tabsArea {
+    display: none;
+}
+#cse .gsc-resultsHeader {
+    border-bottom: medium none #FFFFFF;
+    margin-bottom: 4px;
+}
+#cse .gs-webResult .gs-visibleUrl-short {
+    display: none;
+}
+#cse .gs-webResult .gs-visibleUrl-long {
+    display: block;
+}
+#search-panel {
+}
+#cse-searchresults-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    font-family: calibri,"Arial Narrow","Times New Roman";
+    margin-top: 10px;
+}
+#cse-searchresuls-box h1 {
+    font-size: 1.4em;
+    font-weight: bolder;
+    margin-top: 18px;
+}
+#cse .gsc-thinWrapper {
+    width: 100% !important;
+}
+input.gsc-input {
+    border: 1px solid #DDDDDD;
+    padding: 2px 6px !important;
+    width: 99%;
+}

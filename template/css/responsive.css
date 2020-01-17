@@ -1,0 +1,154 @@
+@CHARSET "ISO-8859-1";
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	.header-sm {
+		display: none;
+	}
+
+	.home-slide {
+		height: 600px  !important;
+	}
+	.slider {
+		min-height: 600px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.header-sm {
+		display: none;
+	}
+
+	.home-slide {
+		height: 400px  !important;
+	}
+	
+	.slider {
+		min-height: 400px !important;
+	}
+
+	#top-header > ul > li {
+		margin-right: 20px !important;
+	}
+}
+
+/* Portrait desktop */
+/*@media (min-width: 992px) {
+	.inner {
+		width: 980px;
+	}
+
+	.header-sm {
+		display: none;
+	}
+
+	.home-slide {
+		height: 600px  !important;
+	}
+}*/
+
+/* Landscape tablet */
+@media (max-width: 991px) {
+	.inner {
+		width: 100%;
+	}
+	.header {
+		display: block;
+	}
+	.header-sm {
+		display: none;
+	}
+	.home-slide {
+		height: 400px  !important;
+	}
+	.slider {
+		min-height: 400px !important;
+	}
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.inner {
+		width: 100%;
+	}
+	.header {
+		display: none;
+	}
+	.header-sm {
+		display: block;
+		min-height: 50px;
+	}
+	.col-xs-padding-bottom-40 {
+		padding-bottom: 40px;
+	}
+	#cot_tl_pop {
+		display: none;
+	}
+	#cot_tl_fixed {
+		display: none;
+	}
+	.sbzon {
+		display: none !important;
+	}
+	.sbzoff {
+		display: none !important;
+	}
+	.scrollup {
+		display: none !important;
+	}
+	.home-slide {
+		height: 250px  !important;
+	}
+	.home-slide h1 {
+		font-size: 28px;
+	}
+	.home-slide .text {
+		margin-top: -100px !important;
+	}
+}
+
+
+@media (max-width: 480px) {
+	.home-slide {
+		height: 210px !important;
+	}
+
+	.home-slide h1 {
+		font-size: 20px;
+	}
+
+	.home-slide h3 {
+		font-size: 16px;
+	}
+
+	.fee-table-cluster .cluster-content {
+	}
+
+	.fee-table-cluster .cluster-content .col-sm-3 {
+	}
+
+	.fee-table-cluster .cluster-content .col-sm-3:not(:last-child) {
+	  	margin-bottom: 40px;
+	}
+}
+
+
+@media (max-width: 360px) {
+	.home-slide {
+		height: 200px !important;
+	}
+}
+
+/* Small device */
+@media (max-width: 320px) {
+	.home-slide {
+		height: 180px !important;
+	}
+}
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
