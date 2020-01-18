@@ -76,18 +76,18 @@
 				<li class="menu-item-div"></li>
 				<li>
 					<a href="<?=site_url("visa-processing")?>" class="<?=(($tabindex == "processing") ? "active" : "")?>" title="">How It Works</a>
-					<ul class="sub-menu">
+					<!-- <ul class="sub-menu">
 						<li><a style="padding: 6px;" class="<?=(($tabindex == "visa-processing") ? "active" : "")?>" title="" href="<?=site_url("vietnam-visa-on-arrival")?>">Visa On Arrival</a></li>
 						<li><a class="<?=(($tabindex == "vietnam-e-visa") ? "active" : "")?>" title="" href="<?=site_url("vietnam-e-visa")?>">E-Visa</a></li>
-					</ul>
+					</ul> -->
 				</li>
 				<li class="menu-item-div"></li>
 				<li>
 					<a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="">Apply Visa Form</a>
-					<ul class="sub-menu">
+					<!-- <ul class="sub-menu">
 						<li><a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-visa")?>">Visa On Arrival</a></li>
 						<li><a class="<?=(($tabindex == "apply-e-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-e-visa")?>">E-Visa</a></li>
-					</ul>
+					</ul> -->
 				</li>
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "visa-fee") ? "active" : "")?>" title="" href="<?=site_url("visa-fee")?>">Visa Fee</a></li>

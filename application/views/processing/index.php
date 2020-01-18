@@ -144,100 +144,56 @@
 									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Countries of permit</h5>
 								</div>
 								<div class="content">
-									<div class="list-countries">
-										<div class="group-contries group-A">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">A</a></div>
-											<div class="sonline"><a href="">Armenia</a></div>
-											<div class="sonline"><a href="">Australia</a></div>
-											<div class="sonline"><a href="">Azerbaijan</a></div>
+									<div class="nation clearfix">
+										<?
+											$regions = array();
+											foreach ($requirements as $requirement) {
+												if (!in_array($requirement->country_region, $regions)) {
+													$regions[] = $requirement->country_region;
+												}
+											}
+											sort($regions);
+										?>
+										<? $dem=0; foreach ($regions as $region) { 
+											$info = new stdClass();
+											$info->region = $region;
+											$region_items = $this->m_requirement->join_country_items($info,1);
+											$c = ceil(count($region_items)/4);
+											$c_items = count($region_items);
+										?>
+										<div class="nation_permit pb-4">
+											<div class="nation_title pb-3"><?=$region;?></div>
+											<table>
+												<?
+												$str = '';
+												for ($i=0; $i < $c; $i++) { 
+													$str .= '<tr>';
+													for ($j = 4*$i; $j < 4*($i+1); $j++) { 
+														if (!empty($region_items[$j])) {
+															$str .= '<td>'.'<a href="'.site_url("visa-requirements/{$region_items[$j]->alias}").'">'.$region_items[$j]->citizen.'</a></td>';
+														}
+													}
+													$str .= '</tr>';
+												}
+												echo $str;
+												?>
+											</table>
 										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Andorra</a></div>
-											<div class="sonline"><a href="">Argentina</a></div>
-											<div class="sonline"><a href="">Austria</a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-B">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">B</a></div>
-											<div class="sonline"><a href="">Belgium</a></div>
-											<div class="sonline"><a href="">Brazil</a></div>
-											<div class="sonline"><a href="">Bulgaria</a></div>
-										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Belarus</a></div>
-											<div class="sonline" style="width: 50%;"><a href="">Bosnia and Herzegovina</a></div>
-											<div class="sonline"><a href="">Brunie</a></div>
-										</div>
-										<div class="group-contries group-C">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">C</a></div>
-											<div class="sonline"><a href="">Chile</a></div>
-											<div class="sonline"><a href="">China (<span class="required">*</span>)</a></div>
-											<div class="sonline"><a href="">Colombia</a></div>
-										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Canada</a></div>
-											<div class="sonline" style="width: 50%;"><a href="">Czech Republic</a></div>
-											<div class="sonline"><a href="">Croatia</a></div>
-										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Cuba</a></div>
-											<div class="sonline"><a href="">Cyprus</a></div>
-											<div class=""><a href=""></a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-D">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">D</a></div>
-											<div class="sonline"><a href="">Denmark</a></div>
-											<div class="sonline" style="width: 50%;"><a href="">Dominican Republic</a></div>
-										</div>
-										<div class="group-contries group-E">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">E</a></div>
-											<div class="sonline"><a href="">Ecuador</a></div>
-											<div class="sonline"><a href="">Estonia</a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-F">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">F</a></div>
-											<div class="sonline"><a href="">Finland</a></div>
-											<div class="sonline"><a href="">France</a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-G">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">G</a></div>
-											<div class="sonline"><a href="">Georgia</a></div>
-											<div class="sonline"><a href="">Germany</a></div>
-											<div class="sonline"><a href="">Greece</a></div>
-										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Guatemala</a></div>
-											<div class=""><a href=""></a></div>
-											<div class=""><a href=""></a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-H">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">H</a></div>
-											<div class="sonline"><a href="">Honduras</a></div>
-											<div class="sonline"><a href="">Hungary</a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-I">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">I</a></div>
-											<div class="sonline"><a href="">Iceland</a></div>
-											<div class="sonline"><a href="">India</a></div>
-											<div class="sonline"><a href="">India</a></div>
-										</div>
-										<div class="group-contries">
-											<div class="sonline"><a href="">Ireland</a></div>
-											<div class="sonline"><a href="">Italy</a></div>
-											<div class=""><a href=""></a></div>
-											<div class=""><a href=""></a></div>
-										</div>
-										<div class="group-contries group-J">
-											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">J</a></div>
-											<div class="sonline"><a href="">Japan</a></div>
-											<div class=""><a href=""></a></div>
-											<div class=""><a href=""></a></div>
-										</div>
+										<? } ?>
+										<!-- <div class="row permit">
+											<? foreach ($regions as $region) { ?>
+											<div class="col-sm-3 number"><?=$region;?></div>
+											<div class="col-sm-9">
+												<ul class="row list">
+													<? foreach ($requirements as $requirement) { ?>
+														<? if ($requirement->country_region == $region) { ?>
+														<li class="col-sm-4"><a href=""><?=$requirement->citizen?></a></li>
+														<? } ?>
+													<? } ?>
+												</ul>
+											</div>
+											<? } ?>
+										</div> -->
 									</div>
 								</div>
 							</div>

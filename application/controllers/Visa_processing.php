@@ -14,6 +14,7 @@ class Visa_processing extends CI_Controller {
 		$view_data = array();
 		$view_data['faqs'] = $this->m_content->items($info, 1);
 		$view_data['evisa_faqs'] = $this->m_content->items($info_evisa, 1);
+		$view_data['requirements'] = $this->m_requirement->join_country_items(null,1);
 
 		$tmpl_content = array();
 		$tmpl_content['meta']['title'] = "How Vietnam Visa on Arrival works?";

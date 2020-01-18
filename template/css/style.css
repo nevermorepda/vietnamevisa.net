@@ -2563,6 +2563,25 @@ ul.style-step li.active {
 .different .content {
 	padding: 0px 24px;
 }
+.different .content .nation_permit .list{
+
+}
+.different .content .nation_permit .list .list-item{
+	
+}
+.different .content .nation_permit .nation_title {
+	font-size: 25px;
+	font-weight: 600;
+	color: #902d2d;
+	text-transform: uppercase;
+}
+.different .content .nation_permit table {
+	border-collapse: collapse;
+}
+.different .content .nation_permit table, td, th {
+	border: 1px solid #b3b3b3;
+	padding: 5px 15px;
+}
 .list-countries {
 }
 .list-countries .group-contries {
