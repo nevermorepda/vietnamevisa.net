@@ -556,8 +556,9 @@ class Apply_e_visa extends CI_Controller {
 
 		if ($vev == null) {
 			redirect(site_url("apply-e-visa"));
+
 		}
-		
+
 		if (!empty($_POST))
 		{
 			$vev->passport_holder		= (!empty($_POST["passport_holder"]) ? $_POST["passport_holder"] : "");
@@ -684,7 +685,7 @@ class Apply_e_visa extends CI_Controller {
 		else {
 			$this->check_valid_return($vev);
 		}
-		
+
 		// Redirect from login form or step 1
 		$user = $this->session->userdata("user");
 		if (!empty($user)) {
@@ -705,9 +706,10 @@ class Apply_e_visa extends CI_Controller {
 		$vev->member_discount			= !empty($this->util->level_account()) ? $this->util->level_account()[2] : 0 ;
 		// Final save
 		$this->session->set_userdata("vev", $vev);
-
 		// Require login
+
 		$this->util->requireUserLogin("apply-e-visa/login");
+
 		$check_step = new stdClass();
 		$info = new stdClass();
 		$info->email = $this->session->userdata('user')->user_email;
@@ -760,11 +762,10 @@ class Apply_e_visa extends CI_Controller {
 	function login()
 	{
 		$vev = $this->session->userdata("vev");
-		
+
 		if ($vev == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
-		
 		$breadcrumb = array('Apply E Visa' => site_url('apply-e-visa'), '1. Visa Options' => site_url('apply-e-visa/step1'), 'Member Login' => '');
 		
 		$this->session->set_userdata("return_url", site_url("apply-e-visa/step2"));
@@ -790,7 +791,7 @@ class Apply_e_visa extends CI_Controller {
 	function dologin()
 	{
 		$vev = $this->session->userdata("vev");
-		
+
 		if ($vev == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
@@ -901,7 +902,6 @@ class Apply_e_visa extends CI_Controller {
 				}
 			}
 		}
-		
 		if ($user != null) {
 			if (empty($vev->contact_title)) {
 				$vev->contact_title = $user->title;
@@ -938,7 +938,6 @@ class Apply_e_visa extends CI_Controller {
 			$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->vip_discount/100);
 			
 			$this->session->set_userdata("vev", $vev);
-			
 			redirect(site_url("apply-e-visa/step2"));
 		}
 	}

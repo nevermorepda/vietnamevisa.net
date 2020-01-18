@@ -272,6 +272,7 @@ class M_visa_fee extends M_db
 		if ($booking_type_id == 2) {
 			$purpose = "evisa_tourist_";
 			$capital = "capital_";
+			$visa_type = str_replace('e-', '', $visa_type);
 		} else {
 			$purpose = "tourist_";
 			$capital = "capital_";
@@ -354,7 +355,6 @@ class M_visa_fee extends M_db
 		$price->rush_fee		= $rush_fee;
 		$price->rush_capital	= $rush_capital;
 		$price->total_fee		= ($service_fee + $rush_fee) * $group_size;
-		
 		return $price;
 	}
 	
@@ -377,6 +377,7 @@ class M_visa_fee extends M_db
 		if ($booking_type_id == 2) {
 			$purpose = "evisa_business_";
 			$capital = "capital_";
+			$visa_type = str_replace('e-', '', $visa_type);
 		} else {
 			$purpose = "business_";
 			$capital = "capital_";

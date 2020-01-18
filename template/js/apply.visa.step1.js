@@ -21,6 +21,9 @@ $(document).ready(function() {
 	$(".arrival_port").change(function(){
 		updatePanel();
 	});
+	$(".exit_port").change(function(){
+		updatePanel();
+	});
 	$(".arrival_month").change(function(){
 		checkArrivalDate();
 		checkProcessingTime();
@@ -603,6 +606,7 @@ function onPurposeChanged()
 function onArrivalPortChanged()
 {
 	$(".arrival_port_t").html($(".arrival_port :selected").text());
+	$(".exit_port_t").html($(".exit_port :selected").text());
 }
 
 function onRushChanged()

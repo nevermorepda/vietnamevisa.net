@@ -128,6 +128,7 @@
 								</div>
 								<div class="col-md-8">
 									<select id="visa_type" name="visa_type" class="form-control visa_type">
+										<option value="e-1ms">1 month single (e-visa)</option>
 										<? foreach ($visa_types as $visa_type) {
 											if ($visa_type->code == '6mm') {
 										?>
@@ -153,28 +154,6 @@
 										<? } ?>
 									</select>
 									<script> genVisitOptions(); $('#visit_purpose').val('<?=$step1->visit_purpose?>'); </script>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<div class="col-md-4">
-									<label class="control-label">Arrival airport <span class="required">*</span></label>
-								</div>
-								<div class="col-md-8">
-									<select id="arrival_port" name="arrival_port" class="form-control arrival_port">
-										<option value="" selected="selected">Please select...</option>
-										<? foreach ($arrival_ports as $arrival_port) {
-											if (in_array($arrival_port->code, array("SGN", "HAN", "DAN", "CXR"))) { ?>
-											<option value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>
-										<?	}
-										}
-										?>
-									</select>
-									<script> $('#arrival_port').val('<?=$step1->arrival_port?>'); </script>
-									<div class="processing-note">
-										The first port you arrive to Vietnam.
-									</div>
 								</div>
 							</div>
 						</div>
@@ -219,6 +198,76 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-4">
+									<label class="control-label">Arrival airport <span class="required">*</span></label>
+								</div>
+								<div class="col-md-8">
+									<select id="arrival_port" name="arrival_port" class="form-control arrival_port">
+										<option value="" selected="selected">Please select...</option>
+									</select>
+									<script> $('#arrival_port').val('<?=$step1->arrival_port?>'); </script>
+									<div class="processing-note">
+										The first port you arrive to Vietnam.
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row form-group wrap_exit_port" style="display: none;">
+							<div class="col-md-4">
+								<label class="control-label">Exit through checkpoint <span class="required">*</span></label>
+							</div>
+							<div class="col-md-8">
+								<select id="exit_port" name="exit_port" class="form-control frm-input exit_port">
+									<option value="" selected="selected">Please select...</option>
+								</select>
+								<script> $('#exit_port').val('<?=$step1->exit_port?>'); </script>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(".visa_type").change(function(){
+								var typ = $(this).val();
+								var str_holiday = '';
+								var str = '<option value="" selected="selected">Please select...</option>';
+								var frm_url = '<?=BASE_URL_HTTPS."/apply-visa/step2.html"?>';
+								if (typ != 'e-1ms') {
+									<? foreach ($arrival_ports as $arrival_port) {
+										if (in_array($arrival_port->code, array("SGN", "HAN", "DAN", "CXR"))) { ?>
+											str += '<option value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>';
+									<?	}
+									} ?>
+									str_holiday += '<label><input id="processing_time_holiday" note-id="processing-time-holiday-note" class="processing_time" type="radio" name="processing_time" value="Holiday" <?=($step1->processing_time=="Holiday"?"checked='checked'":"")?>/><strong>Holiday (for Saturday, Sunday or public holiday)</strong></label>';
+									str_holiday += '<div id="processing-time-holiday-note" class="processing-option none"><div class="processing-note">You need to choose this option if you are flying out on a weekend or holiday. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Holiday")->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to <span class="red">process immediately</span>. This fee, however, includes the stamping fee since we will have an associate obtaining the visa for you at the airport before your arrival.</div></div>';
+									$('.exit_port').html('');
+									$('.wrap_exit_port').css('display', 'none');
+									$('.review_exit_port').css('display', 'none');
+									$('.extra_service').css('display', 'block');
+									$('#promotion_li').css('display', 'block');
+								} else {
+									frm_url = '<?=BASE_URL_HTTPS."/apply-e-visa/step2.html"?>';
+									<? $ports = array('Airport','Landport','Seaport'); for ($i=1; $i <= 3 ; $i++) {
+											$info = new stdClass();
+											$info->category_id = $i;
+											$arrival_ports = $this->m_arrival_port->items($info, 1);
+										?>
+										str += '<optgroup label="<?=$ports[$i-1]?>">';
+										<? foreach ($arrival_ports as $arrival_port) { ?>
+											str += '<option value="<?=$arrival_port->short_name?>"><?=$arrival_port->airport?></option>';
+										<? } ?>
+										str += '</optgroup>';
+									<? } ?>
+									$('.exit_port').html(str);
+									$('.wrap_exit_port').css('display', 'flex');
+									$('.review_exit_port').css('display', 'block');
+									$('.extra_service').css('display', 'none');
+									$('#promotion_li').css('display', 'none');
+								}
+								$('#frmApply').attr('action', frm_url);
+								$('.holiday_process').html(str_holiday);
+								$('.arrival_port').html(str);
+							});
+						</script>
 						<div class="form-group">
 							<div class="row">
 								<div class="col-md-4">
@@ -267,7 +316,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="radio" style="margin-top: 5px">
+									<div class="radio holiday_process" style="margin-top: 5px">
 										<label>
 											<input id="processing_time_holiday" note-id="processing-time-holiday-note" class="processing_time" type="radio" name="processing_time" value="Holiday" <?=($step1->processing_time=="Holiday"?"checked='checked'":"")?>/>
 											<strong>Holiday (for Saturday, Sunday or public holiday)</strong>
@@ -281,7 +330,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group extra_service">
 							<div class="row full_package_group <?=((strtoupper($country_name)=='VIET NAM')?'full_package_group_none':'')?>">
 								<div class="col-md-12">
 									<div class="div"></div>
@@ -306,7 +355,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group extra_service">
 							<div class="row">
 								<div class="col-md-12">
 									<div class="div"></div>
@@ -409,12 +458,16 @@
 								<span class="visit_purpose_t">Please select...</span>
 							</li>
 							<li class="clearfix">
+								<label>Arrival date:</label>
+								<span class="arrival_date_t">Please select...</span>
+							</li>
+							<li class="clearfix">
 								<label>Arrival airport:</label>
 								<span class="arrival_port_t">Please select...</span>
 							</li>
-							<li class="clearfix">
-								<label>Arrival date:</label>
-								<span class="arrival_date_t">Please select...</span>
+							<li class="clearfix review_exit_port">
+								<label>Exit airport:</label>
+								<span class="exit_port_t">Please select...</span>
 							</li>
 							<li class="clearfix">
 								<label>Visa service fee:</label>

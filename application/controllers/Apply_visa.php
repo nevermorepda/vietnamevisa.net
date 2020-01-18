@@ -233,6 +233,7 @@ class Apply_visa extends CI_Controller {
 		$step1->group_size				= 1;
 		$step1->visit_purpose			= "";
 		$step1->arrival_port			= "";
+		$step1->exit_port				= 0;
 		$step1->processing_time			= "Normal";
 		$step1->private_visa			= 0;
 		$step1->full_package			= 0;
@@ -407,12 +408,16 @@ class Apply_visa extends CI_Controller {
 		
 		$visit_types = array();
 		$visit_types[] = "";
-		
-		if (!empty($tourist_visa_types) && in_array($visa_type, $tourist_visa_types)) {
+		if ($visa_type == 'e-1ms') {
 			$visit_types[] = "For tourist";
-		}
-		if (!empty($business_visa_types) && in_array($visa_type, $business_visa_types)) {
 			$visit_types[] = "For business";
+		} else {
+			if (!empty($tourist_visa_types) && in_array($visa_type, $tourist_visa_types)) {
+				$visit_types[] = "For tourist";
+			}
+			if (!empty($business_visa_types) && in_array($visa_type, $business_visa_types)) {
+				$visit_types[] = "For business";
+			}
 		}
 		
 		echo json_encode($visit_types);
@@ -431,23 +436,31 @@ class Apply_visa extends CI_Controller {
 		$service_type		= (!empty($_POST["service_type"]) ? $_POST["service_type"] : 0);
 		$car_type			= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "");
 		$num_seat			= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 0);
-		
+
+		$private_visa = 0;
+		$full_package = 0;
+		$fast_checkin = 0;
+		$car_pickup = 0;
+		$booking_type_id = 2;
+
 		$result = array();
-		
-		// Private letter
-		$private_visa = $this->m_private_letter_fee->search(((stripos(strtolower($visit_purpose), "business") === false) ? "tourist_" : "business_").$visa_type);
-		
-		// FC
-		$fast_checkin = $this->m_fast_checkin_fee->search($service_type, $arrival_port);
-		
-		// Car pick-up
-		$car_pickup = $this->m_car_fee->search($num_seat, $arrival_port);
-		
+		if ($visa_type != 'e-1ms') {
+			// Private letter
+			$private_visa = $this->m_private_letter_fee->search(((stripos(strtolower($visit_purpose), "business") === false) ? "tourist_" : "business_").$visa_type);
+			
+			// FC
+			$fast_checkin = $this->m_fast_checkin_fee->search($service_type, $arrival_port);
+			
+			// Car pick-up
+			$car_pickup = $this->m_car_fee->search($num_seat, $arrival_port);
+			
+			// Full package
+			$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
+
+			$booking_type_id = 1;
+		}
 		// Visa service
-		$visa_fee = $this->m_visa_fee->cal_visa_fee($visa_type, $group_size, $processing_time, $passport_holder, $visit_purpose, $arrival_port);
-		
-		// Full package
-		$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
+		$visa_fee = $this->m_visa_fee->cal_visa_fee($visa_type, $group_size, $processing_time, $passport_holder, $visit_purpose, $arrival_port,$booking_type_id);
 		
 		$result = array($private_visa, $full_package, $fast_checkin, $car_pickup, $visa_fee->service_fee, $visa_fee->rush_fee, $visa_fee->stamp_fee, $step1->discount, $step1->discount_unit, $step1->member_discount);
 		echo json_encode($result);
