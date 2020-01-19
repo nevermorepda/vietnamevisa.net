@@ -154,46 +154,22 @@
 											}
 											sort($regions);
 										?>
-										<? $dem=0; foreach ($regions as $region) { 
-											$info = new stdClass();
-											$info->region = $region;
-											$region_items = $this->m_requirement->join_country_items($info,1);
-											$c = ceil(count($region_items)/4);
-											$c_items = count($region_items);
-										?>
-										<div class="nation_permit pb-4">
-											<div class="nation_title pb-3"><?=$region;?></div>
-											<table>
-												<?
-												$str = '';
-												for ($i=0; $i < $c; $i++) { 
-													$str .= '<tr>';
-													for ($j = 4*$i; $j < 4*($i+1); $j++) { 
-														if (!empty($region_items[$j])) {
-															$str .= '<td>'.'<a href="'.site_url("visa-requirements/{$region_items[$j]->alias}").'">'.$region_items[$j]->citizen.'</a></td>';
-														}
-													}
-													$str .= '</tr>';
-												}
-												echo $str;
-												?>
-											</table>
-										</div>
-										<? } ?>
-										<!-- <div class="row permit">
-											<? foreach ($regions as $region) { ?>
-											<div class="col-sm-3 number"><?=$region;?></div>
-											<div class="col-sm-9">
-												<ul class="row list">
-													<? foreach ($requirements as $requirement) { ?>
-														<? if ($requirement->country_region == $region) { ?>
-														<li class="col-sm-4"><a href=""><?=$requirement->citizen?></a></li>
-														<? } ?>
-													<? } ?>
-												</ul>
-											</div>
+										<table class="table">
+											<? $dem=0; foreach ($regions as $region) { 
+												$info = new stdClass();
+												$info->region = $region;
+												$region_items = $this->m_requirement->join_country_items($info,1);
+											?>
+											<tr>
+												<td width="100px"><?=$region?></td>
+												<td>
+													<? $c = count($region_items); foreach ($region_items as $key => $region_item) { ?>
+														<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
+													<?  } ?>
+												</td>
+											</tr>
 											<? } ?>
-										</div> -->
+										</table>
 									</div>
 								</div>
 							</div>
@@ -250,6 +226,35 @@
 									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Countries of permit</h5>
 								</div>
 								<div class="content">
+									<div class="nation clearfix">
+										<?
+											$regions = array();
+											foreach ($requirements as $requirement) {
+												if (!in_array($requirement->country_region, $regions)) {
+													$regions[] = $requirement->country_region;
+												}
+											}
+											sort($regions);
+										?>
+										<table class="table">
+											<? $dem=0; foreach ($regions as $region) { 
+												$info = new stdClass();
+												$info->region = $region;
+												$region_items = $this->m_requirement->join_country_items($info,1);
+											?>
+											<tr>
+												<td width="100px"><?=$region?></td>
+												<td>
+													<? $c = count($region_items); foreach ($region_items as $key => $region_item) { ?>
+														<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
+													<?  } ?>
+												</td>
+											</tr>
+											<? } ?>
+										</table>
+									</div>
+								</div>
+								<!-- <div class="content">
 									<div class="list-countries">
 										<div class="group-contries group-A">
 											<div class="sonline"><a href="" style="background:#ebebeb;font-weight: 600;">A</a></div>
@@ -334,7 +339,7 @@
 											<div class=""><a href=""></a></div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
