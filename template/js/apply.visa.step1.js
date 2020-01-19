@@ -815,6 +815,12 @@ function calServiceFees()
 					}
 				}
 			}
+			if (typeofvisa == 'e-1ms') {
+				total += 25 * group_size;
+				$('.total_visa_stamping_price').html('25 $ x '+group_size+' applicants = '+25*group_size+' $');
+			} else {
+				$('.total_visa_stamping_price').html('');
+			}
 			
 			$(".total_visa_price").html(total_visa_price_txt);
 			$(".total_price").html(total.toFixed(2)+" $");

@@ -48,7 +48,7 @@ define("PATH_CKFINDER",			$_SERVER['DOCUMENT_ROOT'].'/'.DOMAIN.'/files/upload/im
 define("HOSTNAME", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("DATABASE", "vietnamvisa");
+define("DATABASE", "vietnamevisanet");
 define("DRIVER",   "mysqli");
 
 // --------------------------------------------

@@ -206,6 +206,11 @@
 								<div class="col-md-8">
 									<select id="arrival_port" name="arrival_port" class="form-control arrival_port">
 										<option value="" selected="selected">Please select...</option>
+										<? foreach ($arrival_ports as $arrival_port) {
+											if (in_array($arrival_port->code, array("SGN", "HAN", "DAN", "CXR"))) { ?>
+												<option value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>
+										<?	}
+										} ?>
 									</select>
 									<script> $('#arrival_port').val('<?=$step1->arrival_port?>'); </script>
 									<div class="processing-note">
@@ -244,6 +249,7 @@
 									$('.review_exit_port').css('display', 'none');
 									$('.extra_service').css('display', 'block');
 									$('#promotion_li').css('display', 'block');
+									$('.stamping_price').css('display', 'none');
 								} else {
 									frm_url = '<?=BASE_URL_HTTPS."/apply-e-visa/step2.html"?>';
 									<? $ports = array('Airport','Landport','Seaport'); for ($i=1; $i <= 3 ; $i++) {
@@ -262,6 +268,7 @@
 									$('.review_exit_port').css('display', 'block');
 									$('.extra_service').css('display', 'none');
 									$('#promotion_li').css('display', 'none');
+									$('.stamping_price').css('display', 'block');
 								}
 								$('#frmApply').attr('action', frm_url);
 								$('.holiday_process').html(str_holiday);
@@ -468,6 +475,10 @@
 							<li class="clearfix review_exit_port">
 								<label>Exit airport:</label>
 								<span class="exit_port_t">Please select...</span>
+							</li>
+							<li class="clearfix stamping_price" style="display: none;">
+								<label>Visa stamping fee:</label>
+								<span class="total_visa_stamping_price price">25 $ x 1 applicants = 25 $</span>
 							</li>
 							<li class="clearfix">
 								<label>Visa service fee:</label>

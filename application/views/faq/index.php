@@ -110,10 +110,7 @@
 					<? $i = 0;
 					foreach ($faqs as $faq) { ?>
 					<li>
-						<h3 class="click-faqs" status="0" data-index="<?=$faq->id?>" id="faqs-<?=$faq->id?>" ><a class="collapsed" rel="nofollow" title="<?=$faq->title?>" data-toggle="collapse" aria-expanded="false" aria-controls="collapse"><?=($i+1)?>. <?=$faq->title?></a></h3>
-						<div class="collapse" id="detail<?=$faq->id?>">
-							<p><?=$faq->content?></p>
-						</div>
+						<h3 class="click-faqs" status="0" data-index="<?=$faq->id?>" id="faqs-<?=$faq->id?>" ><a href="<?=site_url("faqs/{$faq->alias}")?>" class="collapsed" title="<?=$faq->title?>"><?=($i+1)?>. <?=$faq->title?></a></h3>
 					</li>
 					<? $i++; } ?>
 				</ul>
@@ -123,10 +120,7 @@
 					<? $i = 0;
 					foreach ($evisa_faqs as $evisa_faq) { ?>
 					<li>
-						<h3 class="click-faqs" status="0" data-index="<?=$evisa_faq->id?>" id="faqs-<?=$evisa_faq->id?>" ><a class="collapsed" rel="nofollow" title="<?=$evisa_faq->title?>" data-toggle="collapse" aria-expanded="false" aria-controls="collapse"><?=($i+1)?>. <?=$evisa_faq->title?></a></h3>
-						<div class="collapse" id="detail<?=$evisa_faq->id?>">
-							<p><?=$evisa_faq->content?></p>
-						</div>
+						<h3 class="click-faqs" status="0" data-index="<?=$evisa_faq->id?>" id="faqs-<?=$evisa_faq->id?>" ><a href="<?=site_url("faqs/{$faq->alias}")?>" class="collapsed" title="<?=$evisa_faq->title?>"><?=($i+1)?>. <?=$evisa_faq->title?></a></h3>
 					</li>
 					<? $i++; } ?>
 				</ul>
@@ -163,22 +157,6 @@
 	</div>
 </div>
 <!-- End about us -->
-<script>
-	$(document).ready(function() {
-		$('.click-faqs').click(function() {
-			var faqsIndex = parseInt($(this).data('index'));
-			$('#detail' + faqsIndex).slideToggle();
-			var stt = parseInt($(this).attr('status'));
-			if (stt == 0) {
-				$(this).attr('status',1);
-				$(this).addClass('collapsed')
-			} else {
-				$(this).attr('status',0);
-				$(this).removeClass('collapsed')
-			}
-		});
-	});
-</script>
 <script>
 	$(document).ready(function() {
 		$('.btn').mouseenter(function() {
