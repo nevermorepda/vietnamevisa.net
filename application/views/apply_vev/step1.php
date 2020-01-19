@@ -98,7 +98,7 @@
 									<option value="<?=$i?>"><?=$i?> Applicants</option>
 									<? } ?>
 								</select>
-								<script> $('#group_size').val('<?=$vev->group_size?>'); </script>
+								<script> $('#group_size').val('<?=$step1->group_size?>'); </script>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -109,7 +109,7 @@
 								<select id="visa_type" name="visa_type" class="form-control visa_type">
 									<option value="1ms">1 month single</option>
 								</select>
-								<script> $('#visa_type').val('<?=$vev->visa_type?>'); </script>
+								<script> $('#visa_type').val('<?=$step1->visa_type?>'); </script>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -122,7 +122,7 @@
 									<option value="For tourist">For tourist</option>
 									<option value="For business">For business</option>
 								</select>
-								<script> genVisitOptions(); $('#visit_purpose').val('<?=$vev->visit_purpose?>'); </script>
+								<script> genVisitOptions(); $('#visit_purpose').val('<?=$step1->visit_purpose?>'); </script>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -192,7 +192,7 @@
 									</optgroup>
 									<? } ?>
 								</select>
-								<script> $('#arrival_port').val('<?=$vev->arrival_port?>'); </script>
+								<script> $('#arrival_port').val('<?=$step1->arrival_port?>'); </script>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -214,7 +214,7 @@
 									</optgroup>
 									<? } ?>
 								</select>
-								<script> $('#exit_port').val('<?=$vev->exit_port?>'); </script>
+								<script> $('#exit_port').val('<?=$step1->exit_port?>'); </script>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -224,7 +224,7 @@
 							<div class="col-md-8">
 								<div class="radio">
 									<label>
-										<input id="processing_time_normal" note-id="processing-time-normal-note" class="processing_time" type="radio" name="processing_time" value="Normal" <?=($vev->processing_time=="Normal"?"checked='checked'":"")?>/>
+										<input id="processing_time_normal" note-id="processing-time-normal-note" class="processing_time" type="radio" name="processing_time" value="Normal" <?=($step1->processing_time=="Normal"?"checked='checked'":"")?>/>
 										Normal (Guaranteed 3 working days)
 									</label>
 									<a class="glyphicon glyphicon-question-sign tooltip-marker hidden" data-toggle="popover" data-trigger="hover" data-html="true" data-container="body" data-toggle="popover" data-placement="top" title="" data-content="We guarantee delivery of approval letter in <?=((strtoupper($country_name)=='VIET NAM')?'2 working days':'1 working day')?> by email."></a>
@@ -236,10 +236,10 @@
 								</div>
 								<div class="radio" style="margin-top: 5px">
 									<label>
-										<input id="processing_time_urgent" note-id="processing-time-urgent-note" class="processing_time" type="radio" name="processing_time" value="Urgent" <?=($vev->processing_time=="Urgent"?"checked='checked'":"")?>/>
+										<input id="processing_time_urgent" note-id="processing-time-urgent-note" class="processing_time" type="radio" name="processing_time" value="Urgent" <?=($step1->processing_time=="Urgent"?"checked='checked'":"")?>/>
 										Urgent (within 1 working day)
 									</label>
-									<a class="glyphicon glyphicon-question-sign tooltip-marker hidden" data-toggle="popover" data-trigger="hover" data-html="true" data-container="body" data-toggle="popover" data-placement="top" title="" data-content="<p>It is effective for whom needs visa urgently. The approval letter will be sent via email in <span class='text-color-red'>4 to 8 working hours</span>. The extra charge is from <b><?="$".$this->m_visa_fee->cal_visa_fee("1ms", 1, "Urgent","","","",$vev->booking_type_id)->rush_fee?> $</b>/person.</p><p><b><u>Notice</u></b>: In case you apply on Saturday, Sunday or Vietnam public holiday, it will be processed the next business day.</p>"></a>
+									<a class="glyphicon glyphicon-question-sign tooltip-marker hidden" data-toggle="popover" data-trigger="hover" data-html="true" data-container="body" data-toggle="popover" data-placement="top" title="" data-content="<p>It is effective for whom needs visa urgently. The approval letter will be sent via email in <span class='text-color-red'>4 to 8 working hours</span>. The extra charge is from <b><?="$".$this->m_visa_fee->cal_visa_fee("1ms", 1, "Urgent","","","",$step1->booking_type_id)->rush_fee?> $</b>/person.</p><p><b><u>Notice</u></b>: In case you apply on Saturday, Sunday or Vietnam public holiday, it will be processed the next business day.</p>"></a>
 									<div id="processing-time-urgent-note" class="processing-option display-none">
 										<div class="processing-note">
 											It is effective for who needs visa in urgent. We will send the approval letter by email in <span class="text-color-red">1 working days</span>. If you apply on a Saturday, Sunday or holiday, it will be processed the next business day. The extra charge is from <b>19 $</b>/person.
@@ -248,12 +248,12 @@
 								</div>
 								<div class="radio" style="margin-top: 5px">
 									<label>
-										<input id="processing_time_emergency" note-id="processing_time_emergency-note" class="processing_time" type="radio" name="processing_time" value="Emergency" <?=($vev->processing_time=="Emergency"?"checked='checked'":"")?>/>
+										<input id="processing_time_emergency" note-id="processing_time_emergency-note" class="processing_time" type="radio" name="processing_time" value="Emergency" <?=($step1->processing_time=="Emergency"?"checked='checked'":"")?>/>
 										<span><strong>Emergency (Within 4 hours)</strong></span>
 									</label>
 									<div id="processing_time_emergency-note" class="processing-option none">
 										<div class="processing-note">
-											Similar to Urgent option except it only takes <span class="red">4 hours</span>. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Emergency","","","",$vev->booking_type_id)->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately. You are subject to pay stamping fee at the airports. (You can apply supper urgent case on weekend/holiday for arrival date is next Monday or next business day.)
+											Similar to Urgent option except it only takes <span class="red">4 hours</span>. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Emergency","","","",$step1->booking_type_id)->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately. You are subject to pay stamping fee at the airports. (You can apply supper urgent case on weekend/holiday for arrival date is next Monday or next business day.)
 										</div>
 									</div>
 								</div>
@@ -325,7 +325,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="clearfix" id="promotion-box-succed" style="display: <?=(!empty($vev->discount) || !empty($vev->member_discount))?'block':'none'?>">
+									<div class="clearfix" id="promotion-box-succed" style="display: <?=(!empty($step1->discount) || !empty($step1->member_discount))?'block':'none'?>">
 										<label class="left">Promotion discount:</label>
 										<span class="promotion_t price"></span>
 									</div>

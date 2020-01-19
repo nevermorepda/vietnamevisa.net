@@ -1,7 +1,7 @@
 <?
 	$service_fee_group = array();
 	$nationality_group = array();
-	foreach ($vev->nationality as $nationality) {
+	foreach ($step1->nationality as $nationality) {
 		if (array_key_exists($nationality, $nationality_group)) {
 			$nationality_group[$nationality] = $nationality_group[$nationality] + 1;
 		} else {
@@ -112,10 +112,10 @@
 												<th>Arrival date</th>
 											</tr>
 											<tr>
-												<td><?=$this->util->getVisaType2String($vev->visa_type)?></td>
-												<td><?=$vev->visit_purpose?></td>
-												<td><?=$vev->processing_time?></td>
-												<td><?=date("M d, Y", strtotime($vev->arrival_date))?></td>
+												<td><?=$this->util->getVisaType2String($step1->visa_type)?></td>
+												<td><?=$step1->visit_purpose?></td>
+												<td><?=$step1->processing_time?></td>
+												<td><?=date("M d, Y", strtotime($step1->arrival_date))?></td>
 											</tr>
 										</table>
 									</div>
@@ -132,11 +132,11 @@
 												<th>Fast-track</th>
 											</tr>
 											<tr>
-												<td><?=$this->m_arrival_port->load($vev->arrival_port)->airport?></td>
-												<td class="text-center"><?=$vev->flightnumber.' - '.$vev->arrivaltime?></td>
-												<td class="text-center"><?=($vev->private_visa?"Yes":"No")?></td>
-												<td class="text-center"><?=($vev->car_pickup?$vev->car_type." (".$vev->num_seat." seats)":"No")?></td>
-												<td class="text-center"><?=($vev->full_package?"Full package":($vev->fast_checkin?"Yes":"No"))?></td>
+												<td><?=$this->m_arrival_port->load($step1->arrival_port)->airport?></td>
+												<td class="text-center"><?=$step1->flightnumber.' - '.$step1->arrivaltime?></td>
+												<td class="text-center"><?=($step1->private_visa?"Yes":"No")?></td>
+												<td class="text-center"><?=($step1->car_pickup?$step1->car_type." (".$step1->num_seat." seats)":"No")?></td>
+												<td class="text-center"><?=($step1->full_package?"Full package":($step1->fast_checkin?"Yes":"No"))?></td>
 											</tr>
 										</table>
 									</div>
@@ -156,17 +156,17 @@
 												<th>Expired date</th>
 												<!-- <th>Religion</th> -->
 											</tr>
-											<? for ($i=1; $i<=$vev->group_size; $i++) { ?>
+											<? for ($i=1; $i<=$step1->group_size; $i++) { ?>
 											<tr>
 												<td class="text-center"><?=$i?></td>
-												<td><?=$vev->fullname[$i]?></td>
-												<td class="text-center"><?=$vev->gender[$i]?></td>
-												<td><?=date("M d, Y", strtotime($vev->birthmonth[$i]."/".$vev->birthdate[$i]."/".$vev->birthyear[$i]))?></td>
-												<td><?=$vev->nationality[$i]?></td>
-												<td><?=$vev->passport[$i]?></td>
-												<!-- <td><?//=$vev->passport_type[$i]?></td> -->
-												<td><?=date("M d, Y", strtotime($vev->expirymonth[$i].'/'.$vev->expirydate[$i].'/'.$vev->expiryyear[$i]))?></td>
-												<!-- <td><?//=$vev->religion[$i]?></td> -->
+												<td><?=$step1->fullname[$i]?></td>
+												<td class="text-center"><?=$step1->gender[$i]?></td>
+												<td><?=date("M d, Y", strtotime($step1->birthmonth[$i]."/".$step1->birthdate[$i]."/".$step1->birthyear[$i]))?></td>
+												<td><?=$step1->nationality[$i]?></td>
+												<td><?=$step1->passport[$i]?></td>
+												<!-- <td><?//=$step1->passport_type[$i]?></td> -->
+												<td><?=date("M d, Y", strtotime($step1->expirymonth[$i].'/'.$step1->expirydate[$i].'/'.$step1->expiryyear[$i]))?></td>
+												<!-- <td><?//=$step1->religion[$i]?></td> -->
 											</tr>
 											<? } ?>
 										</table>
@@ -240,50 +240,50 @@
 										<ul>
 											<li class="clearfix hidden">
 												<label>Passport holder:</label>
-												<span class="passport_holder_t"><?=$vev->passport_holder?></span>
+												<span class="passport_holder_t"><?=$step1->passport_holder?></span>
 											</li>
 											<li class="clearfix">
 												<label>Number of persons:</label>
-												<span class="group_size_t"><?=$vev->group_size?> <?=($vev->group_size>1?"people":"person")?></span>
+												<span class="group_size_t"><?=$step1->group_size?> <?=($step1->group_size>1?"people":"person")?></span>
 											</li>
 											<li class="clearfix">
 												<label>Type of visa:</label>
-												<span class="visa_type_t"><?=$this->util->getVisaType2String($vev->visa_type)?></span>
+												<span class="visa_type_t"><?=$this->util->getVisaType2String($step1->visa_type)?></span>
 											</li>
 											<li class="clearfix">
 												<label>Purpose of visit:</label>
-												<span class="visit_purpose_t"><?=$vev->visit_purpose?></span>
+												<span class="visit_purpose_t"><?=$step1->visit_purpose?></span>
 											</li>
 											<li class="clearfix">
 												<label>Arrival airport:</label>
-												<span class="arrival_port_t"><?=$vev->arrival_port?></span>
+												<span class="arrival_port_t"><?=$step1->arrival_port?></span>
 											</li>
 											<li class="clearfix">
 												<label>Arrival date:</label>
-												<span class="arrival_date_t"><?=date("M/d/Y", strtotime($vev->arrival_date))?></span>
+												<span class="arrival_date_t"><?=date("M/d/Y", strtotime($step1->arrival_date))?></span>
 											</li>
 											<li class="clearfix">
 												<label>Exit port:</label>
-												<span class="exit_port_t"><?=$vev->exit_port?></span>
+												<span class="exit_port_t"><?=$step1->exit_port?></span>
 											</li>
 											<!-- <li class="clearfix">
 												<label>Exit date:</label>
-												<span class="arrival_date_t"><?//=date("M/d/Y", strtotime($vev->exit_date))?></span>
+												<span class="arrival_date_t"><?//=date("M/d/Y", strtotime($step1->exit_date))?></span>
 											</li> -->
 											<li class="clearfix">
 												<label>Visa stamping fee:</label>
-												<span class="total_stamping_fee_t price pointer" data-toggle="collapse" data-target="#stamping-fee-detail"><?=$vev->stamp_fee*$vev->group_size?> $ <i class="fa fa-chevron-circle-down"></i></span>
+												<span class="total_stamping_fee_t price pointer" data-toggle="collapse" data-target="#stamping-fee-detail"><?=$step1->stamp_fee*$step1->group_size?> $ <i class="fa fa-chevron-circle-down"></i></span>
 												<div id="stamping-fee-detail" class="stamping-fee-detail text-right collapse">
-													<span class="total_stamping_price price"><?=$vev->stamp_fee." $ x ".$vev->group_size." ".($vev->group_size>1?"people":"person")." = ".$vev->stamp_fee*$vev->group_size?> $</span>
+													<span class="total_stamping_price price"><?=$step1->stamp_fee." $ x ".$step1->group_size." ".($step1->group_size>1?"people":"person")." = ".$step1->stamp_fee*$step1->group_size?> $</span>
 												</div>
 											</li>
 											<li class="clearfix">
 												<label>Visa service fee:</label>
-												<span class="total_visa_price_t price pointer" data-toggle="collapse" data-target="#service-fee-detail"><?=$vev->total_service_fee?> $ <i class="fa fa-chevron-circle-down"></i></span>
+												<span class="total_visa_price_t price pointer" data-toggle="collapse" data-target="#service-fee-detail"><?=$step1->total_service_fee?> $ <i class="fa fa-chevron-circle-down"></i></span>
 												<div id="service-fee-detail" class="service-fee-detail text-right collapse">
 													<?
 													foreach ($nationality_group as $nationality => $count) {
-														$visa_fee = $this->m_visa_fee->cal_visa_fee($vev->visa_type, $vev->group_size, $vev->processing_time, $nationality, $vev->visit_purpose,null,2);
+														$visa_fee = $this->m_visa_fee->cal_visa_fee($step1->visa_type, $step1->group_size, $step1->processing_time, $nationality, $step1->visit_purpose,null,2);
 														$service_fee_group[$nationality] = $visa_fee->service_fee;
 														$service_fee_detail  = '<div class="service-fee-item">';
 														$service_fee_detail .= '<div class="text-right"><strong>'.$nationality.'</strong></div>';
@@ -294,70 +294,70 @@
 													?>
 												</div>
 											</li>
-											<li class="clearfix <?=(($vev->processing_time != 'Normal')?'':'display-none')?>" id="processing_time_li">
+											<li class="clearfix <?=(($step1->processing_time != 'Normal')?'':'display-none')?>" id="processing_time_li">
 												<div class="clearfix">
 													<label>Processing time:</label>
-													<span class="processing_note_t"><?=$vev->processing_time?></span>
+													<span class="processing_note_t"><?=$step1->processing_time?></span>
 												</div>
-												<span class="processing_t price"><?=$vev->rush_fee." $ x ".$vev->group_size." ".($vev->group_size>1?"people":"person")." = ".$vev->rush_fee*$vev->group_size?> $</span>
+												<span class="processing_t price"><?=$step1->rush_fee." $ x ".$step1->group_size." ".($step1->group_size>1?"people":"person")." = ".$step1->rush_fee*$step1->group_size?> $</span>
 											</li>
-											<li class="clearfix <?=(!empty($vev->private_visa)?'':'display-none')?>" id="private_visa_li">
+											<li class="clearfix <?=(!empty($step1->private_visa)?'':'display-none')?>" id="private_visa_li">
 												<label>Private letter:</label>
-												<span class="private_visa_t price"><?=$vev->private_visa_fee?> $</span>
+												<span class="private_visa_t price"><?=$step1->private_visa_fee?> $</span>
 											</li>
-											<li class="clearfix <?=(!empty($vev->full_package)?'':'display-none')?>" id="full_package_li">
+											<li class="clearfix <?=(!empty($step1->full_package)?'':'display-none')?>" id="full_package_li">
 												<label>Full package service:</label>
 												<div class="full_package_services">
-													<div class="clearfix"><label>1. Government fee</label><span class='price'><?=$vev->stamp_fee?> $ x <?=$vev->group_size?> <?=($vev->group_size>1?"people":"person")?> = <?=$vev->stamp_fee*$vev->group_size?> $</span></div>
-													<div class="clearfix"><label>2. Airport fast check-in</label><span class='price'><?=$vev->full_package_fc_fee?> $ x <?=$vev->group_size?> <?=($vev->group_size>1?"people":"person")?> = <?=$vev->full_package_fc_fee*$vev->group_size?> $</span></div>
+													<div class="clearfix"><label>1. Government fee</label><span class='price'><?=$step1->stamp_fee?> $ x <?=$step1->group_size?> <?=($step1->group_size>1?"people":"person")?> = <?=$step1->stamp_fee*$step1->group_size?> $</span></div>
+													<div class="clearfix"><label>2. Airport fast check-in</label><span class='price'><?=$step1->full_package_fc_fee?> $ x <?=$step1->group_size?> <?=($step1->group_size>1?"people":"person")?> = <?=$step1->full_package_fc_fee*$step1->group_size?> $</span></div>
 												</div>
 											</li>
-											<li class="clearfix <?=(($vev->fast_checkin||$vev->car_pickup)?'':'display-none')?>" id="extra_service_li">
+											<li class="clearfix <?=(($step1->fast_checkin||$step1->car_pickup)?'':'display-none')?>" id="extra_service_li">
 												<label>Airport assistance services:</label>
 												<div class="extra_services">
 													<?
 														$serviceCnt = 1;
-														if ($vev->fast_checkin==1) {
+														if ($step1->fast_checkin==1) {
 													?>
-														<div class="clearfix"><label><?=($serviceCnt++)?>. Fast check-in</label><span class='price'><?=$vev->fast_checkin_fee?> $ x <?=$vev->group_size?> <?=($vev->group_size>1?"people":"person")?> = <?=$vev->fast_checkin_fee*$vev->group_size?> $</span></div>
+														<div class="clearfix"><label><?=($serviceCnt++)?>. Fast check-in</label><span class='price'><?=$step1->fast_checkin_fee?> $ x <?=$step1->group_size?> <?=($step1->group_size>1?"people":"person")?> = <?=$step1->fast_checkin_fee*$step1->group_size?> $</span></div>
 													<?
 														}
-														if ($vev->fast_checkin==2) {
+														if ($step1->fast_checkin==2) {
 													?>
-														<div class="clearfix"><label><?=($serviceCnt++)?>. VIP fast check-in</label><span class='price'><?=$vev->fast_checkin_fee?> $ x <?=$vev->group_size?> <?=($vev->group_size>1?"people":"person")?> = <?=$vev->fast_checkin_fee*$vev->group_size?> $</span></div>
+														<div class="clearfix"><label><?=($serviceCnt++)?>. VIP fast check-in</label><span class='price'><?=$step1->fast_checkin_fee?> $ x <?=$step1->group_size?> <?=($step1->group_size>1?"people":"person")?> = <?=$step1->fast_checkin_fee*$step1->group_size?> $</span></div>
 													<?	
 														}
-														if ($vev->car_pickup) {
+														if ($step1->car_pickup) {
 													?>
-														<div class="clearfix"><label><?=($serviceCnt++)?>. Car pick-up</label><span class='price'>(<?=$vev->car_type?>, <?=$vev->num_seat?> seats) = <?=$vev->car_total_fee?> $</span></div>
+														<div class="clearfix"><label><?=($serviceCnt++)?>. Car pick-up</label><span class='price'>(<?=$step1->car_type?>, <?=$step1->num_seat?> seats) = <?=$step1->car_total_fee?> $</span></div>
 													<?
 														}
 													?>
 												</div>
 											</li>
-											<li class="clearfix <?=(!empty($vev->vip_discount)?'':'display-none')?>" id="vipsave_li">
-												<label>VIP discount <span class="vipsavepercent_t"><?=$vev->vip_discount?>%</span></label>
-												<span class="vipsave_t price">- <?=round($vev->total_service_fee * $vev->vip_discount/100)?> $</span>
+											<li class="clearfix <?=(!empty($step1->vip_discount)?'':'display-none')?>" id="vipsave_li">
+												<label>VIP discount <span class="vipsavepercent_t"><?=$step1->vip_discount?>%</span></label>
+												<span class="vipsave_t price">- <?=round($step1->total_service_fee * $step1->vip_discount/100)?> $</span>
 											</li>
-											<? if (!empty($vev->discount) || !empty($vev->member_discount)) { 
+											<? if (!empty($step1->discount) || !empty($step1->member_discount)) { 
 												$title_discount = 'Member discount';
-												$discount = $vev->member_discount;
-												if ($vev->discount_unit == "USD") {
-													round($vev->discount,2);
+												$discount = $step1->member_discount;
+												if ($step1->discount_unit == "USD") {
+													round($step1->discount,2);
 												} else {
-													if ($vev->member_discount < $vev->discount) {
+													if ($step1->member_discount < $step1->discount) {
 														$title_discount = 'Promotion discount';
-														$discount = $vev->discount;
+														$discount = $step1->discount;
 													}
 												}
-												$discount_fee = round(($vev->total_service_fee * $discount/100),2);
+												$discount_fee = round(($step1->total_service_fee * $discount/100),2);
 											?>
 											<li class="clearfix <?=(!empty($discount)?'':'display-none')?>" id="promotion_li" style="background-color: #F8F8F8;">
 												<div class="clearfix">
 													<label class="left"><?=$title_discount?>:</label>
 													<span class="promotion_t price">
 													- <?=$discount_fee?> $
-													<?="({$discount}{$vev->discount_unit})"?>
+													<?="({$discount}{$step1->discount_unit})"?>
 													</span>
 												</div>
 											</li>
@@ -368,12 +368,12 @@
 													<label class="pull-left text-color-red">TOTAL FEE:</label>
 													<div class="pull-right subtotal-price">
 														<div class="price-block">
-															<span class="price total_price"><?=$vev->total_fee?> $</span>
+															<span class="price total_price"><?=$step1->total_fee?> $</span>
 														</div>
 													</div>
 												</div>
 												<!-- <div class="text-left" style="font-size: 14px;">
-												<?// if ($vev->processing_time == "Holiday" || !empty($vev->full_package)) { ?>
+												<?// if ($step1->processing_time == "Holiday" || !empty($step1->full_package)) { ?>
 													<i class="stamping_fee_included">(<a target="_blank" title="stamping fee" href="<?//=site_url("vietnam-visa-fees")?>#stamping-fee">stamping fee</a> included, no need to pay any extra fee)</i>
 												<?// } else { ?>
 													<i class="stamping_fee_excluded">(<a target="_blank" title="stamping fee" href="<?//=site_url("vietnam-visa-fees")?>#stamping-fee">stamping fee</a> is included)</i>

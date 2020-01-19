@@ -83,7 +83,7 @@
 				</li>
 				<li class="menu-item-div"></li>
 				<li>
-					<a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="">Apply Visa Form</a>
+					<a href="<?=site_url("apply-visa")?>" class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="">Apply Visa Form</a>
 					<!-- <ul class="sub-menu">
 						<li><a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-visa")?>">Visa On Arrival</a></li>
 						<li><a class="<?=(($tabindex == "apply-e-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-e-visa")?>">E-Visa</a></li>

@@ -118,7 +118,7 @@ class Apply_e_visa extends CI_Controller {
 	{
 		$this->prepare();
 		
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 		
 		if (!empty($code)) {
 			$code = strtoupper(trim($code));
@@ -126,13 +126,13 @@ class Apply_e_visa extends CI_Controller {
 			if (!empty($promotions)) {
 				foreach ($promotions as $promotion) {
 					if (strtoupper($promotion->code) == $code) {
-						$vev->promotion_code = $code;
-						$vev->discount = $promotion->discount;
-						$vev->discount_unit = $promotion->discount_unit;
-						if ($vev->discount > 0) {
-							$vev->vip_discount = 0;
+						$step1->promotion_code = $code;
+						$step1->discount = $promotion->discount;
+						$step1->discount_unit = $promotion->discount_unit;
+						if ($step1->discount > 0) {
+							$step1->vip_discount = 0;
 						}
-						$this->session->set_userdata("vev", $vev);
+						$this->session->set_userdata("step1", $step1);
 					}
 				}
 			}
@@ -148,7 +148,7 @@ class Apply_e_visa extends CI_Controller {
 		$code = (!empty($_POST["code"]) ? $_POST["code"] : "");
 		$result	= "";
 		
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 		
 		if (!empty($code)) {
 			$code = strtoupper(trim($code));
@@ -156,13 +156,13 @@ class Apply_e_visa extends CI_Controller {
 			if (!empty($promotions)) {
 				foreach ($promotions as $promotion) {
 					if (strtoupper($promotion->code) == $code) {
-						$vev->promotion_code = $code;
-						$vev->discount = $promotion->discount;
-						$vev->discount_unit = $promotion->discount_unit;
-						if ($vev->discount > 0) {
-							$vev->vip_discount = 0;
+						$step1->promotion_code = $code;
+						$step1->discount = $promotion->discount;
+						$step1->discount_unit = $promotion->discount_unit;
+						if ($step1->discount > 0) {
+							$step1->vip_discount = 0;
 						}
-						$this->session->set_userdata("vev", $vev);
+						$this->session->set_userdata("step1", $step1);
 						$result = $promotion->discount;
 					}
 				}
@@ -182,86 +182,86 @@ class Apply_e_visa extends CI_Controller {
 	
 	public function prepare()
 	{
-		$this->session->unset_userdata("vev");
+		$this->session->unset_userdata("step1");
 		
-		$vev = new stdClass();
-		$vev->booking_type_id			= 2;
-		$vev->passport_holder			= "";
-		$vev->visa_type					= "1ms";
-		$vev->group_size				= 1;
-		$vev->visit_purpose				= "";
-		$vev->arrival_port				= 0;
-		$vev->exit_port					= 0;
-		$vev->processing_time			= "Normal";
-		$vev->private_visa				= 0;
-		$vev->full_package				= 0;
-		$vev->full_package_fc_fee		= 0;
-		$vev->full_package_total_fee	= 0;
-		$vev->fast_checkin				= 0;
-		$vev->car_pickup				= 0;
-		// $vev->car_type					= "Economic Car";
-		// $vev->num_seat					= 4;
-		$vev->promotion_type			= "1ms";
-		$vev->promotion_code			= "";
-		$vev->member_discount			= !empty($this->util->level_account()) ? $this->util->level_account()[2] : 0 ;
-		$vev->discount					= 0;
-		$vev->discount_unit 			= "%";
-		$vev->fullname[1]				= "";
-		$vev->gender[1]					= "";
-		$vev->birthdate[1]				= "";
-		$vev->birthmonth[1]				= "";
-		$vev->birthyear[1]				= "";
-		$vev->nationality[1]			= "";
-		$vev->passport[1]				= "";
-		$vev->flight_booking			= 1;
-		$vev->flightnumber				= "";
-		$vev->arrivaltime				= "";
-		$vev->arrivaldate				= "";
-		$vev->exitdate					= "";
-		$vev->contact_title				= "Mr";
-		$vev->contact_fullname			= "";
-		$vev->contact_email				= "";
-		$vev->contact_email2			= "";
-		$vev->contact_phone				= "";
-		$vev->comment					= "";
-		$vev->payment					= "";
-		$vev->vip_discount				= $this->vip()->discount;
+		$step1 = new stdClass();
+		$step1->booking_type_id			= 2;
+		$step1->passport_holder			= "";
+		$step1->visa_type					= "1ms";
+		$step1->group_size				= 1;
+		$step1->visit_purpose				= "";
+		$step1->arrival_port				= 0;
+		$step1->exit_port					= 0;
+		$step1->processing_time			= "Normal";
+		$step1->private_visa				= 0;
+		$step1->full_package				= 0;
+		$step1->full_package_fc_fee		= 0;
+		$step1->full_package_total_fee	= 0;
+		$step1->fast_checkin				= 0;
+		$step1->car_pickup				= 0;
+		// $step1->car_type					= "Economic Car";
+		// $step1->num_seat					= 4;
+		$step1->promotion_type			= "1ms";
+		$step1->promotion_code			= "";
+		$step1->member_discount			= !empty($this->util->level_account()) ? $this->util->level_account()[2] : 0 ;
+		$step1->discount					= 0;
+		$step1->discount_unit 			= "%";
+		$step1->fullname[1]				= "";
+		$step1->gender[1]					= "";
+		$step1->birthdate[1]				= "";
+		$step1->birthmonth[1]				= "";
+		$step1->birthyear[1]				= "";
+		$step1->nationality[1]			= "";
+		$step1->passport[1]				= "";
+		$step1->flight_booking			= 1;
+		$step1->flightnumber				= "";
+		$step1->arrivaltime				= "";
+		$step1->arrivaldate				= "";
+		$step1->exitdate					= "";
+		$step1->contact_title				= "Mr";
+		$step1->contact_fullname			= "";
+		$step1->contact_email				= "";
+		$step1->contact_email2			= "";
+		$step1->contact_phone				= "";
+		$step1->comment					= "";
+		$step1->payment					= "";
+		$step1->vip_discount				= $this->vip()->discount;
 		
 		$user = $this->session->userdata("user");
 		if (!empty($user)) {
-			$vev->contact_title		= $user->title;
-			$vev->contact_fullname	= $user->user_fullname;
-			$vev->contact_email		= $user->user_email;
-			$vev->contact_phone		= $user->phone;
+			$step1->contact_title		= $user->title;
+			$step1->contact_fullname	= $user->user_fullname;
+			$step1->contact_email		= $user->user_email;
+			$step1->contact_phone		= $user->phone;
 		}
 		
 		// Cal fees
-		$visa_fee = $this->m_visa_fee->cal_visa_fee($vev->visa_type, $vev->group_size, $vev->processing_time, $vev->passport_holder, $vev->visit_purpose,null,$vev->booking_type_id);
-		$vev->service_fee			= $visa_fee->service_fee;
-		$vev->service_fee_discount	= 0;
-		$vev->stamp_fee				= $visa_fee->stamp_fee;
-		$vev->rush_fee				= $visa_fee->rush_fee;
-		$vev->total_service_fee		= ($vev->service_fee * $vev->group_size);
-		$vev->total_rush_fee		= ($vev->rush_fee * $vev->group_size);
+		$visa_fee = $this->m_visa_fee->cal_visa_fee($step1->visa_type, $step1->group_size, $step1->processing_time, $step1->passport_holder, $step1->visit_purpose,null,$step1->booking_type_id);
+		$step1->service_fee			= $visa_fee->service_fee;
+		$step1->service_fee_discount	= 0;
+		$step1->stamp_fee				= $visa_fee->stamp_fee;
+		$step1->rush_fee				= $visa_fee->rush_fee;
+		$step1->total_service_fee		= ($step1->service_fee * $step1->group_size);
+		$step1->total_rush_fee		= ($step1->rush_fee * $step1->group_size);
 		
-		$vev->private_visa_fee		= 0;
+		$step1->private_visa_fee		= 0;
 		
-		$vev->fast_checkin_fee		= 0;
-		$vev->fast_checkin_total_fee= 0;
+		$step1->fast_checkin_fee		= 0;
+		$step1->fast_checkin_total_fee= 0;
 		
-		$vev->car_fee				= 0;
-		$vev->car_total_fee			= 0;
+		$step1->car_fee				= 0;
+		$step1->car_total_fee			= 0;
 		
-		$vev->total_fee = $vev->total_service_fee + $vev->total_rush_fee + $vev->private_visa_fee + $vev->fast_checkin_total_fee + $vev->car_total_fee;
-		if ($vev->discount_unit == "USD") {
-			$vev->total_fee = $vev->total_fee - $vev->discount;
+		$step1->total_fee = $step1->total_service_fee + $step1->total_rush_fee + $step1->private_visa_fee + $step1->fast_checkin_total_fee + $step1->car_total_fee;
+		if ($step1->discount_unit == "USD") {
+			$step1->total_fee = $step1->total_fee - $step1->discount;
 		} else {
-			$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->discount/100);
+			$step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->discount/100);
 		}
-		$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->vip_discount/100);
-		$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->service_fee_discount/100);
+		$step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->vip_discount/100);
+		$step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->service_fee_discount/100);
 		
-		$this->session->set_userdata("vev", $vev);
+		$this->session->set_userdata("step1", $step1);
 	}
 	
 	public function index()
@@ -272,16 +272,16 @@ class Apply_e_visa extends CI_Controller {
 	
 	function step1()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 		
-		if ($vev == null) {
+		if ($step1 == null) {
 			$this->prepare();
 		}
 		
 		$breadcrumb = array("Apply E-Visa" => site_url("apply-e-visa"), "1. Visa Options" => "");
 		
 		$view_data = array();
-		$view_data["vev"] = $vev;
+		$view_data["step1"] = $step1;
 		$view_data["breadcrumb"] = $breadcrumb;
 		
 		$tmpl_content = array();
@@ -377,12 +377,12 @@ class Apply_e_visa extends CI_Controller {
 		// Full package
 		$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
 		
-		$vev = $this->session->userdata("vev");
-		if ($vev == null) {
+		$step1 = $this->session->userdata("step1");
+		if ($step1 == null) {
 			$this->prepare();
-			$vev = $this->session->userdata("vev");
+			$step1 = $this->session->userdata("step1");
 		}
-		$visa_service_fee = array($private_visa, $full_package, $fast_checkin, $car_pickup, $visa_fee->service_fee, $visa_fee->rush_fee, $visa_fee->stamp_fee, $vev->discount, $vev->discount_unit, $vev->member_discount);
+		$visa_service_fee = array($private_visa, $full_package, $fast_checkin, $car_pickup, $visa_fee->service_fee, $visa_fee->rush_fee, $visa_fee->stamp_fee, $step1->discount, $step1->discount_unit, $step1->member_discount);
 
 		////////////////////////////////////////////
 
@@ -437,7 +437,10 @@ class Apply_e_visa extends CI_Controller {
 		
 		// Visa service
 		$nationality_group = array();
+		$stamp_fee = 0;
 		foreach ($nationalities as $nationality) {
+			$visa_fee = $this->m_visa_fee->cal_e_visa_fee($visa_type, $group_size, $processing_time, $nationality, $visit_purpose);
+			$stamp_fee += $visa_fee->stamp_fee;
 			if (array_key_exists($nationality, $nationality_group)) {
 				$nationality_group[$nationality] = $nationality_group[$nationality] + 1;
 			} else {
@@ -446,10 +449,10 @@ class Apply_e_visa extends CI_Controller {
 		}
 		
 		// Private letter
-		$private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($visit_purpose), "business") === false) ? "tourist_" : "business_").$visa_type);
-		if ($private_visa) {
-			$subtotal += $private_visa_fee;
-		}
+		// $private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($visit_purpose), "business") === false) ? "tourist_" : "business_").$visa_type);
+		// if ($private_visa) {
+		// 	$subtotal += $private_visa_fee;
+		// }
 		
 		// // Full package
 		// if ($full_package) {
@@ -460,27 +463,27 @@ class Apply_e_visa extends CI_Controller {
 		// 	$subtotal += $fast_checkin_fee * $group_size;
 		// }
 		
-		$vev = $this->session->userdata("vev");
-		if ($vev == null) {
+		$step1 = $this->session->userdata("step1");
+		if ($step1 == null) {
 			$this->prepare();
-			$vev = $this->session->userdata("vev");
+			$step1 = $this->session->userdata("step1");
 		}
 		// Visa service
 		$service_fee = 0;
 		$total_visa_fee = 0;
-		$stamp_fee = 0;
 		foreach ($nationality_group as $nationality => $count) {
 			$visa_fee = $this->m_visa_fee->cal_e_visa_fee($visa_type, $group_size, $processing_time, $nationality, $visit_purpose);
 			$service_fee += $visa_fee->service_fee * $count;
-			$stamp_fee += $visa_fee->stamp_fee;
 			$total_visa_fee += ($visa_fee->service_fee + $visa_fee->rush_fee) * $count;
+			
 		}
+
 		// // FC
 		// $total_checkin_fee = 0;
 		// $fast_checkin_fee = $this->m_fast_checkin_fee->search($fast_checkin, $arrival_port);
 		// if ($fast_checkin) {
-		// 	if (!empty($vev->discount_fast_track)) {
-		// 		$total_checkin_fee = ($fast_checkin_fee * $group_size) * (1 - $vev->discount_fast_track/100);
+		// 	if (!empty($step1->discount_fast_track)) {
+		// 		$total_checkin_fee = ($fast_checkin_fee * $group_size) * (1 - $step1->discount_fast_track/100);
 		// 	} else {
 		// 		$total_checkin_fee = $fast_checkin_fee * $group_size;
 		// 	}
@@ -489,21 +492,21 @@ class Apply_e_visa extends CI_Controller {
 		// $total_car_pickup_fee = 0;
 		// $car_pickup_fee = $this->m_car_fee->search($num_seat, $arrival_port);
 		// if ($car_pickup) {
-		// 	if (!empty($vev->discount_car_pickup)) {
-		// 		$total_car_pickup_fee = $car_pickup_fee * (1 - $vev->discount_car_pickup/100);
+		// 	if (!empty($step1->discount_car_pickup)) {
+		// 		$total_car_pickup_fee = $car_pickup_fee * (1 - $step1->discount_car_pickup/100);
 		// 	} else {
 		// 		$total_car_pickup_fee = $car_pickup_fee;
 		// 	}
 		// }
 		
-		if ($vev->discount_unit == "USD") {
-			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $vev->discount;
+		if ($step1->discount_unit == "USD") {
+			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $step1->discount;
 		} else {
-			$discount = ($vev->member_discount > $vev->discount) ? $vev->member_discount : $vev->discount ;
+			$discount = ($step1->member_discount > $step1->discount) ? $step1->member_discount : $step1->discount ;
 			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $service_fee * $discount/100;
 		}
-		
-		echo json_encode(array(round($subtotal,2),$service_fee * $vev->discount/100,$vev->discount,$service_fee,$vev->member_discount));
+
+		echo json_encode(array(round($subtotal,2),$service_fee * $step1->discount/100,$step1->discount,$service_fee,$step1->member_discount));
 	}
 	
 	function ajax_cal_service_fees_detail()
@@ -542,9 +545,9 @@ class Apply_e_visa extends CI_Controller {
 		echo json_encode($result);
 	}
 
-	function check_valid_return($vev)
+	function check_valid_return($step1)
 	{
-		if (empty($vev->arrival_port)) {
+		if (empty($step1->arrival_port)) {
 			$this->session->set_flashdata("session-expired", "The Visa Application Form's session has been expired for some reasons! Please re-fill your information.");
 			redirect(site_url($this->util->slug($this->router->fetch_class())));
 		}
@@ -552,163 +555,161 @@ class Apply_e_visa extends CI_Controller {
 	
 	function step2()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("apply-e-visa"));
-
 		}
 
 		if (!empty($_POST))
 		{
-			$vev->passport_holder		= (!empty($_POST["passport_holder"]) ? $_POST["passport_holder"] : "");
-			$vev->visa_type				= (!empty($_POST["visa_type"]) ? $_POST["visa_type"] : "1ms");
-			$vev->group_size			= (!empty($_POST["group_size"]) ? $_POST["group_size"] : 1);
-			$vev->visit_purpose			= (!empty($_POST["visit_purpose"]) ? $_POST["visit_purpose"] : "");
+			$step1->booking_type_id = 2;
+			$step1->passport_holder		= (!empty($_POST["passport_holder"]) ? $_POST["passport_holder"] : "");
+			$step1->visa_type			= str_replace('e-','', (!empty($_POST["visa_type"]) ? $_POST["visa_type"] : "1ms"));
+			$step1->group_size			= (!empty($_POST["group_size"]) ? $_POST["group_size"] : 1);
+			$step1->visit_purpose			= (!empty($_POST["visit_purpose"]) ? $_POST["visit_purpose"] : "");
 			if (!empty($_POST["arrivaldate"]) && !empty($_POST["arrivalmonth"]) && !empty($_POST["arrivalyear"])) {
-				$vev->arrival_date		= $_POST["arrivalyear"].'-'.$_POST["arrivalmonth"].'-'.$_POST["arrivaldate"];
+				$step1->arrival_date		= $_POST["arrivalyear"].'-'.$_POST["arrivalmonth"].'-'.$_POST["arrivaldate"];
 			} else {
-				$vev->arrival_date = '';
+				$step1->arrival_date = '';
 			}
 
-			$vev->exit_date				= (!empty($_POST["exit_date"]) ? $_POST["exit_date"] : "");
-			$vev->arrival_port			= (!empty($_POST["arrival_port"]) ? $_POST["arrival_port"] : 0);
-			$vev->exit_port				= (!empty($_POST["exit_port"]) ? $_POST["exit_port"] : 0);
-			$vev->processing_time		= (!empty($_POST["processing_time"]) ? $_POST["processing_time"] : "Normal");
+			$step1->exit_date				= (!empty($_POST["exit_date"]) ? $_POST["exit_date"] : "");
+			$step1->arrival_port			= (!empty($_POST["arrival_port"]) ? $_POST["arrival_port"] : 0);
+			$step1->exit_port				= (!empty($_POST["exit_port"]) ? $_POST["exit_port"] : 0);
+			$step1->processing_time		= (!empty($_POST["processing_time"]) ? $_POST["processing_time"] : "Normal");
 			
-			// $vev->private_visa			= (!empty($_POST["private_visa"]) ? $_POST["private_visa"] : 0);
-			// $vev->full_package			= (!empty($_POST["full_package"]) ? $_POST["full_package"] : 0);
-			// $vev->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
-			// $vev->car_pickup			= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
-			// $vev->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
-			// $vev->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
+			// $step1->private_visa			= (!empty($_POST["private_visa"]) ? $_POST["private_visa"] : 0);
+			// $step1->full_package			= (!empty($_POST["full_package"]) ? $_POST["full_package"] : 0);
+			// $step1->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
+			// $step1->car_pickup			= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
+			// $step1->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
+			// $step1->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
 			
-			$vev->vip_discount			= $this->vip()->discount;
+			$step1->vip_discount			= $this->vip()->discount;
 			
-			if ($vev->visa_type == "6mm" || $vev->visa_type == "1ym") {
-				$vev->discount = 0;
-				$vev->vip_discount = 0;
+			if ($step1->visa_type == "6mm" || $step1->visa_type == "1ym") {
+				$step1->discount = 0;
+				$step1->vip_discount = 0;
 			}
 			else {
 				// Reactive promotion code
-				if (!empty($vev->promotion_code) && !$vev->discount) {
+				if (!empty($step1->promotion_code) && !$step1->discount) {
 					$promotions = $this->m_promotion->available_items();
 					if (!empty($promotions)) {
 						foreach ($promotions as $promotion) {
-							if (strtoupper($promotion->code) == $vev->promotion_code) {
-								$vev->discount = $promotion->discount;
-								$vev->discount_unit = $promotion->discount_unit;
+							if (strtoupper($promotion->code) == $step1->promotion_code) {
+								$step1->discount = $promotion->discount;
+								$step1->discount_unit = $promotion->discount_unit;
 							}
 						}
 					}
 				}
 			}
 			
-			if ($vev->discount > 0) {
-				$vev->vip_discount = 0;
+			if ($step1->discount > 0) {
+				$step1->vip_discount = 0;
 			}
 			
 			// RESET FIELDS
-			for ($i=1; $i<=$vev->group_size; $i++) {
-				$vev->fullname[$i]		= "";
-				$vev->gender[$i]		= "";
-				$vev->birthdate[$i]		= "";
-				$vev->birthmonth[$i]	= "";
-				$vev->birthyear[$i]		= "";
-				$vev->nationality[$i]	= $vev->passport_holder;
-				$vev->passport[$i]		= "";
+			for ($i=1; $i<=$step1->group_size; $i++) {
+				$step1->fullname[$i]		= "";
+				$step1->gender[$i]		= "";
+				$step1->birthdate[$i]		= "";
+				$step1->birthmonth[$i]	= "";
+				$step1->birthyear[$i]		= "";
+				$step1->nationality[$i]	= $step1->passport_holder;
+				$step1->passport[$i]		= "";
 			}
 
-			$vev->flightnumber		= "";
-			$vev->arrivaltime		= "";
-			$vev->contact_title		= "Mr";
-			$vev->contact_fullname	= "";
-			$vev->contact_email		= "";
-			$vev->contact_email2	= "";
-			$vev->contact_phone		= "";
-			$vev->comment			= "";
-			$vev->payment			= "";
+			$step1->flightnumber		= "";
+			$step1->arrivaltime		= "";
+			$step1->contact_title		= "Mr";
+			$step1->contact_fullname	= "";
+			$step1->contact_email		= "";
+			$step1->contact_email2	= "";
+			$step1->contact_phone		= "";
+			$step1->comment			= "";
+			$step1->payment			= "";
 			
 			//Cal fees
-			$visa_fee = $this->m_visa_fee->cal_visa_fee($vev->visa_type, $vev->group_size, $vev->processing_time, $vev->passport_holder, $vev->visit_purpose,null,2);
+			$visa_fee = $this->m_visa_fee->cal_visa_fee($step1->visa_type, $step1->group_size, $step1->processing_time, $step1->passport_holder, $step1->visit_purpose,null,2);
 			
-			$vev->service_fee		= $visa_fee->service_fee;
-			$vev->stamp_fee			= $visa_fee->stamp_fee;
-			$vev->rush_fee			= $visa_fee->rush_fee;
-			$vev->total_service_fee	= ($vev->service_fee * $vev->group_size);
-			$vev->total_rush_fee	= ($vev->rush_fee * $vev->group_size);
+			$step1->service_fee		= $visa_fee->service_fee;
+			$step1->stamp_fee			= $visa_fee->stamp_fee;
+			$step1->rush_fee			= $visa_fee->rush_fee;
+			$step1->total_service_fee	= ($step1->service_fee * $step1->group_size);
+			$step1->total_rush_fee	= ($step1->rush_fee * $step1->group_size);
 			
-			if ($vev->private_visa) {
-				$vev->private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($vev->visit_purpose), "business") === false) ? "tourist_" : "business_").$vev->visa_type);
+			if ($step1->private_visa) {
+				$step1->private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($step1->visit_purpose), "business") === false) ? "tourist_" : "business_").$step1->visa_type);
 			} else {
-				$vev->private_visa_fee = 0;
+				$step1->private_visa_fee = 0;
 			}
 			
-			if ($vev->full_package) {
-				$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $vev->arrival_port);
-				$vev->full_package_fc_fee		= $fast_checkin_fee;
-				$vev->full_package_total_fee	= ($vev->stamp_fee + $fast_checkin_fee) * $vev->group_size;
-				$vev->service_fee_discount		= 0;
+			if ($step1->full_package) {
+				$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $step1->arrival_port);
+				$step1->full_package_fc_fee		= $fast_checkin_fee;
+				$step1->full_package_total_fee	= ($step1->stamp_fee + $fast_checkin_fee) * $step1->group_size;
+				$step1->service_fee_discount		= 0;
 			} else {
-				$vev->full_package_fc_fee		= 0;
-				$vev->full_package_total_fee	= 0;
-				$vev->service_fee_discount		= 0;
+				$step1->full_package_fc_fee		= 0;
+				$step1->full_package_total_fee	= 0;
+				$step1->service_fee_discount		= 0;
 			}
 			
-			if ($vev->fast_checkin) {
-				$fast_checkin_fee = $this->m_fast_checkin_fee->search($vev->fast_checkin, $vev->arrival_port);
-				$vev->fast_checkin_fee			= $fast_checkin_fee;
-				$vev->fast_checkin_total_fee	= $fast_checkin_fee * $vev->group_size;
+			if ($step1->fast_checkin) {
+				$fast_checkin_fee = $this->m_fast_checkin_fee->search($step1->fast_checkin, $step1->arrival_port);
+				$step1->fast_checkin_fee			= $fast_checkin_fee;
+				$step1->fast_checkin_total_fee	= $fast_checkin_fee * $step1->group_size;
 			} else {
-				$vev->fast_checkin_fee			= 0;
-				$vev->fast_checkin_total_fee	= 0;
+				$step1->fast_checkin_fee			= 0;
+				$step1->fast_checkin_total_fee	= 0;
 			}
 			
-			if ($vev->car_pickup) {
-				$car_fee = $this->m_car_fee->search($vev->num_seat, $vev->arrival_port);
-				$vev->car_fee		= $car_fee;
-				$vev->car_total_fee	= $car_fee;
+			if ($step1->car_pickup) {
+				$car_fee = $this->m_car_fee->search($step1->num_seat, $step1->arrival_port);
+				$step1->car_fee		= $car_fee;
+				$step1->car_total_fee	= $car_fee;
 			} else {
-				$vev->car_fee		= 0;
-				$vev->car_total_fee	= 0;
+				$step1->car_fee		= 0;
+				$step1->car_total_fee	= 0;
 			}
 			
-			$vev->total_fee = $vev->total_service_fee + $vev->total_rush_fee + $vev->private_visa_fee + $vev->full_package_total_fee + $vev->fast_checkin_total_fee + $vev->car_total_fee + ($vev->stamp_fee*$vev->group_size);
-			if ($vev->discount_unit == "USD") {
-				$vev->total_fee = $vev->total_fee - $vev->discount;
+			$step1->total_fee = $step1->total_service_fee + $step1->total_rush_fee + $step1->private_visa_fee + $step1->full_package_total_fee + $step1->fast_checkin_total_fee + $step1->car_total_fee + ($step1->stamp_fee*$step1->group_size);
+			if ($step1->discount_unit == "USD") {
+				$step1->total_fee = $step1->total_fee - $step1->discount;
 			} else {
-				$vev->total_fee = $vev->total_fee - $vev->total_service_fee * $vev->discount/100;
+				$step1->total_fee = $step1->total_fee - $step1->total_service_fee * $step1->discount/100;
 			}
-			$vev->total_fee = $vev->total_fee - $vev->total_service_fee * $vev->vip_discount/100;
-			$vev->total_fee = $vev->total_fee - $vev->total_service_fee * $vev->service_fee_discount/100;
+			$step1->total_fee = $step1->total_fee - $step1->total_service_fee * $step1->vip_discount/100;
+			$step1->total_fee = $step1->total_fee - $step1->total_service_fee * $step1->service_fee_discount/100;
 		}
 		else {
-			$this->check_valid_return($vev);
+			$this->check_valid_return($step1);
 		}
-
-		// Redirect from login form or step 1
-		$user = $this->session->userdata("user");
-		if (!empty($user)) {
-			if (empty($vev->contact_title)) {
-				$vev->contact_title = $user->title;
-			}
-			if (empty($vev->contact_fullname)) {
-				$vev->contact_fullname = $user->user_fullname;
-			}
-			if (empty($vev->contact_email)) {
-				$vev->contact_email = $user->user_email;
-			}
-			if (empty($vev->contact_phone)) {
-				$vev->contact_phone = $user->phone;
-			}
-		}
-		
-		$vev->member_discount			= !empty($this->util->level_account()) ? $this->util->level_account()[2] : 0 ;
-		// Final save
-		$this->session->set_userdata("vev", $vev);
 		// Require login
 
 		$this->util->requireUserLogin("apply-e-visa/login");
+		// Redirect from login form or step 1
+		$user = $this->session->userdata("user");
+		if (!empty($user)) {
+			if (empty($step1->contact_title)) {
+				$step1->contact_title = $user->title;
+			}
+			if (empty($step1->contact_fullname)) {
+				$step1->contact_fullname = $user->user_fullname;
+			}
+			if (empty($step1->contact_email)) {
+				$step1->contact_email = $user->user_email;
+			}
+			if (empty($step1->contact_phone)) {
+				$step1->contact_phone = $user->phone;
+			}
+		}
+		$step1->member_discount			= 0;
+		// Final save
+		$this->session->set_userdata("step1", $step1);
 
 		$check_step = new stdClass();
 		$info = new stdClass();
@@ -736,7 +737,7 @@ class Apply_e_visa extends CI_Controller {
 		$breadcrumb = array("Apply Visa" => site_url("apply-e-visa"), "1. Visa Options" => site_url("apply-e-visa/step1"), "2. Applicant Details" => "");
 		
 		$view_data = array();
-		$view_data["vev"] = $vev;
+		$view_data["step1"] = $step1;
 		$view_data["breadcrumb"] = $breadcrumb;
 		
 		$tmpl_content = array();
@@ -748,9 +749,9 @@ class Apply_e_visa extends CI_Controller {
 	
 	function dologout()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 		
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
 		
@@ -761,9 +762,9 @@ class Apply_e_visa extends CI_Controller {
 	
 	function login()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
 		$breadcrumb = array('Apply E Visa' => site_url('apply-e-visa'), '1. Visa Options' => site_url('apply-e-visa/step1'), 'Member Login' => '');
@@ -790,9 +791,9 @@ class Apply_e_visa extends CI_Controller {
 	
 	function dologin()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
 		
@@ -902,42 +903,43 @@ class Apply_e_visa extends CI_Controller {
 				}
 			}
 		}
+
 		if ($user != null) {
-			if (empty($vev->contact_title)) {
-				$vev->contact_title = $user->title;
+			if (empty($step1->contact_title)) {
+				$step1->contact_title = $user->title;
 			}
-			if (empty($vev->contact_fullname)) {
-				$vev->contact_fullname = $user->user_fullname;
+			if (empty($step1->contact_fullname)) {
+				$step1->contact_fullname = $user->user_fullname;
 			}
-			if (empty($vev->contact_email)) {
-				$vev->contact_email = $user->user_email;
+			if (empty($step1->contact_email)) {
+				$step1->contact_email = $user->user_email;
 			}
-			if (empty($vev->contact_phone)) {
-				$vev->contact_phone = $user->phone;
+			if (empty($step1->contact_phone)) {
+				$step1->contact_phone = $user->phone;
 			}
 			
 			// Re-calculate the total fee
-			$vev->vip_discount = $this->vip()->discount;
+			$step1->vip_discount = $this->vip()->discount;
 			
-			if ($vev->discount > 0) {
-				$vev->vip_discount = 0;
+			if ($step1->discount > 0) {
+				$step1->vip_discount = 0;
 			}
 			
-			if ($vev->visa_type == "6mm" || $vev->visa_type == "1ym") {
-				$vev->vip_discount = 0;
+			if ($step1->visa_type == "6mm" || $step1->visa_type == "1ym") {
+				$step1->vip_discount = 0;
 			}
 			
-			$vev->total_fee = $vev->total_service_fee + $vev->total_rush_fee + $vev->business_visa_fee + $vev->private_visa_fee + $vev->full_package_total_fee + $vev->fast_checkin_total_fee + $vev->car_total_fee;
-			if ($vev->discount_unit == "USD") {
-				$vev->total_fee = $vev->total_fee - $vev->discount;
+			$step1->total_fee = $step1->total_service_fee + $step1->total_rush_fee + $step1->business_visa_fee + $step1->private_visa_fee + $step1->full_package_total_fee + $step1->fast_checkin_total_fee + $step1->car_total_fee;
+			if ($step1->discount_unit == "USD") {
+				$step1->total_fee = $step1->total_fee - $step1->discount;
 			} else {
-				//$vev->total_fee = $vev->total_fee - $vev->total_service_fee * $vev->discount/100;
-				$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->discount/100);
+				//$step1->total_fee = $step1->total_fee - $step1->total_service_fee * $step1->discount/100;
+				$step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->discount/100);
 			}
-			//$vev->total_fee = $vev->total_fee - $vev->total_service_fee * $vev->vip_discount/100;
-			$vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->vip_discount/100);
+			//$step1->total_fee = $step1->total_fee - $step1->total_service_fee * $step1->vip_discount/100;
+			$step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->vip_discount/100);
 			
-			$this->session->set_userdata("vev", $vev);
+			$this->session->set_userdata("step1", $step1);
 			redirect(site_url("apply-e-visa/step2"));
 		}
 	}
@@ -1081,14 +1083,14 @@ class Apply_e_visa extends CI_Controller {
 	function step3()
 	{
 
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 
 
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("apply-e-visa"));
 		}
 		else {
-			$this->check_valid_return($vev);
+			$this->check_valid_return($step1);
 		}
 
 		// Require login
@@ -1096,164 +1098,164 @@ class Apply_e_visa extends CI_Controller {
 
 		if (!empty($_POST))
 		{
-			for ($i=1; $i<=$vev->group_size; $i++) {
+			for ($i=1; $i<=$step1->group_size; $i++) {
 
 				$allow_type = 'JPG|PNG|jpg|jpeg|png|pdf|PDF';
 				$path = "/files/upload/image/passport_photo";
 				
-				$vev->fullname[$i]		= (!empty($_POST["fullname_{$i}"]) ? $_POST["fullname_{$i}"] : "");
-				$vev->gender[$i]		= (!empty($_POST["gender_{$i}"]) ? $_POST["gender_{$i}"] : "");
-				$vev->birthdate[$i]		= (!empty($_POST["birthdate_{$i}"]) ? $_POST["birthdate_{$i}"] : "");
-				$vev->birthmonth[$i]	= (!empty($_POST["birthmonth_{$i}"]) ? $_POST["birthmonth_{$i}"] : "");
-				$vev->birthyear[$i]		= (!empty($_POST["birthyear_{$i}"]) ? $_POST["birthyear_{$i}"] : "");
-				$vev->nationality[$i]	= (!empty($_POST["nationality_{$i}"]) ? $_POST["nationality_{$i}"] : "");
-				$vev->passport[$i]		= (!empty($_POST["passport_{$i}"]) ? $_POST["passport_{$i}"] : "");
-				// $vev->passport_type[$i]	= (!empty($_POST["passport_type_{$i}"]) ? $_POST["passport_type_{$i}"] : "");
-				$vev->expirydate[$i]	= (!empty($_POST["expirydate_{$i}"]) ? $_POST["expirydate_{$i}"] : "");
-				$vev->expirymonth[$i]	= (!empty($_POST["expirymonth_{$i}"]) ? $_POST["expirymonth_{$i}"] : "");
-				$vev->expiryyear[$i]	= (!empty($_POST["expiryyear_{$i}"]) ? $_POST["expiryyear_{$i}"] : "");
-				// $vev->religion[$i]		= (!empty($_POST["religion_{$i}"]) ? $_POST["religion_{$i}"] : "");
+				$step1->fullname[$i]		= (!empty($_POST["fullname_{$i}"]) ? $_POST["fullname_{$i}"] : "");
+				$step1->gender[$i]		= (!empty($_POST["gender_{$i}"]) ? $_POST["gender_{$i}"] : "");
+				$step1->birthdate[$i]		= (!empty($_POST["birthdate_{$i}"]) ? $_POST["birthdate_{$i}"] : "");
+				$step1->birthmonth[$i]	= (!empty($_POST["birthmonth_{$i}"]) ? $_POST["birthmonth_{$i}"] : "");
+				$step1->birthyear[$i]		= (!empty($_POST["birthyear_{$i}"]) ? $_POST["birthyear_{$i}"] : "");
+				$step1->nationality[$i]	= (!empty($_POST["nationality_{$i}"]) ? $_POST["nationality_{$i}"] : "");
+				$step1->passport[$i]		= (!empty($_POST["passport_{$i}"]) ? $_POST["passport_{$i}"] : "");
+				// $step1->passport_type[$i]	= (!empty($_POST["passport_type_{$i}"]) ? $_POST["passport_type_{$i}"] : "");
+				$step1->expirydate[$i]	= (!empty($_POST["expirydate_{$i}"]) ? $_POST["expirydate_{$i}"] : "");
+				$step1->expirymonth[$i]	= (!empty($_POST["expirymonth_{$i}"]) ? $_POST["expirymonth_{$i}"] : "");
+				$step1->expiryyear[$i]	= (!empty($_POST["expiryyear_{$i}"]) ? $_POST["expiryyear_{$i}"] : "");
+				// $step1->religion[$i]		= (!empty($_POST["religion_{$i}"]) ? $_POST["religion_{$i}"] : "");
 				if (!empty($_FILES["passport_photo_{$i}"]["name"])) {
 					$format_photo = explode('.', $_FILES["passport_photo_{$i}"]["name"]);
 					$photo_name = $this->util->slug($format_photo[0]).'.'.$format_photo[1];
 					$this->util->upload_file('.'.$path,"passport_photo_{$i}","",$allow_type,$photo_name);
-					$vev->photo_path[$i]	= $path.'/'.$photo_name;
+					$step1->photo_path[$i]	= $path.'/'.$photo_name;
 				}
 				if (!empty($_FILES["passport_data_{$i}"]["name"])) {
 					$format_data = explode('.', $_FILES["passport_data_{$i}"]["name"]);
 					$data_name = $this->util->slug($format_data[0]).'.'.$format_data[1];
 					$this->util->upload_file('.'.$path,"passport_data_{$i}","",$allow_type,$data_name);
-					$vev->passport_path[$i]	= $path.'/'.$data_name;
+					$step1->passport_path[$i]	= $path.'/'.$data_name;
 				}
 
 			}
 			
-			$vev->private_visa			= (!empty($_POST["private_visa"]) ? $_POST["private_visa"] : 0);
-			$vev->full_package			= (!empty($_POST["full_package"]) ? $_POST["full_package"] : 0);
-			$vev->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
-			$vev->car_pickup			= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
-			$vev->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
-			$vev->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
+			$step1->private_visa			= (!empty($_POST["private_visa"]) ? $_POST["private_visa"] : 0);
+			$step1->full_package			= (!empty($_POST["full_package"]) ? $_POST["full_package"] : 0);
+			$step1->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
+			$step1->car_pickup			= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
+			$step1->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
+			$step1->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
 			
-			$vev->flight_booking		= (!empty($_POST["flight_booking"]) ? $_POST["flight_booking"] : 0);
-			if ($vev->flight_booking != 0) {
-				$vev->flightnumber		= (!empty($_POST["flightnumber"]) ? $_POST["flightnumber"] : "");
-				$vev->arrivaltime		= (!empty($_POST["arrivaltime"]) ? $_POST["arrivaltime"] : "");
+			$step1->flight_booking		= (!empty($_POST["flight_booking"]) ? $_POST["flight_booking"] : 0);
+			if ($step1->flight_booking != 0) {
+				$step1->flightnumber		= (!empty($_POST["flightnumber"]) ? $_POST["flightnumber"] : "");
+				$step1->arrivaltime		= (!empty($_POST["arrivaltime"]) ? $_POST["arrivaltime"] : "");
 			} else {
-				$vev->flightnumber		= "";
-				$vev->arrivaltime		= "";
+				$step1->flightnumber		= "";
+				$step1->arrivaltime		= "";
 			}
 			
-			$vev->contact_title		= (!empty($_POST["contact_title"]) ? $_POST["contact_title"] : "Mr");
-			$vev->contact_fullname	= (!empty($_POST["contact_fullname"]) ? $_POST["contact_fullname"] : "");
-			$vev->contact_email		= (!empty($_POST["contact_email"]) ? $_POST["contact_email"] : "");
-			$vev->contact_email2	= (!empty($_POST["contact_email2"]) ? $_POST["contact_email2"] : "");
-			$vev->contact_phone		= (!empty($_POST["contact_phone"]) ? $_POST["contact_phone"] : "");
-			$vev->comment			= (!empty($_POST["comment"]) ? $_POST["comment"] : "");
-			$vev->payment			= "";
+			$step1->contact_title		= (!empty($_POST["contact_title"]) ? $_POST["contact_title"] : "Mr");
+			$step1->contact_fullname	= (!empty($_POST["contact_fullname"]) ? $_POST["contact_fullname"] : "");
+			$step1->contact_email		= (!empty($_POST["contact_email"]) ? $_POST["contact_email"] : "");
+			$step1->contact_email2	= (!empty($_POST["contact_email2"]) ? $_POST["contact_email2"] : "");
+			$step1->contact_phone		= (!empty($_POST["contact_phone"]) ? $_POST["contact_phone"] : "");
+			$step1->comment			= (!empty($_POST["comment"]) ? $_POST["comment"] : "");
+			$step1->payment			= "";
 			
-			$vev->task				= (!empty($_POST["task"]) ? $_POST["task"] : "");
-			$arrival_date = explode('-', $vev->arrival_date);
+			$step1->task				= (!empty($_POST["task"]) ? $_POST["task"] : "");
+			$arrival_date = explode('-', $step1->arrival_date);
 			// Double check holiday case
 
-			$rush = $this->util->detect_rush_visa(date("m/d/Y", strtotime("{$arrival_date[1]}/{$arrival_date[2]}/{$arrival_date[0]}")), $vev->visa_type, $vev->visit_purpose);
+			$rush = $this->util->detect_rush_visa(date("m/d/Y", strtotime("{$arrival_date[1]}/{$arrival_date[2]}/{$arrival_date[0]}")), $step1->visa_type, $step1->visit_purpose);
 			if ($rush == 3) {
-				$vev->task = "Holiday";
+				$step1->task = "Holiday";
 			} else if ($rush == 2) {
-				$vev->task = "Emergency";
+				$step1->task = "Emergency";
 			}
 			
-			if ($vev->task == "Holiday") {
-				$vev->processing_time = "Holiday";
-				$vev->full_package = 0;
-				$vev->full_package_fc_fee = 0;
-				$vev->full_package_total_fee = 0;
+			if ($step1->task == "Holiday") {
+				$step1->processing_time = "Holiday";
+				$step1->full_package = 0;
+				$step1->full_package_fc_fee = 0;
+				$step1->full_package_total_fee = 0;
 			}
-			if ($vev->task == "Emergency") {
-				$vev->processing_time = "Emergency";
+			if ($step1->task == "Emergency") {
+				$step1->processing_time = "Emergency";
 			}
 			
 			$nationality_group = array();
-			for ($i=1; $i<=$vev->group_size; $i++) {
-				if (array_key_exists($vev->nationality[$i], $nationality_group)) {
-					$nationality_group[$vev->nationality[$i]] = $nationality_group[$vev->nationality[$i]] + 1;
+			for ($i=1; $i<=$step1->group_size; $i++) {
+				if (array_key_exists($step1->nationality[$i], $nationality_group)) {
+					$nationality_group[$step1->nationality[$i]] = $nationality_group[$step1->nationality[$i]] + 1;
 				} else {
-					$nationality_group[$vev->nationality[$i]] = 1;
+					$nationality_group[$step1->nationality[$i]] = 1;
 				}
 			}
 			
 			//Cal fees
-			$vev->total_service_fee = 0;
-			$vev->total_rush_fee = 0;
+			$step1->total_service_fee = 0;
+			$step1->total_rush_fee = 0;
 			foreach ($nationality_group as $nationality => $count) {
-				$visa_fee = $this->m_visa_fee->cal_visa_fee($vev->visa_type, $vev->group_size, $vev->processing_time, $nationality, $vev->visit_purpose,null,2);
-				$vev->service_fee		= $visa_fee->service_fee;
-				$vev->stamp_fee			= $visa_fee->stamp_fee;
-				$vev->rush_fee			= $visa_fee->rush_fee;
-				$vev->total_service_fee	+= ($visa_fee->service_fee * $count);
-				$vev->total_rush_fee	+= ($visa_fee->rush_fee * $count);
+				$visa_fee = $this->m_visa_fee->cal_visa_fee($step1->visa_type, $step1->group_size, $step1->processing_time, $nationality, $step1->visit_purpose,null,2);
+				$step1->service_fee		= $visa_fee->service_fee;
+				$step1->stamp_fee			= $visa_fee->stamp_fee;
+				$step1->rush_fee			= $visa_fee->rush_fee;
+				$step1->total_service_fee	+= ($visa_fee->service_fee * $count);
+				$step1->total_rush_fee	+= ($visa_fee->rush_fee * $count);
 			}
 			
-			// if ($vev->private_visa) {
-			// 	$vev->private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($vev->visit_purpose), "business") === false) ? "tourist_" : "business_").$vev->visa_type);
+			// if ($step1->private_visa) {
+			// 	$step1->private_visa_fee = $this->m_private_letter_fee->search(((stripos(strtolower($step1->visit_purpose), "business") === false) ? "tourist_" : "business_").$step1->visa_type);
 			// } else {
-			// 	$vev->private_visa_fee = 0;
+			// 	$step1->private_visa_fee = 0;
 			// }
 			
-			// if ($vev->full_package) {
-			// 	$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $vev->arrival_port);
-			// 	$vev->full_package_fc_fee		= $fast_checkin_fee;
-			// 	$vev->full_package_total_fee	= ($vev->stamp_fee + $fast_checkin_fee) * $vev->group_size;
-			// 	$vev->service_fee_discount		= 0;
+			// if ($step1->full_package) {
+			// 	$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $step1->arrival_port);
+			// 	$step1->full_package_fc_fee		= $fast_checkin_fee;
+			// 	$step1->full_package_total_fee	= ($step1->stamp_fee + $fast_checkin_fee) * $step1->group_size;
+			// 	$step1->service_fee_discount		= 0;
 			// } else {
-			// 	$vev->full_package_fc_fee		= 0;
-			// 	$vev->full_package_total_fee	= 0;
-			// 	$vev->service_fee_discount		= 0;
+			// 	$step1->full_package_fc_fee		= 0;
+			// 	$step1->full_package_total_fee	= 0;
+			// 	$step1->service_fee_discount		= 0;
 			// }
 			
-			// if ($vev->fast_checkin) {
-			// 	$fast_checkin_fee = $this->m_fast_checkin_fee->search($vev->fast_checkin, $vev->arrival_port);
-			// 	$vev->fast_checkin_fee			= $fast_checkin_fee;
-			// 	$vev->fast_checkin_total_fee	= $fast_checkin_fee * $vev->group_size;
+			// if ($step1->fast_checkin) {
+			// 	$fast_checkin_fee = $this->m_fast_checkin_fee->search($step1->fast_checkin, $step1->arrival_port);
+			// 	$step1->fast_checkin_fee			= $fast_checkin_fee;
+			// 	$step1->fast_checkin_total_fee	= $fast_checkin_fee * $step1->group_size;
 			// } else {
-			// 	$vev->fast_checkin_fee			= 0;
-			// 	$vev->fast_checkin_total_fee	= 0;
+			// 	$step1->fast_checkin_fee			= 0;
+			// 	$step1->fast_checkin_total_fee	= 0;
 			// }
 			
-			// if ($vev->car_pickup) {
-			// 	$car_fee = $this->m_car_fee->search($vev->num_seat, $vev->arrival_port);
-			// 	$vev->car_fee		= $car_fee;
-			// 	$vev->car_total_fee	= $car_fee;
+			// if ($step1->car_pickup) {
+			// 	$car_fee = $this->m_car_fee->search($step1->num_seat, $step1->arrival_port);
+			// 	$step1->car_fee		= $car_fee;
+			// 	$step1->car_total_fee	= $car_fee;
 			// } else {
-			// 	$vev->car_fee		= 0;
-			// 	$vev->car_total_fee	= 0;
+			// 	$step1->car_fee		= 0;
+			// 	$step1->car_total_fee	= 0;
 			// }
 			
-			$vev->total_fee = $vev->total_service_fee + $vev->total_rush_fee + $vev->stamp_fee*$vev->group_size;
+			$step1->total_fee = $step1->total_service_fee + $step1->total_rush_fee + $step1->stamp_fee*$step1->group_size;
 
-			$discount = $vev->discount;
-			if ($vev->discount_unit == "USD") {
-				$vev->total_fee = $vev->total_fee - $vev->discount;
+			$discount = $step1->discount;
+			if ($step1->discount_unit == "USD") {
+				$step1->total_fee = $step1->total_fee - $step1->discount;
 			} else {
-				if ($vev->member_discount > $vev->discount)
-				$discount = $vev->member_discount;
-				$vev->total_fee = $vev->total_fee - round(($vev->total_service_fee * $discount/100),2);
+				if ($step1->member_discount > $step1->discount)
+				$discount = $step1->member_discount;
+				$step1->total_fee = $step1->total_fee - round(($step1->total_service_fee * $discount/100),2);
 			}
-			// $vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->vip_discount/100);
-			// $vev->total_fee = $vev->total_fee - round($vev->total_service_fee * $vev->service_fee_discount/100);
+			// $step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->vip_discount/100);
+			// $step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->service_fee_discount/100);
 			$check_step = $this->session->userdata("check_step");
 			$data_step = array(
 				"step3" 	=> 1,
-				"price" 	=> $vev->total_fee,
+				"price" 	=> $step1->total_fee,
 			);
 			$this->m_check_step->update($data_step, array("id" => $check_step->id));
 
-			$this->session->set_userdata("vev", $vev);
+			$this->session->set_userdata("step1", $step1);
 		}
 		$breadcrumb = array("Apply Visa" => site_url("apply-e-visa"), "1. Visa Options" => site_url("apply-e-visa/step1"), "2. Applicant Details" => site_url("apply-e-visa/step2"), "3. Review & Payment" => "");
 		
 		$view_data = array();
-		$view_data["vev"] = $vev;
+		$view_data["step1"] = $step1;
 		$view_data["breadcrumb"] = $breadcrumb;
 		
 		$tmpl_content = array();
@@ -1265,13 +1267,13 @@ class Apply_e_visa extends CI_Controller {
 	
 	function completed()
 	{
-		$vev = $this->session->userdata("vev");
+		$step1 = $this->session->userdata("step1");
 
-		if ($vev == null) {
+		if ($step1 == null) {
 			redirect(site_url("apply-e-visa"));
 		}
 		else {
-			$this->check_valid_return($vev);
+			$this->check_valid_return($step1);
 		}
 
 		// Require login
@@ -1279,12 +1281,12 @@ class Apply_e_visa extends CI_Controller {
 		
 		if (!empty($_POST))
 		{
-			$vev->payment = (!empty($_POST["payment"]) ? $_POST["payment"] : "");
-			if (empty($vev->payment)) {
+			$step1->payment = (!empty($_POST["payment"]) ? $_POST["payment"] : "");
+			if (empty($step1->payment)) {
 				$this->session->set_flashdata("error", "Please select an method of Payment.");
 				redirect(site_url("apply-e-visa/step3"), "back");
 			}
-			$this->session->set_userdata("vev", $vev);
+			$this->session->set_userdata("step1", $step1);
 		}
 		
 		/*
@@ -1301,24 +1303,24 @@ class Apply_e_visa extends CI_Controller {
 			if ($booking != null) {
 				$booking_id = $booking->id;
 				
-				$data   = array("payment_method" => $vev->payment);
+				$data   = array("payment_method" => $step1->payment);
 				$where  = array("booking_key" => $key);
 				$this->m_visa_booking->update($data, $where);
 				
 				$paxs = array();
 				
-				for ($i=1; $i<=$vev->group_size; $i++) {
+				for ($i=1; $i<=$step1->group_size; $i++) {
 					$pax["booking_id"]	= $booking_id;
-					$pax["fullname"]	= $vev->fullname[$i];
-					$pax["gender"]		= $vev->gender[$i];
-					$pax["birthday"]	= date("Y-m-d", strtotime($vev->birthmonth[$i]."/".$vev->birthdate[$i]."/".$vev->birthyear[$i]));
-					$pax["nationality"]	= $vev->nationality[$i];
-					$pax["passport"]	= $vev->passport[$i];
-					$pax["passport_type"]	= $vev->passport_type[$i];
-					$pax["expiry_date"]		= $vev->expiryyear[$i].'-'.$vev->expirymonth[$i].'-'.$vev->expirydate[$i];
-					$pax["religion"]		= $vev->religion[$i];
-					$pax["passport_photo"]	= $vev->photo_path[$i];
-					$pax["passport_data"]	= $vev->passport_path[$i];
+					$pax["fullname"]	= $step1->fullname[$i];
+					$pax["gender"]		= $step1->gender[$i];
+					$pax["birthday"]	= date("Y-m-d", strtotime($step1->birthmonth[$i]."/".$step1->birthdate[$i]."/".$step1->birthyear[$i]));
+					$pax["nationality"]	= $step1->nationality[$i];
+					$pax["passport"]	= $step1->passport[$i];
+					$pax["passport_type"]	= $step1->passport_type[$i];
+					$pax["expiry_date"]		= $step1->expiryyear[$i].'-'.$step1->expirymonth[$i].'-'.$step1->expirydate[$i];
+					$pax["religion"]		= $step1->religion[$i];
+					$pax["passport_photo"]	= $step1->photo_path[$i];
+					$pax["passport_data"]	= $step1->passport_path[$i];
 					
 					$paxs[] = $pax;
 				}
@@ -1353,7 +1355,7 @@ class Apply_e_visa extends CI_Controller {
 			
 			// Cal capital
 			$nationality_group = array();
-			foreach ($vev->nationality as $nationality) {
+			foreach ($step1->nationality as $nationality) {
 				if (array_key_exists($nationality, $nationality_group)) {
 					$nationality_group[$nationality] = $nationality_group[$nationality] + 1;
 				} else {
@@ -1361,82 +1363,82 @@ class Apply_e_visa extends CI_Controller {
 				}
 			}
 			
-			$vev->capital = 0;
+			$step1->capital = 0;
 			
 			foreach ($nationality_group as $nationality => $count) {
-				$visa_fee = $this->m_visa_fee->cal_e_visa_fee($vev->visa_type, $vev->group_size, $vev->processing_time, $nationality, $vev->visit_purpose);
-				$vev->capital += $visa_fee->service_capital * $count;
-				$vev->capital += $visa_fee->rush_capital * $count;
+				$visa_fee = $this->m_visa_fee->cal_e_visa_fee($step1->visa_type, $step1->group_size, $step1->processing_time, $nationality, $step1->visit_purpose);
+				$step1->capital += $visa_fee->service_capital * $count;
+				$step1->capital += $visa_fee->rush_capital * $count;
 			}
 			
 			//if (in_array($arrival_port->category_id, array(2, 3))) {
-			//	$vev->capital += ($vev->stamp_fee * $vev->group_size);
+			//	$step1->capital += ($step1->stamp_fee * $step1->group_size);
 			//}
-			if ($vev->private_visa) {
-				$private_visa_fee = $this->m_private_letter_fee->search("capital_evisa_".((stripos(strtolower($vev->visit_purpose), "business") === false) ? "evisa_tourist_" : "evisa_business_").$vev->visa_type);
-				$vev->capital += $private_visa_fee;
+			if ($step1->private_visa) {
+				$private_visa_fee = $this->m_private_letter_fee->search("capital_evisa_".((stripos(strtolower($step1->visit_purpose), "business") === false) ? "evisa_tourist_" : "evisa_business_").$step1->visa_type);
+				$step1->capital += $private_visa_fee;
 			}
-			if ($vev->full_package) {
-				$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $vev->arrival_port, 1);
-				$vev->capital += ($vev->stamp_fee * $vev->group_size);
-				$vev->capital += ($fast_checkin_fee * $vev->group_size);
-			}
-			
-			if ($vev->fast_checkin) {
-				$fast_checkin_fee = $this->m_fast_checkin_fee->search($vev->fast_checkin, $vev->arrival_port, 1);
-				$vev->capital += ($fast_checkin_fee * $vev->group_size);
+			if ($step1->full_package) {
+				$fast_checkin_fee = $this->m_fast_checkin_fee->search(1, $step1->arrival_port, 1);
+				$step1->capital += ($step1->stamp_fee * $step1->group_size);
+				$step1->capital += ($fast_checkin_fee * $step1->group_size);
 			}
 			
-			if ($vev->car_pickup) {
-				$car_fee = $this->m_car_fee->search($vev->num_seat, $vev->arrival_port, 1);
-				$vev->capital += $car_fee;
+			if ($step1->fast_checkin) {
+				$fast_checkin_fee = $this->m_fast_checkin_fee->search($step1->fast_checkin, $step1->arrival_port, 1);
+				$step1->capital += ($fast_checkin_fee * $step1->group_size);
+			}
+			
+			if ($step1->car_pickup) {
+				$car_fee = $this->m_car_fee->search($step1->num_seat, $step1->arrival_port, 1);
+				$step1->capital += $car_fee;
 			}
 			// Add to booking list
 			$data = array(
 				"id"					=> $booking_id,
 				"order_ref"				=> $this->util->order_ref($booking_id),
-				"booking_type_id"		=> $vev->booking_type_id,
+				"booking_type_id"		=> $step1->booking_type_id,
 				"booking_key"			=> $key,
-				"visa_type"				=> $this->util->getVisaType2String($vev->visa_type),
-				"group_size"			=> $vev->group_size,
-				"visit_purpose" 		=> $vev->visit_purpose,
-				"arrival_date"			=> date("Y-m-d", strtotime($vev->arrival_date)),
-				"exit_date"				=> date("Y-m-d", strtotime($vev->exit_date)),
-				"arrival_port"			=> $vev->arrival_port,
-				"exit_port"				=> $vev->exit_port,
-				"flight_number"			=> $vev->flightnumber,
-				"arrival_time"			=> $vev->arrivaltime,
-				"visa_fee"				=> $vev->service_fee,
-				"visa_fee_discount"		=> $vev->service_fee_discount,
-				"total_visa_fee"		=> $vev->total_service_fee,
-				"stamp_fee"				=> $vev->stamp_fee,
-				"rush_type"				=> ($vev->processing_time == "Urgent") ? 1 : (($vev->processing_time == "Emergency") ? 2 : (($vev->processing_time == "Holiday") ? 3 : (($vev->processing_time == "TET Holiday") ? 4 : 0))),
-				"rush_fee"				=> $vev->rush_fee,
-				"total_fee"				=> $vev->total_fee,
-				"capital"				=> $vev->capital + ($vev->group_size * 25),
-				"contact_title"			=> $vev->contact_title,
-				"contact_fullname"		=> $vev->contact_fullname,
-				'primary_email'			=> $vev->contact_email,
-				"secondary_email"		=> $vev->contact_email2,
-				"contact_phone"			=> $vev->contact_phone,
-				"special_request"		=> $vev->comment,
-				"payment_method" 		=> $vev->payment,
+				"visa_type"				=> $this->util->getVisaType2String($step1->visa_type),
+				"group_size"			=> $step1->group_size,
+				"visit_purpose" 		=> $step1->visit_purpose,
+				"arrival_date"			=> date("Y-m-d", strtotime($step1->arrival_date)),
+				"exit_date"				=> date("Y-m-d", strtotime($step1->exit_date)),
+				"arrival_port"			=> $step1->arrival_port,
+				"exit_port"				=> $step1->exit_port,
+				"flight_number"			=> $step1->flightnumber,
+				"arrival_time"			=> $step1->arrivaltime,
+				"visa_fee"				=> $step1->service_fee,
+				"visa_fee_discount"		=> $step1->service_fee_discount,
+				"total_visa_fee"		=> $step1->total_service_fee,
+				"stamp_fee"				=> $step1->stamp_fee,
+				"rush_type"				=> ($step1->processing_time == "Urgent") ? 1 : (($step1->processing_time == "Emergency") ? 2 : (($step1->processing_time == "Holiday") ? 3 : (($step1->processing_time == "TET Holiday") ? 4 : 0))),
+				"rush_fee"				=> $step1->rush_fee,
+				"total_fee"				=> $step1->total_fee,
+				"capital"				=> $step1->capital + ($step1->group_size * 25),
+				"contact_title"			=> $step1->contact_title,
+				"contact_fullname"		=> $step1->contact_fullname,
+				'primary_email'			=> $step1->contact_email,
+				"secondary_email"		=> $step1->contact_email2,
+				"contact_phone"			=> $step1->contact_phone,
+				"special_request"		=> $step1->comment,
+				"payment_method" 		=> $step1->payment,
 				"booking_date" 			=> date("Y-m-d H:i:s"),
 				"paid_date" 			=> date("Y-m-d H:i:s"),
-				"private_visa" 			=> $vev->private_visa,
-				"private_visa_fee" 		=> $vev->private_visa_fee,
-				"full_package"			=> $vev->full_package,
-				"full_package_fc_fee"	=> $vev->full_package_fc_fee,
-				"fast_checkin" 			=> $vev->fast_checkin,
-				"fast_checkin_fee"		=> $vev->fast_checkin_total_fee,
-				"car_pickup" 			=> $vev->car_pickup,
-				"car_type" 				=> $vev->car_type,
-				"seats" 				=> $vev->num_seat,
-				"car_fee" 				=> $vev->car_total_fee,
-				"promotion_code"		=> $vev->promotion_code,
-				"discount"				=> $vev->discount,
-				"discount_unit"			=> $vev->discount_unit,
-				"vip_discount"			=> $vev->vip_discount,
+				"private_visa" 			=> $step1->private_visa,
+				"private_visa_fee" 		=> $step1->private_visa_fee,
+				"full_package"			=> $step1->full_package,
+				"full_package_fc_fee"	=> $step1->full_package_fc_fee,
+				"fast_checkin" 			=> $step1->fast_checkin,
+				"fast_checkin_fee"		=> $step1->fast_checkin_total_fee,
+				"car_pickup" 			=> $step1->car_pickup,
+				"car_type" 				=> $step1->car_type,
+				"seats" 				=> $step1->num_seat,
+				"car_fee" 				=> $step1->car_total_fee,
+				"promotion_code"		=> $step1->promotion_code,
+				"discount"				=> $step1->discount,
+				"discount_unit"			=> $step1->discount_unit,
+				"vip_discount"			=> $step1->vip_discount,
 				"user_id" 				=> !empty($user->id) ? $user->id : 1,
 				"status" 				=> 0,
 				"client_ip" 			=> $this->util->realIP(),
@@ -1449,18 +1451,18 @@ class Apply_e_visa extends CI_Controller {
 			if (!$this->m_visa_booking->add($data)) {
 				$succed = false;
 			} else {
-				for ($i=1; $i<=$vev->group_size; $i++) {
+				for ($i=1; $i<=$step1->group_size; $i++) {
 					$pax["book_id"]			= $booking_id;
-					$pax["fullname"]		= $vev->fullname[$i];
-					$pax["gender"]			= $vev->gender[$i];
-					$pax["birthday"]		= date("Y-m-d", strtotime($vev->birthmonth[$i]."/".$vev->birthdate[$i]."/".$vev->birthyear[$i]));
-					$pax["nationality"]		= $vev->nationality[$i];
-					$pax["passport"]		= $vev->passport[$i];
-					// $pax["passport_type"]	= $vev->passport_type[$i];
-					$pax["expiry_date"]		= $vev->expiryyear[$i].'-'.$vev->expirymonth[$i].'-'.$vev->expirydate[$i];
-					// $pax["religion"]		= $vev->religion[$i];
-					$pax["passport_photo"]	= $vev->photo_path[$i];
-					$pax["passport_data"]	= $vev->passport_path[$i];
+					$pax["fullname"]		= $step1->fullname[$i];
+					$pax["gender"]			= $step1->gender[$i];
+					$pax["birthday"]		= date("Y-m-d", strtotime($step1->birthmonth[$i]."/".$step1->birthdate[$i]."/".$step1->birthyear[$i]));
+					$pax["nationality"]		= $step1->nationality[$i];
+					$pax["passport"]		= $step1->passport[$i];
+					// $pax["passport_type"]	= $step1->passport_type[$i];
+					$pax["expiry_date"]		= $step1->expiryyear[$i].'-'.$step1->expirymonth[$i].'-'.$step1->expirydate[$i];
+					// $pax["religion"]		= $step1->religion[$i];
+					$pax["passport_photo"]	= $step1->photo_path[$i];
+					$pax["passport_data"]	= $step1->passport_path[$i];
 					
 					if (!$this->m_visa_booking->add_traveller($pax)) {
 						$succed = false;
@@ -1478,47 +1480,47 @@ class Apply_e_visa extends CI_Controller {
 			$booking = $this->m_visa_booking->booking($booking_id);
 			
 			// Payment
-			$payment = $vev->payment;
+			$payment = $step1->payment;
 			
-			$client_name = !empty($user->fullname) ? $user->fullname : $vev->contact_fullname;
+			$client_name = !empty($user->fullname) ? $user->fullname : $step1->contact_fullname;
 			// Send mail
 			$tpl_data = $this->mail_tpl->visa_data($booking);
 			
-			if ($vev->discount_unit == "USD") {
-				$discount_fee = $vev->discount;
+			if ($step1->discount_unit == "USD") {
+				$discount_fee = $step1->discount;
 			} else {
-				$discount_fee = round($vev->total_service_fee * $vev->discount/100);
+				$discount_fee = round($step1->total_service_fee * $step1->discount/100);
 			}
 			
 			if (in_array($payment, array("Credit Card", "Western Union", "Bank Transfer"))) {
-				if ($vev->processing_time != "Normal") {
-					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": Confirm ".$vev->processing_time."E-Visa for Vietnam ".$payment;
+				if ($step1->processing_time != "Normal") {
+					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": Confirm ".$step1->processing_time."E-Visa for Vietnam ".$payment;
 				} else {
 					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": Confirm E-Visa for Vietnam ".$payment;
 				}
 			}
 			else {
-				if ($vev->processing_time != "Normal") {
-					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": ".$vev->processing_time." E-Visa for Vietnam Remind ".$payment;
+				if ($step1->processing_time != "Normal") {
+					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": ".$step1->processing_time." E-Visa for Vietnam Remind ".$payment;
 				} else {
 					$subject = "Application #".BOOKING_E_PREFIX.$booking_id.": Visa for E-Vietnam Remind ".$payment;
 				}
 			}
 			
 			$vendor_subject = $subject;
-			if ($vev->processing_time != "Normal") {
-				$vendor_subject = "[".$vev->processing_time."] ".$subject;
+			if ($step1->processing_time != "Normal") {
+				$vendor_subject = "[".$step1->processing_time."] ".$subject;
 			}
 			
 			$tpl_data["RECEIVER"] = MAIL_INFO;
 			$messageToAdmin  = $this->mail_tpl->visa_payment_remind($tpl_data);
 			
-			$tpl_data["RECEIVER"] = $vev->contact_email;
+			$tpl_data["RECEIVER"] = $step1->contact_email;
 			$messageToClient = $this->mail_tpl->visa_payment_remind($tpl_data);
 			// Send to SALE Department
 			$mail = array(
 				"subject"		=> $vendor_subject." - ".$client_name,
-				"from_sender"	=> $vev->contact_email,
+				"from_sender"	=> $step1->contact_email,
 				"name_sender"	=> $client_name,
 				"to_receiver"	=> MAIL_INFO,
 				"message"		=> $messageToAdmin
@@ -1531,7 +1533,7 @@ class Apply_e_visa extends CI_Controller {
 				"subject"		=> $subject,
 				"from_sender"	=> MAIL_INFO,
 				"name_sender"	=> SITE_NAME,
-				"to_receiver"	=> $vev->contact_email,
+				"to_receiver"	=> $step1->contact_email,
 				"message"		=> $messageToClient
 			);
 			$this->mail->config($mail);
@@ -1558,13 +1560,13 @@ class Apply_e_visa extends CI_Controller {
 				$vpcOpt["vpc_AccessCode"]		= OP_ACCESSCODE;
 				$vpcOpt["vpc_MerchTxnRef"]		= $key;
 				$vpcOpt["vpc_OrderInfo"]		= $booking->order_ref;
-				$vpcOpt["vpc_Amount"]			= $vev->total_fee*100;
+				$vpcOpt["vpc_Amount"]			= $step1->total_fee*100;
 				$vpcOpt["vpc_ReturnURL"]		= OP_E_RETURN_URL;
 				$vpcOpt["vpc_Version"]			= "2";
 				$vpcOpt["vpc_Command"]			= "pay";
 				$vpcOpt["vpc_Locale"]			= "en";
 				$vpcOpt["vpc_TicketNo"]			= $this->util->realIP();
-				$vpcOpt["vpc_Customer_Email"]	= $vev->contact_email;
+				$vpcOpt["vpc_Customer_Email"]	= $step1->contact_email;
 				$vpcOpt["vpc_Customer_Id"]		= $user->id;
 				
 				$md5HashData = "";
@@ -1599,11 +1601,11 @@ class Apply_e_visa extends CI_Controller {
 			}
 			else if($payment == "Paypal")
 			{
-				$paymentAmount = $vev->total_fee;
+				$paymentAmount = $step1->total_fee;
 				$paymentType = "Sale";
-				$itemName = BOOKING_E_PREFIX.$booking_id.": ".$this->util->getVisaType2String($vev->visa_type);
+				$itemName = BOOKING_E_PREFIX.$booking_id.": ".$this->util->getVisaType2String($step1->visa_type);
 				$itemQuantity = 1;
-				$itemPrice = $vev->total_fee;
+				$itemPrice = $step1->total_fee;
 				$returnURL = PAYPAL_E_CANCEL_URL."?key=".$key;
 				$cancelURL = PAYPAL_E_RETURN_URL."?key=".$key;
 				

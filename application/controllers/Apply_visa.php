@@ -245,7 +245,7 @@ class Apply_visa extends CI_Controller {
 		$step1->num_seat				= 4;
 		$step1->promotion_type			= "1ms";
 		$step1->promotion_code			= "";
-		$step1->member_discount			= !empty($this->util->level_account()) ? $this->util->level_account()[2] : 0 ;
+		$step1->member_discount			= 0;
 		$step1->discount				= 0;
 		$step1->discount_unit			= "%";
 		$step1->fullname[1]				= "";
@@ -384,10 +384,12 @@ class Apply_visa extends CI_Controller {
 		$nation = $this->m_country->search_by_name($nationality);
 		$tourist_visa_types = array();
 		$business_visa_types = array();
-		
+
+		$nation_id = !empty($nation) ? $nation->id : 0;
+
 		$visa_types = $this->m_visa_type->items(NULL, 1);
-		$types_of_tourist = $this->m_visa_fee->types_of_tourist($nation->id);
-		$types_of_business = $this->m_visa_fee->types_of_business($nation->id);
+		$types_of_tourist = $this->m_visa_fee->types_of_tourist($nation_id);
+		$types_of_business = $this->m_visa_fee->types_of_business($nation_id);
 		
 		foreach ($visa_types as $visa_type) {
 			if (in_array($visa_type->code, $types_of_tourist)) {
@@ -1147,11 +1149,12 @@ class Apply_visa extends CI_Controller {
 		$ban_email = explode(',',str_replace(' ','',strtolower($setting->ban_email)));
 		$ban_passport = explode(',',str_replace(' ','',strtolower($setting->ban_passport)));
 		$ban_err = 0;
-		
+
 		if ($step1 == null) {
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
 		else {
+			
 			$this->check_valid_return($step1);
 		}
 		
@@ -1197,7 +1200,7 @@ class Apply_visa extends CI_Controller {
 			$step1->payment				= "";
 			
 			$step1->task				= (!empty($_POST["task"]) ? $_POST["task"] : "");
-
+			
 			if (in_array(strtolower($_POST["contact_fullname"]), $ban_name)) {
 				$ban_err++;
 			}
@@ -1207,6 +1210,7 @@ class Apply_visa extends CI_Controller {
 			if (in_array(strtolower($_POST["contact_email2"]), $ban_email)) {
 				$ban_err++;
 			}
+			
 			if ($ban_err != 0) {
 				redirect(site_url("apply-visa"));
 			}
@@ -1386,21 +1390,6 @@ class Apply_visa extends CI_Controller {
 			$this->m_check_step->update($data_step, array("id" => $check_step->id));
 
 			$this->session->set_userdata("step1", $step1);
-		}
-		
-		// Check denied passport
-		foreach ($step1->passportnumber as $passport) {
-			$passport = strtoupper(trim(str_replace(" ","",$passport)));
-			$pax_info = new stdClass();
-			$pax_info->search_text = $passport;
-			$paxs = $this->m_visa_pax->items($pax_info, NULL, 10);
-			foreach ($paxs as $pax) {
-				if ((strtoupper(trim(str_replace(" ","",$pax->passport))) == $passport) && ($pax->status == 3)) {
-					$this->session->set_flashdata("error", "Your passport number: ".$passport." is denied from Vietnam Immgration Department.");
-					redirect(site_url("{$this->util->slug($this->router->fetch_class())}/step2"));
-					break;
-				}
-			}
 		}
 		
 		$breadcrumb = array('Apply Visa' => site_url('apply-visa'), '1. Visa Options' => site_url('apply-visa/step1'), '2. Applicant Details' => site_url('apply-visa/step2'), '3. Review & Payment' => '');
