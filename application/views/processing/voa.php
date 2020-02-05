@@ -315,8 +315,7 @@
 		<div class="text-center">
 			<!-- <a class="btn btn-lg btn-danger wow fadeInUp" href="<?=site_url("apply-visa")?>">APPLY FOR VIETNAM VISA</a> -->
 			<div class="show-button m-4">
-				<a class="btn btn-general" href="<?=site_url("apply-visa")?>">APPLY FOR VIETNAM VISA</a>
-				<div class="bg-btn transition" style="width: 100%;"></div>
+				<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY FOR VIETNAM VISA</a>
 			</div>
 		</div>
 		<br>

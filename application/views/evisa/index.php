@@ -81,8 +81,7 @@
 		<div class="text-center" style="padding-top: 20px; padding-bottom: 20px;">
 			<!-- <a class="btn btn-danger" href="<?=site_url("apply-e-visa")?>">Apply Now</a> -->
 			<div class="show-button">
-					<a class="btn btn-general" href="<?=site_url("apply-e-visa")?>">APPLY VISA NOW</a>
-					<div class="bg-btn transition" style="width: 100%;"></div>
+					<a class="btn btn-danger" href="<?=site_url("apply-e-visa")?>">APPLY VISA NOW</a>
 				</div>
 		</div>
 	</div>
@@ -379,8 +378,7 @@
 			<div class="text-center"
 				style="padding-top: 20px; padding-bottom: 20px;">
 				<div class="show-button">
-					<a class="btn btn-general" href="<?=site_url("apply-e-visa")?>">APPLY VISA NOW</a>
-					<div class="bg-btn transition" style="width: 100%;"></div>
+					<a class="btn btn-danger" href="<?=site_url("apply-e-visa")?>">APPLY VISA NOW</a>
 				</div>
 				<!-- <a class="btn btn-danger" href="<?=site_url("apply-e-visa")?>">Apply Now</a> -->
 			</div>

@@ -20,7 +20,7 @@ define("ADMIN_TPL_URL",			BASE_URL."/template/admin/");
 define("ADMIN_IMG_URL",			ADMIN_TPL_URL."images/");
 define("ADMIN_CSS_URL",			ADMIN_TPL_URL."css/");
 define("ADMIN_JS_URL",			ADMIN_TPL_URL."js/");
-define("ADMIN_AGENT_ID",		"M_VIETNAM_VISA_ORG_VN");
+define("ADMIN_AGENT_ID",		"M_VIETNAM_EVISA_NET");
 define("ADMIN_ROW_PER_PAGE",	10);
 define("SUPER_ADMIN_FULL_ROLE",	'8061|8060|5|1|8267');
 
@@ -48,7 +48,7 @@ define("PATH_CKFINDER",			$_SERVER['DOCUMENT_ROOT'].'/'.DOMAIN.'/files/upload/im
 define("HOSTNAME", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("DATABASE", "vietnamevisanet");
+define("DATABASE", "vietnamvisa");
 define("DRIVER",   "mysqli");
 
 // --------------------------------------------

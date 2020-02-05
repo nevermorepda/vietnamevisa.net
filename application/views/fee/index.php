@@ -103,7 +103,6 @@
 					</script>
 					<div class="show-button m-2">
 						<input type="submit" class="btn btn-general" value="CHECK FEE">
-						<div class="bg-btn transition" style="width: 100%;"></div>
 					</div>
 				</form>
 				<br>
@@ -337,8 +336,7 @@
 					<div class="bg-anotate"></div>
 				</div>
 				<div class="show-button">
-					<a class="btn btn-general" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>">APPLY VISA NOW</a>
-					<div class="bg-btn transition" style="width: 100%;"></div>
+					<a class="btn btn-danger" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>">APPLY VISA NOW</a>
 				</div>
 			</div>
 		</div>
@@ -541,8 +539,7 @@
 						<p>With 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnam Visa Org Vn is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. Vietnam Visa on arrival is helpful for overseas tourists and businessmen because it is the most convenient, simple and secured way to get Vietnam visa stamp. It is legitimated and supported by the Vietnamese Immigration Department.</p>
 						<p>Let’s save your money, your time in the first time to visit our country! Whatever service you need, we are happy to tailor a package reflecting your needs and budget.</p>
 						<div class="showmore-button">
-							<a class="btn btn-general" href="<?=site_url('about-us')?>">SHOW MORE</a>
-							<div class="bg-btn transition" style="width: 100%;"></div>
+							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
 						</div>
 					</div>
 				</div>

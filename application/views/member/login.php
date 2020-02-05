@@ -61,8 +61,7 @@
 									<div class="col-md-8 clearfix">
 										<!-- <button type="button" id="btn-login" class="btn btn-danger">LOG IN & CONTINUE <i class="icon-double-angle-right icon-large"></i></button> -->
 										<div class="show-button">
-											<button type="button" id="btn-login" class="btn btn-general" href="">LOG IN & CONTINUE <i class="icon-double-angle-right icon-large"></i></button>
-											<div class="bg-btn transition" style="width: 100%;"></div>
+											<button type="button" id="btn-login" class="btn btn-danger" href="">LOG IN & CONTINUE <i class="icon-double-angle-right icon-large"></i></button>
 										</div>
 									</div>
 								</div>
@@ -163,8 +162,7 @@
 									<div class="col-md-8">
 										<!-- <button type="button" class="btn btn-danger" id="btn-signup" value="CONTINUE">CREATE ACCOUNT <i class="icon-double-angle-right icon-large"></i></button> -->
 										<div class="show-button">
-											<button type="button" id="btn-signup" class="btn btn-general" value="CONTINUE">CREATE ACCOUNT <i class="icon-double-angle-right icon-large"></i></button>
-											<div class="bg-btn transition" style="width: 100%;"></div>
+											<button type="button" id="btn-signup" class="btn btn-danger" value="CONTINUE">CREATE ACCOUNT <i class="icon-double-angle-right icon-large"></i></button>
 										</div>
 									</div>
 								</div>

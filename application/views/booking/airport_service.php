@@ -271,8 +271,7 @@
 			<div class="contact-button text-center">
 				<!-- <button type="submit" class="btn btn-danger btnstep">SUBMIT</button> -->
 				<div class="show-button m-4">
-					<a class="btn btn-general" type="submit">SUBMIT</a>
-					<div class="bg-btn transition" style="width: 100%;"></div>
+					<a class="btn btn-danger" type="submit">SUBMIT</a>
 				</div>
 			</div>
 		</form>
