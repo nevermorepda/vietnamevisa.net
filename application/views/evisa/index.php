@@ -22,7 +22,7 @@
 	<div class="container ">
 		<div class="cluster-heading">
 			<div class="text-center">
-				<h2 class="home-sub-heading" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">E-VISA APPLICATION PROCESS</h2>
+				<h2 class="home-sub-heading" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">E-VISA APPLICATION PROCESS</h2>
 				<!-- <h1 style="font-weight: bold; color:#FA0300; margin-bottom: 25px;">E-VISA APPLICATION PROCESS</h1> -->
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 
 <div class="container center" style="margin-top: 20px">
 	<!-- <h2 class="home-heading"><font color="#E41E01">VIETNAM E-VISA</font> ONLINE APPLICATION</h2>  -->
-	<h2 class="home-sub-heading" style="padding-top: 15px; text-shadow: 3px 3px #bdbdbd;"><font color="#E41E01">VIETNAM E-VISA</font> ONLINE APPLICATION</h2>
+	<h2 class="home-sub-heading" style="text-shadow: 3px 3px #bdbdbd;"><font color="#E41E01">VIETNAM E-VISA</font> ONLINE APPLICATION</h2>
 	<p class="f20" style="color: #E41E01">Vietnam electronic visa for arriving by land crossing or borders.</p>
 </div>
 
@@ -461,7 +461,7 @@
 </div>
 <div class="faqs cluster-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 	<div class="container">
-		<h2 class="home-sub-heading" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about eVisa to Vietnam</h2>
+		<h2 class="home-sub-heading" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about eVisa to Vietnam</h2>
 		<ul>
 			<? $i = 0;
 			foreach ($evisa_faqs as $evisa_faq) { ?>
@@ -491,13 +491,4 @@
 		});
 	});
 </script>
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>
+

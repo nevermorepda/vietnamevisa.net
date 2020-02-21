@@ -34,7 +34,7 @@
 	<div class="howitworks-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 		<div class="process">
 			<div class="container">
-				<h2 class="home-sub-heading text-center" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Application Process</h2>
+				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Application Process</h2>
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="box-step p-3" style="border: 5px solid #ffcd0e;">
@@ -89,7 +89,7 @@
 		</div>
 		<div class="different">
 			<div class="container">
-				<h2 class="home-sub-heading text-center" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">The different between <br>
+				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">The different between <br>
 					<span style="color: #851919">Vietnam Visa on arrival</span> & <span style="color: #de8c15">Vietnam eVisa on arrival</span>
 				</h2>
 				<div class="row">
@@ -348,9 +348,9 @@
 		</div>
 	</div>
 
-	<div class="faqs cluster-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
+	<!-- <div class="faqs cluster-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 		<div class="container">
-			<h2 class="home-sub-heading" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about Visa to Vietnam</h2>
+			<h2 class="home-sub-heading" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about Visa to Vietnam</h2>
 			<div class="row">
 				<div class="col-md-6">
 					<ul>
@@ -398,7 +398,7 @@
 		});
 	</script>
 
-	<!-- About us -->
+	<!-- About us
 	<div class="d-none d-sm-none d-md-block">
 		<div class="about-us-cluster">
 			<div class="container wow fadeInUp">
@@ -424,7 +424,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- End about us -->
 	<!-- <div class="slide-bar d-none d-sm-none d-md-block">
 		<div class="slide-wrap">
@@ -1151,13 +1151,3 @@ $(document).ready(function() {
 		}
 	});
 </script> -->
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>

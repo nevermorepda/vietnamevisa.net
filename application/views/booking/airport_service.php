@@ -291,20 +291,11 @@ $(document).ready(function() {
 		endDate: "<?=date('m/d/Y H:i', strtotime("+1 hour"))?>",
 		locale: {
 			format: 'MM/DD/YYYY h:mm A'
-        }
-    });
+		}
+	});
 	$(".fa-arrival-date").click(function(){
 		$(".arrival-date").trigger("click");
 	});
 });
 </script>
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>
+

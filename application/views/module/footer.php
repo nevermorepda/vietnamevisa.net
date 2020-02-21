@@ -61,7 +61,7 @@
 	<div class="container">
 		<div class="text-center">
 			<div class="copyright">
-				<p>&copy; <?=date('Y')?> Vietnam Visa Department. All rights reserved.<br>
+				<p class="font-weight-bold">&copy; <?=date('Y')?> Vietnam Visa Department. All rights reserved.<br>
 				Full Vietnam visa services online.</p>
 				<?
 					ini_set('default_socket_timeout', 3);

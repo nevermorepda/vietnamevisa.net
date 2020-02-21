@@ -49,7 +49,7 @@
 	</div>
 </div>
 <!-- About us -->
-<div class="d-none d-sm-none d-md-block">
+<!-- <div class="d-none d-sm-none d-md-block">
 	<div class="about-us-cluster">
 		<div class="container wow fadeInUp">
 			<div class="row">
@@ -74,5 +74,5 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- End about us -->

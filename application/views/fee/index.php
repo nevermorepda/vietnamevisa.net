@@ -101,8 +101,8 @@
 						// 	window.location.href = href_request;
 						// });
 					</script>
-					<div class="show-button m-2">
-						<input type="submit" class="btn btn-general" value="CHECK FEE">
+					<div class="btn-checkfee m-2">
+						<input type="submit" class="btn btn-danger" value="CHECK FEE">
 					</div>
 				</form>
 				<br>
@@ -158,7 +158,7 @@
 						<td class="text-center"><?=25+($price_nation->evisa_tourist_1ms)?> USD/person</td>
 						<td class="text-center">
 							<div class="apply-button">
-								<a class="btn-apl" href="">APPLY NOW</a>
+								<a class="btn-danger btn" href="">APPLY NOW</a>
 							</div>
 						</td>
 					</tr>
@@ -169,7 +169,7 @@
 						<td class="text-center"><?=25+($price_nation->evisa_business_1ms)?> USD/person</td>
 						<td class="text-center">
 							<div class="apply-button">
-								<a class="btn-apl" href="">APPLY NOW</a>
+								<a class="btn-danger btn" href="">APPLY NOW</a>
 							</div>
 						</td>
 					</tr>
@@ -181,7 +181,7 @@
 						<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
 						<td class="text-center">
 							<div class="apply-button">
-								<a class="btn-apl" href="">APPLY NOW</a>
+								<a class="btn-danger btn" href="">APPLY NOW</a>
 							</div>
 						</td>
 					</tr>
@@ -193,7 +193,7 @@
 						<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_emergency?> USD/pax</td>
 						<td class="text-center">
 							<div class="apply-button">
-								<a class="btn-apl" href="">APPLY NOW</a>
+								<a class="btn-danger btn" href="">APPLY NOW</a>
 							</div>
 						</td>
 					</tr>
@@ -394,7 +394,7 @@
 						<p>We offers private car who wait for you with businessman.<br>
 						We do for all car of service, even you can rent a car for long trips. More information please visit us.</p>
 						<div class="apply-button m-2" style="display: inline-flex;">
-							<a class="btn-apl" href="">MORE DETAIL</a>
+							<a class="btn btn-danger" href="">MORE DETAIL</a>
 						</div>
 					</div>
 				</div>
@@ -486,7 +486,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="optional-tours">
+		<!-- <div class="optional-tours">
 			<div class="container">
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -521,12 +521,12 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 
 <!-- About us -->
-<div class="d-none d-sm-none d-md-block">
+<!-- <div class="d-none d-sm-none d-md-block">
 	<div class="about-us-cluster">
 		<div class="container wow fadeInUp">
 			<div class="row">
@@ -551,7 +551,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- End about us -->
 <script>
 	$(document).ready(function($) {
@@ -600,16 +600,6 @@
 					}
 				});
 			}
-		});
-	});
-</script>
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
 		});
 	});
 </script>

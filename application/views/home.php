@@ -149,7 +149,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="cluster-content">
+		<!-- <div class="cluster-content">
 			<div class="row">
 				<div class="col-md-6 dispart">
 					<div class="title">
@@ -174,11 +174,11 @@
 					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 
-<div class="shopperapproved d-block d-sm-block d-md-none">
+<!-- <div class="shopperapproved d-block d-sm-block d-md-none">
 	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
 		<h2 class="home-sub-heading">Testimonial</h2>
 		<a class="text-center sa-medal" title="Customer ratings" target="_blank" rel="noopener" href="https://www.shopperapproved.com/reviews/vietnam-visa.org.vn/">
@@ -196,7 +196,7 @@
 		</div>
 	</div>
 </div>
-
+ -->
 <!-- About us -->
 <div class="d-none d-sm-none d-md-block">
 	<div class="about-us-cluster">
@@ -225,14 +225,3 @@
 	</div>
 </div>
 <!-- End about us -->
-
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>
