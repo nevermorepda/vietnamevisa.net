@@ -212,6 +212,7 @@ input.error, select.error, textarea.error, span.error {
 .btn-danger {
 	background: #851919;
 	border-color: #851919;
+	border-radius: 5px;
 }
 .btn-danger:hover {
 	background: #c4191f;
@@ -1252,7 +1253,7 @@ ul.list-embassy li {
 }
 .cluster .cluster-body .content-pr .title {
 	font-size: 45px;
-	color: #333;
+	color: #851919;
 	text-shadow: 3px 3px #bdbdbd;
 }
 .cluster .cluster-body .showmore-button {
@@ -1280,6 +1281,7 @@ ul.list-embassy li {
 .cluster-content {
 	padding: 50px 0px 0px;
 	padding-bottom: 25px;
+	border-bottom: 1px dotted #ccc;
 }
 .cluster-content:last-child {
 	border: none;
@@ -1290,6 +1292,9 @@ ul.list-embassy li {
 .cluster-content .tour-content img {
 	margin-top: 15px;
 	margin-right: 5px;
+}
+.cluster-content .tour-content p {
+	margin: 20px;
 }
 .cluster .title .heading {
 	display: inline-block;
@@ -1317,7 +1322,7 @@ ul.list-embassy li {
 	margin-top: 10px;
 	display: inline;
 	padding-left: 7px;
-	font-weight: 600;
+	font-weight: 500;
 }
 .cluster-our-services .cluster-content h3 a {
 	color: #000;
@@ -1336,9 +1341,10 @@ ul.list-embassy li {
 }
 .about-us-cluster {
 	background-color: #ebebeb;
+	padding: 40px 0;
 }
 .about-us-cluster .about-us-content {
-	padding: 35px 0;
+	/* padding: 35px 0; */
 }
 .about-us-cluster .about-us-content .heading{
 	font-size: 45px;

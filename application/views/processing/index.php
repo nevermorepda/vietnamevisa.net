@@ -41,10 +41,10 @@
 							<div class="step-numb" style="color: #ffcd0e;">1</div>
 							<div class="step-title" style="color: #ffcd0e;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon1.png">
-								<h3>Apply Online</h3>
+								<h3>APPLY ONLINE</h3>
 							</div>
 							<div class="step-content">
-								<p>Fill all passport details to the form online</p>
+								<p>Fill out online visa application form by providing your passport information.</p>
 							</div>
 						</div>
 					</div>
@@ -53,10 +53,10 @@
 							<div class="step-numb" style="color: #de8c15;">2</div>
 							<div class="step-title" style="color: #de8c15;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon2.png">
-								<h3>Payment</h3>
+								<h3>PAYMENT ONLINE</h3>
 							</div>
 							<div class="step-content">
-								<p>Check inforamtion and settle the processing fee</p>
+								<p>Make payment for our visa service via Online Payment Gates.</p>
 							</div>
 						</div>
 					</div>
@@ -65,10 +65,10 @@
 							<div class="step-numb" style="color: #ba411d;">3</div>
 							<div class="step-title" style="color: #ba411d;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon3.png">
-								<h3>Get approval letter</h3>
+								<h3>RECEIVE VISA LETTER</h3>
 							</div>
 							<div class="step-content">
-								<p>Vietnam visa letter send to your email</p>
+								<p>You will get the Approval Letter or Electronic Visa via email as the confirmation.</p>
 							</div>
 						</div>
 					</div>
@@ -77,10 +77,10 @@
 							<div class="step-numb" style="color: #a92020;">4</div>
 							<div class="step-title" style="color: #a92020;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon4.png">
-								<h3>Get visa</h3>
+								<h3>GET VISA STAMP UPON ARRIVAL</h3>
 							</div>
 							<div class="step-content">
-								<p>Get your visa sticker/visa stamp on arrival ports</p>
+								<p>Present your visa letter at check-in point to get Vietnam visa stamp.</p>
 							</div>
 						</div>
 					</div>

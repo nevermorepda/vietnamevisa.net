@@ -149,32 +149,32 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="cluster-content">
+		<div class="cluster-content">
 			<div class="row">
 				<div class="col-md-6 dispart">
 					<div class="title">
 						<img alt="Optional Tours" class="lazy" src="<?=IMG_URL?>new-template/icon4.png">
-						<h3><a title="Optional Tours" href="<?=site_url('tours')?>">OPTIONAL TOURS</a></h3>
+						<h3><a title="Optional Tours" href="<?=site_url('tours')?>">TOURS</a></h3>
 					</div>
 					<div class="tour-content">
 						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/thumb-optiontours.png"></a>
-						<p class="summary"><?=$tours[0]->description;?></p>
+						<?=$tours[0]->description;?>
 					</div>
 					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
 				</div>
 				<div class="col-md-6 dispart">
 					<div class="title">
-						<img alt="Vietnam discovery tours" class="lazy" src="<?=IMG_URL?>new-template/icon5.png">
-						<h3><a title="Vietnam discovery tours" href="<?=site_url('tours')?>">VIET NAM DISCOVERY TOURS</a></h3>
+						<img alt="Vietnam discovery tours" class="lazy" src="<?=IMG_URL?>new-template/icon/icon-11.png">
+						<h3><a title="Vietnam discovery tours" href="<?=site_url('tours')?>">CONSULAR SERVICES</a></h3>
 					</div>
 					<div class="tour-content">
-						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/thumbnail/thumb-vntours.png"></a>
-						<p class="summary"><?=$tours[1]->description;?></p>
+						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/icon/icon-12.png"></a>
+						<?=$tours[1]->description;?>
 					</div>
 					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 </div>
 
