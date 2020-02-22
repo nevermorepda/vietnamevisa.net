@@ -195,8 +195,11 @@
 									<div class="processing-note">
 										<strong>Tips:</strong>
 										<ul>
-											<li>The exact information includes full name, date of birth, passport number and nationality as your passport details.</li>
-											<li>Passport expiration date must has at least 6 months validity when arriving to Vietnam.</li>
+											<li>Please fill in your passport informtion in the application form correctly as in your passport data page.</li>
+											<li>Your passport must be valid at least 6 months upon arrival to Vietnam. Otherwise, we can’t help you to get visa</li>
+											<?if($step1->processing_time=="Holiday" || $step1->processing_time=="Emergency") { ?>
+											<li>Please follow your email after making payment to ensure you will get visa approval letter on time.  Any problems in hurry, please call us at <span class="red"><?=HOTLINE?></span></li>
+											<?}?>
 										</ul>
 									</div>
 								</div>
@@ -303,27 +306,17 @@
 								<div class="form-group" style="padding-top: 20px; padding-bottom: 20px;">
 									<div class="text-center">
 										<!-- <button class="btn btn-danger btn_back" type="button" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="icon-double-angle-left icon-large"></i> BACK</button> -->
-										<div class="show-button m-4">
+										<div class="show-button m-4 d-inline-block">
 											<button class="btn btn-danger" type="button" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i></i> BACK </button>
 										</div>
 										<!-- <button class="btn btn-danger btn-next" type="submit">NEXT <i class="icon-double-angle-right icon-large"></i></button> -->
-										<div class="show-button m-4">
+										<div class="show-button m-4 d-inline-block">
 											<button class="btn btn-danger" type="submit">NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<script>
-							$(document).ready(function() {
-								$('.btn').mouseenter(function() {
-									$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-								});
-								$('.btn').mouseleave(function() {
-									$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-								});
-							});
-						</script>
 						<div class="col-lg-3 col-sm-4">
 							<div class="panel-fees">
 								<ul>

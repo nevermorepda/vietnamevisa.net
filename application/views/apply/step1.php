@@ -134,6 +134,8 @@
 												if ($visa_type->code == '6mm') {
 											?>
 											<option value="<?=$visa_type->code?>"><?=$visa_type->name?> (US Only)</option>
+											<?} elseif($visa_type->code == '1ym') {?>
+											<option value="<?=$visa_type->code?>"><?=$visa_type->name?> (US Only)</option>
 											<? } else { ?>
 											<option value="<?=$visa_type->code?>"><?=$visa_type->name?></option>
 											<? } } ?>
@@ -193,7 +195,7 @@
 												<script> $("#arrivaldate").val("<?=$step1->arrivaldate?>"); </script>
 											</div>
 										</div>
-										<div class="processing-note">
+										<div class="processing-note mt-2">
 											When you arrive Vietnam?
 										</div>
 									</div>
@@ -214,7 +216,7 @@
 											} ?>
 										</select>
 										<script> $('#arrival_port').val('<?=$step1->arrival_port?>'); </script>
-										<div class="processing-note">
+										<div class="processing-note mt-2">
 											The first port you arrive to Vietnam.
 										</div>
 									</div>
@@ -331,7 +333,7 @@
 											</label>
 											<div id="processing-time-holiday-note" class="processing-option none">
 												<div class="processing-note">
-													You need to choose this option if you are flying out on a weekend or holiday. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Holiday")->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to <span class="red">process immediately</span>. This fee, however, includes the stamping fee since we will have an associate obtaining the visa for you at the airport before your arrival.
+													You need to choose this option if the time you apply for visa and your arrival time to Vietnam is non-working time of The Vietnam Immigration Department (Saturdays; Sundays; national holidays; from 4pm to 8am next day Vietnam time). The holiday fee is <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Holiday")->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to get confirmation for  your application <span class="red">received and acknowledged to process immediately</span>. This fee also includes goverment fee and fast track serice at Vietnam airports, you will not pay any fee upon arrival and our staff will assist you to get your Vietnam visa stamp when you arrive.
 												</div>
 											</div>
 										</div>
@@ -379,7 +381,7 @@
 											</label>
 										</div>
 										<div class="processing-note">
-											Because of Vietnam Immigration Office policy, they list a number of people on the same visa letter, so we offer private/confidential visa letter is showing your name or your group in 1 letter without others name on your letter. But you have to pay extra <b id="note-letter-fee" style="color:red"></b>/letter for you or your group.
+											Normally, The Vietnam Immigration Department process a lot of applications. It is common and legal to get an visa approval letter with several names of applicants applying at the same time. If you feel uncomfortable with this kind of shared letter, we offer you to apply for visa on arrival with the option of “Private Letter” to get your approval letter for only yourself or your group without other strange names on it. Each application will pay extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get private visa approval letter. Please notice that if you don’t choose “Private letter” option, you will receive shared  approval letter and we can’t change anything after your application is processed.
 										</div>
 										<div class="checkbox cb_fast_checkin">
 											<label>
@@ -434,16 +436,6 @@
 							</div>
 						</div>
 					</div>
-					<script>
-						$(document).ready(function() {
-							$('.btn').mouseenter(function() {
-								$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-							});
-							$('.btn').mouseleave(function() {
-								$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-							});
-						});
-					</script>
 					<? $level = $this->util->level_account(); ?>
 					<div class="col-md-5">
 						<div class="panel-fees">
@@ -481,8 +473,15 @@
 									<span class="total_visa_stamping_price price">25 $ x 1 applicants = 25 $</span>
 								</li>
 								<li class="clearfix">
-									<label>Visa service fee:</label>
-									<span class="total_visa_price price"></span>
+									<div class="clearfix">
+										<label>Visa service fee:</label>
+										<span class="total_visa_price price"></span>
+									</div>
+									<div class="processing_fee_note text-right" style="position: relative;">
+										<i class="processing_fee red">(<a class="red" target="_blank" title="processing fee" href="<?=site_url("visa-fee")?>#stamping-fee">the processing fee</a> is based on tar-iff table)</i>
+										<!-- <i class="stamping_fee_excluded">(<a target="_blank" title="stamping fee" href="<?=site_url("visa-fee")?>#stamping-fee">stamping fee</a> is excluding, you will pay in cash at the airport)</i> -->
+										<!-- <img style="position: absolute;right: 20px;top: 16px;" src="<?=IMG_URL?>private-letter.png" alt="private-letter"> -->
+									</div>
 								</li>
 								<li class="clearfix" id="processing_time_li" style="display: none">
 									<label>Processing time:</label>
@@ -532,7 +531,7 @@
 										<label>TOTAL FEE:</label>
 										<span class="total_price"></span>
 									</div>
-									<div class="text-right" style="position: relative;">
+									<div class="stamping_fee_note text-right" style="position: relative;">
 										<i class="stamping_fee_included none">(<a target="_blank" title="stamping fee" href="<?=site_url("visa-fee")?>#stamping-fee">stamping fee</a> included, no need to pay any extra fee)</i>
 										<i class="stamping_fee_excluded">(<a target="_blank" title="stamping fee" href="<?=site_url("visa-fee")?>#stamping-fee">stamping fee</a> is excluding, you will pay in cash at the airport)</i>
 										<!-- <img style="position: absolute;right: 20px;top: 16px;" src="<?=IMG_URL?>private-letter.png" alt="private-letter"> -->

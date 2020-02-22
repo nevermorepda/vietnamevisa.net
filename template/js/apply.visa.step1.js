@@ -770,7 +770,7 @@ function calServiceFees()
 			}
 			
 			var total_visa_price_txt = service_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(service_fee*group_size)+" $";
-			
+			    
 			if (processing_time == "Urgent" || processing_time == "Emergency" || processing_time == "Holiday") {
 				$(".processing_t").html(rush_fee+" $ x "+group_size+" person"+((group_size>1)?"s":"")+" = "+(rush_fee*group_size)+" $");
 				$("#processing_time_li").show();
@@ -817,9 +817,15 @@ function calServiceFees()
 			}
 			if (typeofvisa == 'e-1ms') {
 				total += 25 * group_size;
+				$('.stamping_fee_note').hide();
+				$('.processing_fee_note').hide();
 				$('.total_visa_stamping_price').html('25 $ x '+group_size+' applicants = '+25*group_size+' $');
+				$("#processing_time_emergency").attr("disabled", true);
+				$("#processing_time_emergency").parent().find("strong").css("color", "#ccc");
 			} else {
 				$('.total_visa_stamping_price').html('');
+				$('.stamping_fee_note').show();
+				$('.processing_fee_note').show();
 			}
 			
 			$(".total_visa_price").html(total_visa_price_txt);

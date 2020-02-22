@@ -1440,6 +1440,10 @@ ul.list-embassy li {
 	background-color: #e7e7e7;
 	padding: 20px 0px;
 }
+.footer-bottom p {
+	padding: 0;
+	margin: 0;
+}
 .shopperapproved .sa-medal {
 	position: relative;
 	display: block;
@@ -1513,13 +1517,6 @@ ul.style-step li.active {
 }
 .applyform .control-label {
 	font-weight: bold;
-}
-.processing-note {
-	background-color: #ECEFF1;
-	margin-top: 12px;
-	padding: 15px;
-	font-size: 12px;
-	position: relative;
 }
 
 .processing-note.note-success {
@@ -2005,8 +2002,8 @@ ul.style-step li.active {
 }
 .processing-note {
 	background-color: #ECEFF1;
-	margin-top: 12px;
 	padding: 15px;
+	margin-bottom: 15px;
 	font-size: 12px;
 	position: relative;
 }
