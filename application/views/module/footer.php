@@ -25,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-6 col-xs-6">
+			<div class="col-md-4 col-sm-6 col-xs-6">
 				<h3 class="fnav-title"><a href="">USEFUL INFORMATION</a></h3>
 				<ul class="fnav-links">
 					<li><a title="Vietnam Visa" href="">Vietnam Visa</a></li>
@@ -35,14 +35,14 @@
 					<li><a title="Consultant Services Guideline" href="">Consultant Services Guideline</a></li>
 				</ul>
 			</div>
-			<div class="col-md-2 col-sm-6 col-xs-6">
+			<div class="col-md-3 col-sm-6 col-xs-6">
 				<h3 class="fnav-title"><a href="">QUICK LINKS</a></h3>
 				<ul class="fnav-links">
 					<li><a title="About Us" href="<?=site_url("about-us")?>">About Us</a></li>
 					<li><a title="Terms and Conditions" href="<?=site_url("terms-and-conditions")?>">Terms & Conditions</a></li>
 					<li><a title="Privacy policy" href="<?=site_url("policy")?>">Privacy Policy</a></li>
 					<li><a title="Payment Instruction" href="<?=site_url("payment-instruction")?>">Payment Instruction</a></li>
-					<li><a title="Cancellation and Refund Policy" href="">Cancellation & Refund Policy</a></li>
+					<li><a title="Cancellation and Refund Policy" href="<?=site_url("policy")?>">Cancellation & Refund Policy</a></li>
 				</ul>
 			</div>
 		</div>

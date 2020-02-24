@@ -7,13 +7,13 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="text-content">
-					<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA FORM</span></h1>
+					<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA</span></h1>
 					<div class="alternative-breadcrumb">
 					<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
 					</div>
 					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Sed do eiusmod tempor incididunt ut labore et dolore magna </li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Safety and reliable procedure</li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Professional staffs</li>
 					</ul>
 				</div>
 			</div>

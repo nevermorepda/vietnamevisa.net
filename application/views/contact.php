@@ -132,8 +132,8 @@ i.fa {
 					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 					</div>
 					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Sed do eiusmod tempor incididunt ut labore et dolore magna </li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Support online 24/7 </li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Office available Mon-Friday </li>
 					</ul>
 				</div>
 			</div>

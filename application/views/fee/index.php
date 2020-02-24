@@ -72,6 +72,14 @@
 <div class="fee cluster-content">
 	<div class="cluster-body">
 		<div class="container">
+			<div class="explain-fee">
+				<h2 class="page-title home-sub-heading shadow-text">Vietnam visa fees</h2>
+				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red">Visa Processing fee</span> and <span class="red">Goverment fee</span></p>
+				<ul>
+					<li><span class="font-weight-bold">Processing fee:</span> It is the fee you will pay online for us to do all the paperwork to submit your application to the Vietnam Immigration Department for visa procedure. Processing fee depends on type and term of visa you want to get.</li>
+					<li><span class="font-weight-bold">Goverment fee:</span> This fee is paid for Vietnam Immigration Officers to have a visa stamped onto your passport.  For passengers who apply for visa on arrival, you will pay in cash at LANDING VISA counter  when you arrive at Vietnam airport. For passengers enter Vietnam by Electronic Visa, Goverment fee is included when you pay online. Therefore you will not pay any fee at check-on point.</li>
+				</ul>
+			</div>
 			<div class="text-center">
 				<form id="frmCheckVisaFee" action="<?=site_url("visa-fee")?>" method="POST">
 					<h3 class="hw-opt-title">List of eligible countries for a Vietnam visa</h3>
@@ -123,87 +131,66 @@
 			<? if ($document_required) { ?>
 			<br>
 			<div class="alert alert-warning">
-				<p>We are pleased to inform that <span class="red f16"><?=$current_nation->name?></span> is listed in the special nation list of the Vietnam Immigration Department. It takes more time for Vietnam Immigration Department to check carefully and process visa.</p>
-				<p>In order to process your visa, please contact us via email address <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> and supply us your:</p>
+				<p>Dear customer,</p>
+				<p>It is informed that xx passport holders can apply online on our website for Visa On Arrival but we ONLY can help you to process 1 month single tourist visa, not for a full 30 days, the Immigration just bases on your ticket to process visa (maximum 25 days). </p>
+				<p>The processing will take 7- 10 working days. The documents following are required:</p>
 				<ul>
-					<li><strong>Passport scan (personal informative page) </strong></li>
-					<li><strong>Date of arrival and exit</strong></li>
-					<li><strong>Purpose to enter Vietnam: business invitation letter or booking tour voucher of travel agency in Vietnam</strong></li>
-					<li><strong>Flight ticket</strong></li>
-					<li><strong>Hotel booking or staying address</strong></li>
+					<li><strong>Passport scan</strong></li>
+					<li><strong>Booking tour voucher of travel agency in Vietnam</strong></li>
+					<li><strong>Flight ticket confirmation</strong></li>
+					<li><strong>Hotel booking confirmation</strong></li>
 				</ul>
-				<p>The Vietnam Immigration Department will check your status within 2 days. Then we will inform the result for you. If your visa application is approved, we will send you the notification including the visa letter.</p>
-				<p>For further questions please feel free to contact us via email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p>
+				<p>Without those documents, we can not process visa for you. Please send to our email : <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p>
+				<p><span class="font-weight-bold">IMPORTANT NOTICE:</span> We can help you to process Vietnam Visa Arrival. Please note that the Vietnam Immigration requires you must have more than $1000 USD which you must show in cash or give your card to the Immigration Officer to check upon arrival. If you meet this condition then can continue to do the visa stamp procedure. Otherwise, you may not enter Vietnam, even if you have the APPROVAL LETTER. Please prepare this amount before your departure.</p>
+				<p>Best regards, <br>
+				Vietnam Evisa Team,
+				</p>
 			</div>
 			<? } ?>
 		</div>
 		<div class="e-visa-fee">
 			<div class="container">
 				<div class="title">
-					<h1 class="home-sub-heading">eVisa on arrival</h1>
+					<h2 class="home-sub-heading shadow-text">Vietnam Electronic Visa</h2>
 					<h4 class="sub-title">(available for 26 landport and airport, 86 countries)</h4>
 				</div>
-				<table class="table table-bordered pricing-table">
-					<tr>
-						<th class="text-left" rowspan="">E VISA TYPES</th>
-						<th class="text-center" colspan="">PROCESSING FEE <br><span style="font-style: italic; font-size:15px">(Normal 3 days)</span> </th>
-						<th class="text-center" rowspan="">GOVERMENT FEE</th>
-						<th class="text-center" rowspan="">TOTAL</th>
-						<th class="text-center" rowspan=""></th>
-					</tr>
-					<tr>
-						<td class="text-left">1 month single for tourist</td>
-						<td class="text-center"><?=$price_nation->evisa_tourist_1ms?></td>
-						<td class="text-center">25</td>
-						<td class="text-center"><?=25+($price_nation->evisa_tourist_1ms)?> USD/person</td>
-						<td class="text-center">
-							<div class="apply-button">
-								<a class="btn-danger btn" href="">APPLY NOW</a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="text-left">1 month single for business</td>
-						<td class="text-center"><?=$price_nation->evisa_business_1ms?></td>
-						<td class="text-center">25</td>
-						<td class="text-center"><?=25+($price_nation->evisa_business_1ms)?> USD/person</td>
-						<td class="text-center">
-							<div class="apply-button">
-								<a class="btn-danger btn" href="">APPLY NOW</a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="text-left red">Urgent 1 business </td>
-						<td class="text-center red" colspan="2">
-							<span class="red">Plus <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</span>
-						</td>
-						<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
-						<td class="text-center">
-							<div class="apply-button">
-								<a class="btn-danger btn" href="">APPLY NOW</a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="text-left red">Emergency 1 business </td>
-						<td class="text-center red" colspan="2">
-							<span class="red">Plus <?=$processing_fee->evisa_tourist_1ms_emergency?> USD/pax</span>
-						</td>
-						<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_emergency?> USD/pax</td>
-						<td class="text-center">
-							<div class="apply-button">
-								<a class="btn-danger btn" href="">APPLY NOW</a>
-							</div>
-						</td>
-					</tr>
-				</table>
+				<div class="row">
+					<div class="col-sm-9">
+						<table class="table table-bordered pricing-table">
+							<tr>
+								<th class="text-left" rowspan="">TYPES OF VISA</th>
+								<th class="text-center" colspan="">PROCESSING FEE <br><span style="font-style: italic; font-size:15px">(Normal 3 days)</span> </th>
+								<th class="text-center" rowspan="">GOVERMENT FEE</th>
+								<th class="text-center" rowspan="">TOTAL</th>
+							</tr>
+							<tr>
+								<td class="text-left">Tourist</td>
+								<td class="text-center"><?=$price_nation->evisa_tourist_1ms?> USD/pax</td>
+								<td class="text-center" rowspan="2">25 USD/pax</td>
+								<td class="text-center"><?=25+($price_nation->evisa_tourist_1ms)?> USD/person</td>
+							</tr>
+							<tr>
+								<td class="text-left">Business</td>
+								<td class="text-center"><?=$price_nation->evisa_business_1ms?> USD/pax</td>
+								<td class="text-center"><?=25+($price_nation->evisa_business_1ms)?> USD/person</td>
+							</tr>
+							<tr>
+								<td class="text-left red">Urgent processcing </td>
+								<td class="text-center red" colspan="2">
+									<span class="red">Plus <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</span>
+								</td>
+								<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		<div class="visa-arrival-fee">
 			<div class="container">
 				<div class="title clearfix">
-					<h1 class="home-sub-heading">Vietnam visa arrival</h1>
+					<h2 class="home-sub-heading shadow-text">Vietnam Visa On arrival</h2>
 					<h4 class="sub-title">(available for International airport only, all countries can apply visa)</h4>
 				</div>
 				<div class="wrap-service-type">
@@ -211,7 +198,7 @@
 						<img src="<?=IMG_URL?>new-template/icon/icon6.png"><h3>TOURIST VISA</h3>
 					</div>
 					<div class="content">
-						<p>Vietnam Tourist Visa or Vietnam Travel Visa (DL Category) is issued to those who wish to arrive in Vietnam for the purpose of visiting family members or friends or other personal affairs. In general, Tourist Visa is good for TOURISM purposes only.</p>
+						<p>Vietnam Tourist Visa (DL Category) is part of the required immigration process for those who enter Vietnam for the purpose of traveling ONLY. </p>
 					</div>
 				</div>
 				<?
@@ -243,7 +230,7 @@
 					?>
 					<tr>
 						<td class="text-left"><?=$this->m_visa_type->load($visa_type)->name?></td>
-						<td class="text-center"><?=${"tourist_{$visa_type}"}->service_fee?></td>
+						<td class="text-center"><?=${"tourist_{$visa_type}"}->service_fee?> USD/pax</td>
 						<td class="text-center">
 							<? if ($can_rush) { ?>
 							<span class="red">Plus <?=$processing_fee->{"tourist_{$visa_type}_urgent"}?> USD/pax</span>
@@ -275,7 +262,7 @@
 						<img src="<?=IMG_URL?>new-template/icon/icon7.png"><h3>BUSINESS VISA</h3>
 					</div>
 					<div class="content">
-						<p>Business Visa (DN Category) is issued to those who intend to go to Vietnam for business purposes, such as the negotiation of contracts, estate settlement, consultation with business associates, and participation in scientific, educational, professional or business conventions, conferences or seminars and other legitimate activities of a commercial or professional nature.</p>
+						<p>Vietnam Business Visa (DN Category) is part of the required immigration process for those who enter Vietnam for business purposes attending business conferences, conventions, meetings, and other business-related events.</p>
 					</div>
 				</div>
 				<?
@@ -283,51 +270,50 @@
 						$row_number_service = 2;
 						$col_number_service = 3;
 				?>
-				<table class="table table-bordered pricing-table">
-							<tr>
-								<th class="text-left" rowspan="<?=$row_number_service?>">TYPES OF VISA</th>
-								<th class="text-center" colspan="<?=$col_number_service+1?>">BUSINESS VISA FEE</th>
-								<th class="text-center" rowspan="<?=$row_number_service?>">STAMPING FEE</th>
-							</tr>
-							<tr>
-								<th class="sub-heading text-center" colspan="<?=$col_number_service-2?>">NORMAL PROCESSING <br>(<?=$normal_pr_time?>)</th>
-								<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">URGENT <br>(4-8 working hours)</th>
-								<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">EMERGENCY <br>(1-4 working hours)</th>
-								<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">HOLIDAY FEE <br>(weekend + holiday)</th>
-							</tr>
-							<!--  -->
-							<?
-								foreach ($tourist_visa_types as $visa_type) { 
-							?>
-							<tr>
-								<td class="text-left"><?=$this->m_visa_type->load($visa_type)->name?></td>
-								<td class="text-center"><?=${"business_{$visa_type}"}->service_fee?></td>
-								<td class="text-center">
-									<? if ($can_rush) { ?>
-									<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_urgent"}?> USD/pax</span>
-									<? } else { ?>
-									NA
-									<? } ?>
-								</td>
-								<td class="text-center">
-									<? if ($can_rush) { ?>
-									<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_emergency"}?> USD/pax</span>
-									<? } else { ?>
-									NA
-									<? } ?>
-								</td>
-								<td class="text-center">
-									<? if ($can_rush) { ?>
-									<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_holiday"}?> USD/pax</span>
-									<? } else { ?>
-									NA
-									<? } ?>
-								</td>
-								<td class="text-center"><?=${"business_{$visa_type}"}->stamp_fee?> USD/pax</td>
-							</tr>
-							<? } ?>
-						</table>
-					<? } ?>
+					<table class="table table-bordered pricing-table">
+						<tr>
+							<th class="text-left" rowspan="<?=$row_number_service?>">TYPES OF VISA</th>
+							<th class="text-center" colspan="<?=$col_number_service+1?>">BUSINESS VISA FEE</th>
+							<th class="text-center" rowspan="<?=$row_number_service?>">STAMPING FEE</th>
+						</tr>
+						<tr>
+							<th class="sub-heading text-center" colspan="<?=$col_number_service-2?>">NORMAL PROCESSING <br>(<?=$normal_pr_time?>)</th>
+							<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">URGENT <br>(4-8 working hours)</th>
+							<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">EMERGENCY <br>(1-4 working hours)</th>
+							<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">HOLIDAY FEE <br>(weekend + holiday)</th>
+						</tr>
+						<?
+							foreach ($tourist_visa_types as $visa_type) { 
+						?>
+						<tr>
+							<td class="text-left"><?=$this->m_visa_type->load($visa_type)->name?></td>
+							<td class="text-center"><?=${"business_{$visa_type}"}->service_fee?> USD/pax</td>
+							<td class="text-center">
+								<? if ($can_rush) { ?>
+								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_urgent"}?> USD/pax</span>
+								<? } else { ?>
+								NA
+								<? } ?>
+							</td>
+							<td class="text-center">
+								<? if ($can_rush) { ?>
+								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_emergency"}?> USD/pax</span>
+								<? } else { ?>
+								NA
+								<? } ?>
+							</td>
+							<td class="text-center">
+								<? if ($can_rush) { ?>
+								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_holiday"}?> USD/pax</span>
+								<? } else { ?>
+								NA
+								<? } ?>
+							</td>
+							<td class="text-center"><?=${"business_{$visa_type}"}->stamp_fee?> USD/pax</td>
+						</tr>
+						<? } ?>
+					</table>
+				<? } ?>
 				<div class="vs-anotate">
 					<p>All Business and Tourist visa private visa letter request 
 					<br><span style="color:#ff0000">+ 10 USD letter</span> ( people or group) <br>
@@ -343,7 +329,7 @@
 		<div class="ext-service">
 			<div class="container">
 				<div class="title clearfix">
-					<h1 class="home-sub-heading">Extra Service on arrival at the airport</h1>
+					<h2 class="home-sub-heading shadow-text">Extra Service on arrival at the airport</h2>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -388,11 +374,11 @@
 
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon3.png"><h3>TRANSFER</h3>
+						<img src="<?=IMG_URL?>new-template/icon/icon3.png"><h3>AIRPORT CAR PICK UP</h3>
 					</div>
 					<div class="content clearfix">
-						<p>We offers private car who wait for you with businessman.<br>
-						We do for all car of service, even you can rent a car for long trips. More information please visit us.</p>
+						<p>Smoothly experience of driving with our careful, well-trained and friendly drivers. <br>
+						For the group of 1 to 12 person(s), you will be offered a private car for your group with the appropriate number of seats and fee as:</p>
 						<div class="apply-button m-2" style="display: inline-flex;">
 							<a class="btn btn-danger" href="">MORE DETAIL</a>
 						</div>
@@ -400,7 +386,7 @@
 				</div>
 				<table class="table table-bordered pricing-table">
 					<tr>
-						<th class="text-center" rowspan="2" colspan="2">TYPE OF CAR</th>
+						<th class="text-center" rowspan="2" colspan="">TYPE OF CAR</th>
 						<th class="text-center" colspan="<?=sizeof($car_ports)?>"><span style="color:#ff0000;">ARRIVAL AIRPORTS IN VIETNAM</span></th>
 					</tr>
 					<tr>
@@ -409,35 +395,61 @@
 					<? } ?>
 					</tr>
 					<tr>
-						<td class="text-center" style="width: 10%;"><strong>4</strong></td>
-						<td class="text-center" rowspan="2">SEATS</td>
+						<td class="text-center" style="width: 10%;" rowspan="2"><strong>4 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
 							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(4, $port->id)?> USD/car</span>
-								<br>capacity 2-3 people
-								<br>3 lugagues
 							</td>
 						<? } ?>
+					</tr>
+					<tr>
+						<td class="text-center">3 people & 3 luggages + handbags
+						</td>
+						<td class="text-center">3 people & 3 luggages + handbags
+						</td>
+						<td class="text-center">3 people & 3 luggages + handbags
+						</td>
+						<td class="text-center">3 people & 3 luggages + handbags
+						</td>
 					</tr>
 					
 					<tr>
-						<td class="text-center" style="width: 10%;"><strong>7</strong></td>
+						<td class="text-center" style="width: 10%;" rowspan="2"><strong>7 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
 							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(7, $port->id)?> USD/car</span>
-								<br>capacity 2-3 people
-								<br>3 lugagues
 							</td>
 						<? } ?>
 					</tr>
+					<tr>
+						<td class="text-center">5 people & 5 luggages + handbags
+						</td>
+						<td class="text-center">5 people & 5 luggages + handbags
+						</td>
+						<td class="text-center">5 people & 5 luggages + handbags
+						</td>
+						<td class="text-center">5 people & 5 luggages + handbags
+						</td>
+					</tr>
 
 					<tr>
-						<td class="text-center" style="width: 10%;"><strong>16</strong></td>
-						<td class="text-center" rowspan="2">SEATS</td>
+						<td class="text-center" style="width: 10%;" rowspan="2"><strong>16 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
 							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(16, $port->id)?> USD/car</span>
-								<br>capacity 2-3 people
-								<br>3 lugagues
 							</td>
 						<? } ?>
+					</tr>
+					<tr>
+						<td class="text-center">capacity 2-3 people
+							<br>3 lugagues
+						</td>
+						<td class="text-center">capacity 2-3 people
+							<br>3 lugagues
+						</td>
+						<td class="text-center">capacity 2-3 people
+							<br>3 lugagues
+						</td>
+						<td class="text-center">capacity 2-3 people
+							<br>3 lugagues
+						</td>
 					</tr>
 				</table>	
 				<div class="tf-anotate">
@@ -449,7 +461,7 @@
 		<div class="ext-service-ins">
 			<div class="container">
 				<div class="title clearfix">
-					<h1 class="home-sub-heading">Extra Service inside Vietnam</h1>
+					<h2 class="home-sub-heading shadow-text">Extra Service inside Vietnam</h2>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -459,7 +471,7 @@
 						<p>We can only process visa extension for who arrive at Tan Son Nhat Airports. If you arrive from Hanoi, please send passport to Immigration</p>
 					</div>
 				</div>
-				<table class="table table-bordered pricing-table">
+				<!-- <table class="table table-bordered pricing-table">
 					<tr>
 						<th class="text-left" rowspan="2">TYPE OF VISA</th>
 						<th class="text-center" colspan="2"><span style="color:#ff0000;">LENGHT OF STAY</span></th>
@@ -479,9 +491,12 @@
 						<td class="text-center">150 USD/person</td>
 						<td class="text-center">250 USD/person</td>
 					</tr>
-				</table>
+				</table> -->
+				<div class="summary">
+					<p>We can help you to extend your curent visa to stay longer without exit Vietnam.  You just need to send us your passport scan, visa stamp and visa sticker to our email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p> then we will inform you the extension fee after checking your documents with Vietnam Immigration Department. If you agree with that fee, please come to our office and give us your passport with 1 passport photo (white background). After that, we will submit it to the Vietnam Immigration to extend visa for you.</p>
+				</div>
 				<div class="ext-service-ins-anotate">
-					<p>Please send all necessarry documents: passport scan, visa scan, immigration stamp to <span style="color:#ff0000">visa@vietnam-visa.org.vn</span></p>
+					<p>Please send all necessarry documents: passport scan, visa scan, immigration stamp to <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p>
 					<div class="bg-anotate"></div>
 				</div>
 			</div>
@@ -525,34 +540,6 @@
 	</div>
 </div>
 
-<!-- About us -->
-<!-- <div class="d-none d-sm-none d-md-block">
-	<div class="about-us-cluster">
-		<div class="container wow fadeInUp">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="about-us-content">
-						<div class="title">
-							<h1 class="heading">About Us</h1>
-						</div>
-						<p>It is our great pleasure to assist you in obtaining Vietnam Visa and we would like to get this opportunity to say “thank you” for your interest in our site Vietnam Visa Org Vn.</p>
-						<p>With 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnam Visa Org Vn is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. Vietnam Visa on arrival is helpful for overseas tourists and businessmen because it is the most convenient, simple and secured way to get Vietnam visa stamp. It is legitimated and supported by the Vietnamese Immigration Department.</p>
-						<p>Let’s save your money, your time in the first time to visit our country! Whatever service you need, we are happy to tailor a package reflecting your needs and budget.</p>
-						<div class="showmore-button">
-							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="about-us-images">
-						<img src="<?=IMG_URL?>new-template/thumbnail/aboutus-img.png" class="img-responsive full-width" alt="About Us">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- End about us -->
 <script>
 	$(document).ready(function($) {
 		$('.btn-check').click(function(event) {
