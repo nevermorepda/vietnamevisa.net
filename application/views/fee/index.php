@@ -49,8 +49,8 @@
 					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 					</div>
 					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Flexible processing fee</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Chose your passport holder to be sure correct fees</li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Reasonable and  Competitive Price</li>
+						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">No hidden fees</li>
 					</ul>
 				</div>
 			</div>
