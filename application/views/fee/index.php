@@ -177,7 +177,7 @@
 							<tr>
 								<td class="text-left red">Urgent processcing </td>
 								<td class="text-center red" colspan="2">
-									<span class="red">Plus <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</span>
+									<span class="red">+ <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</span>
 								</td>
 								<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
 							</tr>
@@ -233,21 +233,21 @@
 						<td class="text-center"><?=${"tourist_{$visa_type}"}->service_fee?> USD/pax</td>
 						<td class="text-center">
 							<? if ($can_rush) { ?>
-							<span class="red">Plus <?=$processing_fee->{"tourist_{$visa_type}_urgent"}?> USD/pax</span>
+							<span class="red">+ <?=$processing_fee->{"tourist_{$visa_type}_urgent"}?> USD/pax</span>
 							<? } else { ?>
 							NA
 							<? } ?>
 						</td>
 						<td class="text-center">
 							<? if ($can_rush) { ?>
-							<span class="red">Plus <?=$processing_fee->{"tourist_{$visa_type}_emergency"}?> USD/pax</span>
+							<span class="red">+ <?=$processing_fee->{"tourist_{$visa_type}_emergency"}?> USD/pax</span>
 							<? } else { ?>
 							NA
 							<? } ?>
 						</td>
 						<td class="text-center">
 							<? if ($can_rush) { ?>
-							<span class="red">Plus <?=$processing_fee->{"tourist_{$visa_type}_holiday"}?> USD/pax</span>
+							<span class="red">+ <?=$processing_fee->{"tourist_{$visa_type}_holiday"}?> USD/pax</span>
 							<? } else { ?>
 							NA
 							<? } ?>
@@ -290,21 +290,21 @@
 							<td class="text-center"><?=${"business_{$visa_type}"}->service_fee?> USD/pax</td>
 							<td class="text-center">
 								<? if ($can_rush) { ?>
-								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_urgent"}?> USD/pax</span>
+								<span class="red">+ <?=$processing_fee->{"business_{$visa_type}_urgent"}?> USD/pax</span>
 								<? } else { ?>
 								NA
 								<? } ?>
 							</td>
 							<td class="text-center">
 								<? if ($can_rush) { ?>
-								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_emergency"}?> USD/pax</span>
+								<span class="red">+ <?=$processing_fee->{"business_{$visa_type}_emergency"}?> USD/pax</span>
 								<? } else { ?>
 								NA
 								<? } ?>
 							</td>
 							<td class="text-center">
 								<? if ($can_rush) { ?>
-								<span class="red">Plus <?=$processing_fee->{"business_{$visa_type}_holiday"}?> USD/pax</span>
+								<span class="red">+ <?=$processing_fee->{"business_{$visa_type}_holiday"}?> USD/pax</span>
 								<? } else { ?>
 								NA
 								<? } ?>
@@ -314,13 +314,13 @@
 						<? } ?>
 					</table>
 				<? } ?>
-				<div class="vs-anotate">
+				<!-- <div class="vs-anotate">
 					<p>All Business and Tourist visa private visa letter request 
 					<br><span style="color:#ff0000">+ 10 USD letter</span> ( people or group) <br>
 					Full package service: processing fee + Fast track 
 					<br><span style="color:#ff0000">+ Stamping fee/ government fee</span></p>
 					<div class="bg-anotate"></div>
-				</div>
+				</div> -->
 				<div class="show-button">
 					<a class="btn btn-danger" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>">APPLY VISA NOW</a>
 				</div>
@@ -336,7 +336,7 @@
 						<img src="<?=IMG_URL?>new-template/icon/icon1.png"><h3>FAST TRACK</h3>
 					</div>
 					<div class="content">
-						<p>We offer this service for you as VIP deligate of Officer. After long flight, businessman, ...</p>
+						<p>Airport fast track and VIP services was established to support the travelers to get Visa stamp and sticker without waiting in line faster than normal processing.</p>
 					</div>
 				</div>
 				<table class="table table-bordered pricing-table">
@@ -364,7 +364,7 @@
 					</tr>
 					<tr>
 						<td class="text-left">FULL SERVICE </td>
-						<td class="text-center" colspan="4">Normal Fast track + Goverment fees. You dont need to do anything at the airport</td>
+						<td class="text-center" colspan="4">Normal Fast track and Government fees. You do not need to do anything at the airport </td>
 					</tr>
 				</table>
 				<div class="ft-anotate">
@@ -387,7 +387,7 @@
 				<table class="table table-bordered pricing-table">
 					<tr>
 						<th class="text-center" rowspan="2" colspan="">TYPE OF CAR</th>
-						<th class="text-center" colspan="<?=sizeof($car_ports)?>"><span style="color:#ff0000;">ARRIVAL AIRPORTS IN VIETNAM</span></th>
+						<th class="text-center" colspan="<?=sizeof($car_ports)?>"><span style="color:#ff0000;">PICK UP AT AIRPORT</span></th>
 					</tr>
 					<tr>
 					<? foreach ($car_ports as $port) { ?>
@@ -397,7 +397,7 @@
 					<tr>
 						<td class="text-center" style="width: 10%;" rowspan="2"><strong>4 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
-							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(4, $port->id)?> USD/car</span>
+							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(4, $port->id)?> USD/time</span>
 							</td>
 						<? } ?>
 					</tr>
@@ -415,7 +415,7 @@
 					<tr>
 						<td class="text-center" style="width: 10%;" rowspan="2"><strong>7 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
-							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(7, $port->id)?> USD/car</span>
+							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(7, $port->id)?> USD/time</span>
 							</td>
 						<? } ?>
 					</tr>
@@ -433,29 +433,25 @@
 					<tr>
 						<td class="text-center" style="width: 10%;" rowspan="2"><strong>16 seat car</strong></td>
 						<? foreach ($car_ports as $port) { ?>
-							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(16, $port->id)?> USD/car</span>
+							<td class="text-center"><span style="color: #ff0000; font-weight: 600;"><?=$this->m_car_fee->search(16, $port->id)?> USD/time</span>
 							</td>
 						<? } ?>
 					</tr>
 					<tr>
-						<td class="text-center">capacity 2-3 people
-							<br>3 lugagues
+						<td class="text-center">12 people & 10 luggages + handbags
 						</td>
-						<td class="text-center">capacity 2-3 people
-							<br>3 lugagues
+						<td class="text-center">12 people & 10 luggages + handbags
 						</td>
-						<td class="text-center">capacity 2-3 people
-							<br>3 lugagues
+						<td class="text-center">12 people & 10 luggages + handbags
 						</td>
-						<td class="text-center">capacity 2-3 people
-							<br>3 lugagues
+						<td class="text-center">12 people & 10 luggages + handbags
 						</td>
 					</tr>
 				</table>	
-				<div class="tf-anotate">
+				<!-- <div class="tf-anotate">
 					<p>For Car rental, please contact us at : <span style="color:#ff0000">Visa@domain.com</span></p>
 					<div class="bg-anotate"></div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="ext-service-ins">
@@ -467,9 +463,9 @@
 					<div class="heading clearfix">
 						<img src="<?=IMG_URL?>new-template/icon/icon2.png"><h3>VISA EXTENSION</h3>
 					</div>
-					<div class="content">
+					<!-- <div class="content">
 						<p>We can only process visa extension for who arrive at Tan Son Nhat Airports. If you arrive from Hanoi, please send passport to Immigration</p>
-					</div>
+					</div> -->
 				</div>
 				<!-- <table class="table table-bordered pricing-table">
 					<tr>
@@ -493,12 +489,12 @@
 					</tr>
 				</table> -->
 				<div class="summary">
-					<p>We can help you to extend your curent visa to stay longer without exit Vietnam.  You just need to send us your passport scan, visa stamp and visa sticker to our email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p> then we will inform you the extension fee after checking your documents with Vietnam Immigration Department. If you agree with that fee, please come to our office and give us your passport with 1 passport photo (white background). After that, we will submit it to the Vietnam Immigration to extend visa for you.</p>
+					<p>We can help you to extend your curent visa to stay longer without exit Vietnam.  You just need to send us your passport scan, visa stamp and visa sticker to our email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p> then we will inform you the extension fee after checking your documents with Vietnam Immigration Department. If you agree with that fee, please come to our office and give us your passport with 1 portrait photograph. After that, we will submit it to the Vietnam Immigration to extend visa for you. Please take note that visa extension must be done offline so we just help who is in Ho Chi Minh city. If you stay in other cities, please find a travel agent nearby your location for support.</p>
 				</div>
-				<div class="ext-service-ins-anotate">
+				<!-- <div class="ext-service-ins-anotate">
 					<p>Please send all necessarry documents: passport scan, visa scan, immigration stamp to <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p>
 					<div class="bg-anotate"></div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<!-- <div class="optional-tours">

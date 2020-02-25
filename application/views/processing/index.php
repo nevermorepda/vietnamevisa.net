@@ -41,7 +41,7 @@
 							<div class="step-numb" style="color: #ffcd0e;">1</div>
 							<div class="step-title" style="color: #ffcd0e;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon1.png">
-								<h3>APPLY ONLINE</h3>
+								<h3>Apply Online</h3>
 							</div>
 							<div class="step-content">
 								<p>Fill out online visa application form by providing your passport information.</p>
@@ -53,7 +53,7 @@
 							<div class="step-numb" style="color: #de8c15;">2</div>
 							<div class="step-title" style="color: #de8c15;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon2.png">
-								<h3>PAYMENT ONLINE</h3>
+								<h3>Payment online</h3>
 							</div>
 							<div class="step-content">
 								<p>Make payment for our visa service via Online Payment Gates.</p>
@@ -65,7 +65,7 @@
 							<div class="step-numb" style="color: #ba411d;">3</div>
 							<div class="step-title" style="color: #ba411d;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon3.png">
-								<h3>RECEIVE VISA LETTER</h3>
+								<h3>Receive Visa Letter</h3>
 							</div>
 							<div class="step-content">
 								<p>You will get the Approval Letter or Electronic Visa via email as the confirmation.</p>
@@ -77,10 +77,10 @@
 							<div class="step-numb" style="color: #a92020;">4</div>
 							<div class="step-title" style="color: #a92020;">
 								<img src="<?=IMG_URL?>new-template/icon/hiw-icon4.png">
-								<h3>GET VISA STAMP UPON ARRIVAL</h3>
+								<h3>Get visa stamp</h3>
 							</div>
 							<div class="step-content">
-								<p>Present your visa letter at check-in point to get Vietnam visa stamp.</p>
+								<p>Present your visa letter at check-in point to get Vietnam Visa Stamp upon arrival.</p>
 							</div>
 						</div>
 					</div>
@@ -97,46 +97,71 @@
 						<div class="content-left">
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Effect from 1986</hh55>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Effect from 2003</hh55>
 								</div>
 								<div class="content"></div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Airport only</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Purpose of Visit:</h5>
 								</div>
-								<div class="content"></div>
+								<div class="content">Tourist/Busines</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Type of visa</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Type of visa:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lenght of stay</h5>
-								</div>
-								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>Single/multiple entry</p>
 								</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Visa approval letter look like</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lenght of stay:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>1 – 3 months</p>
 								</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Valid for Airorts</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Involving fees:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>Requires to pay fee for the visa approval letter and stamp fee in cash at Vietnam Airport when collecting visa on arrival</p>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Processing time:</h5>
+								</div>
+								<div class="content">
+									<ul>
+										<li>1-2 working days for normal case</li>
+										<li>4-8 working hours for urgent case</li>
+										<li>30 mins for emergency case</li>
+									</ul>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Eligible ports:</h5>
+								</div>
+								<div class="content">
+									<ul>
+										<li>Tan Son Nhat Airport (Ho Chi Minh)</li>
+										<li>Noi Bai Airport (Ha Noi)</li>
+										<li>Cam Ranh Airport (Nha Trang)</li>
+										<li>Da Nang Airport</li>
+									</ul>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">How to use:</h5>
+								</div>
+								<div class="content">
+									<p>Requires visitors to apply online for a visa approval letter first, then get the visa at Landing Visa Counter at Vietnam airport before going to the passport control. A visa stamping fee is required to pay in cash on arrival.</p>
 								</div>
 							</div>
 							<div class="item">
@@ -185,40 +210,60 @@
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">26 ports and Airports</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Purpose of Visit:</h5>
 								</div>
-								<div class="content"></div>
+								<div class="content">Tourist/Busines</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Type of visa</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Type of visa:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lenght of stay</h5>
-								</div>
-								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>Only single entry</p>
 								</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Visa approval letter look like</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lenght of stay:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>30 days</p>
 								</div>
 							</div>
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Valid for Airorts</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Involving fees:</h5>
 								</div>
 								<div class="content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+									<p>Requires you pay once and no need to pay any fee on arrival</p>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Processing time:</h5>
+								</div>
+								<div class="content">
+									<ul>
+										<li>2-3 working days for normal case</li>
+										<li>4-8 working hours for urgent case</li>
+										<li>NO emergency case</li>
+									</ul>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Eligible ports:</h5>
+								</div>
+								<div class="content">
+									<p>8 airports, 16 land ports, and 9 seaports. Check Eligible Ports here: <a href="">“link”</a></p>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title">
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">How to use:</h5>
+								</div>
+								<div class="content">
+									<p>When the travelers arrive in Vietnam going to the Passport Control to show E-Visa for checking and get the Stamp on the passport for 30 days without paying any fees.</p>
 								</div>
 							</div>
 							<div class="item">

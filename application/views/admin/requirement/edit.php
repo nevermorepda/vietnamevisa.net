@@ -36,6 +36,18 @@
 					<td class="table-head text-right"></td>
 					<td>
 						<select id="active" name="active" class="form-control">
+							<option value="1">Visa on arrival</option>
+							<option value="0">Electronic visa</option>
+						</select>
+						<script type="text/javascript">
+							$("#active").val("<?=$item->active?>");
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-head text-right">Check visa type</td>
+					<td>
+						<select id="active" name="active" class="form-control">
 							<option value="1">Show</option>
 							<option value="0">Hide</option>
 						</select>

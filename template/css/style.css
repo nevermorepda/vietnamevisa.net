@@ -1321,8 +1321,8 @@ ul.list-embassy li {
 	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster {
-	background-color: #ebebeb;
 	padding: 40px 0;
+	border-top: 1px solid #ccc;
 }
 .about-us-cluster .about-us-content {
 	/* padding: 35px 0; */
@@ -1333,7 +1333,6 @@ ul.list-embassy li {
 	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster .about-us-images {
-	margin: 45px 0;
 }
 .about-us-cluster .about-us-content .showmore-button {
 	position: relative;
@@ -1346,8 +1345,7 @@ ul.list-embassy li {
 	z-index: 0;
 }
 .footer {
-	/* border-top: 4px solid #ed1c24; */
-	background: #fbfbfb;
+	background: #f3f3f3;
 }
 .footer .fnav-title {
 	font-size: 25px;
@@ -2614,7 +2612,7 @@ ul.style-step li.active {
 }
 .box-step {
 	position: relative;
-	padding-left: 30px !important;
+	padding-left: 35px !important;
 	margin: 0px 0px 20px 40px;
 	height: 200px;
 }
@@ -2629,9 +2627,7 @@ ul.style-step li.active {
 	margin: 0;
 }
 .step-content {
-	font-weight: 600;
-	line-height: 16px;
-	font-size: 13px;
+	font-size: 14px;
 }
 .step-numb {
 	position: absolute;
