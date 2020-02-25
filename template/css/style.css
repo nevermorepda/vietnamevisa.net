@@ -93,7 +93,7 @@ h6 {
 	left: 10px;
 	z-index: 0;
 }
-.btn-general {
+/* .btn-general {
 	border: 2px solid #000000;
 	padding: 8px 16px;
 	background: transparent;
@@ -101,24 +101,18 @@ h6 {
 	font-weight: 700;
 	font-size: 14px;
 	z-index: 1;
-}
-.btn-apl{
-	color: #ffffff;
-	background-color: #851919;
-	border-color: #851919;
-	border-radius: 5px;
-	padding: 11px 17px;
-}
+} */
+
 .btn-detail {
 	float: right;
 	background-color: #ffffff;
 	border-color: #ffffff;
-	font-weight: 600;
+	font-weight: 500;
 }
-.show-button {
+/* .show-button {
 	position: relative;
 	display: inline-flex;
-}
+} */
 .cluster {
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -216,8 +210,9 @@ input.error, select.error, textarea.error, span.error {
 	border-radius: 0;
 }
 .btn-danger {
-	background: #ed1c24;
-	border-color: #ed1c24;
+	background: #851919;
+	border-color: #851919;
+	border-radius: 5px;
 }
 .btn-danger:hover {
 	background: #c4191f;
@@ -293,26 +288,7 @@ input.error, select.error, textarea.error, span.error {
 
 .cluster .cluster-body {
 }
-.wrap-service-type {
-	padding-top: 30px;
-}
-.wrap-service-type .heading h3 {
-	display: inline-block;
-	margin: 0;
-	vertical-align: middle;
-	font-weight: 600;
-	padding-left: 15px;
-}
-.wrap-service-type .heading img {
-	display: inline-block;
-}
-.wrap-service-type .content {
-	font-weight: 600;
-	padding-bottom: 25px;
-	padding-top: 5px;
-	font-size: 14px;
-	display: inline-flex;
-}
+
 /* .scrollup {
 	background: url("../images/icon/scroll-top.png") no-repeat scroll center center #ABAEB7;
 	right: 15px;
@@ -394,7 +370,7 @@ input.error, select.error, textarea.error, span.error {
 	width: 100%;
 }
 .page-content {
-	padding-bottom: 40px;
+	/* padding-bottom: 40px; */
 }
 .page-title {
 	margin-top: 0px;
@@ -1258,7 +1234,7 @@ ul.list-embassy li {
 }
 .cluster .cluster-body .content-pr .title {
 	font-size: 45px;
-	color: #333;
+	color: #851919;
 	text-shadow: 3px 3px #bdbdbd;
 }
 .cluster .cluster-body .showmore-button {
@@ -1284,8 +1260,9 @@ ul.list-embassy li {
 	border: none;
 }
 .cluster-content {
-	padding: 30px 0px 0px;
+	padding: 50px 0px 0px;
 	padding-bottom: 25px;
+	border-bottom: 1px dotted #ccc;
 }
 .cluster-content:last-child {
 	border: none;
@@ -1296,6 +1273,9 @@ ul.list-embassy li {
 .cluster-content .tour-content img {
 	margin-top: 15px;
 	margin-right: 5px;
+}
+.cluster-content .tour-content p {
+	margin: 20px;
 }
 .cluster .title .heading {
 	display: inline-block;
@@ -1312,7 +1292,7 @@ ul.list-embassy li {
 	background-position: center;
 	background-size: cover;
 	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 }
 .cluster-our-services .cluster-content img {
 	/* height: 150px; */
@@ -1323,7 +1303,7 @@ ul.list-embassy li {
 	margin-top: 10px;
 	display: inline;
 	padding-left: 7px;
-	font-weight: 600;
+	font-weight: 500;
 }
 .cluster-our-services .cluster-content h3 a {
 	color: #000;
@@ -1341,10 +1321,11 @@ ul.list-embassy li {
 	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster {
-	background-color: #ebebeb;
+	padding: 40px 0;
+	border-top: 1px solid #ccc;
 }
 .about-us-cluster .about-us-content {
-	padding: 35px 0;
+	/* padding: 35px 0; */
 }
 .about-us-cluster .about-us-content .heading{
 	font-size: 45px;
@@ -1352,7 +1333,6 @@ ul.list-embassy li {
 	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster .about-us-images {
-	margin: 45px 0;
 }
 .about-us-cluster .about-us-content .showmore-button {
 	position: relative;
@@ -1365,12 +1345,11 @@ ul.list-embassy li {
 	z-index: 0;
 }
 .footer {
-	border-top: 4px solid #ed1c24;
-	background: #ffffff;
+	background: #f3f3f3;
 }
 .footer .fnav-title {
 	font-size: 25px;
-	font-weight: bold;
+	font-weight: 500;
 	text-transform: uppercase;
 	padding-bottom: 15px;
 }
@@ -1437,9 +1416,12 @@ ul.list-embassy li {
 	padding-left: 10px;
 }
 .footer-bottom {
-	background-color: #f6f6f6;
+	background-color: #e7e7e7;
 	padding: 20px 0px;
-	font-weight: 600;
+}
+.footer-bottom p {
+	padding: 0;
+	margin: 0;
 }
 .shopperapproved .sa-medal {
 	position: relative;
@@ -1514,13 +1496,6 @@ ul.style-step li.active {
 }
 .applyform .control-label {
 	font-weight: bold;
-}
-.processing-note {
-	background-color: #ECEFF1;
-	margin-top: 12px;
-	padding: 15px;
-	font-size: 12px;
-	position: relative;
 }
 
 .processing-note.note-success {
@@ -1778,6 +1753,12 @@ ul.style-step li.active {
 /* End FAQs */
 
 /* Visa-fee */
+.btn-checkfee {
+	display: inline-flex;
+}
+.shadow-text {
+	text-shadow: 3px 3px #bdbdbd;
+}
 .fee-banner ul {
 	margin: 0;
 	padding: 0;
@@ -1786,9 +1767,22 @@ ul.style-step li.active {
 .fee-banner ul li {
 	padding: 5px 0;
 }
-/* .fee {
+.fee {
 	padding: 50px 0;
-} */
+}
+.fee .explain-fee {
+	padding-bottom: 50px;
+}
+.fee .explain-fee ul{
+	list-style-type: square;
+	margin: 0;
+	padding-left: 15px;
+	color: #999;
+}
+.fee .explain-fee ul li {
+	color: #464646;
+	padding-bottom: 15px;
+}
 .fee .form-control {
 	display: inline-block;
 	width: 30%;
@@ -1822,9 +1816,6 @@ ul.style-step li.active {
 .fee .e-visa-fee .title .sub-title {
 	font-style: italic;
 }
-.fee .e-visa-fee .title h1 {
-	text-shadow: 3px 3px #bdbdbd;
-}
 .fee .e-visa-fee .pricing-table th {
 	vertical-align: middle;
 	background: none repeat scroll 0 0 #ebebeb !important;
@@ -1832,6 +1823,7 @@ ul.style-step li.active {
 }
 .fee .e-visa-fee .pricing-table td {
 	border: 1px solid #707070;
+	vertical-align: middle;
 }
 .fee .visa-arrival-fee {
 	padding: 50px 0;
@@ -1843,8 +1835,8 @@ ul.style-step li.active {
 .fee .visa-arrival-fee .title .sub-title {
 	font-style: italic;
 }
-.fee .visa-arrival-fee .title h1 {
-	text-shadow: 3px 3px #bdbdbd;
+.fee .visa-arrival-fee .title h2 {
+	
 }
 .fee .visa-arrival-fee .pricing-table th {
 	vertical-align: middle;
@@ -1877,14 +1869,11 @@ ul.style-step li.active {
 	top: 50px;
 }
 .fee .visa-arrival-fee .show-button{
-	margin: 0 480px;
+	text-align: center;
 }
 .fee .ext-service {
 	padding: 50px 0;
 	border-bottom: 1px solid #ccc;
-}
-.fee .ext-service .title h1 {
-	text-shadow: 3px 3px #bdbdbd;
 }
 .fee .ext-service .pricing-table th {
 	vertical-align: middle;
@@ -1895,6 +1884,7 @@ ul.style-step li.active {
 .fee .ext-service .pricing-table td {
 	border: 1px solid #707070;
 	vertical-align: middle;
+	width: 10%;
 }
 .fee .ext-service .ft-anotate {
 	border: 1px solid #707070;
@@ -1938,9 +1928,6 @@ ul.style-step li.active {
 }
 .fee .ext-service-ins {
 	padding: 50px 0;
-}
-.fee .ext-service-ins .title h1 {
-	text-shadow: 3px 3px #bdbdbd;
 }
 .fee .ext-service-ins .pricing-table th {
 	vertical-align: middle;
@@ -1986,11 +1973,31 @@ ul.style-step li.active {
 .optional-tours .content .description {
 	padding: 0px 17px;
 }
+.wrap-service-type {
+	padding-top: 30px;
+}
+.wrap-service-type .heading h3 {
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+	font-weight: 600;
+	padding-left: 15px;
+}
+.wrap-service-type .heading img {
+	display: inline-block;
+}
+.wrap-service-type .content {
+	font-weight: 600;
+	padding-bottom: 25px;
+	padding-top: 5px;
+	font-size: 14px;
+	display: inline-flex;
+}
 /* End Visa-fee */
 
 /* Apply-form */
 .applyform-content {
-	padding: 50px 0;
+	/* padding: 50px 0; */
 	background: url("../images/background.png") no-repeat scroll top center transparent;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -2003,8 +2010,8 @@ ul.style-step li.active {
 }
 .processing-note {
 	background-color: #ECEFF1;
-	margin-top: 12px;
 	padding: 15px;
+	margin-bottom: 15px;
 	font-size: 12px;
 	position: relative;
 }
@@ -2605,8 +2612,9 @@ ul.style-step li.active {
 }
 .box-step {
 	position: relative;
-	padding-left: 30px !important;
+	padding-left: 35px !important;
 	margin: 0px 0px 20px 40px;
+	height: 200px;
 }
 .step-title {
 	display: inline-block;
@@ -2619,15 +2627,13 @@ ul.style-step li.active {
 	margin: 0;
 }
 .step-content {
-	font-weight: 600;
-	line-height: 16px;
-	font-size: 13px;
+	font-size: 14px;
 }
 .step-numb {
 	position: absolute;
 	font-size: 140px;
 	font-weight: 800;
-	top: -28px;
+	top: -8px;
 	left: -45px;
 	-webkit-text-stroke: 3px white;
 	paint-order: stroke fill;
@@ -3028,7 +3034,7 @@ ul.style-step li.active {
 	display: inline-flex;
 }
 .applyform {
-	padding: 50px 0;
+	/* padding: 50px 0; */
 }
 .applyform .box-booking-detail .thumbnail img {
 	width: 100%;

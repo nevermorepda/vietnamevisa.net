@@ -5,7 +5,7 @@
 <div class="footer">
 	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
 		<div class="row">
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-5 col-sm-12 col-xs-12">
 				<div class="row">
 					<div class="col-md-11">
 						<a title="Vietnam Visa" href="<?=BASE_URL?>"><img style="width: 240px;" src="<?=IMG_URL?>/new-template/logo.png" alt="Vietnam Visa" /></a>
@@ -26,32 +26,23 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-6">
-				<h3 class="fnav-title"><a href="<?=site_url('news')?>">NEWS</a></h3>
-				<?foreach ($visa_news as $news) { ?>
-				
-				<div class="fnav-links footer-news">
-					<div class="date-submitted">
-						<p><span style="font-size: 25px; font-weight: 700;"><?=date("d",strtotime($news->created_date));?></span>
-						<br>
-						<span style="text-transform: uppercase;"><?=date("M",strtotime($news->created_date));?></span>
-						</p>
-					</div>
-					<div class="content">
-						<p><a href="<?=site_url("news/view/{$news->alias}")?>"><?=$news->title;?></a></p>
-					</div>
-				</div>
-				<? } ?>
+				<h3 class="fnav-title"><a href="">USEFUL INFORMATION</a></h3>
+				<ul class="fnav-links">
+					<li><a title="Vietnam Visa" href="">Vietnam Visa</a></li>
+					<li><a title="Embassy list" href="">Embassy list</a></li>
+					<li><a title="Visa News" href="">Visa News</a></li>
+					<li><a title="Travel Tips" href="">Travel Tips</a></li>
+					<li><a title="Consultant Services Guideline" href="">Consultant Services Guideline</a></li>
+				</ul>
 			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6">
+			<div class="col-md-3 col-sm-6 col-xs-6">
 				<h3 class="fnav-title"><a href="">QUICK LINKS</a></h3>
 				<ul class="fnav-links">
 					<li><a title="About Us" href="<?=site_url("about-us")?>">About Us</a></li>
-					<li><a title="Privacy policy" href="<?=site_url("policy")?>">Policy</a></li>
-					<li><a title="Terms and Conditions" href="<?=site_url("terms-and-conditions")?>">Terms of use</a></li>
-					<li><a title="Privacy policy" href="<?=site_url("policy")?>">Refund policy</a></li>
-					<li><a title="" href="">Who need visa</a></li>
-					<li><a title="" href="">Embassy location</a></li>
-					<li><a title="" href="">Check visa status</a></li>
+					<li><a title="Terms and Conditions" href="<?=site_url("terms-and-conditions")?>">Terms & Conditions</a></li>
+					<li><a title="Privacy policy" href="<?=site_url("policy")?>">Privacy Policy</a></li>
+					<li><a title="Payment Instruction" href="<?=site_url("payment-instruction")?>">Payment Instruction</a></li>
+					<li><a title="Cancellation and Refund Policy" href="<?=site_url("policy")?>">Cancellation & Refund Policy</a></li>
 				</ul>
 			</div>
 		</div>
@@ -61,7 +52,7 @@
 	<div class="container">
 		<div class="text-center">
 			<div class="copyright">
-				<p>&copy; <?=date('Y')?> Vietnam Visa Department. All rights reserved.<br>
+				<p>&copy; <?=date('Y')?> Vietnam Visa Department. All rights reserved.
 				Full Vietnam visa services online.</p>
 				<?
 					ini_set('default_socket_timeout', 3);
@@ -71,8 +62,8 @@
 					$str = str_replace('>5', '5', $sa_content);
 					echo $str;
 				?>
-				<p style="font-size:13px;">We are pleased to inform that <?=DOMAIN?> is the E-commercial website in Vietnam in processing Vietnam visa. We are not affiliated with the Government. We are offering useful services for helping the Customer to understand visa application, visa processing and visa requirements which is being related to Visa on arrival.
-				Once you use our services, we have a mission to handle visa applications in Vietnam Immigration Department and provide the legal services to you and on time. You can also obtain Vietnam visa by yourself at Vietnam Embassies in your living country or visit the official website for a lower price. - by <a href="<?=BASE_URL?>"><?=DOMAIN?></a></p>
+				<!-- <p style="font-size:13px;">We are pleased to inform that <?=DOMAIN?> is the E-commercial website in Vietnam in processing Vietnam visa. We are not affiliated with the Government. We are offering useful services for helping the Customer to understand visa application, visa processing and visa requirements which is being related to Visa on arrival.
+				Once you use our services, we have a mission to handle visa applications in Vietnam Immigration Department and provide the legal services to you and on time. You can also obtain Vietnam visa by yourself at Vietnam Embassies in your living country or visit the official website for a lower price. - by <a href="<?=BASE_URL?>"><?=DOMAIN?></a></p> -->
 			</div>
 		</div>
 	</div>

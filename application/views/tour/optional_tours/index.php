@@ -14,7 +14,7 @@
 <div class="optional-tour">
 	<div class="container">
 		<div class="heading">
-			<h2 class="home-sub-heading" style="padding-top: 15px; text-shadow: 3px 3px #bdbdbd;">Optional Tours</h2>
+			<h2 class="home-sub-heading" style="text-shadow: 3px 3px #bdbdbd;">Optional Tours</h2>
 		</div>
 		<div class="sub-heading">
 			<p>Besides Saigon city tours, we can definitely offer you various other exciting private tours by cars to famous tourist attractions in Vietnam. Therefore, you will get the nice chances to discover interesting Vietnamese culture, history and landscapes.</p>

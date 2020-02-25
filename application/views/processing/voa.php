@@ -430,7 +430,7 @@
 </div>
 <div class="faqs cluster-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 	<div class="container">
-		<h2 class="home-sub-heading" style="padding-top: 15px; padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about Visa to Vietnam</h2>
+		<h2 class="home-sub-heading" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">More question about Visa to Vietnam</h2>
 		<ul>
 			<? $i = 0;
 			foreach ($faqs as $faq) { ?>
@@ -482,16 +482,7 @@
   
 </div>
 </div>
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>
+
 <? if ($this->session->flashdata("status")) { ?>
 <script>
 $(document).ready(function() {

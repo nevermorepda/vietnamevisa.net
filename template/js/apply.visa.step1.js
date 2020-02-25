@@ -247,6 +247,9 @@ function onVisaTypeChanged()
 	if (type_of_visa == "1ym") {
 		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(1 year stay, multiple entry/exit)");
 	}
+	if (type_of_visa == "e-1ms") {
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(30 days stay, only 1 time entry/exit)");
+	}
 }
 
 function genVisaTypeOptions()
@@ -393,6 +396,7 @@ function checkProcessingTime()
 	var arrivalyear = $("#arrivalyear").val();
 	var arrivalmonth = $("#arrivalmonth").val();
 	var arrivaldate = $("#arrivaldate").val();
+	var visa_type = $("#visa_type").val();
 	
 	if (arrivalyear != "" && arrivalmonth != "" && arrivaldate != "") {
 		var date			= new Date();
@@ -770,7 +774,7 @@ function calServiceFees()
 			}
 			
 			var total_visa_price_txt = service_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(service_fee*group_size)+" $";
-			
+			    
 			if (processing_time == "Urgent" || processing_time == "Emergency" || processing_time == "Holiday") {
 				$(".processing_t").html(rush_fee+" $ x "+group_size+" person"+((group_size>1)?"s":"")+" = "+(rush_fee*group_size)+" $");
 				$("#processing_time_li").show();
@@ -817,11 +821,15 @@ function calServiceFees()
 			}
 			if (typeofvisa == 'e-1ms') {
 				total += 25 * group_size;
+				$('.stamping_fee_note').hide();
+				$('.processing_fee_note').hide();
 				$('.total_visa_stamping_price').html('25 $ x '+group_size+' applicants = '+25*group_size+' $');
 			} else {
 				$('.total_visa_stamping_price').html('');
+				$('.stamping_fee_note').show();
+				$('.processing_fee_note').show();
 			}
-			
+
 			$(".total_visa_price").html(total_visa_price_txt);
 			$(".total_price").html(total.toFixed(2)+" $");
 

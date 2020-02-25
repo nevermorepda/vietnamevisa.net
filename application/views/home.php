@@ -92,25 +92,26 @@
 					</div> -->
 					<div class="col-lg-6">
 						<div class="content-pr">
-							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">Vietnam visa on arrival</a></h1>
+							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">Vietnam Visa On arrival</a></h1>
 							<ul>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Valid for who arrives Airports only</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> All countries can apply visa through this gate </li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Refundable if vis deny </li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Max stay 90 days and extend</li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Pick up visa at Vietnam International airports</li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Diverse selection of visa types </li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Most countries can apply </li>
 							</ul>
-							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">eVisa Vietnam</a></h1>
+							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">Vietnam Electronic Visa</a></h1>
 							<ul>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Vietnam eVisa valid for Who arrive land ports and Airports</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> 86 countries only</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Non refundable for any case</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> And max stay 30 days </li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Available for 8 airports, 16 landports, 9 seaports and 86 countries</li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Valid for 30 days, and single entry only</li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> No fees upon arrival</li>
 							</ul>
 						</div>
 						<div class="showmore-button">
 							<a class="btn btn-danger" href="<?=site_url('visa-processing')?>">SHOW MORE</a>
 						</div>
 					</div>
+				</div>
+				<div class="pt-3">
+					
 				</div>
 			</div>
 		</div>
@@ -154,22 +155,22 @@
 				<div class="col-md-6 dispart">
 					<div class="title">
 						<img alt="Optional Tours" class="lazy" src="<?=IMG_URL?>new-template/icon4.png">
-						<h3><a title="Optional Tours" href="<?=site_url('tours')?>">OPTIONAL TOURS</a></h3>
+						<h3><a title="Optional Tours" href="<?=site_url('tours')?>">TOURS</a></h3>
 					</div>
 					<div class="tour-content">
 						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/thumb-optiontours.png"></a>
-						<p class="summary"><?=$tours[0]->description;?></p>
+						<?=$tours[0]->description;?>
 					</div>
 					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
 				</div>
 				<div class="col-md-6 dispart">
 					<div class="title">
-						<img alt="Vietnam discovery tours" class="lazy" src="<?=IMG_URL?>new-template/icon5.png">
-						<h3><a title="Vietnam discovery tours" href="<?=site_url('tours')?>">VIET NAM DISCOVERY TOURS</a></h3>
+						<img alt="Vietnam discovery tours" class="lazy" src="<?=IMG_URL?>new-template/icon/icon-11.png">
+						<h3><a title="Vietnam discovery tours" href="<?=site_url('tours')?>">CONSULAR SERVICES</a></h3>
 					</div>
 					<div class="tour-content">
-						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/thumbnail/thumb-vntours.png"></a>
-						<p class="summary"><?=$tours[1]->description;?></p>
+						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/icon/icon-12.png"></a>
+						<?=$tours[1]->description;?>
 					</div>
 					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
 				</div>
@@ -178,7 +179,7 @@
 	</div>
 </div>
 
-<div class="shopperapproved d-block d-sm-block d-md-none">
+<!-- <div class="shopperapproved d-block d-sm-block d-md-none">
 	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
 		<h2 class="home-sub-heading">Testimonial</h2>
 		<a class="text-center sa-medal" title="Customer ratings" target="_blank" rel="noopener" href="https://www.shopperapproved.com/reviews/vietnam-visa.org.vn/">
@@ -196,7 +197,7 @@
 		</div>
 	</div>
 </div>
-
+ -->
 <!-- About us -->
 <div class="d-none d-sm-none d-md-block">
 	<div class="about-us-cluster">
@@ -207,9 +208,16 @@
 						<div class="title">
 							<h1 class="heading">About Us</h1>
 						</div>
-						<p>It is our great pleasure to assist you in obtaining Vietnam Visa and we would like to get this opportunity to say “thank you” for your interest in our site Vietnam Visa Org Vn.</p>
-						<p>With 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnam Visa Org Vn is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. Vietnam Visa on arrival is helpful for overseas tourists and businessmen because it is the most convenient, simple and secured way to get Vietnam visa stamp. It is legitimated and supported by the Vietnamese Immigration Department.</p>
-						<p>Let’s save your money, your time in the first time to visit our country! Whatever service you need, we are happy to tailor a package reflecting your needs and budget.</p>
+						<p><a href="<?=BASE_URL?>"><?=BASE_URL?></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
+						<p>Over 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnamevisa.net is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. We work with the vision:</p>
+						<ul>
+							<li>No Hidden Charges</li>
+							<li>Competitive Prices</li>
+							<li>Timely visa processing</li>
+							<li>Prompt Support via chat, email, or phone</li>
+							<li>Fast and secure</li>
+						</ul>
+						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on </p>
 						<div class="showmore-button">
 							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
 						</div>
@@ -225,14 +233,3 @@
 	</div>
 </div>
 <!-- End about us -->
-
-<script>
-	$(document).ready(function() {
-		$('.btn').mouseenter(function() {
-			$(this).parent().find('.bg-btn').css({'top':'0px','left':'0px'});
-		});
-		$('.btn').mouseleave(function() {
-			$(this).parent().find('.bg-btn').css({'top':'10px','left':'10px'});
-		});
-	});
-</script>
