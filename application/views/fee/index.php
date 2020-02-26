@@ -69,7 +69,7 @@
 	</div>
 </div>
 
-<div class="fee cluster-content">
+<div class="fees cluster-content">
 	<div class="cluster-body">
 		<div class="container">
 			<div class="explain-fee">

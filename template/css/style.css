@@ -238,7 +238,13 @@ input.error, select.error, textarea.error, span.error {
 .red, .text-color-red, .required {
 	color: #FF0000 !important;
 }
+.row {
+	display: flex; /* equal height of the children */
+}
 
+.col {
+	flex: 1; /* additionally, equal width */
+}
 .full-width {
 	width: 100% !important;
 }
@@ -1767,88 +1773,88 @@ ul.style-step li.active {
 .fee-banner ul li {
 	padding: 5px 0;
 }
-.fee {
+.fees {
 	padding: 50px 0;
 }
-.fee .explain-fee {
+.fees .explain-fee {
 	padding-bottom: 50px;
 }
-.fee .explain-fee ul{
+.fees .explain-fee ul{
 	list-style-type: square;
 	margin: 0;
 	padding-left: 15px;
 	color: #999;
 }
-.fee .explain-fee ul li {
+.fees .explain-fee ul li {
 	color: #464646;
 	padding-bottom: 15px;
 }
-.fee .form-control {
+.fees .form-control {
 	display: inline-block;
 	width: 30%;
 	border-radius: 0;
 	border: 0.1rem solid #000000;
 	font-weight: 700;
 }
-.fee .available-visa .ul-processing {
+.fees .available-visa .ul-processing {
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;
 }
-.fee .available-visa .ul-processing li {
+.fees .available-visa .ul-processing li {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-.fee .available-visa .ul-processing > li:before {
+.fees .available-visa .ul-processing > li:before {
 	color: #39B54A;
 	font-family: FontAwesome;
 	content: "\f058";
 	margin-right: 15px;
 	display: inline-block;
 }
-.fee .e-visa-fee {
+.fees .e-visa-fee {
 	padding: 50px 0;
 	border-bottom: 1px solid #ccc;
 }
-.fee .e-visa-fee .title {
+.fees .e-visa-fee .title {
 	padding-bottom: 30px;
 }
-.fee .e-visa-fee .title .sub-title {
+.fees .e-visa-fee .title .sub-title {
 	font-style: italic;
 }
-.fee .e-visa-fee .pricing-table th {
+.fees .e-visa-fee .pricing-table th {
 	vertical-align: middle;
 	background: none repeat scroll 0 0 #ebebeb !important;
 	border: 1px solid #707070;
 }
-.fee .e-visa-fee .pricing-table td {
+.fees .e-visa-fee .pricing-table td {
 	border: 1px solid #707070;
 	vertical-align: middle;
 }
-.fee .visa-arrival-fee {
+.fees .visa-arrival-fee {
 	padding: 50px 0;
 	border-bottom: 1px solid #ccc;
 }
-.fee .visa-arrival-fee .title {
+.fees .visa-arrival-fee .title {
 	/* padding-bottom: 30px; */
 }
-.fee .visa-arrival-fee .title .sub-title {
+.fees .visa-arrival-fee .title .sub-title {
 	font-style: italic;
 }
-.fee .visa-arrival-fee .title h2 {
+.fees .visa-arrival-fee .title h2 {
 	
 }
-.fee .visa-arrival-fee .pricing-table th {
+.fees .visa-arrival-fee .pricing-table th {
 	vertical-align: middle;
 	background: none repeat scroll 0 0 #ebebeb !important;
 	border: 1px solid #707070;
 	font-size: 15px;
 }
-.fee .visa-arrival-fee .pricing-table td {
+.fees .visa-arrival-fee .pricing-table td {
 	border: 1px solid #707070;
 	vertical-align: middle;
 }
-.fee .visa-arrival-fee .vs-anotate {
+.fees .visa-arrival-fee .vs-anotate {
 	border: 1px solid #707070;
 	height: 180px;
 	width: 520px;
@@ -1858,7 +1864,7 @@ ul.style-step li.active {
 	position: relative;
 	background: #fff;
 }
-.fee .visa-arrival-fee .vs-anotate .bg-anotate {
+.fees .visa-arrival-fee .vs-anotate .bg-anotate {
 	border: 1px solid #851919;
 	background: #851919;
 	width: 400px;
@@ -1868,25 +1874,25 @@ ul.style-step li.active {
 	left: 150px;
 	top: 50px;
 }
-.fee .visa-arrival-fee .show-button{
+.fees .visa-arrival-fee .show-button{
 	text-align: center;
 }
-.fee .ext-service {
+.fees .ext-service {
 	padding: 50px 0;
 	border-bottom: 1px solid #ccc;
 }
-.fee .ext-service .pricing-table th {
+.fees .ext-service .pricing-table th {
 	vertical-align: middle;
 	background: none repeat scroll 0 0 #ebebeb !important;
 	border: 1px solid #707070;
 	font-size: 15px;
 }
-.fee .ext-service .pricing-table td {
+.fees .ext-service .pricing-table td {
 	border: 1px solid #707070;
 	vertical-align: middle;
 	width: 10%;
 }
-.fee .ext-service .ft-anotate {
+.fees .ext-service .ft-anotate {
 	border: 1px solid #707070;
 	height: 110px;
 	width: 580px;
@@ -1896,7 +1902,7 @@ ul.style-step li.active {
 	position: relative;
 	background: #fff;
 }
-.fee .ext-service .ft-anotate .bg-anotate {
+.fees .ext-service .ft-anotate .bg-anotate {
 	border: 1px solid #851919;
 	background: #851919;
 	width: 460px;
@@ -1906,7 +1912,7 @@ ul.style-step li.active {
 	left: 150px;
 	top: 50px;
 }
-.fee .ext-service .tf-anotate {
+.fees .ext-service .tf-anotate {
 	border: 1px solid #707070;
 	height: 83px;
 	width: 485px;
@@ -1916,7 +1922,7 @@ ul.style-step li.active {
 	position: relative;
 	background: #fff;
 }
-.fee .ext-service .tf-anotate .bg-anotate {
+.fees .ext-service .tf-anotate .bg-anotate {
 	border: 1px solid #851919;
 	background: #851919;
 	width: 355px;
@@ -1926,20 +1932,20 @@ ul.style-step li.active {
 	left: 150px;
 	top: 40px;
 }
-.fee .ext-service-ins {
+.fees .ext-service-ins {
 	padding: 50px 0;
 }
-.fee .ext-service-ins .pricing-table th {
+.fees .ext-service-ins .pricing-table th {
 	vertical-align: middle;
 	background: none repeat scroll 0 0 #ebebeb !important;
 	border: 1px solid #707070;
 	font-size: 15px;
 }
-.fee .ext-service-ins .pricing-table td {
+.fees .ext-service-ins .pricing-table td {
 	border: 1px solid #707070;
 	vertical-align: middle;
 }
-.fee .ext-service-ins .ext-service-ins-anotate {
+.fees .ext-service-ins .ext-service-ins-anotate {
 	border: 1px solid #707070;
 	height: 90px;
 	width: 485px;
@@ -1949,7 +1955,7 @@ ul.style-step li.active {
 	position: relative;
 	background: #fff;
 }
-.fee .ext-service-ins .ext-service-ins-anotate .bg-anotate {
+.fees .ext-service-ins .ext-service-ins-anotate .bg-anotate {
 	border: 1px solid #851919;
 	background: #851919;
 	width: 360px;
@@ -2543,8 +2549,6 @@ ul.style-step li.active {
 	border-bottom: 1px solid #ccc;
 }
 .different .content-right {
-	/* border-left: 2px dashed #ccc; */
-	padding-left: 15px;
 }
 .different .item {
 	padding: 10px 0;
@@ -2554,14 +2558,14 @@ ul.style-step li.active {
 	font-size: 16px;
 	position: relative;
 }
-.different .content-right .title h5:before {
+.different .right .title h5:before {
 	width: 10px;
 	height: 10px;
 	content: "";
 	border-radius: 50%;
 	position: absolute;
 	background: #a92020;
-	left: -36px;
+	left: -21px;
 }
 .different .title img{
 	vertical-align: initial;
@@ -2569,6 +2573,10 @@ ul.style-step li.active {
 }
 .different .content {
 	padding: 0px 24px;
+}
+.different .content ul {
+	list-style: none;
+	padding: 0;
 }
 .different .content .nation_permit .list{
 
@@ -2612,9 +2620,9 @@ ul.style-step li.active {
 }
 .box-step {
 	position: relative;
-	padding-left: 35px !important;
-	margin: 0px 0px 20px 40px;
-	height: 200px;
+	padding-left: 30px !important;
+	margin: 0px 0px 20px 17px;
+	height: 180px;
 }
 .step-title {
 	display: inline-block;
@@ -2633,7 +2641,7 @@ ul.style-step li.active {
 	position: absolute;
 	font-size: 140px;
 	font-weight: 800;
-	top: -8px;
+	top: -18px;
 	left: -45px;
 	-webkit-text-stroke: 3px white;
 	paint-order: stroke fill;
