@@ -297,11 +297,11 @@
 									<a class="btn btn-general" type="button" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step2.html"?>'"><i class="icon-double-angle-left icon-large">BACK </a>
 									<div class="bg-btn transition" style="width: 100%;"></div>
 								</div> -->
-								<div class="show-button m-4" >
+								<div class="show-button m-4 d-inline-flex" >
 									<a class="btn btn-danger" href="<?=site_url("apply-visa/step2")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK </a>
 								</div>
 								<!-- <button class="btn btn-danger btn_next" type="submit">NEXT <i class="icon-double-angle-right icon-large"></i></button> -->
-								<div class="show-button m-4">
+								<div class="show-button m-4 d-inline-flex">
 									<button class="btn btn-danger" type="submit">SUBMIT TO PAYMENT &nbsp;&nbsp;<i class="icon-double-angle-right icon-large"></i></button>
 								</div>
 							</div>

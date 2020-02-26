@@ -100,7 +100,7 @@
 						<div class="content-left">
 							<div class="item">
 								<div class="title">
-									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">How it look?</h5>
+									<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">How it look?</h5>
 								</div>
 								<div class="content"><img class="full-width" src="<?=IMG_URL?>/Vietnam-visa-stamp-on-arrival.png" alt=""></div>
 							</div>
@@ -121,7 +121,7 @@
 					<div class="col-sm-6">
 						<div class="item">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">How to apply</h5>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">How to apply</h5>
 							</div>
 							<div class="content">
 								<p><span style="color: #851919; font-weight: 600;">Step 1:</span>Fill in the application online via this link for Visa On Arrival <a href="http://www.vietnamevisa.net/apply-visa.html">http://www.vietnamevisa.net/apply-visa.html</a> to choose the type of visa</p>
@@ -354,7 +354,7 @@
 											<td>
 												<?if(!empty($region_items)) {  $c = count($region_items); foreach ($region_items as $key => $region_item) { ?>
 													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
-												<?  } } else {
+												<? } } else {
 													echo 'N/A';
 												} ?>
 											</td>

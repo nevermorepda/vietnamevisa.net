@@ -829,7 +829,6 @@ function calServiceFees()
 				$('.stamping_fee_note').show();
 				$('.processing_fee_note').show();
 			}
-
 			$(".total_visa_price").html(total_visa_price_txt);
 			$(".total_price").html(total.toFixed(2)+" $");
 
