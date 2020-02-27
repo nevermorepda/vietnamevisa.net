@@ -242,7 +242,7 @@
 									if (typ != 'e-1ms') {
 										<? foreach ($arrival_ports as $arrival_port) {
 											if (in_array($arrival_port->code, array("SGN", "HAN", "DAN", "CXR"))) { ?>
-												str += '<option value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>';
+												str += '<option cate-id="<?=$arrival_port->category_id?>" value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>';
 										<?	}
 										} ?>
 										str_holiday += '<label><input id="processing_time_holiday" note-id="processing-time-holiday-note" class="processing_time" type="radio" name="processing_time" value="Holiday" <?=($step1->processing_time=="Holiday"?"checked='checked'":"")?>/><strong>Holiday (for Saturday, Sunday or public holiday)</strong></label>';
@@ -250,9 +250,11 @@
 										$('.exit_port').html('');
 										$('.wrap_exit_port').css('display', 'none');
 										$('.review_exit_port').css('display', 'none');
-										$('.extra_service').css('display', 'block');
 										$('#promotion_li').css('display', 'block');
 										$('.stamping_price').css('display', 'none');
+										$('.emergency_process').css('display', 'block');
+										$('#private_letter').css('display', 'block');
+										$('.box_full_package').css('display', 'block');
 									} else {
 										frm_url = '<?=BASE_URL_HTTPS."/apply-e-visa/step2.html"?>';
 										<? $ports = array('Airport','Landport','Seaport'); for ($i=1; $i <= 3 ; $i++) {
@@ -262,16 +264,18 @@
 											?>
 											str += '<optgroup label="<?=$ports[$i-1]?>">';
 											<? foreach ($arrival_ports as $arrival_port) { ?>
-												str += '<option value="<?=$arrival_port->short_name?>"><?=$arrival_port->airport?></option>';
+												str += '<option cate-id="<?=$arrival_port->category_id?>" value="<?=$arrival_port->short_name?>"><?=$arrival_port->airport?></option>';
 											<? } ?>
 											str += '</optgroup>';
 										<? } ?>
 										$('.exit_port').html(str);
 										$('.wrap_exit_port').css('display', 'flex');
 										$('.review_exit_port').css('display', 'block');
-										$('.extra_service').css('display', 'none');
 										$('#promotion_li').css('display', 'none');
 										$('.stamping_price').css('display', 'block');
+										$('.emergency_process').css('display', 'none');
+										$('#private_letter').css('display', 'none');
+										$('.box_full_package').css('display', 'none');
 									}
 									$('#frmApply').attr('action', frm_url);
 									$('.holiday_process').html(str_holiday);
@@ -315,7 +319,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="radio" style="margin-top: 5px">
+										<div class="radio emergency_process" style="margin-top: 5px">
 											<label>
 												<input id="processing_time_emergency" note-id="processing_time_emergency-note" class="processing_time" type="radio" name="processing_time" value="Emergency" <?=($step1->processing_time=="Emergency"?"checked='checked'":"")?>/>
 												<span class="red"><strong>Emergency (Within 30 minutes)</strong></span>
@@ -340,7 +344,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group extra_service">
+							<div class="form-group extra_service box_full_package">
 								<div class="row full_package_group <?=((strtoupper($country_name)=='VIET NAM')?'full_package_group_none':'')?>">
 									<div class="col-md-12">
 										<div class="div"></div>
@@ -365,7 +369,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group extra_service">
+							<div class="form-group extra_service" id="extra_service">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="div"></div>
@@ -374,14 +378,16 @@
 										<label class="control-label">Upon arrival services</label>
 									</div>
 									<div class="col-md-8">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="private_visa" name="private_visa" class="private_visa" value="1" <?=($step1->private_visa==1?"checked='checked'":"")?>>
-												<strong class="text-color-red">Show me in a private visa letter</strong>
-											</label>
-										</div>
-										<div class="processing-note">
-											Normally, The Vietnam Immigration Department process a lot of applications. It is common and legal to get an visa approval letter with several names of applicants applying at the same time. If you feel uncomfortable with this kind of shared letter, we offer you to apply for visa on arrival with the option of “Private Letter” to get your approval letter for only yourself or your group without other strange names on it. Each application will pay extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get private visa approval letter. Please notice that if you don’t choose “Private letter” option, you will receive shared  approval letter and we can’t change anything after your application is processed.
+										<div id="private_letter">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" id="private_visa" name="private_visa" class="private_visa" value="1" <?=($step1->private_visa==1?"checked='checked'":"")?>>
+													<strong class="text-color-red">Show me in a private visa letter</strong>
+												</label>
+											</div>
+											<div class="processing-note">
+												Normally, The Vietnam Immigration Department process a lot of applications. It is common and legal to get an visa approval letter with several names of applicants applying at the same time. If you feel uncomfortable with this kind of shared letter, we offer you to apply for visa on arrival with the option of “Private Letter” to get your approval letter for only yourself or your group without other strange names on it. Each application will pay extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get private visa approval letter. Please notice that if you don’t choose “Private letter” option, you will receive shared  approval letter and we can’t change anything after your application is processed.
+											</div>
 										</div>
 										<div class="checkbox cb_fast_checkin">
 											<label>

@@ -100,12 +100,12 @@
 								<input type="hidden" id="arrival_port" name="arrival_port" value="<?=$step1->arrival_port?>">
 								<input type="hidden" id="visit_purpose" name="visit_purpose" value="<?=$step1->visit_purpose?>">
 								<input type="hidden" id="processing_time" name="processing_time" value="<?=$step1->processing_time?>">
-								<input type="hidden" id="private_visa" name="private_visa" value="<?=$step1->private_visa?>">
-								<input type="hidden" id="full_package" name="full_package" value="<?=$step1->full_package?>">
+								<!-- <input type="hidden" id="private_visa" name="private_visa" value="<?=$step1->private_visa?>">
+								<input type="hidden" id="full_package" name="full_package" value="<?=$step1->full_package?>"> -->
 								<input type="hidden" id="fast_checkin" name="fast_checkin" value="<?=$step1->fast_checkin?>">
 								<input type="hidden" id="car_pickup" name="car_pickup" value="<?=$step1->car_pickup?>">
-								<input type="hidden" id="car_type" name="car_type" value="<?//=$step1->car_type?>">
-								<input type="hidden" id="num_seat" name="num_seat" value="<?//=$step1->num_seat?>">
+								<input type="hidden" id="car_type" name="car_type" value="<?=$step1->car_type?>">
+								<input type="hidden" id="num_seat" name="num_seat" value="<?=$step1->num_seat?>">
 								<input type="hidden" id="discount" name="discount" value="<?=$step1->discount?>">
 								<input type="hidden" id="discount_unit" name="discount_unit" value="<?=$step1->discount_unit?>">
 								<div class="row clearfix">
@@ -444,6 +444,110 @@
 												</div>
 											</div>
 										</div> -->
+										<? if (!empty($step1->car_pickup)) { $car_plus_fees = $this->m_car_plus_fee->items();?>
+										<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?=GOOGLE_MAPS_KEY?>&libraries=places"></script>
+										<div class="group" id="flightinfo">
+											<h2>Car pick-up Information</h2>
+											<div class="group-content">
+												<p>Please fill out the flight information that we can pick you up on time at the airport.</p>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="input-group mb-3">
+															<div class="input-group-prepend">
+																<label class="input-group-text" for="inputGroupSelect01">Airport</label>
+															</div>
+															<select class="custom-select" id="inputGroupSelect01">
+																<option value="" selected="selected">Please select...</option>
+																<? foreach ($car_plus_fees as $car_plus_fee) { ?>
+																<option value="<?=$car_plus_fee->short_name?>" port_id="<?=$car_plus_fee->port?>" name-item="<?=$car_plus_fee->airport?>"><?=$car_plus_fee->airport?></option>
+																<? } ?>
+															</select>
+															<script type="text/javascript">
+																$('.custom-select').val('<?=$step1->arrival_port?>');
+															</script>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="input-group mb-3">
+															<div class="input-group-prepend">
+																<span class="input-group-text" id="inputGroup-sizing-default">Destination</span>
+															</div>
+															<input type="text" id="destination" class="form-control" value="<?=$step1->car_destination?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+														</div>
+													</div>
+												</div>
+												<p class="cnt-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>>Your distance <strong class="total-distance"><?=$step1->car_distance?>km</strong> <span class="text-color-red">(<strong class="distance-fee"><?=$step1->car_total_fee?>$</strong> for cover <strong class="distance"><?=$step1->car_distance_default?>km</strong>)</span>. You have to pay an additional <strong class="car-plus-fee text-color-red"><?=$step1->car_plus_fee?>$</strong> for the remaining <strong class="distance-plus"><?=$step1->car_distance-$step1->car_distance_default?>km</strong>.</p>
+											</div>
+										</div>
+										<script type="text/javascript">
+											$(function () {
+												google.maps.event.addDomListener(window, 'load', function () { });
+												function calculateDistance() {
+													var service = new google.maps.DistanceMatrixService();
+													service.getDistanceMatrix({
+														origins: [$('option:selected', '.custom-select').attr('name-item')],
+														destinations: [$('#destination').val()],
+														travelMode: google.maps.TravelMode.DRIVING,
+														unitSystem: google.maps.UnitSystem.IMPERIAL,
+														avoidHighways: false,
+														avoidTolls: false,
+													}, callback);
+												}
+												function callback(response, status) {
+													if ($('.custom-select').val() != '' && $('#destination').val() != ''){
+														var p = {};
+														p['distance'] = response.rows[0].elements[0].distance.value;
+														p['port_id'] = $('option:selected', '.custom-select').attr('port_id');
+														p['destination'] = $('#destination').val();
+
+														$.ajax({
+															url: '<?=site_url("apply-e-visa/ajax-call-car-plus-fees")?>',
+															type: 'POST',
+															dataType: 'json',
+															data: p,
+															success: function (res) {
+																if (res != null) { 
+																	var total_visa_fee = parseFloat($('#total_fee').val());
+																	$('.distance').html(res[0].distance+'km');
+																	$('.total-distance').html(res[2]+'km');
+																	$('.car-plus-fee').html(res[1]+'$');
+																	$('.distance-plus').html((res[2]-res[0].distance).toFixed(2)+'km');
+																	$('.review-car-plus-fee > span').html('+ ('+(res[2]-res[0].distance).toFixed(2)+'km) '+' = '+res[1]+' $');
+																	$('.total_price').html(total_visa_fee+res[1]+' $');
+
+																	$('.cnt-car-plus-fee').css('display', 'block');
+																	$('.review-car-plus-fee').css('display', 'block');
+																} else {
+																	$('.cnt-car-plus-fee').css('display', 'none');
+																	$('.review-car-plus-fee').css('display', 'none');
+																}
+															}
+														});
+													} else {
+														updatePanel();
+														$('.review-car-plus-fee > span').html('');
+														$('.cnt-car-plus-fee').css('display', 'none');
+														$('.review-car-plus-fee').css('display', 'none');
+													}
+												}
+												function initialize() {
+													var input = document.getElementById('destination');
+													var autocomplete = new google.maps.places.Autocomplete(input);
+													google.maps.event.addListener(autocomplete, 'place_changed', function () {
+														calculateDistance();
+													});
+												}
+												google.maps.event.addDomListener(window, 'load', initialize);
+												$('.custom-select').change(function(event) {
+													if ($('#destination').val() != ''){
+														calculateDistance();
+													} else {
+														updatePanel();
+													}
+												});
+											});
+										</script>
+										<? } ?>
 										<div class="group">
 											<h2 class="group-heading">Contact Information</h2>
 											<div class="group-content">
@@ -613,6 +717,7 @@
 																}
 															?>
 														</div>
+														<div class="review-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>><span class='price'>+ (<?=$step1->car_distance-$step1->car_distance_default?>km) = <?=$step1->car_plus_fee?> $</span></div>
 													</li>
 													<li class="clearfix <?=(!empty($step1->vip_discount)?'':'display-none')?>" id="vipsave_li">
 														<label>VIP discount <span class="vipsavepercent_t"><?=$step1->vip_discount?>%</span></label>
@@ -637,6 +742,7 @@
 															<div class="pull-right subtotal-price">
 																<div class="price-block">
 																	<span class="price total_price"><?=$step1->total_fee?> $</span>
+																	<input type="hidden" id="total_fee" value="<?=$step1->total_fee?>">
 																</div>
 															</div>
 														</div>

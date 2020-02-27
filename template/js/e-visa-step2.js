@@ -377,12 +377,12 @@ function calServiceFees()
 	var checkin_fee			= 0;
 	var package_checkin_fee	= 0;
 	var car_fee				= 0;
-	//var car_type			= "Economic Car";//$(".car_type").val();
-	//var num_seat			= parseInt($(".num_seat").val());
+	var car_type			= $("#car_type").val();
+	var num_seat			= parseInt($("#num_seat").val());
 	var service_type		= 0;
 	var arrival_port		= $("#arrival_port").val();
 	
-	if ($("#fast_checkin").is(":checked")) {
+	if ($("#fast_checkin").val() == 1) {
 		service_type = 1;
 	}
 	
@@ -399,8 +399,8 @@ function calServiceFees()
 	p['processing_time']= processing_time;
 	p['service_type']	= service_type;
 	p['booking_type_id']= 2;
-	// p['car_type']		= car_type;
-	// p['num_seat']		= num_seat;
+	p['car_type']		= car_type;
+	p['num_seat']		= num_seat;
 	
 	$.ajax({
 		type: "POST",
@@ -427,11 +427,11 @@ function calServiceFees()
 			
 			var serviceList = "";
 			var serviceCnt  = 1;
-			if ($("#fast_checkin").is(":checked")) {
+			if (parseInt($("#fast_checkin").val()) == 1) {
 				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(checkin_fee*group_size)+" $</span></div>";
 				total += checkin_fee * group_size;
 			}
-			if ($("#car_pickup").is(":checked")) {
+			if (parseInt($("#car_pickup").val()) == 1) {
 				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = "+car_fee+" $</span></div>";
 				total += car_fee;
 			}
@@ -442,19 +442,19 @@ function calServiceFees()
 				$("#extra_service_li").hide();
 			}
 			
-			var serviceList = "";
-			var serviceCnt  = 1;
-			if ($("#full_package").is(":checked")) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Government fee</label><span class='price'>"+stamp_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(stamp_fee*group_size)+" $</span></div>";
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+package_checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(package_checkin_fee*group_size)+" $</span></div>";
-				total += (stamp_fee + package_checkin_fee) * group_size;
-			}
-			$(".full_package_services").html(serviceList);
-			if (serviceList != "") {
-				$("#full_package_li").show();
-			} else {
-				$("#full_package_li").hide();
-			}
+			// var serviceList = "";
+			// var serviceCnt  = 1;
+			// if ($("#full_package").is(":checked")) {
+			// 	serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Government fee</label><span class='price'>"+stamp_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(stamp_fee*group_size)+" $</span></div>";
+			// 	serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+package_checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(package_checkin_fee*group_size)+" $</span></div>";
+			// 	total += (stamp_fee + package_checkin_fee) * group_size;
+			// }
+			// $(".full_package_services").html(serviceList);
+			// if (serviceList != "") {
+			// 	$("#full_package_li").show();
+			// } else {
+			// 	$("#full_package_li").hide();
+			// }
 			
 			// total += parseFloat(result[1][2]) + ( rush_fee + stamp_fee) * parseFloat(group_size);
 			// if (service_fee > 0) {
@@ -475,6 +475,9 @@ function calServiceFees()
 	p['visit_purpose']	= visit_purpose;
 	p['arrival_port']	= arrival_port;
 	p['processing_time']= processing_time;
+	p['fast_checkin']	= $("#fast_checkin").val();
+	p['car_pickup']		= $("#car_pickup").val();
+	p['num_seat']		= num_seat;
 	p['booking_type_id']= 2;
 	
 	$(".total_price").html("Loading...");
@@ -484,9 +487,14 @@ function calServiceFees()
 		data: p,
 		dataType: "json",
 		success: function(result) {
+			var car_plus_fee = 0;
+			if ($('.car-plus-fee').html() != undefined) {
+				car_plus_fee = parseFloat($('.car-plus-fee').html());
+			}
 			var discount = (result[4] > result[2]) ? result[4] : result[2];
 			discount_fee = result[3] * (discount/100);
-			$(".total_price").html(result[0].toFixed(2)+" $");
+			$(".total_price").html(parseFloat(result[0].toFixed(2))+car_plus_fee+" $");
+			$("#total_fee").val(result[0].toFixed(2));
 			if (discount_fee != 0)
 			$("#promotion_li").show();
 			$(".promotion_t").html("- "+discount_fee.toFixed(2)+" $");

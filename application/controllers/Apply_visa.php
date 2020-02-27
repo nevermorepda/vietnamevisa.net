@@ -449,21 +449,22 @@ class Apply_visa extends CI_Controller {
 		$car_pickup = 0;
 		$booking_type_id = 2;
 
+		
+		
+		// FC
+		$fast_checkin = $this->m_fast_checkin_fee->search($service_type, $arrival_port);
+		
+		// Car pick-up
+		$car_pickup = $this->m_car_fee->search($num_seat, $arrival_port);
+		
+		// Full package
+		$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
+
 		$result = array();
 		if ($visa_type != 'e-1ms') {
+			$booking_type_id = 1;
 			// Private letter
 			$private_visa = $this->m_private_letter_fee->search(((stripos(strtolower($visit_purpose), "business") === false) ? "tourist_" : "business_").$visa_type);
-			
-			// FC
-			$fast_checkin = $this->m_fast_checkin_fee->search($service_type, $arrival_port);
-			
-			// Car pick-up
-			$car_pickup = $this->m_car_fee->search($num_seat, $arrival_port);
-			
-			// Full package
-			$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
-
-			$booking_type_id = 1;
 		}
 		// Visa service
 		$visa_fee = $this->m_visa_fee->cal_visa_fee($visa_type, $group_size, $processing_time, $passport_holder, $visit_purpose, $arrival_port,$booking_type_id);
