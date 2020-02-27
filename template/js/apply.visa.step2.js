@@ -413,7 +413,7 @@ function calServiceFees()
 		dataType: "json",
 		success: function(result) {
 			var car_plus_fee = 0;
-			if ($('.car-plus-fee').html() != '') {
+			if ($('.car-plus-fee').html() != undefined) {
 				car_plus_fee = parseFloat($('.car-plus-fee').html());
 			}
 			var discount = (result[4] > result[2]) ? result[4] : result[2];
