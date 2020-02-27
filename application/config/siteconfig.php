@@ -108,6 +108,7 @@ define('RECAPTCHA_SECRET',		'6LecZBgTAAAAAONTUrc7vt24lHNBAuvhMO2-jBtQ');
 
 // Google Plus API key
 define('GOOGLE_KEY',			'724539714112-fpe7i8pgia4tg37gna48e94dan9ijpk2.apps.googleusercontent.com');
+define('GOOGLE_MAPS_KEY',		'AIzaSyDigCaYfSLVz0PhLL4P7s7D6kU5Kd63AEY');
 
 // Facebook API key
 define('FB_KEY',				'762751813859314');

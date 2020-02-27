@@ -126,6 +126,7 @@
 								<li><a href="<?=site_url("syslog/private-letter-fees")?>">Private Letter Fees</a></li>
 								<li><a href="<?=site_url("syslog/car-fees")?>">Car Fees</a></li>
 								<li><a href="<?=site_url("syslog/fast-checkin-fees")?>">Fast Check-in Fees</a></li>
+								<li><a href="<?=site_url("syslog/car-plus-fees")?>">Car Plus Fees</a></li>
 							</ul>
 						</li>
 						<li class="dropdown <?=((in_array($method, array('visa-booking', 'service-booking', 'payment-online', 'payment-report', 'check-list')))?'active':'')?>">

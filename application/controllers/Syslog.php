@@ -2701,6 +2701,100 @@ class Syslog extends CI_Controller {
 		
 		echo "";
 	}
+
+	public function car_plus_fees($action=null, $id=null)
+	{
+		$this->_breadcrumb = array_merge($this->_breadcrumb, array("Processing Fees" => site_url("{$this->util->slug($this->router->fetch_class())}/{$this->util->slug($this->router->fetch_method())}")));
+		$task = $this->util->value($this->input->post("task"), "");
+		if (!empty($task)) {
+			if ($task == "save") {
+				$port			= $this->util->value($this->input->post("port"), 0);
+				$distance		= $this->util->value($this->input->post("distance"), 0);
+				$distance_plus	= $this->util->value($this->input->post("distance_plus"), 0);
+				$seat_4			= $this->util->value($this->input->post("seat_4"), 0);
+				$seat_7			= $this->util->value($this->input->post("seat_7"), 0);
+				$seat_16		= $this->util->value($this->input->post("seat_16"), 0);
+				$seat_24		= $this->util->value($this->input->post("seat_24"), 0);
+				
+				$data = array (
+					"port"			=> $port,
+					"distance"		=> $distance,
+					"distance_plus"	=> $distance_plus,
+					"seat_4"		=> $seat_4,
+					"seat_7"		=> $seat_7,
+					"seat_16"		=> $seat_16,
+					"seat_24"		=> $seat_24
+				);
+				if ($action == "add") {
+					$this->m_car_plus_fee->add($data);
+				}
+				else if ($action == "edit") {
+					$where = array("id" => $id);
+					$this->m_car_plus_fee->update($data, $where);
+				}
+				redirect(site_url("syslog/car-plus-fees"));
+			}
+			else if ($task == "cancel") {
+				redirect(site_url("syslog/car-plus-fees"));
+			}
+			else if ($task == "delete") {
+				$ids = $this->util->value($this->input->post("cid"), array());
+				foreach ($ids as $id) {
+					$where = array("id" => $id);
+					$this->m_car_plus_fee->delete($where);
+				}
+				redirect(site_url("syslog/car-plus-fees"));
+			}
+		}
+		if ($action == 'add') {
+			$item = $this->m_car_plus_fee->instance();
+		
+			$view_data = array();
+			$view_data["breadcrumb"] = $this->_breadcrumb;
+			$view_data["item"] = $item;
+			
+			$tmpl_content = array();
+			$tmpl_content["content"] = $this->load->view("admin/pricing/edit_car_plus", $view_data, true);
+			$this->load->view("layout/admin/main", $tmpl_content);
+		} else if ($action == 'edit') {
+			$item = $this->m_car_plus_fee->load($id);
+		
+			$view_data = array();
+			$view_data["breadcrumb"] = $this->_breadcrumb;
+			$view_data["item"] = $item;
+			
+			$tmpl_content = array();
+			$tmpl_content["content"] = $this->load->view("admin/pricing/edit_car_plus", $view_data, true);
+			$this->load->view("layout/admin/main", $tmpl_content);
+		} else {
+			$items = $this->m_car_plus_fee->items();
+		
+			$view_data = array();
+			$view_data["breadcrumb"] = $this->_breadcrumb;
+			$view_data["items"] = $items;
+			
+			$tmpl_content = array();
+			$tmpl_content["content"] = $this->load->view("admin/pricing/car_plus", $view_data, true);
+			$this->load->view("layout/admin/main", $tmpl_content);
+		}
+	}
+	function ajax_car_plus_fees()
+	{
+		$visa_type 	= $this->input->post("visa_type");
+		$val 		= $this->input->post("val");
+		$id 		= $this->input->post("id");
+
+		$data  = array(
+			"{$visa_type}" => $val
+		);
+		$where = array(
+			"id" => $id
+		);
+		
+		$this->m_car_plus_fee->update($data, $where);
+		
+		echo "";
+	}
 	
 	public function private_letter_fees()
 	{

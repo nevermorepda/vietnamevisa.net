@@ -243,6 +243,10 @@ class Apply_visa extends CI_Controller {
 		$step1->car_pickup				= 0;
 		$step1->car_type				= "Economic Car";
 		$step1->num_seat				= 4;
+		$step1->car_plus_fee			= 0;
+		$step1->car_distance			= 0;
+		$step1->car_distance_default	= 0;
+		$step1->car_destination			= "";
 		$step1->promotion_type			= "1ms";
 		$step1->promotion_code			= "";
 		$step1->member_discount			= 0;
@@ -1323,6 +1327,7 @@ class Apply_visa extends CI_Controller {
 			}
 			$step1->total_fee = $step1->total_fee - round(($step1->total_service_fee * $step1->vip_discount/100),2);
 			$step1->total_fee = $step1->total_fee - round(($step1->total_service_fee * $step1->service_fee_discount/100),2);
+			$step1->total_fee += $step1->car_plus_fee;
 			// =============================
 
 			// Check denied passport
@@ -1551,28 +1556,21 @@ class Apply_visa extends CI_Controller {
 				'user_agent'			=> $agent,
 				'platform'				=> $platform,
 			);
-			if (strtoupper($security_code) == strtoupper($this->util->getSecurityCode()))
-			{
-				if (!$this->m_visa_booking->add($data)) {
-					$succed = false;
-				} else {
-					for ($i=1; $i<=$step1->group_size; $i++) {
-						$pax["book_id"]		= $booking_id;
-						$pax["fullname"]	= $step1->fullname[$i];
-						$pax["gender"]		= $step1->gender[$i];
-						$pax["birthday"]	= date("Y-m-d", strtotime($step1->birthmonth[$i]."/".$step1->birthdate[$i]."/".$step1->birthyear[$i]));
-						$pax["nationality"]	= $step1->nationality[$i];
-						$pax["passport"]	= $step1->passportnumber[$i];
-						
-						if (!$this->m_visa_booking->add_traveller($pax)) {
-							$succed = false;
-						}
+			if (!$this->m_visa_booking->add($data)) {
+				$succed = false;
+			} else {
+				for ($i=1; $i<=$step1->group_size; $i++) {
+					$pax["book_id"]		= $booking_id;
+					$pax["fullname"]	= $step1->fullname[$i];
+					$pax["gender"]		= $step1->gender[$i];
+					$pax["birthday"]	= date("Y-m-d", strtotime($step1->birthmonth[$i]."/".$step1->birthdate[$i]."/".$step1->birthyear[$i]));
+					$pax["nationality"]	= $step1->nationality[$i];
+					$pax["passport"]	= $step1->passportnumber[$i];
+					
+					if (!$this->m_visa_booking->add_traveller($pax)) {
+						$succed = false;
 					}
 				}
-			} else {
-				$succed = false;
-				$this->session->set_flashdata("error", "Captcha is not valid");
-				redirect('apply-visa/step3');
 			}
 		}
 		
@@ -2334,6 +2332,35 @@ class Apply_visa extends CI_Controller {
 			'mail' => $step1->contact_email
 		);
 		$this->m_review_audio->add($data);
+	}
+	function ajax_call_car_plus_fees() {
+		$distance = $this->input->post("distance");
+		$port_id = $this->input->post("port_id");
+		$destination = $this->input->post("destination");
+
+		$arr_result = array();
+		$step1 = $this->session->userdata("step1");
+		
+		$car_plus_fee = $this->m_car_plus_fee->search($port_id);
+
+		$plus_car_fee = round((Float)$distance/1000,1) - $car_plus_fee->distance;
+		if ($plus_car_fee > $car_plus_fee->distance_plus) {
+
+			$seat = "seat_{$step1->num_seat}";
+			$step1->car_plus_fee = round(($plus_car_fee/$car_plus_fee->distance_plus)*$car_plus_fee->{$seat},1);
+			$step1->car_distance = round((Float)$distance/1000,1);
+			$step1->car_distance_default = $car_plus_fee->distance;
+			$step1->car_destination = $destination;
+
+			array_push($arr_result, $car_plus_fee);
+			array_push($arr_result, $step1->car_plus_fee);
+			array_push($arr_result, $step1->car_distance);
+		} else {
+			$step1->car_plus_fee = 0;
+		}
+		$this->session->set_userdata("step1", $step1);
+
+		echo json_encode($arr_result);
 	}
 }
 
