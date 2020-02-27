@@ -44,6 +44,9 @@ class M_requirement extends M_db
 			if (!empty($info->region)) {
 				$sql .= " AND vs_country.region = '{$info->region}'";
 			}
+			if (!empty($info->type)) {
+				$sql .= " AND {$this->_table}.type = '{$info->type}'";
+			}
 		}
 		if (!is_null($active)) {
 			$sql .= " AND {$this->_table}.active = '{$active}'";
@@ -55,7 +58,6 @@ class M_requirement extends M_db
 		if (!is_null($offset)) {
 			$sql .= " OFFSET {$offset}";
 		}
-		
 		$query = $this->db->query($sql);
 		return $query->result();
 	}

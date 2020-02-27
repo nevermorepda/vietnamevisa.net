@@ -69,15 +69,15 @@
 	</div>
 </div>
 
-<div class="fee cluster-content">
+<div class="fees cluster-content">
 	<div class="cluster-body">
 		<div class="container">
 			<div class="explain-fee">
 				<h2 class="page-title home-sub-heading shadow-text">Vietnam visa fees</h2>
-				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red">Visa Processing fee</span> and <span class="red">Goverment fee</span></p>
+				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red">Visa Processing fee</span> and <span class="red">Government fee</span></p>
 				<ul>
 					<li><span class="font-weight-bold">Processing fee:</span> It is the fee you will pay online for us to do all the paperwork to submit your application to the Vietnam Immigration Department for visa procedure. Processing fee depends on type and term of visa you want to get.</li>
-					<li><span class="font-weight-bold">Goverment fee:</span> This fee is paid for Vietnam Immigration Officers to have a visa stamped onto your passport.  For passengers who apply for visa on arrival, you will pay in cash at LANDING VISA counter  when you arrive at Vietnam airport. For passengers enter Vietnam by Electronic Visa, Goverment fee is included when you pay online. Therefore you will not pay any fee at check-on point.</li>
+					<li><span class="font-weight-bold">Government fee:</span> This fee is paid for Vietnam Immigration Officers to have a visa stamped onto your passport.  For passengers who apply for visa on arrival, you will pay in cash at LANDING VISA counter  when you arrive at Vietnam airport. For passengers enter Vietnam by Electronic Visa, Government fee is included when you pay online. Therefore you will not pay any fee at check-on point.</li>
 				</ul>
 			</div>
 			<div class="text-center">
@@ -160,7 +160,7 @@
 							<tr>
 								<th class="text-left" rowspan="">TYPES OF VISA</th>
 								<th class="text-center" colspan="">PROCESSING FEE <br><span style="font-style: italic; font-size:15px">(Normal 3 days)</span> </th>
-								<th class="text-center" rowspan="">GOVERMENT FEE</th>
+								<th class="text-center" rowspan="">GOVERNMENT FEE</th>
 								<th class="text-center" rowspan="">TOTAL</th>
 							</tr>
 							<tr>
@@ -195,7 +195,7 @@
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon6.png"><h3>TOURIST VISA</h3>
+						<img src="<?=IMG_URL?>new-template/icon/icon6.png"><h3>TOURIST VISA FEES FOR <?=strtoupper(!empty($current_nation->name) ? $current_nation->name : null)?></h3>
 					</div>
 					<div class="content">
 						<p>Vietnam Tourist Visa (DL Category) is part of the required immigration process for those who enter Vietnam for the purpose of traveling ONLY. </p>
@@ -217,7 +217,7 @@
 					<tr>
 						<th class="text-left" rowspan="<?=$row_number_service?>">TYPES OF VISA</th>
 						<th class="text-center" colspan="<?=$col_number_service+1?>">PROCESSING FEE</th>
-						<th class="text-center" rowspan="<?=$row_number_service?>">GOVERMENT FEE</th>
+						<th class="text-center" rowspan="<?=$row_number_service?>">GOVERNMENT FEE</th>
 					</tr>
 					<tr>
 						<th class="sub-heading text-center" colspan="<?=$col_number_service-2?>">NORMAL PROCESSING <br>(<?=$normal_pr_time?>)</th>
@@ -259,7 +259,7 @@
 				<? } ?>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon7.png"><h3>BUSINESS VISA</h3>
+						<img src="<?=IMG_URL?>new-template/icon/icon7.png"><h3>BUSINESS VISA FEES FOR <?=strtoupper(!empty($current_nation->name) ? $current_nation->name : null)?></h3>
 					</div>
 					<div class="content">
 						<p>Vietnam Business Visa (DN Category) is part of the required immigration process for those who enter Vietnam for business purposes attending business conferences, conventions, meetings, and other business-related events.</p>
@@ -367,10 +367,10 @@
 						<td class="text-center" colspan="4">Normal Fast track and Government fees. You do not need to do anything at the airport </td>
 					</tr>
 				</table>
-				<div class="ft-anotate">
+				<!-- <div class="ft-anotate">
 					<p>Big Group will be discount, please contact us at : <span style="color:#ff0000">Visa@domain.com</span></p>
 					<div class="bg-anotate"></div>
-				</div>
+				</div> -->
 
 				<div class="wrap-service-type">
 					<div class="heading clearfix">

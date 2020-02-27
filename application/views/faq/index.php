@@ -81,7 +81,6 @@
 					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 					</div>
 					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Always listen the client</li>
 						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Provide helpful and clear information </li>
 					</ul>
 				</div>

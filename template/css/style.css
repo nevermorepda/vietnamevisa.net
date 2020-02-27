@@ -1033,7 +1033,14 @@ ul.list-embassy li {
 
 /* End Confidence */
 /* Service */
-
+.services {
+    background: url('../images/wizban/service-banner.jpg') no-repeat scroll bottom center transparent;
+    min-height: 350px;
+    position: relative;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;}
 .service-widget {
 	width: 100%;
 	margin-bottom: 15px;
@@ -1641,6 +1648,9 @@ ul.style-step li.active {
 	margin: 0 0 18px 0;
 }
 .applyform.step3 h3 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	font-weight: normal;
 }
 .applyform.step3 .table-summary th,
 .applyform.step3 .table-summary td {
@@ -1993,7 +2003,6 @@ ul.style-step li.active {
 	display: inline-block;
 }
 .wrap-service-type .content {
-	font-weight: 600;
 	padding-bottom: 25px;
 	padding-top: 5px;
 	font-size: 14px;
@@ -2566,6 +2575,10 @@ ul.style-step li.active {
 	position: absolute;
 	background: #a92020;
 	left: -21px;
+<<<<<<< HEAD
+=======
+	top: 4px;
+>>>>>>> daf29d9d5995ffa664a3b694f00aeb278f8911ea
 }
 .different .title img{
 	vertical-align: initial;

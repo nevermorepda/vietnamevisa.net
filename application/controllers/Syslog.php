@@ -1808,6 +1808,7 @@ class Syslog extends CI_Controller {
 				$meta_desc			= $this->util->value($this->input->post("meta_desc"), "");
 				$content			= $this->util->value($this->input->post("content"), "");
 				$active				= $this->util->value($this->input->post("active"), 1);
+				$type				= $this->util->value($this->input->post("type"), 1);
 				
 				if (empty($alias)) {
 					$alias = $this->util->slug($title);
@@ -1822,6 +1823,7 @@ class Syslog extends CI_Controller {
 					//"meta_desc"		=> $meta_desc,
 					"content"			=> $content,
 					"active"			=> $active,
+					"type"				=> $type,
 				);
 				
 				if ($action == "add") {

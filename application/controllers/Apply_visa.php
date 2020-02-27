@@ -478,7 +478,7 @@ class Apply_visa extends CI_Controller {
 			$this->session->set_flashdata("session-expired", "The Visa Application Form's session has been expired for some reasons! Please re-fill your information.");
 			redirect(site_url("{$this->util->slug($this->router->fetch_class())}"));
 		}
-	}
+	}     
 	
 	function step2()
 	{
