@@ -30,12 +30,13 @@
 					<table class="table table-bordered table-striped table-hover">
 						<tr>
 							<th colspan="<?=($r) ? 4 : 3 ?>"></th>
-							<th colspan="12" class="text-center">Visa on Arrival</th>
+							<th colspan="13" class="text-center">Visa on Arrival</th>
 							<th colspan="2" class="text-center">E-Visa</th>
 						</tr>
 						<tr>
 							<th rowspan="2" class="text-center" width="30px">#</th>
 							<th rowspan="2" >Nationality <? if ($r) { ?><div class="pull-right">Document Required?</div><? } ?></th>
+							<? if ($r) { ?><th rowspan="2" class="text-center" width="100px"><div class="pull-right">Non Document Required?</div></th><? } ?>
 							<? if ($r) { ?><th rowspan="2" class="text-center" width="100px"><div class="pull-right">Fee Default</div></th><? } ?>
 							<th rowspan="2" class="text-center" width="100px">Group Discount</th>
 							<th colspan="6">For Tourist</th>
@@ -78,6 +79,7 @@
 						<tr>
 							<td class="text-center"><?=($i+1)?></td>
 							<td><?=$nation->name?> <? if ($r) { ?><div class="pull-right"><label class="switch"><input type="checkbox" class="change-option" name="<?=$fee->document_required?>" visa-type="document_required" nation-id="<?=$nation->id?>" <?=($fee->document_required?"checked":"")?>><div class="sw-slider round"></div></label></div><? } ?></td>
+							<? if ($r) { ?><td><div class="pull-right"><label class="switch"><input type="checkbox" class="change-option" name="<?=$fee->non_document_required?>" visa-type="non_document_required" nation-id="<?=$nation->id?>" <?=($fee->non_document_required?"checked":"")?>><div class="sw-slider round"></div></label></div></td><? } ?>
 							<? if ($r) { ?><td><div class="pull-right"><label class="switch"><input type="checkbox" class="change-option" name="<?=$fee->get_fee_default?>" visa-type="get_fee_default" nation-id="<?=$nation->id?>" <?=($fee->get_fee_default?"checked":"")?>><div class="sw-slider round"></div></label></div></td><? } ?>
 							<td class="text-center" ><div class=""><label class="switch"><input type="checkbox" class="change-option" name="<?=$fee->group_discount?>" visa-type="group_discount" nation-id="<?=$nation->id?>" <?=($fee->group_discount?"checked":"")?>><div class="sw-slider round"></div></label></div></td>
 							<td>

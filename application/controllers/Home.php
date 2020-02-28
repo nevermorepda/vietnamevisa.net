@@ -8,8 +8,8 @@ class Home extends CI_Controller {
 		// $this->output->cache(CACHE_TIME);
 
 		$info = new stdClass();
-		$info->catid = ID_EXTRA_SERVICES;
-		$services = $this->m_content->items($info,1,4);
+		$info->catid = 10;
+		$services = $this->m_content->items($info,1);
 		
 		$visa_news_info = new stdClass();
 		$visa_news_info->catid = 2;

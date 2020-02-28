@@ -1,5 +1,5 @@
 <div class="service-widget">
-	<div class="content" style="border-top: 2px solid #4267B2;">
+	<div class="content" style="border-top: 5px solid #851919;">
 		<div class="title">
 			EXTRA SERVICES
 		</div>

@@ -213,6 +213,7 @@ input.error, select.error, textarea.error, span.error {
 	background: #851919;
 	border-color: #851919;
 	border-radius: 5px;
+	color: #ffffff;
 }
 .btn-danger:hover {
 	background: #c4191f;
@@ -376,7 +377,8 @@ input.error, select.error, textarea.error, span.error {
 	width: 100%;
 }
 .page-content {
-	/* padding-bottom: 40px; */
+	padding-bottom: 40px;
+	border-bottom: 1px dotted #ccc;
 }
 .page-title {
 	margin-top: 0px;
@@ -677,7 +679,7 @@ input.error, select.error, textarea.error, span.error {
 	background-size: cover;
 }
 .support-online-widget .content {
-	padding: 10px;
+	padding: 9px;
 }
 .support-online-widget table {
 	margin-bottom: 5px;
@@ -1034,13 +1036,33 @@ ul.list-embassy li {
 /* End Confidence */
 /* Service */
 .services {
-    background: url('../images/wizban/service-banner.jpg') no-repeat scroll bottom center transparent;
-    min-height: 350px;
-    position: relative;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;}
+	background: url('../images/wizban/service-banner.jpg') no-repeat scroll bottom center transparent;
+	min-height: 350px;
+	position: relative;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;}
+
+.services-img {
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	position: absolute;
+	top: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.services-img .text .txt-container .value-prop h1 {
+	color: #FFFFFF;
+	font-size: 36px;
+	font-weight: 100;
+}
+.services-img .text .txt-container .value-prop h5 {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 100;
+}
+
 .service-widget {
 	width: 100%;
 	margin-bottom: 15px;
@@ -1077,7 +1099,7 @@ ul.list-embassy li {
 }
 .service-widget .content ul li a {
 	width: 100%;
-	padding: 10px;
+	padding: 9px;
 	line-height: 26px;
 	display: block;
 	color: #000000;
@@ -1266,6 +1288,30 @@ ul.list-embassy li {
 	padding-right: 15px;
 	color: #676766;
 }
+.cluster .cluster-body .des-pr {
+	position: relative;
+}
+.cluster .cluster-body .des-pr .border-text1{
+	position: absolute;
+	bottom: -15px;
+}
+.cluster .cluster-body .des-pr .border-text2{
+	position: absolute;
+	transform: rotate(90deg);
+}
+.cluster .cluster-body .des-pr .border-text3{
+	position: absolute;
+	transform: rotate(180deg);
+	right: 0px;
+}
+.cluster .cluster-body .des-pr .border-text4{
+	position: absolute;
+	transform: rotate(270deg);
+	right: 0px;
+	bottom: -15px;
+}
+
+
 .dispart {
 	border-right: 1px dotted #ccc;
 }
@@ -2555,7 +2601,6 @@ ul.style-step li.active {
 
 .different {
 	padding: 50px 0;
-	border-bottom: 1px solid #ccc;
 }
 .different .content-right {
 }

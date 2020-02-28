@@ -1,5 +1,6 @@
 <?
 	$document_required = $this->m_visa_fee->search($current_nation->id)->document_required;
+	$non_document_required = $this->m_visa_fee->search($current_nation->id)->non_document_required;
 	
 	$tourist_1ms = $this->m_visa_fee->cal_visa_fee("1ms", 1, "", $current_nation->name);
 	$tourist_1mm = $this->m_visa_fee->cal_visa_fee("1mm", 1, "", $current_nation->name);
@@ -147,6 +148,17 @@
 				</p>
 			</div>
 			<? } ?>
+			<? if ($non_document_required) { ?>
+			<br>
+			<div class="alert alert-warning">
+				<p>Dear customer,</p>
+				<p>We would like to inform that  xxx passport holders can apply online on our website to get visa on arrival. However, The Immigration will ask for passport scan of applicant to process Vietnam Visa. Please send to our email : <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> . Without Passport Scan, we can’t process visa for you.</p>
+				<p><span class="font-weight-bold">IMPORTANT NOTICE:</span> We can help you to process Vietnam Visa Arrival. Please note that the Vietnam Immigration requires you must have more than $1000 USD which you must show in cash or give your card to the Immigration Officer to check upon arrival. If you meet this condition then can continue to do the visa stamp procedure. Otherwise, you may not enter Vietnam, even if you have the APPROVAL LETTER. Please prepare this amount before your departure.</p>
+				<p>Best regards, <br>
+				Vietnam Evisa Team,
+				</p>
+			</div>
+			<? } ?>
 		</div>
 		<div class="e-visa-fee">
 			<div class="container">
@@ -195,7 +207,7 @@
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon6.png"><h3>TOURIST VISA FEES FOR <?=strtoupper(!empty($current_nation->name) ? $current_nation->name : null)?></h3>
+						<img src="<?=IMG_URL?>new-template/icon/icon6.png"><h3>TOURIST VISA FEES <?=strtoupper(!empty($current_nation->name) ? 'FOR '.$current_nation->name : null)?></h3>
 					</div>
 					<div class="content">
 						<p>Vietnam Tourist Visa (DL Category) is part of the required immigration process for those who enter Vietnam for the purpose of traveling ONLY. </p>
@@ -259,7 +271,7 @@
 				<? } ?>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon7.png"><h3>BUSINESS VISA FEES FOR <?=strtoupper(!empty($current_nation->name) ? $current_nation->name : null)?></h3>
+						<img src="<?=IMG_URL?>new-template/icon/icon7.png"><h3>BUSINESS VISA FEES  <?=strtoupper(!empty($current_nation->name) ? 'FOR '.$current_nation->name : null)?></h3>
 					</div>
 					<div class="content">
 						<p>Vietnam Business Visa (DN Category) is part of the required immigration process for those who enter Vietnam for business purposes attending business conferences, conventions, meetings, and other business-related events.</p>

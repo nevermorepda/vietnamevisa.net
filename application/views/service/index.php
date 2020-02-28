@@ -31,12 +31,14 @@
 				<? foreach ($items as $item) { 
 				?>
 					<div class="col-sm-4">
-						<div class="thumbnail">
-							<a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive full-width" src="<?=BASE_URL.$item->thumbnail?>"/></a>
-							<div class="caption pt-2">
-								<h3 class="title"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
-								<p><?=word_limiter(strip_tags($item->summary), 40)?></p>
-								<p><a class="btn btn-danger" href="<?=site_url("services/view/{$item->alias}")?>">Read more</a></p>
+						<div class="mb-3">
+							<div class="thumbnail">
+								<a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive full-width" src="<?=BASE_URL.$item->thumbnail?>"/></a>
+								<div class="caption pt-2">
+									<h3 class="title font-weight-bold"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
+									<p><?=word_limiter(strip_tags($item->summary), 30)?></p>
+									<p><a class="btn btn-danger" href="<?=site_url("services/view/{$item->alias}")?>">Read more</a></p>
+								</div>
 							</div>
 						</div>
 					</div>

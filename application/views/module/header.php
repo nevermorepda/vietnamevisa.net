@@ -92,8 +92,8 @@
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "visa-fee") ? "active" : "")?>" title="" href="<?=site_url("visa-fee")?>">Visa Fee</a></li>
 				<li class="menu-item-div"></li>
-				<!-- <li><a class="" title="" href="./services.html">Extra Services</a></li>
-				<li class="menu-item-div"></li> -->
+				<li><a class="" title="" href="./services.html">Extra Services</a></li>
+				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "faqs") ? "active" : "")?>" title="" href="<?=site_url("faqs")?>">FAQs</a></li>
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "contact") ? "active" : "")?>" title="" href="<?=site_url("contact")?>">Contact</a></li>
@@ -150,9 +150,9 @@
 							<li>
 								<a title="" href="<?=site_url("visa-fee")?>"><span class="glyphicon glyphicon-usd"></span> Visa Fees</a>
 							</li>
-							<!-- <li>
+							<li>
 								<a title="" href="<?=site_url("services")?>"><span class="glyphicon glyphicon-cog"></span> Extra Services</a>
-							</li> -->
+							</li>
 							<li>
 								<a title="" href="<?=site_url("faqs")?>"><span class="glyphicon glyphicon-question-sign"></span> FAQs</a>
 							</li>

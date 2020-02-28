@@ -1,5 +1,6 @@
-<div class="confidence-widget">
-	<div class="content" style="border-top: 2px solid #4267B2;">
+<div class="confidence-widget" style="border-top: 5px solid #851919;">
+	<div class="banner"></div>
+	<div class="content">
 		<div class="title">
 			APPLY WITH CONFIDENCE
 		</div>
