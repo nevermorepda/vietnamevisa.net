@@ -264,7 +264,7 @@ var map = new google.maps.Map(
 	}
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDigCaYfSLVz0PhLL4P7s7D6kU5Kd63AEY&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?=GOOGLE_MAPS_KEY?>&callback=myMap"></script>
 
 <? if ($this->session->flashdata('success')) { ?>
 <script>

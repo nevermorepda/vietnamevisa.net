@@ -19,6 +19,13 @@ $(document).ready(function() {
 		updatePanel();
 	});
 	$(".arrival_port").change(function(){
+		if (parseInt($('option:selected', '#arrival_port').attr('cate-id')) == 1) {
+			$('#extra_service').css('display', 'block');
+		} else {
+			$('#extra_service').css('display', 'none');
+			$("#fast_checkin").prop('checked', false);
+			$("#car_pickup").prop('checked', false); 
+		}
 		updatePanel();
 	});
 	$(".exit_port").change(function(){

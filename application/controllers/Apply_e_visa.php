@@ -350,7 +350,7 @@ class Apply_e_visa extends CI_Controller {
 	{
 		$nationalities		= (!empty($_POST["nationalities"]) ? $_POST["nationalities"] : array());
 		$passport_holder	= (!empty($_POST["passport_holder"]) ? $_POST["passport_holder"] : "");
-		$booking_type_id	= (!empty($_POST["booking_type_id"]) ? $_POST["booking_type_id"] : 1);
+		// $booking_type_id	= (!empty($_POST["booking_type_id"]) ? $_POST["booking_type_id"] : 1);
 		$group_size			= (!empty($_POST["group_size"]) ? $_POST["group_size"] : 0);
 		$visa_type			= (!empty($_POST["visa_type"]) ? $_POST["visa_type"] : "1ms");
 		$visit_purpose		= (!empty($_POST["visit_purpose"]) ? $_POST["visit_purpose"] : "");
@@ -372,7 +372,7 @@ class Apply_e_visa extends CI_Controller {
 		$car_pickup = $this->m_car_fee->search($num_seat, $arrival_port);
 		
 		// Visa service
-		$visa_fee = $this->m_visa_fee->cal_visa_fee($visa_type, $group_size, $processing_time, $passport_holder, $visit_purpose,null, $booking_type_id);
+		$visa_fee = $this->m_visa_fee->cal_visa_fee($visa_type, $group_size, $processing_time, $passport_holder, $visit_purpose,null, 2);
 		
 		// Full package
 		$full_package = $this->m_fast_checkin_fee->search(1, $arrival_port);
@@ -478,32 +478,32 @@ class Apply_e_visa extends CI_Controller {
 			
 		}
 
-		// // FC
-		// $total_checkin_fee = 0;
-		// $fast_checkin_fee = $this->m_fast_checkin_fee->search($fast_checkin, $arrival_port);
-		// if ($fast_checkin) {
-		// 	if (!empty($step1->discount_fast_track)) {
-		// 		$total_checkin_fee = ($fast_checkin_fee * $group_size) * (1 - $step1->discount_fast_track/100);
-		// 	} else {
-		// 		$total_checkin_fee = $fast_checkin_fee * $group_size;
-		// 	}
-		// }
-		// // Car pick-up
-		// $total_car_pickup_fee = 0;
-		// $car_pickup_fee = $this->m_car_fee->search($num_seat, $arrival_port);
-		// if ($car_pickup) {
-		// 	if (!empty($step1->discount_car_pickup)) {
-		// 		$total_car_pickup_fee = $car_pickup_fee * (1 - $step1->discount_car_pickup/100);
-		// 	} else {
-		// 		$total_car_pickup_fee = $car_pickup_fee;
-		// 	}
-		// }
+		// FC
+		$total_checkin_fee = 0;
+		$fast_checkin_fee = $this->m_fast_checkin_fee->search($fast_checkin, $arrival_port);
+		if ($fast_checkin) {
+			if (!empty($step1->discount_fast_track)) {
+				$total_checkin_fee = ($fast_checkin_fee * $group_size) * (1 - $step1->discount_fast_track/100);
+			} else {
+				$total_checkin_fee = $fast_checkin_fee * $group_size;
+			}
+		}
+		// Car pick-up
+		$total_car_pickup_fee = 0;
+		$car_pickup_fee = $this->m_car_fee->search($num_seat, $arrival_port);
+		if ($car_pickup) {
+			if (!empty($step1->discount_car_pickup)) {
+				$total_car_pickup_fee = $car_pickup_fee * (1 - $step1->discount_car_pickup/100);
+			} else {
+				$total_car_pickup_fee = $car_pickup_fee;
+			}
+		}
 		
 		if ($step1->discount_unit == "USD") {
-			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $step1->discount;
+			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $step1->discount + $total_checkin_fee + $total_car_pickup_fee;
 		} else {
 			$discount = ($step1->member_discount > $step1->discount) ? $step1->member_discount : $step1->discount ;
-			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - $service_fee * $discount/100;
+			$subtotal = ($subtotal + $total_visa_fee + $stamp_fee) - ($service_fee * $discount/100) + $total_checkin_fee + $total_car_pickup_fee;
 		}
 
 		echo json_encode(array(round($subtotal,2),$service_fee * $step1->discount/100,$step1->discount,$service_fee,$step1->member_discount));
@@ -581,10 +581,14 @@ class Apply_e_visa extends CI_Controller {
 			
 			// $step1->private_visa			= (!empty($_POST["private_visa"]) ? $_POST["private_visa"] : 0);
 			// $step1->full_package			= (!empty($_POST["full_package"]) ? $_POST["full_package"] : 0);
-			// $step1->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
-			// $step1->car_pickup			= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
-			// $step1->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
-			// $step1->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
+			$step1->fast_checkin			= (!empty($_POST["fast_checkin"]) ? $_POST["fast_checkin"] : (!empty($_POST["vip_fast_checkin"]) ? $_POST["vip_fast_checkin"] : 0));
+			$step1->car_pickup				= (!empty($_POST["car_pickup"]) ? $_POST["car_pickup"] : 0);
+			$step1->car_type				= (!empty($_POST["car_type"]) ? $_POST["car_type"] : "Economic Car");
+			$step1->num_seat				= (!empty($_POST["num_seat"]) ? $_POST["num_seat"] : 4);
+			$step1->car_plus_fee			= 0;
+			$step1->car_distance			= 0;
+			$step1->car_distance_default	= 0;
+			$step1->car_destination			= "";
 			
 			$step1->vip_discount			= $this->vip()->discount;
 			
@@ -1213,33 +1217,33 @@ class Apply_e_visa extends CI_Controller {
 			// 	$step1->service_fee_discount		= 0;
 			// }
 			
-			// if ($step1->fast_checkin) {
-			// 	$fast_checkin_fee = $this->m_fast_checkin_fee->search($step1->fast_checkin, $step1->arrival_port);
-			// 	$step1->fast_checkin_fee			= $fast_checkin_fee;
-			// 	$step1->fast_checkin_total_fee	= $fast_checkin_fee * $step1->group_size;
-			// } else {
-			// 	$step1->fast_checkin_fee			= 0;
-			// 	$step1->fast_checkin_total_fee	= 0;
-			// }
+			if ($step1->fast_checkin) {
+				$fast_checkin_fee = $this->m_fast_checkin_fee->search($step1->fast_checkin, $step1->arrival_port);
+				$step1->fast_checkin_fee			= $fast_checkin_fee;
+				$step1->fast_checkin_total_fee	= $fast_checkin_fee * $step1->group_size;
+			} else {
+				$step1->fast_checkin_fee			= 0;
+				$step1->fast_checkin_total_fee	= 0;
+			}
 			
-			// if ($step1->car_pickup) {
-			// 	$car_fee = $this->m_car_fee->search($step1->num_seat, $step1->arrival_port);
-			// 	$step1->car_fee		= $car_fee;
-			// 	$step1->car_total_fee	= $car_fee;
-			// } else {
-			// 	$step1->car_fee		= 0;
-			// 	$step1->car_total_fee	= 0;
-			// }
+			if ($step1->car_pickup) {
+				$car_fee = $this->m_car_fee->search($step1->num_seat, $step1->arrival_port);
+				$step1->car_fee		= $car_fee;
+				$step1->car_total_fee	= $car_fee;
+			} else {
+				$step1->car_fee		= 0;
+				$step1->car_total_fee	= 0;
+			}
 			
 			$step1->total_fee = $step1->total_service_fee + $step1->total_rush_fee + $step1->stamp_fee*$step1->group_size;
 
 			$discount = $step1->discount;
 			if ($step1->discount_unit == "USD") {
-				$step1->total_fee = $step1->total_fee - $step1->discount;
+				$step1->total_fee = $step1->total_fee - $step1->discount + $step1->fast_checkin_total_fee + $step1->car_total_fee + $step1->car_plus_fee;
 			} else {
 				if ($step1->member_discount > $step1->discount)
 				$discount = $step1->member_discount;
-				$step1->total_fee = $step1->total_fee - round(($step1->total_service_fee * $discount/100),2);
+				$step1->total_fee = $step1->total_fee - round(($step1->total_service_fee * $discount/100),2) + $step1->fast_checkin_total_fee + $step1->car_total_fee + $step1->car_plus_fee;
 			}
 			// $step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->vip_discount/100);
 			// $step1->total_fee = $step1->total_fee - round($step1->total_service_fee * $step1->service_fee_discount/100);
@@ -2187,6 +2191,35 @@ class Apply_e_visa extends CI_Controller {
 		$tmpl_content = array();
 		$tmpl_content["content"]   = $this->load->view("apply_vev/failure", $view_data, TRUE);
 		$this->load->view("layout/main", $tmpl_content);
+	}
+	function ajax_call_car_plus_fees() {
+		$distance = $this->input->post("distance");
+		$port_id = $this->input->post("port_id");
+		$destination = $this->input->post("destination");
+
+		$arr_result = array();
+		$step1 = $this->session->userdata("step1");
+		
+		$car_plus_fee = $this->m_car_plus_fee->search($port_id);
+
+		$plus_car_fee = round((Float)$distance/1000,1) - $car_plus_fee->distance;
+		if ($plus_car_fee > $car_plus_fee->distance_plus) {
+
+			$seat = "seat_{$step1->num_seat}";
+			$step1->car_plus_fee = round(($plus_car_fee/$car_plus_fee->distance_plus)*$car_plus_fee->{$seat},1);
+			$step1->car_distance = round((Float)$distance/1000,1);
+			$step1->car_distance_default = $car_plus_fee->distance;
+			$step1->car_destination = $destination;
+
+			array_push($arr_result, $car_plus_fee);
+			array_push($arr_result, $step1->car_plus_fee);
+			array_push($arr_result, $step1->car_distance);
+		} else {
+			$step1->car_plus_fee = 0;
+		}
+		$this->session->set_userdata("step1", $step1);
+
+		echo json_encode($arr_result);
 	}
 }
 

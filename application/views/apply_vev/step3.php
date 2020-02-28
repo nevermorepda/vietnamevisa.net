@@ -332,6 +332,7 @@
 														}
 													?>
 												</div>
+												<div class="review-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>><span class='price'>+ (<?=$step1->car_distance-$step1->car_distance_default?>km) = <?=$step1->car_plus_fee?> $</span></div>
 											</li>
 											<li class="clearfix <?=(!empty($step1->vip_discount)?'':'display-none')?>" id="vipsave_li">
 												<label>VIP discount <span class="vipsavepercent_t"><?=$step1->vip_discount?>%</span></label>

@@ -198,5 +198,6 @@ $autoload['model'] = array(
 	'm_category_tour',
 	'm_tour_fee',
 	'm_tour_rate',
-	'm_tour_booking'
+	'm_tour_booking',
+	'm_car_plus_fee'
 );

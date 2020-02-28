@@ -412,9 +412,14 @@ function calServiceFees()
 		data: p,
 		dataType: "json",
 		success: function(result) {
+			var car_plus_fee = 0;
+			if ($('.car-plus-fee').html() != undefined) {
+				car_plus_fee = parseFloat($('.car-plus-fee').html());
+			}
 			var discount = (result[4] > result[2]) ? result[4] : result[2];
 			discount_fee = result[3] * (discount/100);
-			$(".total_price").html(result[0].toFixed(2)+" $");
+			$(".total_price").html(parseFloat(result[0].toFixed(2))+car_plus_fee+" $");
+			$("#total_fee").val(result[0].toFixed(2));
 			if (discount_fee != 0)
 			$("#promotion_li").show();
 			$(".promotion_t").html("- "+discount_fee.toFixed(2)+" $");
@@ -476,7 +481,7 @@ function _calServiceFees()
 		data: p,
 		dataType: "html",
 		success: function(result) {
-			$(".total_price").html(result+ " $");
+			$(".total_price").html(result+" $");
 		}
 	});
 	

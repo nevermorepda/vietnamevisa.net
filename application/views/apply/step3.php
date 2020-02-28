@@ -195,12 +195,18 @@
 												<td class="text-center"><?=$step1->fast_checkin_total_fee?> $</td>
 											</tr>
 										<? } ?>
-										<? if ($step1->car_pickup) { ?>
+										<? if ($step1->car_pickup) {$distance_plus = $step1->car_distance-$step1->car_distance_default; ?>
 											<tr>
 												<td>Car pick-up (<?=$step1->car_type?>, <?=$step1->num_seat?> seats)</td>
 												<td class="text-center">1</td>
-												<td class="text-center"><?=$step1->car_fee?> $</td>
-												<td class="text-center"><?=$step1->car_total_fee?> $</td>
+												<td class="text-center"><?=$step1->car_fee?> $ <?=!empty($step1->car_plus_fee) ? "+ {$step1->car_plus_fee} $({$distance_plus}km)" : ''?></td>
+												<td class="text-center"><?
+													if (!empty($step1->car_plus_fee)) {
+														echo $step1->car_total_fee + $step1->car_plus_fee;
+													} else {
+														echo $step1->car_total_fee;
+													}
+												?> $</td>
 											</tr>
 										<? } ?>
 										<? if ($step1->vip_discount) { ?>
