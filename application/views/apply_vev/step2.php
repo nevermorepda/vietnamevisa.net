@@ -506,7 +506,11 @@
 															dataType: 'json',
 															data: p,
 															success: function (res) {
-																if (res != null) { 
+																if (res === undefined || res.length == 0) {
+																	$('.cnt-car-plus-fee').css('display', 'none');
+																	$('.review-car-plus-fee').css('display', 'none');
+																	$('.total_price').html($('#total_fee').val());
+																} else {
 																	var total_visa_fee = parseFloat($('#total_fee').val());
 																	$('.distance').html(res[0].distance+'km');
 																	$('.total-distance').html(res[2]+'km');
@@ -517,9 +521,6 @@
 
 																	$('.cnt-car-plus-fee').css('display', 'block');
 																	$('.review-car-plus-fee').css('display', 'block');
-																} else {
-																	$('.cnt-car-plus-fee').css('display', 'none');
-																	$('.review-car-plus-fee').css('display', 'none');
 																}
 															}
 														});

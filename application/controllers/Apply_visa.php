@@ -2351,7 +2351,6 @@ class Apply_visa extends CI_Controller {
 			$step1->car_plus_fee = round(($plus_car_fee/$car_plus_fee->distance_plus)*$car_plus_fee->{$seat},1);
 			$step1->car_distance = round((Float)$distance/1000,1);
 			$step1->car_distance_default = $car_plus_fee->distance;
-			$step1->car_destination = $destination;
 
 			array_push($arr_result, $car_plus_fee);
 			array_push($arr_result, $step1->car_plus_fee);
@@ -2359,6 +2358,7 @@ class Apply_visa extends CI_Controller {
 		} else {
 			$step1->car_plus_fee = 0;
 		}
+		$step1->car_destination = $destination;
 		$this->session->set_userdata("step1", $step1);
 
 		echo json_encode($arr_result);
