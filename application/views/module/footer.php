@@ -8,7 +8,7 @@
 			<div class="col-md-5 col-sm-12 col-xs-12">
 				<div class="row">
 					<div class="col-md-11">
-						<a title="Vietnam Visa" href="<?=BASE_URL?>"><img style="width: 240px;" src="<?=IMG_URL?>/new-template/logo.png" alt="Vietnam Visa" /></a>
+						<a title="Vietnam Visa" href="<?=BASE_URL?>"><img style="width: 240px;" src="<?=IMG_URL?>/logo_vietnamevisa.net.svg" alt="Vietnam Visa" /></a>
 						<br>
 						<ul class="fnav-links">	
 							<li><?=ADDRESS?></li>

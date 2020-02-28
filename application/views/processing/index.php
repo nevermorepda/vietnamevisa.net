@@ -149,7 +149,7 @@
 					<div class="col-sm-6">
 						<div class="item">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Effect from 2003</hh55>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Effect from 2003</h5>
 							</div>
 							<div class="content"></div>
 						</div>
@@ -411,4 +411,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 

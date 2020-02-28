@@ -1,4 +1,4 @@
-<div class="page-content">
+<div class="pages-content">
 	<div class="slide-bar">
 		<div class="slide-wrap">
 			<div id="" class="slide-image owl-carousel owl-theme">
@@ -110,8 +110,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="pt-3">
-					
+				<div class="des-pr">
+					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text1">
+					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text2">
+					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text3">
+					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text4">
+					<div class="m-4">
+						<p class="pt-3">We assist for Vietnam Visa with convenient and professional processing:</p>
+						<p>Visa On Arrival (VOA) is a process of obtaining the pre-approved visa letter (visa approval letter) via applying online. The travelers will pick up the actual visa stamp and visa sticker by showing the Approval Letter at international airports in Vietnam upon arrival.</p>
+						<p>Electronic Visa (E-Visa) is another modern type of Vietnam visa online. With this type of visa, you will receive E-Visa via email and you do not have to pay stamping fee upon arrival and enter Vietnam with multiple options of entry ports: land ports, seaports or airports.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -127,26 +135,26 @@
 				<div class="col-md-4 dispart">
 					<div class="title">
 						<img alt="Airport concierge service" class="lazy" src="<?=IMG_URL?>new-template/icon1.png">
-						<h3><a title="Airport concierge service" href="<?=site_url("services/view/airport-fast-track-service")?>">VIP FAST TRACK</a></h3>
+						<h3><a title="Airport concierge service" href="<?=site_url("services/view/{$services[0]->alias}")?>"><?=$services[0]->title;?></a></h3>
 					</div>
-					<p class="summary">Our staff will meet you at the aircraft gate with your name on the welcome board and assist you to get visa stamp and visa sticker without getting line as other. Just 5-10 minutes you will at the luggage lounge to wait for your belonging.</p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/airport-fast-track-service")?>">DETAIL</a>
+					<p class="summary"><?=word_limiter(strip_tags($services[0]->summary), 29);?></p>
+					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[0]->alias}")?>">DETAIL</a>
 				</div>
 				<div class="col-md-4 dispart">
 					<div class="title">
 						<img alt="Car pickup service" class="lazy" src="<?=IMG_URL?>new-template/icon3.png">
-						<h3><a title="Car pickup service" href="<?=site_url("services/view/airport-pick-up-service")?>">AIRPORT CAR PICKUP</a></h3>
+						<h3><a title="Car pickup service" href="<?=site_url("services/view/{$services[4]->alias}")?>"><?=$services[4]->title;?></a></h3>
 					</div>
-					<p class="summary">You are tired in the plane during the flight and you want to rest in hotel immediately to be ready for an interesting vacation. We highly recommend the car pick-up service beside Applying Vietnam Visa Online Service.</p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/airport-pick-up-service")?>">DETAIL</a>
+					<p class="summary"><?=word_limiter(strip_tags($services[4]->summary), 29);?></p>
+					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[4]->alias}")?>">DETAIL</a>
 				</div>
 				<div class="col-md-4 dispart">
 					<div class="title">
 						<img alt="Vietnam hotel booking" class="lazy" src="<?=IMG_URL?>new-template/icon2.png">
-						<h3><a title="Vietnam hotel booking" href="<?=site_url("services/view/vietnam-visa-extension-and-renewal")?>">VISA EXTENSION AND RENEWAL</a></h3>
+						<h3><a title="Vietnam hotel booking" href="<?=site_url("services/view/{$services[3]->alias}")?>"><?=$services[3]->title;?></a></h3>
 					</div>
-					<p class="summary">This section explains the customer how to apply to their visa extension for the temporary staying permission in Vietnam with the purpose for visiting relatives, traveling, business or others.</p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/vietnam-visa-extension-and-renewal")?>">DETAIL</a>
+					<p class="summary"><?=word_limiter(strip_tags($services[3]->summary), 29);?></p>
+					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[3]->alias}")?>">DETAIL</a>
 				</div>
 			</div>
 		</div>
@@ -154,25 +162,25 @@
 			<div class="row">
 				<div class="col-md-6 dispart">
 					<div class="title">
-						<img alt="Optional Tours" class="lazy" src="<?=IMG_URL?>new-template/icon4.png">
-						<h3><a title="Optional Tours" href="<?=site_url('tours')?>">TOURS</a></h3>
+						<img alt="Tours" class="lazy" src="<?=IMG_URL?>new-template/icon4.png">
+						<h3><a title="Optional Tours" href="<?=site_url("services/view/{$services[1]->alias}")?>"><?=$services[1]->title;?></a></h3>
 					</div>
 					<div class="tour-content">
-						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/thumb-optiontours.png"></a>
-						<?=$tours[0]->description;?>
+						<a href="<?=site_url("services/view/{$services[1]->alias}")?>"><img class="img-thumnail img-responsive img-pr pr-3" alt="" src="<?=IMG_URL?>new-template/thumb-optiontours.png"></a>
+						<?=word_limiter(strip_tags($services[1]->summary), 29);?>
 					</div>
-					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
+					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[1]->alias}")?>">DETAIL</a>
 				</div>
 				<div class="col-md-6 dispart">
 					<div class="title">
-						<img alt="Vietnam discovery tours" class="lazy" src="<?=IMG_URL?>new-template/icon/icon-11.png">
-						<h3><a title="Vietnam discovery tours" href="<?=site_url('tours')?>">CONSULAR SERVICES</a></h3>
+						<img alt="Consular services" class="lazy" src="<?=IMG_URL?>new-template/icon/icon-11.png">
+						<h3><a title="Vietnam discovery tours" href="<?=site_url("services/view/{$services[2]->alias}")?>"><?=$services[2]->title;?></a></h3>
 					</div>
 					<div class="tour-content">
-						<a href="<?=site_url('tours')?>"><img class="img-thumnail img-responsive img-pr" alt="" src="<?=IMG_URL?>new-template/icon/icon-12.png"></a>
-						<?=$tours[1]->description;?>
+						<a href="<?=site_url("services/view/{$services[2]->alias}")?>"><img class="img-thumnail img-responsive img-pr pr-3" alt="" src="<?=IMG_URL?>new-template/icon/icon-12.png"></a>
+						<?=word_limiter(strip_tags($services[2]->summary), 29);?>
 					</div>
-					<a class="btn btn-light btn-detail" href="<?=site_url('tours')?>">DETAIL</a>
+					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[2]->alias}")?>">DETAIL</a>
 				</div>
 			</div>
 		</div>
@@ -208,7 +216,7 @@
 						<div class="title">
 							<h1 class="heading">About Us</h1>
 						</div>
-						<p><a href="<?=BASE_URL?>"><?=BASE_URL?></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
+						<p><a href="<?=BASE_URL?>"><span style="text-decoration: underline;"><?=BASE_URL?></span></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
 						<p>Over 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnamevisa.net is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. We work with the vision:</p>
 						<ul>
 							<li>No Hidden Charges</li>
