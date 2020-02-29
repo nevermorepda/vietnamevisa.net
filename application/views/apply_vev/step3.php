@@ -209,7 +209,7 @@
 										</div>
 									</div> -->
 								</div>
-								<div class="">
+								<!-- <div class="">
 									<label class="form-label">CAPTCHA <span class="required">*</span></label>
 									<div class="clearfix">
 										<div class="left">
@@ -219,14 +219,14 @@
 											<label class="security-code"><?=$this->util->createSecurityCode()?></label>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="text-center">
 									<!-- <a style="padding-left: 80px;padding-right: 80px;" class="btn btn-danger btn-1x" href="<?=site_url("apply-e-visa/step2")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK</a> -->
-									<div class="show-button m-4" >
+									<div class="show-button m-4 d-inline-flex" >
 										<a class="btn btn-danger" href="<?=site_url("apply-e-visa/step2")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK </a>
 									</div>
 									<!-- <button style="    margin: 10px;" class="btn btn-danger btn-1x btn-next" type="submit">SUBMIT TO PAYMENT &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button> -->
-									<div class="show-button m-4">
+									<div class="show-button m-4 d-inline-flex">
 										<button class="btn btn-danger" type="submit">SUBMIT TO PAYMENT &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 									</div>
 								</div>
@@ -246,7 +246,7 @@
 											</li>
 											<li class="clearfix">
 												<label>Type of visa:</label>
-												<span class="visa_type_t"><?=$this->util->getVisaType2String($step1->visa_type)?></span>
+												<span class="visa_type_t"><?=$this->util->getVisaType2String($step1->visa_type).' (e-visa)'?></span>
 											</li>
 											<li class="clearfix">
 												<label>Purpose of visit:</label>

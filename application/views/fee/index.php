@@ -159,6 +159,20 @@
 				</p>
 			</div>
 			<? } ?>
+			<? if (!sizeof($tourist_visa_types) && !sizeof($business_visa_types)) { ?>
+			<div class="alert alert-warning">
+				<p>Dear customer,</p>
+				<p>Thanks for your concern, <br>
+				We regret to inform that  we can not   assist Vietnam Visa with your Nationality <br>
+				Please contact Vietnam Embassy nearest your location for supporting. <br>
+				ou can check the Vietnam Embassy list here : <a href="<?=site_url("vietnam-embassies/{$current_nation->alias}")?>">link</a> <br>
+				We apologize for any inconvenience this may cause.</p>
+				<p>Thanks for contacting us. <br>
+				Best regards, <br>
+				Vietnam Evisa Team,
+				</p>
+			</div>
+			<? } ?>
 		</div>
 		<div class="e-visa-fee">
 			<div class="container">
@@ -166,8 +180,10 @@
 					<h2 class="home-sub-heading shadow-text">Vietnam Electronic Visa</h2>
 					<h4 class="sub-title">(available for 26 landport and airport, 86 countries)</h4>
 				</div>
+				<? if (sizeof($tourist_evisa_types) && sizeof($business_evisa_types)) { ?>
 				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-8">
 						<table class="table table-bordered pricing-table">
 							<tr>
 								<th class="text-left" rowspan="">TYPES OF VISA</th>
@@ -195,10 +211,12 @@
 							</tr>
 						</table>
 					</div>
+					<div class="col-sm-2"></div>
 				</div>
-				
+				<? } ?>
 			</div>
 		</div>
+		
 		<div class="visa-arrival-fee">
 			<div class="container">
 				<div class="title clearfix">
@@ -285,8 +303,8 @@
 					<table class="table table-bordered pricing-table">
 						<tr>
 							<th class="text-left" rowspan="<?=$row_number_service?>">TYPES OF VISA</th>
-							<th class="text-center" colspan="<?=$col_number_service+1?>">BUSINESS VISA FEE</th>
-							<th class="text-center" rowspan="<?=$row_number_service?>">STAMPING FEE</th>
+							<th class="text-center" colspan="<?=$col_number_service+1?>">PROCESSING FEE</th>
+							<th class="text-center" rowspan="<?=$row_number_service?>">GOVERNMENT FEE</th>
 						</tr>
 						<tr>
 							<th class="sub-heading text-center" colspan="<?=$col_number_service-2?>">NORMAL PROCESSING <br>(<?=$normal_pr_time?>)</th>
@@ -333,9 +351,11 @@
 					<br><span style="color:#ff0000">+ Stamping fee/ government fee</span></p>
 					<div class="bg-anotate"></div>
 				</div> -->
+				<? if (sizeof($tourist_visa_types) && sizeof($business_visa_types)) { ?>
 				<div class="show-button">
 					<a class="btn btn-danger" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>">APPLY VISA NOW</a>
 				</div>
+				<? } ?>
 			</div>
 		</div>
 		<div class="ext-service">
@@ -460,10 +480,9 @@
 						</td>
 					</tr>
 				</table>	
-				<!-- <div class="tf-anotate">
-					<p>For Car rental, please contact us at : <span style="color:#ff0000">Visa@domain.com</span></p>
-					<div class="bg-anotate"></div>
-				</div> -->
+				<div class="tf-anotate">
+					<p>This fee is ONLY applied from the airport to city center. If your destination is not in the centre, please fill in the hotel address here to check exact fee.</p>
+				</div>
 			</div>
 		</div>
 		<div class="ext-service-ins">
@@ -508,43 +527,6 @@
 					<div class="bg-anotate"></div>
 				</div> -->
 			</div>
-		</div>
-		<!-- <div class="optional-tours">
-			<div class="container">
-				<div class="wrap-service-type">
-					<div class="heading clearfix">
-						<img src="<?=IMG_URL?>new-template/icon/icon4.png"><h3>OPTIONAL TOURS</h3>
-					</div>
-					<div class="content">
-						<p>We offer short tours for city, please click to find which suitable for you</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="thumb-tour">
-							<img src="<?=IMG_URL?>new-template/thumbnail/thumb-tour1.png">
-						</div>
-						<div class="content">
-							<div class="title-tour">Cu Chi Tunel</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="thumb-tour">
-							<img src="<?=IMG_URL?>new-template/thumbnail/thumb-tour2.png">
-						</div>
-						<div class="content">
-							<div class="title-tour">City Tours</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 	</div>
 </div>
 

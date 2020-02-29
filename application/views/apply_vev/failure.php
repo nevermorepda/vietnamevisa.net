@@ -11,7 +11,6 @@
 			</div>
 		</div>
 	</div>
-	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 	<div class="visa-form">
 		<div class="cluster">
 			<div class="container">
@@ -40,7 +39,7 @@
 									<li>The credit card information that you filled is incorrect.</li>
 								</ul>
 							</p>
-							<p>Please try to <a title="procces the payment" href="<?=site_url("apply-visa/step3")."?key=".$key?>">settle the payment again</a> or <a title="Apply Vietnam visa online" href="<?=site_url("apply-visa")?>">click here</a> to re-apply the Vietnam visa on arrival then try with other cards or choose another method of payment.</p>
+							<p>Please try to <a title="procces the payment" href="<?=site_url("apply-e-visa/step3")."?key=".$key?>">settle the payment again</a> or <a title="Apply Vietnam visa online" href="<?=site_url("apply-visa")?>">click here</a> to re-apply the Vietnam visa on arrival then try with other cards or choose another method of payment.</p>
 							<p>Should you have any further questions, please do not hesitate to contact us via <a title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> or <a title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to be supported promptly.</p>
 							<p>
 								Best Regards,<br />
@@ -50,7 +49,7 @@
 								Email: <a title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a>
 							</p>
 							<div class="text-center">
-								<a class="btn btn-danger btn-radius" title="Apply Vietnam visa online" href="<?=site_url("apply-visa/step3")."?key=".$key?>">TRY AGAIN</a>
+								<a class="btn btn-danger btn-radius" title="Apply Vietnam visa online" href="<?=site_url("apply-e-visa/step3")."?key=".$key?>">TRY AGAIN</a>
 							</div>
 						</div>
 					</div>

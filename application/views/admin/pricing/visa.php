@@ -29,8 +29,8 @@
 				<div role="tabpanel" class="tab-pane <?=(!$r?"active":"")?>" id="<?=$this->util->slug($regions[$r])?>">
 					<table class="table table-bordered table-striped table-hover">
 						<tr>
-							<th colspan="<?=($r) ? 4 : 3 ?>"></th>
-							<th colspan="13" class="text-center">Visa on Arrival</th>
+							<th colspan="<?=($r) ? 5 : 3 ?>"></th>
+							<th colspan="12" class="text-center">Visa on Arrival</th>
 							<th colspan="2" class="text-center">E-Visa</th>
 						</tr>
 						<tr>

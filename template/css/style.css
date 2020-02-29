@@ -1310,8 +1310,6 @@ ul.list-embassy li {
 	right: 0px;
 	bottom: -15px;
 }
-
-
 .dispart {
 	border-right: 1px dotted #ccc;
 }
@@ -1321,7 +1319,6 @@ ul.list-embassy li {
 .cluster-content {
 	padding: 50px 0px 0px;
 	padding-bottom: 25px;
-	border-bottom: 1px dotted #ccc;
 }
 .cluster-content:last-child {
 	border: none;
@@ -1969,14 +1966,6 @@ ul.style-step li.active {
 	top: 50px;
 }
 .fees .ext-service .tf-anotate {
-	border: 1px solid #707070;
-	height: 83px;
-	width: 485px;
-	padding: 29px;
-	margin: 50px 355px;
-	font-weight: 600;
-	position: relative;
-	background: #fff;
 }
 .fees .ext-service .tf-anotate .bg-anotate {
 	border: 1px solid #851919;
