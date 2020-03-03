@@ -28,11 +28,11 @@
 			<div class="col-md-4 col-sm-6 col-xs-6">
 				<h3 class="fnav-title"><a href="">USEFUL INFORMATION</a></h3>
 				<ul class="fnav-links">
-					<li><a title="Vietnam Visa" href="">Vietnam Visa</a></li>
-					<li><a title="Embassy list" href="">Embassy list</a></li>
-					<li><a title="Visa News" href="">Visa News</a></li>
-					<li><a title="Travel Tips" href="">Travel Tips</a></li>
-					<li><a title="Consultant Services Guideline" href="">Consultant Services Guideline</a></li>
+					<li><a title="Vietnam Visa" href="#">Vietnam Visa</a></li>
+					<li><a title="Embassy list" href="#">Embassy list</a></li>
+					<li><a title="Visa News" href="#">Visa News</a></li>
+					<li><a title="Travel Tips" href="#">Travel Tips</a></li>
+					<li><a title="Consultant Services Guideline" href="#">Consular Services Guideline</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 col-sm-6 col-xs-6">

@@ -275,7 +275,7 @@ input.error, select.error, textarea.error, span.error {
 }
 
 .home-sub-heading {
-	font-size: 45px;
+	font-size: 35px;
 }
 .border-text {
 	border: 3px solid #ffff00;
@@ -1576,6 +1576,8 @@ ul.style-step li.active {
 }
 
 .panel-options {
+	padding: 30px;
+	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
 }
 
 .panel-options .div {
@@ -1589,12 +1591,11 @@ ul.style-step li.active {
 .panel-fees {
 	background-color: #FFFFFF;
 	padding: 0px;
-	border: 1px solid #DDDDDD;
 	position: relative;
+	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
 }
 .panel-fees ul {
 	list-style: none;
-	margin: 10px 0px 0px 0px;
 	padding: 0px;
 }
 .panel-fees li {
@@ -1816,7 +1817,7 @@ ul.style-step li.active {
 	display: inline-flex;
 }
 .shadow-text {
-	text-shadow: 3px 3px #bdbdbd;
+	text-shadow: 3px 2px #bdbdbd;
 }
 .fee-banner ul {
 	margin: 0;
@@ -2077,44 +2078,6 @@ ul.style-step li.active {
 	border-style: solid;
 	border-width: 6px; 
 }
-.panel-fees {
-	background-color: #FFFFFF;
-	padding: 0px;
-	border: 1px solid #DDDDDD;
-	position: relative;
-}
-.panel-fees ul {
-	list-style: none;
-	margin: 10px 0px 0px 0px;
-	padding: 0px;
-}
-.panel-fees li {
-	border-bottom: 1px solid #BDC6CA;
-	padding: 10px;
-}
-.panel-fees span, .panel-fees table.extra_service {
-	float: right;
-}
-.panel-fees .price {
-	font-family: sans-serif;
-	color: #005286;
-	font-weight: bold;
-}
-.panel-fees .total {
-	border: none;
-	margin-top: -1px;
-}
-.panel-fees .total span {
-	color: #DC2222;
-	font-size: 16px;
-	font-weight: bold;
-}
-.panel-fees .payment-methods {
-	background-color: #ECEFF1;
-	text-align: center;
-	padding: 12px 20px;
-	margin-top: 10px;
-}
 .applyform .control-label {
 	font-weight: bold;
 }
@@ -2122,11 +2085,11 @@ ul.style-step li.active {
 	display: table;
 	width: 100%;
 	padding-bottom: 40px;
+	text-align: center;
 }
 .step-apply .step {
 	display: table-cell;
 	width: 25%;
-	border-bottom: 3px solid #ccc;
 	padding: 15px 0px;
 	font-size: 18px;
 	border-right: 5px solid #fff0;
@@ -2135,17 +2098,16 @@ ul.style-step li.active {
 	position: relative;
 }
 .step-apply .active {
-	border-bottom: 3px solid #851919 !important;
 }
 .step-apply .step .line-step {
 	position: absolute;
 	width: 100%;
-	top: 80%;
+	top: 0%;
 }
 .step-apply .active .line-step .step-number {
-	width: 25px;
-	height: 25px;
-	background: #851919 !important;
+	width: 70px;
+	height: 70px;
+	background: #bb262d !important;
 	display: inline-block;
 	border-radius: 50%;
 	color: #fff;
@@ -2153,22 +2115,19 @@ ul.style-step li.active {
 }
 .step-apply .active .line-step .step-number:before {
 	position: absolute;
-	font-family: FontAwesome;
-	content: '\f00c' !important;
 	left: 0;
 	width: 100%;
 	text-align: center;
-	font-size: 13px;
-	padding: 3px;
 }
 .step-apply .step .line-step .step-number {
-	width: 25px;
-	height: 25px;
-	background: #cccccc;
+	width: 70px;
+	height: 70px;
+	background: #8b8075;
 	display: inline-block;
 	border-radius: 50%;
 	color: #fff;
 	position: relative;
+	font-size: 37px;
 }
 .step-apply .step .line-step1 .step-number:before {
 	position: absolute;
@@ -2176,6 +2135,7 @@ ul.style-step li.active {
 	left: 0;
 	width: 100%;
 	text-align: center;
+	top: 10px;
 }
 .step-apply .step .line-step2 .step-number:before {
 	position: absolute;
@@ -2183,6 +2143,7 @@ ul.style-step li.active {
 	left: 0;
 	width: 100%;
 	text-align: center;
+	top: 10px;
 }
 .step-apply .step .line-step3 .step-number:before {
 	position: absolute;
@@ -2190,6 +2151,7 @@ ul.style-step li.active {
 	left: 0;
 	width: 100%;
 	text-align: center;
+	top: 10px;
 }
 .step-apply .step .line-step4 .step-number:before {
 	position: absolute;
@@ -2197,6 +2159,7 @@ ul.style-step li.active {
 	left: 0;
 	width: 100%;
 	text-align: center;
+	top: 10px;
 }
 .applyform-banner ul li {
 	padding: 5px 0;
@@ -2637,10 +2600,14 @@ ul.style-step li.active {
 	color: #902d2d;
 	text-transform: uppercase;
 }
-.different .content .nation_permit table {
+.different .content .nation table {
 	border-collapse: collapse;
 }
-.different .content .nation_permit table, td, th {
+.different .content .nation .table td {
+	border: 1px solid #b3b3b3;
+	padding: 5px 15px;
+}
+.different .content .nation .table th {
 	border: 1px solid #b3b3b3;
 	padding: 5px 15px;
 }
@@ -3089,7 +3056,7 @@ ul.style-step li.active {
 	display: inline-flex;
 }
 .applyform {
-	/* padding: 50px 0; */
+	padding: 50px	;
 }
 .applyform .box-booking-detail .thumbnail img {
 	width: 100%;

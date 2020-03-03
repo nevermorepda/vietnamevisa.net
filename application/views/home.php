@@ -221,9 +221,9 @@
 						<ul>
 							<li>No Hidden Charges</li>
 							<li>Competitive Prices</li>
-							<li>Timely visa processing</li>
+							<li>Timely Visa Processing</li>
 							<li>Prompt Support via chat, email, or phone</li>
-							<li>Fast and secure</li>
+							<li>Fast And Secure</li>
 						</ul>
 						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on </p>
 						<div class="showmore-button">

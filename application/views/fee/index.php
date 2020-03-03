@@ -69,16 +69,15 @@
 		</div>
 	</div>
 </div>
-
 <div class="fees cluster-content">
 	<div class="cluster-body">
 		<div class="container">
 			<div class="explain-fee">
-				<h2 class="page-title home-sub-heading shadow-text">Vietnam visa fees</h2>
+				<h2 class="page-title home-sub-heading shadow-text">VIETNAM VISA FEES</h2>
 				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red">Visa Processing fee</span> and <span class="red">Government fee</span></p>
 				<ul>
-					<li><span class="font-weight-bold">Processing fee:</span> It is the fee you will pay online for us to do all the paperwork to submit your application to the Vietnam Immigration Department for visa procedure. Processing fee depends on type and term of visa you want to get.</li>
-					<li><span class="font-weight-bold">Government fee:</span> This fee is paid for Vietnam Immigration Officers to have a visa stamped onto your passport.  For passengers who apply for visa on arrival, you will pay in cash at LANDING VISA counter  when you arrive at Vietnam airport. For passengers enter Vietnam by Electronic Visa, Government fee is included when you pay online. Therefore you will not pay any fee at check-on point.</li>
+					<li><span class="font-weight-bold red">Processing fee:</span> It is the fee you will pay online for us to do all the paperwork to submit your application to the Vietnam Immigration Department for visa procedure. Processing fee depends on type and term of visa you want to get.</li>
+					<li><span class="font-weight-bold red">Government fee:</span> This fee is paid for Vietnam Immigration Officers to have a visa stamped onto your passport.  For passengers who apply for visa on arrival, you will pay in cash at LANDING VISA counter  when you arrive at Vietnam airport. For passengers enter Vietnam by Electronic Visa, Government fee is included when you pay online. Therefore you will not pay any fee at check-on point.</li>
 				</ul>
 			</div>
 			<div class="text-center">
@@ -133,7 +132,7 @@
 			<br>
 			<div class="alert alert-warning">
 				<p>Dear customer,</p>
-				<p>It is informed that xx passport holders can apply online on our website for Visa On Arrival but we ONLY can help you to process 1 month single tourist visa, not for a full 30 days, the Immigration just bases on your ticket to process visa (maximum 25 days). </p>
+				<p>It is informed that <span class="red"><?=!empty($current_nation->name) ? $current_nation->name : null?></span> passport holders can apply online on our website for Visa On Arrival but we ONLY can help you to process 1 month single tourist visa, not for a full 30 days, the Immigration just bases on your ticket to process visa (maximum 25 days). </p>
 				<p>The processing will take 7- 10 working days. The documents following are required:</p>
 				<ul>
 					<li><strong>Passport scan</strong></li>
@@ -152,7 +151,7 @@
 			<br>
 			<div class="alert alert-warning">
 				<p>Dear customer,</p>
-				<p>We would like to inform that  xxx passport holders can apply online on our website to get visa on arrival. However, The Immigration will ask for passport scan of applicant to process Vietnam Visa. Please send to our email : <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> . Without Passport Scan, we can’t process visa for you.</p>
+				<p>We would like to inform that <span class="red"><?=!empty($current_nation->name) ? $current_nation->name : null?></span> passport holders can apply online on our website to get visa on arrival. However, The Immigration will ask for passport scan of applicant to process Vietnam Visa. Please send to our email : <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> . Without Passport Scan, we can’t process visa for you.</p>
 				<p><span class="font-weight-bold">IMPORTANT NOTICE:</span> We can help you to process Vietnam Visa Arrival. Please note that the Vietnam Immigration requires you must have more than $1000 USD which you must show in cash or give your card to the Immigration Officer to check upon arrival. If you meet this condition then can continue to do the visa stamp procedure. Otherwise, you may not enter Vietnam, even if you have the APPROVAL LETTER. Please prepare this amount before your departure.</p>
 				<p>Best regards, <br>
 				Vietnam Evisa Team,
@@ -163,9 +162,9 @@
 			<div class="alert alert-warning">
 				<p>Dear customer,</p>
 				<p>Thanks for your concern, <br>
-				We regret to inform that  we can not   assist Vietnam Visa with your Nationality <br>
+				We regret to inform that we can not assist Vietnam Visa with your Nationality <br>
 				Please contact Vietnam Embassy nearest your location for supporting. <br>
-				ou can check the Vietnam Embassy list here : <a href="<?=site_url("vietnam-embassies/{$current_nation->alias}")?>">link</a> <br>
+				You can check the Vietnam Embassy list here : <a href="<?=site_url("vietnam-embassies/{$current_nation->alias}")?>"><?=site_url("vietnam-embassies/{$current_nation->alias}")?></a> <br>
 				We apologize for any inconvenience this may cause.</p>
 				<p>Thanks for contacting us. <br>
 				Best regards, <br>
@@ -177,42 +176,32 @@
 		<div class="e-visa-fee">
 			<div class="container">
 				<div class="title">
-					<h2 class="home-sub-heading shadow-text">Vietnam Electronic Visa</h2>
-					<h4 class="sub-title">(available for 26 landport and airport, 86 countries)</h4>
+					<h2 class="home-sub-heading shadow-text">VIETNAM ELECTRONIC VISA</h2>
+					<h4 class="sub-title">(available at airports, land ports and seaports for 86 countries)</h4>
 				</div>
 				<? if (sizeof($tourist_evisa_types) && sizeof($business_evisa_types)) { ?>
-				<div class="row">
-					<div class="col-sm-2"></div>
-					<div class="col-sm-8">
-						<table class="table table-bordered pricing-table">
-							<tr>
-								<th class="text-left" rowspan="">TYPES OF VISA</th>
-								<th class="text-center" colspan="">PROCESSING FEE <br><span style="font-style: italic; font-size:15px">(Normal 3 days)</span> </th>
-								<th class="text-center" rowspan="">GOVERNMENT FEE</th>
-								<th class="text-center" rowspan="">TOTAL</th>
-							</tr>
-							<tr>
-								<td class="text-left">Tourist</td>
-								<td class="text-center"><?=$price_nation->evisa_tourist_1ms?> USD/pax</td>
-								<td class="text-center" rowspan="2">25 USD/pax</td>
-								<td class="text-center"><?=25+($price_nation->evisa_tourist_1ms)?> USD/person</td>
-							</tr>
-							<tr>
-								<td class="text-left">Business</td>
-								<td class="text-center"><?=$price_nation->evisa_business_1ms?> USD/pax</td>
-								<td class="text-center"><?=25+($price_nation->evisa_business_1ms)?> USD/person</td>
-							</tr>
-							<tr>
-								<td class="text-left red">Urgent processcing </td>
-								<td class="text-center red" colspan="2">
-									<span class="red">+ <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</span>
-								</td>
-								<td class="text-center red"><?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
-							</tr>
-						</table>
-					</div>
-					<div class="col-sm-2"></div>
-				</div>
+				<table class="table table-bordered pricing-table">
+					<tr>
+						<th class="text-left" rowspan="2">TYPES OF VISA</th>
+						<th class="text-center" colspan="2">PROCESSING FEE <br></th>
+						<th class="text-center" rowspan="2">GOVERNMENT FEE</th>
+					</tr>
+					<tr>
+						<th class="text-center" rowspan="">NORMAL <br> (Guaranteed 3 working days)</th>
+						<th class="text-center red" rowspan="">URGENT <br> (within 2 working days)</th>
+					</tr>
+					<tr>
+						<td class="text-left">Tourist</td>
+						<td class="text-center"><?=$price_nation->evisa_tourist_1ms?> USD/pax</td>
+						<td class="text-center red">+ <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
+						<td class="text-center" rowspan="2">25 USD/pax</td>
+					</tr>
+					<tr>
+						<td class="text-left">Business</td>
+						<td class="text-center"><?=$price_nation->evisa_business_1ms?> USD/pax</td>
+						<td class="text-center red">+ <?=$processing_fee->evisa_tourist_1ms_urgent?> USD/pax</td>
+					</tr>
+				</table>
 				<? } ?>
 			</div>
 		</div>
@@ -220,8 +209,8 @@
 		<div class="visa-arrival-fee">
 			<div class="container">
 				<div class="title clearfix">
-					<h2 class="home-sub-heading shadow-text">Vietnam Visa On arrival</h2>
-					<h4 class="sub-title">(available for International airport only, all countries can apply visa)</h4>
+					<h2 class="home-sub-heading shadow-text">VIETNAM VISA ON ARRIVAL</h2>
+					<h4 class="sub-title">(available at International Airport Only for most of countries)</h4>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -361,7 +350,7 @@
 		<div class="ext-service">
 			<div class="container">
 				<div class="title clearfix">
-					<h2 class="home-sub-heading shadow-text">Extra Service on arrival at the airport</h2>
+					<h2 class="home-sub-heading shadow-text">EXTRA SERVICE ON ARRIVAL AT THE AIRPORT</h2>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -488,7 +477,7 @@
 		<div class="ext-service-ins">
 			<div class="container">
 				<div class="title clearfix">
-					<h2 class="home-sub-heading shadow-text">Extra Service inside Vietnam</h2>
+					<h2 class="home-sub-heading shadow-text">EXTRA SERVICE INSIDE VIETNAM</h2>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -520,13 +509,14 @@
 					</tr>
 				</table> -->
 				<div class="summary">
-					<p>We can help you to extend your curent visa to stay longer without exit Vietnam.  You just need to send us your passport scan, visa stamp and visa sticker to our email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p> then we will inform you the extension fee after checking your documents with Vietnam Immigration Department. If you agree with that fee, please come to our office and give us your passport with 1 portrait photograph. After that, we will submit it to the Vietnam Immigration to extend visa for you. Please take note that visa extension must be done offline so we just help who is in Ho Chi Minh city. If you stay in other cities, please find a travel agent nearby your location for support.</p>
+					<p>We can help you to extend a visa based on your current visa to stay longer without exitting Vietnam. You just need to send your passport scan, visa stamp and visa sticker to our email <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a> .After checking the documents with Vietnam Immigration Department, we will inform you the extension fee. If you agree with that fee, please come to our office and give us your passport with 1 portrait photograph. We will submit it to the Vietnam Immigration to extend visa for you then. Please take note that Visa Extension must be done offline so we just assist who is in Ho Chi Minh city. If you stay in other cities, please find a travel agent nearby your location for support.</p>
 				</div>
 				<!-- <div class="ext-service-ins-anotate">
 					<p>Please send all necessarry documents: passport scan, visa scan, immigration stamp to <a class="red" title="email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a></p>
 					<div class="bg-anotate"></div>
 				</div> -->
 			</div>
+		</div>
 	</div>
 </div>
 

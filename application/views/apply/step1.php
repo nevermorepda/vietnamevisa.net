@@ -52,38 +52,34 @@
 			<//? require_once(APPPATH."views/apply/step-nav.php"); ?>
 		</div> -->
 
-			<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
-		<div class="step-apply text-center">
+		<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+		<div class="step-apply ">
 			<div class="step active">
 				<div class="line-step line-step1">
 					<span class="step-number"></span>
 				</div>
-				Visa Options
 			</div>
 			<div class="step">
 				<div class="line-step line-step2">
 					<span class="step-number"></span>
 				</div>
-				Login Account
 			</div>
 			<div class="step">
 				<div class="line-step line-step3">
 					<span class="step-number"></span>
 				</div>
-				Applicant Details
 			</div>
 			<div class="step">
 				<div class="line-step line-step4">
 					<span class="step-number"></span>
 				</div>
-				Review & Payment
 			</div>
 		</div>
 		
 		<div class="applyform">
 			<form id="frmApply" class="form-horizontal" role="form" action="<?=BASE_URL_HTTPS."/apply-visa/step2.html"?>" method="POST">
 				<div class="row clearfix">
-					<div class="col-md-7">
+					<div class="col-md-8">
 						<div class="panel-options">
 							<!-- <div class="row">
 								<div class="col-md-4">
@@ -443,7 +439,7 @@
 						</div>
 					</div>
 					<? $level = $this->util->level_account(); ?>
-					<div class="col-md-5">
+					<div class="col-md-4">
 						<div class="panel-fees">
 							<ul>
 								<!-- <li class="clearfix">

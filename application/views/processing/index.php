@@ -124,7 +124,7 @@
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">How to apply</h5>
 							</div>
 							<div class="content">
-								<p><span style="color: #851919; font-weight: 600;">Step 1:</span>Fill in the application online via this link for Visa On Arrival <a href="http://www.vietnamevisa.net/apply-visa.html">http://www.vietnamevisa.net/apply-visa.html</a> to choose the type of visa</p>
+								<p><span style="color: #851919; font-weight: 600;">Step 1:</span>Fill in the application form for Visa On Arrival <a href="http://www.vietnamevisa.net/apply-visa.html"><span class="font-italic">here</span></a> to choose the type of visa</p>
 								<p><span style="color: #851919; font-weight: 600;">Step 2:</span> Double check the information and make the payment by Credit/Debit Card via Online Payment Gates and Bank Transfer</p>
 								<p><span style="color: #851919; font-weight: 600;">Step 3:</span> : You will receive an email with your application ID in the title to confirm about the successful visa application and the time when you will receive the Approval Letter via email</p>
 								<p><span style="color: #851919; font-weight: 600;">Step 4:</span> Advising to print the Approval Letter out in advance to board the plane and get the visa upon arrival with the documents: 2 portraits size 4x6 cm, the Entry & Exit form, Stamping Fee in cash and the Approval Letter printing in color.</p>
@@ -137,7 +137,7 @@
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">How to apply</h5>
 							</div>
 							<div class="content">
-								<p><span style="color: #de8c15; font-weight: 600;">Step 1:</span> Fill in the application online via this link for Electronic Visa: <a href="http://www.vietnamevisa.net/apply-visa.html">http://www.vietnamevisa.net/apply-visa.html</a> to choose the type of visa</p>
+								<p><span style="color: #de8c15; font-weight: 600;">Step 1:</span> Fill in the application form for Electronic Visa <a href="http://www.vietnamevisa.net/apply-visa.html"><span class="font-italic">here</span></a> to choose the type of visa</p>
 								<p><span style="color: #de8c15; font-weight: 600;">Step 2:</span> Double check the information and make the payment by Credit/Debit Card via Online Payment Gates and Bank Transfer. Fill in the passport information and upload the portrait and passport scan in *.jpg, *.png or *.gif and the maximum upload file size is 8MB.</p>
 								<p><span style="color: #de8c15; font-weight: 600;">Step 3:</span> You will receive an email to confirm successful visa application with the application ID in the title and the time when we will send the Electronic Visa to your email</p>
 								<p><span style="color: #de8c15; font-weight: 600;">Step 4:</span> Advising to print the Electronic Visa out in advance and show at the exactly entry port to get the visa stamp upon arrival without paying any fee.</p>
@@ -205,22 +205,27 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="item d-table">
-							<div class="title d-table-cell">
+						<div class="item ">
+							<div class="title">
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lenght of stay:</h5>
 							</div>
-							<div class="content d-table-cell">
-								<p>1 – 3 months</p>
+							<div class="content">
+								<ul>
+									<li>1 – 3 months</li>
+									<li>6 months - 1 year (United State of America ONLY)</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-6 right" style="border-left: 2px dashed #ccc;">
-						<div class="item d-table">
-							<div class="title d-table-cell">
+						<div class="item ">
+							<div class="title">
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lenght of stay:</h5>
 							</div>
-							<div class="content d-table-cell">
-								<p>30 days</p>
+							<div class="content">
+								<ul>
+									<li>30 days</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -299,7 +304,7 @@
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Eligible ports:</h5>
 							</div>
 							<div class="content">
-								<p>8 airports, 16 land ports, and 9 seaports. Check Eligible Ports here: <a href="">“link”</a></p>
+								<p>8 airports, 16 land ports, and 9 seaports. Check Eligible Ports <a href=""><span class="font-italic">here</span></a>
 							</div>
 						</div>
 					</div>

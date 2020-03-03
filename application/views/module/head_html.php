@@ -60,7 +60,7 @@ if (!empty($configured_metas)) {
 <link rel="canonical" href="<?=PROTOCOL.$meta_info->url?>" />
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" media="screen,all" href="<?=CSS_URL?>style.css" />
+<link rel="stylesheet" type="text/css" media="screen,all" href="<?=CSS_URL?>style.css?v=<?=date("YmdHis")?>" />
 <link rel="stylesheet" href="<?=CSS_URL?>owl.carousel.min.css">
 <link rel="stylesheet" href="<?=CSS_URL?>owl.theme.default.min.css">
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
