@@ -42,7 +42,7 @@
 	</div>
 </div>
 
-<div class="cluster-content">
+<div class="applyform-content cluster-content">
 	<div class="container">
 		<!-- breadcrumb -->
 		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
@@ -55,24 +55,22 @@
 		<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
 		<div class="step-apply ">
 			<div class="step active">
-				<div class="line-step line-step1">
-					<span class="step-number"></span>
-				</div>
+				<div class="line-right line-step1"></div>
+				<span class="step-number">1</span>
 			</div>
 			<div class="step">
-				<div class="line-step line-step2">
-					<span class="step-number"></span>
-				</div>
+				<div class="line-right line-step2"></div>
+				<div class="line-left"></div>
+				<span class="step-number">2</span>
 			</div>
 			<div class="step">
-				<div class="line-step line-step3">
-					<span class="step-number"></span>
-				</div>
+				<div class="line-right line-step3"></div>
+				<div class="line-left"></div>
+				<span class="step-number">3</span>
 			</div>
 			<div class="step">
-				<div class="line-step line-step4">
-					<span class="step-number"></span>
-				</div>
+				<div class="line-left line-step4"></div>
+				<span class="step-number">4</span>
 			</div>
 		</div>
 		

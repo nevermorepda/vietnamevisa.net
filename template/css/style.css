@@ -2048,12 +2048,7 @@ ul.style-step li.active {
 
 /* Apply-form */
 .applyform-content {
-	/* padding: 50px 0; */
-	background: url("../images/background.png") no-repeat scroll top center transparent;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
+	background-color: #f8f8f8;
 }
 .apply-visa .group-heading {
 	padding: 10px;
@@ -2099,10 +2094,21 @@ ul.style-step li.active {
 }
 .step-apply .active {
 }
-.step-apply .step .line-step {
+.step-apply .step .line-right {
 	position: absolute;
-	width: 100%;
-	top: 0%;
+	width: 50%;
+	top: 50%;
+	height: 20px;
+	border-top: 2px #d7cec8 dashed;
+	left: 50%;
+}
+.step-apply .step .line-left {
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	height: 20px;
+	border-top: 2px #d7cec8 dashed;
+	right: 50%;
 }
 .step-apply .active .line-step .step-number {
 	width: 70px;
@@ -2119,7 +2125,7 @@ ul.style-step li.active {
 	width: 100%;
 	text-align: center;
 }
-.step-apply .step .line-step .step-number {
+.step-apply .step .step-number {
 	width: 70px;
 	height: 70px;
 	background: #8b8075;
@@ -2128,6 +2134,7 @@ ul.style-step li.active {
 	color: #fff;
 	position: relative;
 	font-size: 37px;
+	padding: 10px;
 }
 .step-apply .step .line-step1 .step-number:before {
 	position: absolute;
