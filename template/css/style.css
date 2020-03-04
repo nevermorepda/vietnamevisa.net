@@ -212,7 +212,6 @@ input.error, select.error, textarea.error, span.error {
 .btn-danger {
 	background: #851919;
 	border-color: #851919;
-	border-radius: 5px;
 	color: #ffffff;
 }
 .btn-danger:hover {
@@ -271,7 +270,7 @@ input.error, select.error, textarea.error, span.error {
 	background-color: #fcf8e3;
 }
 .home-heading {
-	font-size: 32px;
+	font-size: 45px;
 }
 
 .home-sub-heading {
@@ -1317,8 +1316,7 @@ ul.list-embassy li {
 	border: none;
 }
 .cluster-content {
-	padding: 50px 0px 0px;
-	padding-bottom: 25px;
+	padding: 25px 0px;
 }
 .cluster-content:last-child {
 	border: none;
@@ -1496,7 +1494,9 @@ ul.list-embassy li {
 }
 
 /* Apply Form */
-
+.btn-apply-code {
+	font-size: 13px;
+}
 .tab-step {
 	border-bottom: 3px solid #cc0008;
 	margin: 0 0 30px;
@@ -1545,19 +1545,20 @@ ul.style-step li.active {
 	color: #D40000;
 }
 .applyform input[type="text"] {
+	height: 33px;
+	border-radius: 0;
 }
 .applyform select {
+	font-size: 13px;
 }
 .applyform textarea {
 }
 .applyform .control-label {
 	font-weight: bold;
 }
-
 .processing-note.note-success {
 	background-color: #dff0d8;
 }
-
 .processing-note:before {
 	position: absolute;
 	display: block;
@@ -1576,10 +1577,25 @@ ul.style-step li.active {
 }
 
 .panel-options {
-	padding: 30px;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
+	background-color: #ffffff;
+	font-size: 13px;
 }
-
+.panel-options .optional {
+	padding: 5px 30px;
+}
+.panel-options .title {
+	font-size: 29px;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.31;
+	letter-spacing: normal;
+	color: #8c1516;
+	border-bottom: 2px solid #8c1516;
+	margin: 0px 30px 30px 30px;
+	padding: 30px 0 0 0px;
+}
 .panel-options .div {
 	padding-top: 15px;
 	width: 100%;
@@ -1587,37 +1603,126 @@ ul.style-step li.active {
 	border-top: 1px solid #CCC;
 	display: block;
 }
-
 .panel-fees {
-	background-color: #FFFFFF;
-	padding: 0px;
+	background: url("http://localhost/vietnamevisa.net/template/images/new-template/panelfee-bg.png") no-repeat scroll top center transparent;
 	position: relative;
+	object-fit: contain;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
+	font-size: 13px;
+}
+.panel-fees .title {
+	font-size: 20px;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.3;
+	letter-spacing: normal;
+	color: #a51518;
+	padding: 30px 0 30px 0;
 }
 .panel-fees ul {
 	list-style: none;
 	padding: 0px;
+	margin: 0;
 }
 .panel-fees li {
-	border-bottom: 1px solid #BDC6CA;
-	padding: 10px;
+	padding: 10px 20px;
 }
 .panel-fees .last {
 	border-bottom: 1px solid #6997B3;
 }
 .panel-fees span, .panel-fees table.extra_service {
 	float: right;
+	text-align: right;
 }
 .panel-fees table.extra_service td {
 	padding: 0px 0px 10px 0px;
 }
+.panel-fees .service_fee {
+	border-bottom: 1px dashed #a51518;
+	padding-bottom: 25px;
+}
+.panel-fees .service_fee .processing_fee_note {
+	color: #a51518;
+}
+.panel-fees .service_fee .processing_fee_note a{
+	color: #a51518;
+}
+.panel-fees .promo_code {
+	padding-top: 25px;
+}
 .panel-fees .total {
 	border: none;
-	margin-top: -1px;
+	margin-top: 0px;
+	background-color: #a51518;
+	color: #ffffff;
+	padding: 20px;
+	position: relative;
+}
+.panel-fees .total .left_edge {
+	right: 100%;
+	position: absolute;
+	height: 100%;
+	width: 15px;
+	background: #a51518;
+	top: 0;
+}
+.panel-fees .total .left_edge:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0px 0 15px 15px;
+	border-color: transparent transparent #959595 transparent;
+	top: -14px;
+}
+.panel-fees .total .right_edge {
+	left: 100%;
+	position: absolute;
+	height: 100%;
+	width: 15px;
+	background: #a51518;
+	top: 0;
+}
+.panel-fees .total .right_edge:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 0 0 15px;
+	border-color: transparent transparent transparent #959595;
+	top: -14px;
+}
+.panel-fees .total .total_fee{
+	font-size: 20px;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.3;
+	letter-spacing: normal;
+	text-align: center;
+	color: #ffffff;
+	vertical-align: middle;
+	float: left;
+}
+.panel-fees .total a{
+	color: #ffffff;
+	text-decoration: none;
+}
+.panel-fees .total .total_price {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 35px;
+	font-weight: bold;
+}
+.panel-fees .total .stamping_fee_note {
+	font-size: 11px;
 }
 .panel-fees .price {
 	font-family: sans-serif;
-	color: #005286;
+	color: #a51518;
 	font-weight: bold;
 }
 .panel-fees label span {
@@ -1640,13 +1745,10 @@ ul.style-step li.active {
 .panel-fees .total span {
 	color: #DC2222;
 	font-size: 16px;
-	font-weight: bold;
 }
 .panel-fees .payment-methods {
-	background-color: #ECEFF1;
 	text-align: center;
-	padding: 12px 20px;
-	margin-top: 10px;
+	padding: 15px 9px;
 }
 .promotion-input {
 }
@@ -1682,17 +1784,22 @@ ul.style-step li.active {
 }
 .applyform.step2 .group .group-content .passport-detail .form-control {
 	margin-bottom: 15px;
+	height: 33px;
+	border-radius: 0;
 }
 .terms_conditions_confirm {
 	text-decoration: underline;
 }
-
+.step3 {
+	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
+	background-color: #ffffff;
+	padding: 30px !important;
+}
 .applyform.step3 .table-summary {
 	border-collapse: collapse;
 	margin: 0 0 18px 0;
 }
 .applyform.step3 h3 {
-	border-bottom: 1px solid #ccc;
 	padding-bottom: 5px;
 	font-weight: normal;
 }
@@ -1724,9 +1831,113 @@ ul.style-step li.active {
 .applymore15 .here {
 	text-decoration: underline;
 }
-
 /* End Apply Form */
-
+/* Apply-form */
+.applyform-heading {
+	padding: 40px 0;
+}
+.applyform-content {
+}
+.apply-visa .group-heading {
+	padding: 10px;
+	font-size: 25px;
+}
+.processing-note {
+	background-color: #ECEFF1;
+	padding: 15px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	position: relative;
+}
+.processing-note:before {
+	position: absolute;
+	display: block;
+	top: -12px;
+	left: 20px;
+	content: " ";
+	box-sizing: border-box;
+	z-index: 2;
+	border-color: transparent transparent rgb(236, 239, 241);
+	border-style: solid;
+	border-width: 6px; 
+}
+.applyform .control-label {
+	font-weight: bold;
+}
+.step-apply {
+	display: table;
+	width: 100%;
+	text-align: center;
+}
+.step-apply .step {
+	display: table-cell;
+	width: 25%;
+	padding: 15px 0px;
+	font-size: 18px;
+	font-weight: 600;
+	position: relative;
+}
+.step-apply .step .active {
+	background: #bb262d !important;
+}
+.step-apply .step .line-right {
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	height: 20px;
+	border-top: 2px #d7cec8 dashed;
+	left: 50%;
+}
+.step-apply .step .line-left:before {
+	content: '' !important;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	bottom: 9px;
+	z-index: 1;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent transparent transparent #d7cec8;
+	border-width: 10px 0 10px 12px;
+}
+.step-apply .step .line-left {
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	height: 20px;
+	border-top: 2px #d7cec8 dashed;
+	right: 50%;
+}
+.step-apl-content {
+	display: table;
+	width: 100%;
+	padding-bottom: 50px;
+}
+.step-apl-content .bystep {
+	display: table-cell;
+	width: 25%;
+	text-align: center;
+	font-weight: 600;
+}
+.step-apl-content .active {
+	color: #851919 !important;
+}
+.step-apply .step .step-number {
+	width: 70px;
+	height: 70px;
+	background: #8b8075;
+	display: inline-block;
+	border-radius: 50%;
+	color: #fff;
+	position: relative;
+	font-size: 37px;
+	padding: 10px;
+}
+.applyform-banner ul li {
+	padding: 5px 0;
+}
+/* End Apply-form */
 /* Contact */
 .contact-banner ul {
 	margin: 0;
@@ -2046,132 +2257,7 @@ ul.style-step li.active {
 }
 /* End Visa-fee */
 
-/* Apply-form */
-.applyform-content {
-	background-color: #f8f8f8;
-}
-.apply-visa .group-heading {
-	padding: 10px;
-	font-size: 25px;
-}
-.processing-note {
-	background-color: #ECEFF1;
-	padding: 15px;
-	margin-bottom: 15px;
-	font-size: 12px;
-	position: relative;
-}
-.processing-note:before {
-	position: absolute;
-	display: block;
-	top: -12px;
-	left: 20px;
-	content: " ";
-	box-sizing: border-box;
-	z-index: 2;
-	border-color: transparent transparent rgb(236, 239, 241);
-	border-style: solid;
-	border-width: 6px; 
-}
-.applyform .control-label {
-	font-weight: bold;
-}
-.step-apply {
-	display: table;
-	width: 100%;
-	padding-bottom: 40px;
-	text-align: center;
-}
-.step-apply .step {
-	display: table-cell;
-	width: 25%;
-	padding: 15px 0px;
-	font-size: 18px;
-	border-right: 5px solid #fff0;
-	border-left: 5px solid #fff0;
-	font-weight: 600;
-	position: relative;
-}
-.step-apply .active {
-}
-.step-apply .step .line-right {
-	position: absolute;
-	width: 50%;
-	top: 50%;
-	height: 20px;
-	border-top: 2px #d7cec8 dashed;
-	left: 50%;
-}
-.step-apply .step .line-left {
-	position: absolute;
-	width: 50%;
-	top: 50%;
-	height: 20px;
-	border-top: 2px #d7cec8 dashed;
-	right: 50%;
-}
-.step-apply .active .line-step .step-number {
-	width: 70px;
-	height: 70px;
-	background: #bb262d !important;
-	display: inline-block;
-	border-radius: 50%;
-	color: #fff;
-	position: relative;
-}
-.step-apply .active .line-step .step-number:before {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	text-align: center;
-}
-.step-apply .step .step-number {
-	width: 70px;
-	height: 70px;
-	background: #8b8075;
-	display: inline-block;
-	border-radius: 50%;
-	color: #fff;
-	position: relative;
-	font-size: 37px;
-	padding: 10px;
-}
-.step-apply .step .line-step1 .step-number:before {
-	position: absolute;
-	content: '1';
-	left: 0;
-	width: 100%;
-	text-align: center;
-	top: 10px;
-}
-.step-apply .step .line-step2 .step-number:before {
-	position: absolute;
-	content: '2';
-	left: 0;
-	width: 100%;
-	text-align: center;
-	top: 10px;
-}
-.step-apply .step .line-step3 .step-number:before {
-	position: absolute;
-	content: '3';
-	left: 0;
-	width: 100%;
-	text-align: center;
-	top: 10px;
-}
-.step-apply .step .line-step4 .step-number:before {
-	position: absolute;
-	content: '4';
-	left: 0;
-	width: 100%;
-	text-align: center;
-	top: 10px;
-}
-.applyform-banner ul li {
-	padding: 5px 0;
-}
-/* End Apply-form */
+
 
 /* Login */
 .login-form {
@@ -2502,7 +2588,7 @@ ul.style-step li.active {
 .applyform.step2 .group .group-content .passport-detail {
 	margin-left: -2px;
 	margin-right: -2px;
-	font-size: 15px;
+	font-size: 13px;
 }
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] {
 	padding-left: 2px;
@@ -2511,9 +2597,6 @@ ul.style-step li.active {
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] .row {
 	margin-left: -2px;
 	margin-right: -2px;
-}
-.applyform.step2 .group .group-content .passport-detail .form-control {
-	margin-bottom: 15px;
 }
 .applyform.step2 .group .group-content .form-control {
 	padding: 4px;
@@ -3063,7 +3146,7 @@ ul.style-step li.active {
 	display: inline-flex;
 }
 .applyform {
-	padding: 50px	;
+	padding: 0px;
 }
 .applyform .box-booking-detail .thumbnail img {
 	width: 100%;

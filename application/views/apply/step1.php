@@ -41,37 +41,41 @@
 		</div>
 	</div>
 </div>
-
-<div class="applyform-content cluster-content">
+<div class="applyform-heading">
 	<div class="container">
 		<!-- breadcrumb -->
-		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-		<!-- end breadcrumb -->
-		<!-- 	<div class="tab-step clearfix">
-			<h1 class="note">Vietnam Visa Application Form</h1>
-			<//? require_once(APPPATH."views/apply/step-nav.php"); ?>
-		</div> -->
-
-		<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+	<!-- end breadcrumb -->
+		<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+	</div>
+</div>
+<div class="applyform-content cluster-content">
+	<div class="container">
 		<div class="step-apply ">
-			<div class="step active">
-				<div class="line-right line-step1"></div>
-				<span class="step-number">1</span>
+			<div class="step">
+				<div class="line-right"></div>
+				<span class="step-number active">1</span>
 			</div>
 			<div class="step">
-				<div class="line-right line-step2"></div>
+				<div class="line-right"></div>
 				<div class="line-left"></div>
 				<span class="step-number">2</span>
 			</div>
 			<div class="step">
-				<div class="line-right line-step3"></div>
+				<div class="line-right"></div>
 				<div class="line-left"></div>
 				<span class="step-number">3</span>
 			</div>
 			<div class="step">
-				<div class="line-left line-step4"></div>
+				<div class="line-left"></div>
 				<span class="step-number">4</span>
 			</div>
+		</div>
+		<div class="step-apl-content">
+			<div class="bystep active">Visa Option</div>
+			<div class="bystep">Account Login</div>
+			<div class="bystep">Application Details</div>
+			<div class="bystep">Review & Payment</div>
 		</div>
 		
 		<div class="applyform">
@@ -79,6 +83,7 @@
 				<div class="row clearfix">
 					<div class="col-md-8">
 						<div class="panel-options">
+							<div class="title text-left">VISA OPTION</div>
 							<!-- <div class="row">
 								<div class="col-md-4">
 									<label class="control-label">Passport holder <span class="required">*</span></label>
@@ -100,7 +105,7 @@
 									<script> $('#passport_holder').val('<?//=$step1->passport_holder?>'); </script>
 								</div>
 							</div> -->
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Number of visa <span class="required">*</span></label>
@@ -116,7 +121,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Type of visa <span class="required">*</span></label>
@@ -138,7 +143,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Purpose of visit <span class="required">*</span></label>
@@ -154,7 +159,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Arrival date <span class="required">*</span></label>
@@ -195,7 +200,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Arrival airport <span class="required">*</span></label>
@@ -216,7 +221,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row form-group wrap_exit_port" style="display: none;">
+							<div class="row form-group optional wrap_exit_port" style="display: none;">
 								<div class="col-md-4">
 									<label class="control-label">Exit through checkpoint <span class="required">*</span></label>
 								</div>
@@ -276,7 +281,7 @@
 									$('.arrival_port').html(str);
 								});
 							</script>
-							<div class="form-group">
+							<div class="form-group optional">
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label">Processing time <span class="required">*</span></label>
@@ -338,7 +343,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group extra_service box_full_package">
+							<div class="form-group optional extra_service box_full_package">
 								<div class="row full_package_group <?=((strtoupper($country_name)=='VIET NAM')?'full_package_group_none':'')?>">
 									<div class="col-md-12">
 										<div class="div"></div>
@@ -363,7 +368,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group extra_service" id="extra_service">
+							<div class="form-group optional extra_service" id="extra_service">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="div"></div>
@@ -423,7 +428,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group d-none d-sm-none d-md-block">
+							<div class="form-group optional d-none d-sm-none d-md-block">
 								<div class="row" style="padding-top: 20px; padding-bottom: 20px;">
 									<label class="col-md-4 control-label"></label>
 									<div class="col-md-8">
@@ -439,6 +444,7 @@
 					<? $level = $this->util->level_account(); ?>
 					<div class="col-md-4">
 						<div class="panel-fees">
+							<div class="title text-center">VISA OPTION SUMMARY</div>
 							<ul>
 								<!-- <li class="clearfix">
 									<label>Passport holder:</label>
@@ -472,13 +478,13 @@
 									<label>Visa stamping fee:</label>
 									<span class="total_visa_stamping_price price">25 $ x 1 applicants = 25 $</span>
 								</li>
-								<li class="clearfix">
+								<li class="clearfix service_fee">
 									<div class="clearfix">
 										<label>Visa service fee:</label>
 										<span class="total_visa_price price"></span>
 									</div>
 									<div class="processing_fee_note text-right" style="position: relative;">
-										<i class="processing_fee red">(<a class="red" target="_blank" title="processing fee" href="<?=site_url("visa-fee")?>#stamping-fee">the processing fee</a> is based on tar-iff table)</i>
+										<i class="processing_fee">(<a class="" target="_blank" title="processing fee" href="<?=site_url("visa-fee")?>#stamping-fee">the processing fee</a> is based on tar-iff table)</i>
 										<!-- <i class="stamping_fee_excluded">(<a target="_blank" title="stamping fee" href="<?=site_url("visa-fee")?>#stamping-fee">stamping fee</a> is excluding, you will pay in cash at the airport)</i> -->
 										<!-- <img style="position: absolute;right: 20px;top: 16px;" src="<?=IMG_URL?>private-letter.png" alt="private-letter"> -->
 									</div>
@@ -506,7 +512,7 @@
 									<label>VIP discount:</label>
 									<span class="vipsave_t price"></span>
 								</li>
-								<li class="clearfix" id="promotion_li" style="background-color: #F8F8F8;">
+								<li class="clearfix promo_code" id="promotion_li" style="">
 									<div id="promotion-box-input" >
 										<div class="row clearfix">
 											<label class="col-md-5">Got a promotion code?</label>
@@ -527,8 +533,10 @@
 									</div>
 								</li>
 								<li class="total clearfix">
+									<div class="left_edge"></div>
+									<div class="right_edge"></div>
 									<div class="clearfix">
-										<label>TOTAL FEE:</label>
+										<label class="total_fee">Total fee:</label>
 										<span class="total_price"></span>
 									</div>
 									<div class="stamping_fee_note text-right" style="position: relative;">
@@ -552,11 +560,14 @@
 								</li>
 							</ul>
 							<div class="payment-methods">
-								<img alt="" src="<?=IMG_URL?>payment-methods.jpg">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-american-express.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-mastercard.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-paypal.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-visa.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-UnionPay.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-JCB.png">
+								<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-discover.png">
 							</div>
-						</div>
-						<div class="text-center">
-							<img style="margin: auto;" src="<?=IMG_URL.'refun-100.jpg'?>" class="img-responsive" alt="refun 100%">
 						</div>
 					</div>
 				</div>

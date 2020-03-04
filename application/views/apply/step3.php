@@ -28,52 +28,43 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="cluster-content">
+	<div class="applyform-heading">
 		<div class="container">
 			<!-- breadcrumb -->
-			<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-			<!-- end breadcrumb -->
-			
-			<div class="applyform-content cluster-content">
-				<!-- <div class="tab-step clearfix">
-					<h1 class="note">Vietnam Visa Application Form</h1>
-					<ul class="style-step d-none d-sm-none d-md-block">
-						<li class="active"><a style="color: #fff;" href="<?=site_url('apply-visa')?>"><font class="number">1.</font> Visa Options</a></li>
-						<li class="active"><font class="number">2.</font> Login Account</li>
-						<li class="active"><a style="color: #fff;" href="<?=site_url('apply-visa/step2')?>"><font class="number">3.</font> Applicant Details</a></li>
-						<li class="active"><font class="number">4.</font> Review & Payment</li>
-					</ul>
-				</div> -->
-
-				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
-					<div class="step-apply text-center">
-						<div class="step active">
-							<div class="line-step line-step1">
-								<span class="step-number"></span>
-							</div>
-							Visa Options
-						</div>
-						<div class="step active">
-							<div class="line-step line-step2">
-								<span class="step-number"></span>
-							</div>
-							Login Account
-						</div>
-						<div class="step active">
-							<div class="line-step line-step3">
-								<span class="step-number"></span>
-							</div>
-							Applicant Details
-						</div>
-						<div class="step active">
-							<div class="line-step line-step4">
-								<span class="step-number"></span>
-							</div>
-							Review & Payment
-						</div>
+		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+		<!-- end breadcrumb -->
+			<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+		</div>
+	</div>
+	<div class="applyform-content cluster-content">
+		<div class="container">
+				<div class="step-apply ">
+					<div class="step">
+						<div class="line-right"></div>
+						<span class="step-number">1</span>
 					</div>
-
+					<div class="step">
+						<div class="line-right"></div>
+						<div class="line-left"></div>
+						<span class="step-number">2</span>
+					</div>
+					<div class="step">
+						<div class="line-right"></div>
+						<div class="line-left"></div>
+						<span class="step-number">3</span>
+					</div>
+					<div class="step">
+						<div class="line-left"></div>
+						<span class="step-number active">4</span>
+					</div>
+				</div>
+				<div class="step-apl-content">
+					<div class="bystep">Visa Option</div>
+					<div class="bystep">Account Login</div>
+					<div class="bystep">Application Details</div>
+					<div class="bystep active">Review & Payment</div>
+				</div>
+				
 				<div class="applyform step3">
 					<form action="<?=BASE_URL_HTTPS."/apply-visa/completed.html"?>" method="POST">
 						<input type="hidden" name="key" value="<?=(!empty($_GET["key"])?$_GET["key"]:"")?>">
@@ -245,16 +236,12 @@
 								<!-- <img style="position: absolute;right: 0;bottom: 0;" src="<?=IMG_URL?>private-letter.png" alt="private-letter"> -->
 								</div>
 							</div>
-							<div class="col-sm-3">
-								<img style="" src="<?=IMG_URL.'refun-100.jpg'?>" class="img-responsive full-width" alt="refun 100%">
-							</div>
 						</div>
 						<br>
 						<h3>Payment method</h3>
 						<p>Please select one of below payment method to proceed the visa application.</p>
-						<br /><br />
 						<div class="row">
-							<div class="col-xs-4 col-sm-4 text-center">
+							<div class="col-xs-4 col-sm-4">
 								<label for="payment3"><img class="img-responsive" src="<?=IMG_URL?>payment/paypal.png" alt="Paypal" /></label>
 								<br />
 								<div class="radio">
@@ -277,7 +264,7 @@
 									<label><input id="payment4" type="radio" name="payment" value="Western Union" />Western Union</label>
 								</div>
 							</div> -->
-							<div class="col-xs-4 col-sm-4 text-center">
+							<div class="col-xs-4 col-sm-4">
 								<label for="payment4"><img class="img-responsive" src="<?=IMG_URL?>banktransfer.png" alt="Bank Transfer" /></label>
 								<br />
 								<div class="radio">
@@ -314,7 +301,6 @@
 						</div>
 					</form>
 				</div>
-			</div>
 		</div>
 	</div>
 </div>

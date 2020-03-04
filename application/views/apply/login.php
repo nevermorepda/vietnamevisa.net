@@ -21,42 +21,32 @@
 	<? } ?>
 	
 	<div class="">
-		<!-- <div class="tab-step clearfix">
-			<h1 class="note">Vietnam Visa Application Form</h1>
-			<ul class="style-step d-none d-sm-none d-md-block">
-				<li class="active"><font class="number">1.</font> Visa Options</li>
-				<li class="active"><font class="number">2.</font> Account Login</li>
-				<li><font class="number">3.</font> Applicant Details</li>
-				<li><font class="number">4.</font> Review &amp; Payment</li>
-			</ul>
-		</div> -->
-			<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
-			<div class="step-apply text-center">
-				<div class="step active">
-					<div class="line-step line-step1">
-						<span class="step-number"></span>
-					</div>
-					Visa Options
-				</div>
-				<div class="step active">
-					<div class="line-step line-step2">
-						<span class="step-number"></span>
-					</div>
-					Login Account
-				</div>
-				<div class="step">
-					<div class="line-step line-step3">
-						<span class="step-number"></span>
-					</div>
-					Applicant Details
-				</div>
-				<div class="step">
-					<div class="line-step line-step4">
-						<span class="step-number"></span>
-					</div>
-					Review & Payment
-				</div>
+			<div class="step-apply ">
+			<div class="step">
+				<div class="line-right"></div>
+				<span class="step-number">1</span>
 			</div>
+			<div class="step">
+				<div class="line-right"></div>
+				<div class="line-left"></div>
+				<span class="step-number active">2</span>
+			</div>
+			<div class="step">
+				<div class="line-right"></div>
+				<div class="line-left"></div>
+				<span class="step-number">3</span>
+			</div>
+			<div class="step">
+				<div class="line-left"></div>
+				<span class="step-number">4</span>
+			</div>
+		</div>
+		<div class="step-apl-content">
+			<div class="bystep">Visa Option</div>
+			<div class="bystep active">Account Login</div>
+			<div class="bystep">Application Details</div>
+			<div class="bystep">Review & Payment</div>
+		</div>
 		<div class="login-form">
 			<form id="frmSignUp" name="frmSignUp" class="form-horizontal" role="form" action="<?=BASE_URL_HTTPS."/apply-visa/dologin.html"?>" method="POST">
 				<div class="row">
