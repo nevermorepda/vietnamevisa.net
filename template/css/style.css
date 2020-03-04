@@ -1550,6 +1550,7 @@ ul.style-step li.active {
 }
 .applyform select {
 	font-size: 13px;
+	margin-bottom: 5px;
 }
 .applyform textarea {
 }
@@ -1604,7 +1605,7 @@ ul.style-step li.active {
 	display: block;
 }
 .panel-fees {
-	background: url("http://localhost/vietnamevisa.net/template/images/new-template/panelfee-bg.png") no-repeat scroll top center transparent;
+	background: url("../images/new-template/panelfee-bg.png") no-repeat scroll top center transparent;
 	position: relative;
 	object-fit: contain;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
@@ -1924,15 +1925,15 @@ ul.style-step li.active {
 	color: #851919 !important;
 }
 .step-apply .step .step-number {
-	width: 70px;
-	height: 70px;
+	width: 65px;
+	height: 65px;
 	background: #8b8075;
 	display: inline-block;
 	border-radius: 50%;
 	color: #fff;
 	position: relative;
 	font-size: 37px;
-	padding: 10px;
+	padding: 5px;
 }
 .applyform-banner ul li {
 	padding: 5px 0;
