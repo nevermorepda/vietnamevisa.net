@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="banner">
 				<div class="logo">
-					<a title="Vietnam Visa" href="<?=BASE_URL?>"><img style="width: 240px;" src="<?=IMG_URL?>/logo_vietnamevisa.net.svg" alt="Vietnam Visa" /></a>
+					<a title="Vietnam Visa" href="<?=BASE_URL?>"><img style="width: 240px;" src="<?=IMG_URL?>logo_vietnamevisa.net.svg" alt="Vietnam Visa" /></a>
 				</div>
 				<div class="top-menu">
 					<ul class="menu-items">

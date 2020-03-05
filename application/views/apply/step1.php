@@ -210,7 +210,7 @@
 											<option value="" selected="selected">Please select...</option>
 											<? foreach ($arrival_ports as $arrival_port) {
 												if (in_array($arrival_port->code, array("SGN", "HAN", "DAN", "CXR"))) { ?>
-													<option value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>
+													<option cate-id="<?=$arrival_port->category_id?>" value="<?=$arrival_port->id?>"><?=$arrival_port->airport?></option>
 											<?	}
 											} ?>
 										</select>
@@ -432,10 +432,7 @@
 								<div class="row" style="padding-top: 20px; padding-bottom: 20px;">
 									<label class="col-md-4 control-label"></label>
 									<div class="col-md-8">
-										<!-- <a class="btn btn-danger btn-next" style="color:#fff;">NEXT <i class="icon-double-angle-right icon-large"></i></a> -->
-										<div class="show-button">
-											<button class="btn btn-danger" type="submit">NEXT <i class="icon-double-angle-right icon-large"></i></button>
-										</div>
+										<a class="btn btn-danger btn-next" style="color:#fff;">NEXT <i class="icon-double-angle-right icon-large"></i></a>
 									</div>
 								</div>
 							</div>
@@ -550,10 +547,7 @@
 										<div class="row" style="padding-top: 20px; padding-bottom: 20px;">
 											<label class="col-md-4 control-label"></label>
 											<div class="col-md-8 text-center">
-												<!-- <a class="btn btn-danger btn-next " style="color:#fff;">NEXT <i class="icon-double-angle-right icon-large"></i></a> -->
-												<div class="show-button">
-													<button class="btn btn-danger" type="submit">NEXT <i class="icon-double-angle-right icon-large"></i></button>
-												</div>
+												<a class="btn btn-danger btn-next " style="color:#fff;">NEXT <i class="icon-double-angle-right icon-large"></i></a>
 											</div>
 										</div>
 									</div>

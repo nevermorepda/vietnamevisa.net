@@ -402,10 +402,10 @@
 								<div class="form-group" style="padding-top: 20px; padding-bottom: 20px;">
 									<div class="text-center">
 										<div class="show-button m-4 d-inline-block">
-											<button class="btn btn-danger" type="button" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </button>
+											<a class="btn btn-danger" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </a>
 										</div>
 										<div class="show-button m-4 d-inline-block">
-											<button class="btn btn-danger" type="submit">NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+											<a class="btn btn-danger btn-next" >NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										</div>
 									</div>
 								</div>
@@ -505,7 +505,7 @@
 										<div class="right_edge"></div>
 										<div class="clearfix">
 											<label class="total_fee pull-left">Total fee:</label>
-											<div class="total_price pull-right subtotal-price">
+											<div class="pull-right subtotal-price">
 												<div class="price-block">
 													<span class="price total_price"><?=$step1->total_fee?> $</span>
 													<input type="hidden" id="total_fee" value="<?=$step1->total_fee?>">
