@@ -1545,7 +1545,7 @@ ul.style-step li.active {
 	color: #D40000;
 }
 .applyform input[type="text"] {
-	height: 33px;
+	height: 38px;
 	border-radius: 0;
 }
 .applyform select {
@@ -1729,7 +1729,7 @@ ul.style-step li.active {
 	font-family: sans-serif;
 	color: #a51518;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 21px;
 }
 .panel-fees label span {
 	float: none !important;
@@ -1768,8 +1768,6 @@ ul.style-step li.active {
 	padding: 12px 15px;
 }
 .applyform.step2 .group .group-content .form-control {
-	padding: 4px;
-	font-size: 12px;
 }
 .applyform.step2 .group .group-content {
 	background-color: #F8F8F8;
@@ -2606,18 +2604,6 @@ ul.style-step li.active {
 /* End eVisa */
 
 /* Step2 */
-.applyform.step2 .group h2 {
-	background-color: #CFD8DC;
-	font-size: 14px;
-	font-weight: bold;
-	margin: 0px;
-	padding: 12px 15px;
-}
-.applyform.step2 .group .group-content {
-	background-color: #d7d7d74a	;
-	padding: 15px;
-	margin-bottom: 15px;
-}
 .applyform.step2 .group .group-content .passport-detail {
 	margin-left: -2px;
 	margin-right: -2px;
@@ -2631,10 +2617,7 @@ ul.style-step li.active {
 	margin-left: -2px;
 	margin-right: -2px;
 }
-.applyform.step2 .group .group-content .form-control {
-	padding: 4px;
-	font-size: 12px;
-}
+
 .applyform input[type="text"].error, input.error, select.error {
 	border: 1px solid #DF1F26 !important;
 }
