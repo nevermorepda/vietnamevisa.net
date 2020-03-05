@@ -1,4 +1,4 @@
-<!-- <div class="social-comments">
+<div class="social-comments">
 	<div class="addthis_native_toolbox"></div>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -9,4 +9,4 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<div class="fb-comments" data-href="<?=current_url()?>" data-width="100%" data-numposts="10" data-colorscheme="light"></div>
-</div> -->
+</div>

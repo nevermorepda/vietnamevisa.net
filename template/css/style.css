@@ -377,7 +377,6 @@ input.error, select.error, textarea.error, span.error {
 }
 .page-content {
 	padding-bottom: 40px;
-	padding-top: 40px;
 	border-bottom: 1px dotted #ccc;
 }
 .page-title {
@@ -1606,7 +1605,7 @@ ul.style-step li.active {
 	display: block;
 }
 .panel-fees {
-	background: url("../images/new-template/panelfee-bg.png") no-repeat scroll top center transparent;
+	background: url("../images/new-template/panelfeebg.png") no-repeat scroll top center transparent;
 	position: relative;
 	object-fit: contain;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
@@ -1659,7 +1658,7 @@ ul.style-step li.active {
 	margin-top: 0px;
 	background-color: #a51518;
 	color: #ffffff;
-	padding: 20px;
+	padding: 10px;
 	position: relative;
 }
 .panel-fees .total .left_edge {
@@ -1709,6 +1708,8 @@ ul.style-step li.active {
 	color: #ffffff;
 	vertical-align: middle;
 	float: left;
+	padding: 15px;
+	margin: 0;
 }
 .panel-fees .total a{
 	color: #ffffff;
@@ -1719,6 +1720,7 @@ ul.style-step li.active {
 	text-decoration: none;
 	font-size: 35px;
 	font-weight: bold;
+	padding: 0px 15px 0px 0px;
 }
 .panel-fees .total .stamping_fee_note {
 	font-size: 11px;
@@ -1981,7 +1983,7 @@ ul.style-step li.active {
 }
 .faqs-banner h1 {
 	margin: 0;
-	font-size: 12vmin;
+	font-size: 65px;
 	font-weight: 600;
 	color: #aa1111;
 	display: inline-block;
@@ -2001,7 +2003,7 @@ ul.style-step li.active {
 	list-style-type: square;
 	margin: 0;
 	color: #aa1111;
-	font-size: 4.5vmin;
+	font-size: 26px;
 	line-height: 32px;
 	display: inline-block;
 }
@@ -2009,7 +2011,7 @@ ul.style-step li.active {
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 200px 80px 0 200px;
+	padding: 200px 80px 0 180px;
 }
 .faqs ul {
 	list-style: none;
@@ -2017,7 +2019,6 @@ ul.style-step li.active {
 	padding: 0;
 }
 .faqs ul li {
-	border: thin solid #ccc;
 	position: relative;
 	margin-bottom: 20px;
 }

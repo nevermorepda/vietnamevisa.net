@@ -26,7 +26,6 @@
 						<input type="checkbox" id="toggle" name="toggle" onclick="checkAll('<?=sizeof($items)?>');" />
 					</th>
 					<th>Title</th>
-					<th width="180px">Updated</th>
 				</tr>
 				<?
 					$i = 0;
@@ -51,17 +50,6 @@
 							<li><a href="#" onclick="return itemTask('cb<?=$i?>','orderup');"><i class="fa fa-level-up" aria-hidden="true"></i> Up</a></li>
 							<li><a href="#" onclick="return itemTask('cb<?=$i?>','orderdown');"><i class="fa fa-level-down" aria-hidden="true"></i> Down</a></li>
 						</ul>
-					</td>
-					<td>
-						<?
-							$updated_by = $this->m_user->load($item->updated_by);
-							if (!empty($updated_by)) {
-						?>
-						<strong><?=$updated_by->fullname?></strong>
-						<div class="action-icon-list"><span class="text-color-grey"><?=date("Y-m-d H:i:s", strtotime($item->updated_date))?></span></div>
-						<?
-							}
-						?>
 					</td>
 				</tr>
 				<?

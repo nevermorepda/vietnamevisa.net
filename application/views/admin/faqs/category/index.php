@@ -2,13 +2,13 @@
 	<div class="container-fluid">
 		<div class="tool-bar clearfix">
 			<h1 class="page-title">
-				Blog Categories
+				FAQs Categories
 				<div class="pull-right">
 					<ul class="action-icon-list">
 						<li><a href="#" class="btn-unpublish"><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
 						<li><a href="#" class="btn-publish"><i class="fa fa-eye-slash" aria-hidden="true"></i> Show</a></li>
 						<li><a href="#" class="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></li>
-						<li><a href="<?=site_url("syslog/blog-categories/add")?>"><i class="fa fa-plus" aria-hidden="true"></i> Add</a></li>
+						<li><a href="<?=site_url("syslog/faqs-categories/add")?>"><i class="fa fa-plus" aria-hidden="true"></i> Add</a></li>
 					</ul>
 				</div>
 			</h1>
@@ -26,7 +26,6 @@
 						<input type="checkbox" id="toggle" name="toggle" onclick="checkAll('<?=sizeof($items)?>');" />
 					</th>
 					<th>Name</th>
-					<th width="180px">Updated</th>
 				</tr>
 				<?
 					function level_indent($level) {
@@ -43,10 +42,10 @@
 									<input type="checkbox" id="cb<?=$i?>" name="cid[]" value="<?=$category->id?>" onclick="isChecked(this.checked);">
 								</td>
 								<td>
-									<a href="<?=site_url("syslog/blog-categories/edit/{$category->id}")?>"><?=level_indent($level).($level?"|&rarr; ":"")?><?=$category->name?></a>
+									<a href="<?=site_url("syslog/faqs-categories/edit/{$category->id}")?>"><?=level_indent($level).($level?"|&rarr; ":"")?><?=$category->name?></a>
 									<ul class="action-icon-list">
 										<li><a href="<?=site_url("syslog/blog/{$category->alias}")?>"><?=number_format($category->child_num)?> Topics</a></li>
-										<li><a href="<?=site_url("syslog/blog-categories/edit/{$category->id}")?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></li>
+										<li><a href="<?=site_url("syslog/faqs-categories/edit/{$category->id}")?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></li>
 										<li><a href="#" onclick="return confirmBox('Delete items', 'Are you sure you want to delete the selected items?', 'itemTask', ['cb<?=$i?>', 'delete']);"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></li>
 										<? if ($category->active) { ?>
 										<li><a href="#" onclick="return itemTask('cb<?=$i?>','unpublish');"><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
@@ -57,23 +56,12 @@
 										<li><a href="#" onclick="return itemTask('cb<?=$i?>','orderdown');"><i class="fa fa-level-down" aria-hidden="true"></i> Down</a></li>
 									</ul>
 								</td>
-								<td>
-									<?
-										$updated_by = $obj->m_user->load($category->updated_by);
-										if (!empty($updated_by)) {
-									?>
-									<strong><?=$updated_by->fullname?></strong>
-									<div class="action-icon-list"><span class="text-color-grey"><?=date("Y-m-d H:i:s", strtotime($category->updated_date))?></span></div>
-									<?
-										}
-									?>
-								</td>
 							</tr>
 							<?
 							$i++;
 							$child_category_info = new stdClass();
 							$child_category_info->parent_id = $category->id;
-							$child_categories = $obj->m_blog_category->items($child_category_info);
+							$child_categories = $obj->m_faqs_category->items($child_category_info);
 							print_categories($obj, $child_categories, $level+1, $i);
 						}
 					}

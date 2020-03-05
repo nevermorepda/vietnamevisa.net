@@ -60,8 +60,6 @@ $route['news/travel/(:any)'] = "news/travel/$1";
 $route['news/travel'] = "news/travel";
 $route['news/view/(:any)'] = "news/index/$1";
 $route['news/(:any)'] = "news/index/$1";
-$route['faqs/view/(:any)'] = "faqs/index/$1";
-$route['faqs/(:any)'] = "faqs/index/$1";
 $route['services/view/(:any)'] = "services/index/$1";
 $route['services/(:any)'] = "services/index/$1";
 $route['vietnam-embassies/view/(:any)'] = "vietnam-embassies/index/$1";
@@ -79,3 +77,7 @@ $route['tours/ajax-api'] = "tours/ajax_api";
 $route['tours/login'] = "tours/login";
 $route['tours/(:any)'] = "tours/index/$1";
 $route['tours/(:any)/(:any)'] = "tours/index/$1/$2";
+$route['faqs/(:any)/(:any)'] = "faqs/index/$1/$2";
+$route['faqs/(:any)'] = "faqs/index/$1";
+$route['faqs'] = "faqs/index";
+

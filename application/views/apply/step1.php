@@ -81,7 +81,7 @@
 		<div class="applyform">
 			<form id="frmApply" class="form-horizontal" role="form" action="<?=BASE_URL_HTTPS."/apply-visa/step2.html"?>" method="POST">
 				<div class="row clearfix">
-					<div class="col-md-8">
+					<div class="col-md-7">
 						<div class="panel-options">
 							<div class="title text-left">VISA OPTION</div>
 							<!-- <div class="row">
@@ -221,7 +221,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row form-group optional wrap_exit_port" style="display: none;">
+							<!-- <div class="row form-group optional wrap_exit_port" style="display: none;">
 								<div class="col-md-3">
 									<label class="control-label">Exit through checkpoint <span class="required">*</span></label>
 								</div>
@@ -231,7 +231,7 @@
 									</select>
 									<script> $('#exit_port').val('<?=$step1->exit_port?>'); </script>
 								</div>
-							</div>
+							</div> -->
 							<script type="text/javascript">
 								$(".visa_type").change(function(){
 									var typ = $(this).val();
@@ -439,7 +439,7 @@
 						</div>
 					</div>
 					<? $level = $this->util->level_account(); ?>
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<div class="panel-fees">
 							<div class="title text-center">VISA OPTION SUMMARY</div>
 							<ul>
@@ -467,10 +467,10 @@
 									<label>Arrival airport:</label>
 									<span class="arrival_port_t">Please select...</span>
 								</li>
-								<li class="clearfix review_exit_port">
+								<!-- <li class="clearfix review_exit_port">
 									<label>Exit airport:</label>
 									<span class="exit_port_t">Please select...</span>
-								</li>
+								</li> -->
 								<li class="clearfix stamping_price" style="display: none;">
 									<label>Visa stamping fee:</label>
 									<span class="total_visa_stamping_price price">25 $ x 1 applicants = 25 $</span>
@@ -494,7 +494,7 @@
 									<div class="clr"></div>
 								</li>
 								<li class="clearfix" id="private_visa_li" style="display: none">
-									<label class="text-color-red">Private letter:</label>
+									<label class="">Private letter:</label>
 									<span class="private_visa_t price"></span>
 								</li>
 								<li class="clearfix" id="full_package_li" style="display: none">

@@ -6,7 +6,7 @@
 	</div>
 </div>
 
-<div class="" style="background-color: #f5f6f7; padding-top: 30px; padding-bottom: 30px;">
+<!-- <div class="" style="background-color: #f5f6f7; padding-top: 30px; padding-bottom: 30px;">
 	<div class="container">
 		<p>A valid Vietnam visa is required for almost foreign travelers to Vietnam for any purposes from visiting their beloved to going on a business trip or leisure vacation. Fortunately, it is much easier these days for foreign passport holders to apply for visa to Vietnam as there are two available ways to go about this matter:</p>
 		<p><span class="glyphicon glyphicon-check"></span> Apply for a <strong>visa at Vietnam Embassy</strong>; OR</p>
@@ -15,7 +15,7 @@
 		<p>However, visa on arrival is not available for all those who travel to Vietnam by air and the required documents to apply for a visa on arrival may vary from nationality to nationality.</p>
 		<p class="red">Please kindly check the list below and see if visa on arrival is available for your nationality and what you need to provide us to apply for a visa on arrival.</p>
 	</div>
-</div>
+</div> -->
 
 <div class="" style="padding-top: 30px; padding-bottom: 30px;">
 	<div class="container">

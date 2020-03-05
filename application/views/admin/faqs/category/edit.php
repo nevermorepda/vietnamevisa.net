@@ -1,6 +1,6 @@
 <div class="cluster">
 	<div class="container-fluid">
-		<h1 class="page-title">Blog Category</h1>
+		<h1 class="page-title">FAQs Category</h1>
 		<? if (empty($item) || !sizeof($item)) { ?>
 		<p class="help-block">Item not found.</p>
 		<? } else { ?>
@@ -36,13 +36,13 @@
 										<?
 										$child_category_info = new stdClass();
 										$child_category_info->parent_id = $category->id;
-										$child_categories = $obj->m_blog_category->items($child_category_info);
+										$child_categories = $obj->m_faqs_category->items($child_category_info);
 										print_categories($obj, $child_categories, $curr_category_id, $level+1);
 									}
 								}
 								$category_info = new stdClass();
 								$category_info->parent_id = 0;
-								$categories = $this->m_blog_category->items($category_info);
+								$categories = $this->m_faqs_category->items($category_info);
 								print_categories($this, $categories, $item->id, 0);
 							?>
 						</select>

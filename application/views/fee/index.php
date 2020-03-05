@@ -74,7 +74,7 @@
 		<div class="container">
 			<div class="explain-fee">
 				<h2 class="page-title home-sub-heading shadow-text">VIETNAM VISA FEES</h2>
-				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red">Visa Processing fee</span> and <span class="red">Government fee</span></p>
+				<p>In order to receive a Vietnam visa on arrival, passenger need to pay 2 types of fee: <span class="red font-weight-bold">Visa Processing fee</span> and <span class="red font-weight-bold">Government fee</span></p>
 				<ul>
 					<li><span class="font-weight-bold red">Processing fee:</span> It is the fee you will pay online for us to do all the paperwork to submit your application to the Vietnam Immigration Department for visa procedure. Processing fee depends on type and term of visa you want to get.</li>
 					<li><span class="font-weight-bold red">Government fee:</span> This fee is paid for Vietnam Government to have a visa stamped onto your passport. For passengers who apply for Vietnam visa on arrival, you will pay in cash for Vietnam Immigration Officer at LANDING VISA counter when you arrive at Vietnam airport or you can pay stamp fee online with us on our website. For passengers enter Vietnam by Electronic Visa, Government fee is included when you pay online so you will not pay any fee at check-on point.</li>

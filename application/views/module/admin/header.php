@@ -15,6 +15,8 @@
 	$admin_id = explode('|',SUPER_ADMIN_FULL_ROLE);
 
 	$tour_categories = $this->m_category_tour->items();
+
+	$faqs_categories = $this->m_faqs_category->items($category_info);
 ?>
 <div class="header">
 	<div class="header-top">
@@ -69,16 +71,17 @@
 								<li><a href="<?=site_url("syslog/guide")?>">Vietnam Visa Guide</a></li>
 							</ul>
 						</li>
-						<li class="dropdown <?=((in_array($method, array('tour', 'tour-categories')))?'active':'')?>">
-							<a href="<?=site_url("syslog/tour")?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour <span class="caret"></span></a>
+						<li class="dropdown <?=((in_array($method, array('faqs', 'faqs-categories')))?'active':'')?>">
+							<a href="<?=site_url("syslog/faqs")?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQs <span class="caret"></span></a>
 							<ul class="dropdown-menu multi-level">
-								<li><a href="<?=site_url("syslog/tour-categories")?>">Tour Categories</a></li>
+								<li><a href="<?=site_url("syslog/faqs-categories")?>">FAQs Categories</a></li>
 								<li role="separator" class="divider"></li>
-								<? foreach($tour_categories as $tour_category) { ?>
-								<li><a href="<?=site_url("syslog/tour/{$tour_category->id}")?>"><?=$tour_category->name?></a></li>
+								<? foreach($faqs_categories as $faqs_category) { ?>
+								<li><a href="<?=site_url("syslog/faqs/{$faqs_category->id}")?>"><?=$faqs_category->name?></a></li>
 								<? } ?>
 							</ul>
-						</li><? if (in_array($this->session->userdata('admin')->id, $admin_id)) { ?>
+						</li>
+						<? if (in_array($this->session->userdata('admin')->id, $admin_id)) { ?>
 						<li class="<?=(($method=='agents')?'active':'')?>">
 							<a href="<?=site_url("syslog/agents")?>" class="dropdown-toggle" >Agents <span class="caret"></span></a>
 							<ul class="dropdown-menu">
