@@ -212,7 +212,7 @@ input.error, select.error, textarea.error, span.error {
 .btn-danger {
 	background: #851919;
 	border-color: #851919;
-	color: #ffffff;
+	color: #ffffff !important;
 }
 .btn-danger:hover {
 	background: #c4191f;
@@ -274,7 +274,7 @@ input.error, select.error, textarea.error, span.error {
 }
 
 .home-sub-heading {
-	font-size: 35px;
+	font-size: 30px;
 }
 .border-text {
 	border: 3px solid #ffff00;
@@ -1137,7 +1137,7 @@ ul.list-embassy li {
 
 /* End Service */
 .banner-top {
-	min-height: 297px;
+	min-height: 240px;
 	position: relative;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -1545,11 +1545,11 @@ ul.style-step li.active {
 	color: #D40000;
 }
 .applyform input[type="text"] {
-	height: 33px;
+	height: 38px;
 	border-radius: 0;
 }
 .applyform select {
-	font-size: 13px;
+	font-size: 14px;
 	margin-bottom: 5px;
 }
 .applyform textarea {
@@ -1580,7 +1580,7 @@ ul.style-step li.active {
 .panel-options {
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
 	background-color: #ffffff;
-	font-size: 13px;
+	font-size: 14px;
 }
 .panel-options .optional {
 	padding: 5px 30px;
@@ -1605,11 +1605,11 @@ ul.style-step li.active {
 	display: block;
 }
 .panel-fees {
-	background: url("../images/new-template/panelfee-bg.png") no-repeat scroll top center transparent;
+	background: url("../images/new-template/panelfeebg.png") no-repeat scroll top center transparent;
 	position: relative;
 	object-fit: contain;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
-	font-size: 13px;
+	font-size: 14px;
 }
 .panel-fees .title {
 	font-size: 20px;
@@ -1627,7 +1627,7 @@ ul.style-step li.active {
 	margin: 0;
 }
 .panel-fees li {
-	padding: 10px 20px;
+	padding: 5px 20px;
 }
 .panel-fees .last {
 	border-bottom: 1px solid #6997B3;
@@ -1651,13 +1651,14 @@ ul.style-step li.active {
 }
 .panel-fees .promo_code {
 	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .panel-fees .total {
 	border: none;
 	margin-top: 0px;
 	background-color: #a51518;
 	color: #ffffff;
-	padding: 20px;
+	padding: 10px;
 	position: relative;
 }
 .panel-fees .total .left_edge {
@@ -1676,7 +1677,7 @@ ul.style-step li.active {
 	border-style: solid;
 	border-width: 0px 0 15px 15px;
 	border-color: transparent transparent #959595 transparent;
-	top: -14px;
+	top: -15px;
 }
 .panel-fees .total .right_edge {
 	left: 100%;
@@ -1694,7 +1695,7 @@ ul.style-step li.active {
 	border-style: solid;
 	border-width: 15px 0 0 15px;
 	border-color: transparent transparent transparent #959595;
-	top: -14px;
+	top: -15px;
 }
 .panel-fees .total .total_fee{
 	font-size: 20px;
@@ -1707,6 +1708,8 @@ ul.style-step li.active {
 	color: #ffffff;
 	vertical-align: middle;
 	float: left;
+	padding: 15px;
+	margin: 0;
 }
 .panel-fees .total a{
 	color: #ffffff;
@@ -1717,6 +1720,7 @@ ul.style-step li.active {
 	text-decoration: none;
 	font-size: 35px;
 	font-weight: bold;
+	padding: 0px 15px 0px 0px;
 }
 .panel-fees .total .stamping_fee_note {
 	font-size: 11px;
@@ -1725,6 +1729,7 @@ ul.style-step li.active {
 	font-family: sans-serif;
 	color: #a51518;
 	font-weight: bold;
+	font-size: 21px;
 }
 .panel-fees label span {
 	float: none !important;
@@ -1763,8 +1768,6 @@ ul.style-step li.active {
 	padding: 12px 15px;
 }
 .applyform.step2 .group .group-content .form-control {
-	padding: 4px;
-	font-size: 12px;
 }
 .applyform.step2 .group .group-content {
 	background-color: #F8F8F8;
@@ -1972,13 +1975,50 @@ ul.style-step li.active {
 /* End Contact */
 
 /* FAQs */
-.faqs-banner ul {
+.faqs-banner {
 	margin: 0;
-	padding: 0;
-	padding-left: 20px;
+	background-position: center !important;
+}
+.faqs-banner h1 {
+	margin: 0;
+	font-size: 65px;
+	font-weight: 600;
+	color: #aa1111;
+	display: inline-block;
+	position: relative;
+	padding-right: 40px;
+}
+.faqs-banner h1 .bd-right {
+	left: 100%;
+	position: absolute;
+	height: 65%;
+	width: 2px;
+	background: #d31b17;
+	top: 14px;
+}
+
+.faqs-banner ul {
+	list-style-type: square;
+	margin: 0;
+	color: #aa1111;
+	font-size: 26px;
+	line-height: 32px;
+	display: inline-block;
 }
 .faqs-banner ul li {
-	padding: 5px 0;
+}
+.faqs-banner .text-content {
+	width: 100%;
+	padding: 130px 0px 0 120px;
+}
+.faqs .wrap-search {
+	width: 65%;
+	margin: 0 75px;
+}
+.faqs .form-control {
+	border-radius: 0;
+	border: 0.1rem solid #000000;
+	font-weight: 700;
 }
 .faqs ul {
 	list-style: none;
@@ -1986,7 +2026,6 @@ ul.style-step li.active {
 	padding: 0;
 }
 .faqs ul li {
-	border: thin solid #ccc;
 	position: relative;
 	margin-bottom: 20px;
 }
@@ -2574,35 +2613,20 @@ ul.style-step li.active {
 /* End eVisa */
 
 /* Step2 */
-.applyform.step2 .group h2 {
-	background-color: #CFD8DC;
-	font-size: 14px;
-	font-weight: bold;
-	margin: 0px;
-	padding: 12px 15px;
-}
-.applyform.step2 .group .group-content {
-	background-color: #d7d7d74a	;
-	padding: 15px;
-	margin-bottom: 15px;
-}
 .applyform.step2 .group .group-content .passport-detail {
 	margin-left: -2px;
 	margin-right: -2px;
-	font-size: 13px;
+	font-size: 14px;
 }
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
 }
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] .row {
 	margin-left: -2px;
 	margin-right: -2px;
 }
-.applyform.step2 .group .group-content .form-control {
-	padding: 4px;
-	font-size: 12px;
-}
+
 .applyform input[type="text"].error, input.error, select.error {
 	border: 1px solid #DF1F26 !important;
 }
@@ -3184,6 +3208,10 @@ ul.style-step li.active {
 	.banner-top .text-content {
 		padding-top: 30px;
 	}
+	.faqs-banner .text-content {
+	width: 100%;
+	padding: 185px 0px 0 0px;
+	}
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -3271,6 +3299,10 @@ ul.style-step li.active {
 	}
 	.banner-top .text-content {
 		padding-top: 30px;
+	}
+	.faqs-banner .text-content {
+	width: 100%;
+	padding: 129px 36px 0px 35px;
 	}
 }
 @media (max-width: 480px) {

@@ -4,8 +4,8 @@ class Visa_processing extends CI_Controller {
 
 	public function index()
 	{
-		// $this->output->cache(CACHE_TIME);
-		// $this->util->block_ip();
+		$this->output->cache(CACHE_TIME);
+		$this->util->block_ip();
 		$info = new stdClass();
 		$info->catid = 4; // FAQs
 		$info_evisa = new stdClass();

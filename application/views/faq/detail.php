@@ -28,7 +28,7 @@
 						}
 					?>
 					<div id="review-detail">
-						<? require_once(APPPATH."views/module/comment.php"); ?>
+						<? require_once(APPPATH."views/module/comment.php"); ?>						
 					</div>
 					<?
 					$relatedItems = $this->m_content->getNewerItems($item->id, 5);

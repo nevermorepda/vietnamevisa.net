@@ -415,10 +415,10 @@
 						<div class="col-lg-4 col-sm-4">
 							<div class="panel-fees">
 								<ul>
-									<li class="clearfix">
+									<!-- <li class="clearfix">
 										<label>Passport holder:</label>
 										<span class="passport_holder_t"><?=$step1->passport_holder?></span>
-									</li>
+									</li> -->
 									<li class="clearfix">
 										<label>Number of visa:</label>
 										<span class="group_size_t"><?=$step1->group_size?> Applicant<?=($step1->group_size>1?"s":"")?></span>
