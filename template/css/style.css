@@ -274,7 +274,7 @@ input.error, select.error, textarea.error, span.error {
 }
 
 .home-sub-heading {
-	font-size: 35px;
+	font-size: 30px;
 }
 .border-text {
 	border: 3px solid #ffff00;
@@ -1137,13 +1137,13 @@ ul.list-embassy li {
 
 /* End Service */
 .banner-top {
-	min-height: 297px;
+	min-height: 300px;
 	position: relative;
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	background-size: cover !important;
-	background-position: right !important;
+	background-position: center !important;
 }
 .banner-top h1{
 	font-size: 52px;
@@ -1975,9 +1975,20 @@ ul.style-step li.active {
 /* End Contact */
 
 /* FAQs */
+.faqs .btn-rm {
+	border: 1px solid #851919;
+	padding: 5px 12px;
+	color: #851919;
+}
+.faqs .btn-rm:hover {
+	border: 1px solid #851919;
+	color: #ffffff;
+	background: #851919;
+}
 .faqs-banner {
 	margin: 0;
 	background-position: center !important;
+	min-height: 230px;
 }
 .faqs-banner h1 {
 	margin: 0;
@@ -2009,48 +2020,90 @@ ul.style-step li.active {
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 200px 80px 0 180px;
+	padding: 130px 0px 0 222px;
 }
-.faqs ul {
+.faqs .wrap-search {
+	width: 65%;
+	margin: 30px 100px;
+}
+.faqs .form-control {
+	border-radius: 0;
+	border: 2px solid #707070;
+	font-weight: 700;
+}
+.pagination {
+	margin: 30px 0;
+}
+.pagination>.active>a, .pagination>.active>a:hover {
+	background-color: #666!important;
+	border-color: #444!important;
+	color: #fff!important;
+}
+.pagination>li>a {
+	padding: 8px 13px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #666;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+.faqs .btn-search {
+	padding: 6px 20px;
+}
+.faqs .widget-categories {
+	margin: 0;
+	border: 1px solid #707070;
+	background: #851919;
+	border-bottom: none;
+	font-weight: 500;
+}
+.faqs .widget-categories .title {
+	padding: 10px;
+	color: #ffffff;
+}
+.faqs .widget-categories ul {
 	list-style: none;
-	margin: 0;
+	margin: 0; 
 	padding: 0;
+	border-radius: 0;
+	background: #ffffff;
+	font-size: 14px;
 }
-.faqs ul li {
-	position: relative;
-	margin-bottom: 20px;
+.faqs .widget-categories ul li{
+	padding: 10px 15px;
+	border-bottom: 1px solid #707070;
 }
-.faqs ul li .collapse {
-	padding: 15px;
-	background: #fff;
-	color: #3f3f3f;
+.faqs .widget-categories ul li a{
+	font-weight: 600;
 }
-.faqs ul li > h3 {
-	padding: 10px 35px 10px 20px;
-	border-bottom: 1px solid #ccc;
+.faqs .widget-categories ul li:hover{
+	background: #fdcfcf;
+	color: #851919;
+}
+.faqs .faqs-infinite {
+	
+}
+.faqs .faqs-infinite .post{
+	padding: 35px 20px 60px 25px;
+	border: 1px solid #cccccc;
+	border-top: none;
+}
+.faqs .faqs-infinite .post img {
+	vertical-align: baseline;
+	padding-right: 15px;
+}
+.faqs .faqs-infinite .post  .excerpt-container {
+	padding-left: 30px;
+}
+.faqs .faqs-category {
+	border: 1px solid #cccccc;
+	background: #f9f9f9;
+	padding: 11px 25px;
 	margin: 0;
-	background: #f6f6f6;
-	cursor: pointer;
-}
-.faqs ul li > h3.collapsed {
-	color: #3f3f3f;
-}
-.faqs ul li > h3.collapsed:before {
-	color: #474747;
-	content: '-';
-	font-size: 31px;
-	right: 17px;
-	top: 0px;
-	position: absolute;
-	cursor: pointer;
-}
-.faqs ul li > h3:before {
-	color: #474747;
-	content: '+';
-	font-size: 24px;
-	right: 15px;
-	top: 5px;
-	position: absolute;
+} 
+.faqs .faqs-category h3{
+	margin: 0;
 }
 /* End FAQs */
 

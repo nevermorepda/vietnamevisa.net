@@ -207,7 +207,7 @@
 					<div class="col-sm-6">
 						<div class="item ">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lenght of stay:</h5>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lengh of stay:</h5>
 							</div>
 							<div class="content">
 								<ul>
@@ -220,7 +220,7 @@
 					<div class="col-sm-6 right" style="border-left: 2px dashed #ccc;">
 						<div class="item ">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lenght of stay:</h5>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lengh of stay:</h5>
 							</div>
 							<div class="content">
 								<ul>

@@ -28,55 +28,41 @@
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
 <div class="faqs">
-	<div class="cluster cluster-news">
-		<div class="container">
-			
-			<div class="cluster-body">
-				<div class="row">
-					<div class="col-sm-8">
-						<div class="post-content">
-							<div class="faqs-infinite">
-								<? require_once(APPPATH."views/module/search.php"); ?>
-								<? foreach ($items as $value) { 
-									$faqs_categories = $this->m_faqs_category->load($value->catid);
-								?>
-								<div class="post">
-									<div class="post-content-wrapper">
-										<? if (!empty($value->thumbnail)) { ?>
-										<figure class="image-container">
-											<a href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>" class="hover-effect"><img class="img-fluid" src="<?=BASE_URL.$value->thumbnail?>" alt="<?=$value->title?>"></a>
-										</figure>
-										<? } ?>
-										<div class="details">
-											<h3 class="entry-title">
-												<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=$value->title?></a>
-											</h3>
-											<div class="excerpt-container">
-												<?=$value->summary?>
-											</div>
-											<div class="post-meta">
-												<? if (!empty($value->thumbnail)) { ?>
-												<div class="entry-date"><?=date("d M Y",strtotime($value->created_date))?></div>
-												<? } ?>
-												<div class="entry-author fn">
-													<b>Posted By:</b> <a href="#" class="author"><?=SITE_NAME?></a>
-												</div>
-												<div class="entry-action">
-													<a href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>" class="button entry-comment btn-small"><i class="fa fa-comment"></i> <span>Comment</span></a>
-												</div>
-											</div>
-										</div>
+	<div class="container">
+		<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
+		<div class="cluster-body">
+			<div class="row">
+				<div class="col-sm-8">
+					<? require_once(APPPATH."views/module/search.php"); ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="faqs-category "><h3 class="font-weight-bold">Vietnam Visa</h3></div>
+					<div class="faqs-infinite">
+						<? foreach ($items as $value) { 
+							$faqs_categories = $this->m_faqs_category->load($value->catid);
+						?>
+						<div class="post">
+							<div class="post-content-wrapper">
+								<div class="details">
+									<div>
+										<h4 class="entry-title font-weight-bold d-inline-block">
+											<img class="d-inline-block" src="<?=IMG_URL?>new-template/icon/icon-faqs.png">
+											<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=$value->title?></a>
+										</h4>
 									</div>
+									<div class="excerpt-container"><?=$value->summary?></div>
 								</div>
-								<? } ?>
 							</div>
+							<div class="float-right"><a class="btn-rm" href="<?=site_url('')?>">Read more</a></div>
 						</div>
-						<div><?=$pagination?></div>
+						<? } ?>
 					</div>
-					<div class="col-sm-4">
-						<? require_once(APPPATH."views/module/latest_items.php"); ?>
-						<? require_once(APPPATH."views/module/categories.php"); ?>
-					</div>
+					<div><?=$pagination?></div>
+				</div>
+				<div class="col-sm-4">
+					<? require_once(APPPATH."views/module/categories.php"); ?>
 				</div>
 			</div>
 		</div>

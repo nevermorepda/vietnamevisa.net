@@ -1,5 +1,5 @@
 <div class="widget widget-categories">
-	<h4 class="font-weight-bold f20">CATEGORIES</h4>
+	<div class="font-weight-bold text-center title">CATEGORY</div>
 	<ul class="list">
 		<? foreach ($categories as $category) {
 			$info = new stdClass();
@@ -7,7 +7,8 @@
 			$count_items = count($this->m_faqs->items($info,1));
 		?>
 		<li class="item">
-			<a href="<?=site_url("faqs/{$category->alias}")?>"><?=$category->name?> (<?=$count_items?>)</a>
+			<a class="d-inline-block" href="<?=site_url("faqs/{$category->alias}")?>"><?=$category->name?> </a>
+			<div class="count-items float-right">(<?=$count_items?>)</div>
 		</li>
 		<? } ?>
 	</ul>
