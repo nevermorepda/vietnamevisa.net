@@ -1,7 +1,15 @@
 @CHARSET "ISO-8859-1";
 
 /* Large desktop */
+@media (min-width: 1666px) {
+	.banner-top {
+		height: 300px;
+	}
+}
 @media (min-width: 1200px) {
+	.banner-top {
+		height: 300px;
+	}
 	.header-sm {
 		display: none;
 	}
