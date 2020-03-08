@@ -212,7 +212,7 @@ input.error, select.error, textarea.error, span.error {
 .btn-danger {
 	background: #851919;
 	border-color: #851919;
-	color: #ffffff;
+	color: #ffffff !important;
 }
 .btn-danger:hover {
 	background: #c4191f;
@@ -377,6 +377,7 @@ input.error, select.error, textarea.error, span.error {
 }
 .page-content {
 	padding-bottom: 40px;
+	padding-top: 40px;
 	border-bottom: 1px dotted #ccc;
 }
 .page-title {
@@ -1549,7 +1550,7 @@ ul.style-step li.active {
 	border-radius: 0;
 }
 .applyform select {
-	font-size: 13px;
+	font-size: 14px;
 	margin-bottom: 5px;
 }
 .applyform textarea {
@@ -1580,7 +1581,7 @@ ul.style-step li.active {
 .panel-options {
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
 	background-color: #ffffff;
-	font-size: 13px;
+	font-size: 14px;
 }
 .panel-options .optional {
 	padding: 5px 30px;
@@ -1609,7 +1610,7 @@ ul.style-step li.active {
 	position: relative;
 	object-fit: contain;
 	box-shadow: 0 15px 42px 0 rgba(0, 0, 0, 0.16);
-	font-size: 13px;
+	font-size: 14px;
 }
 .panel-fees .title {
 	font-size: 20px;
@@ -1627,7 +1628,7 @@ ul.style-step li.active {
 	margin: 0;
 }
 .panel-fees li {
-	padding: 10px 20px;
+	padding: 5px 20px;
 }
 .panel-fees .last {
 	border-bottom: 1px solid #6997B3;
@@ -1651,6 +1652,7 @@ ul.style-step li.active {
 }
 .panel-fees .promo_code {
 	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .panel-fees .total {
 	border: none;
@@ -1676,7 +1678,7 @@ ul.style-step li.active {
 	border-style: solid;
 	border-width: 0px 0 15px 15px;
 	border-color: transparent transparent #959595 transparent;
-	top: -14px;
+	top: -15px;
 }
 .panel-fees .total .right_edge {
 	left: 100%;
@@ -1694,7 +1696,7 @@ ul.style-step li.active {
 	border-style: solid;
 	border-width: 15px 0 0 15px;
 	border-color: transparent transparent transparent #959595;
-	top: -14px;
+	top: -15px;
 }
 .panel-fees .total .total_fee{
 	font-size: 20px;
@@ -1725,6 +1727,7 @@ ul.style-step li.active {
 	font-family: sans-serif;
 	color: #a51518;
 	font-weight: bold;
+	font-size: 20px;
 }
 .panel-fees label span {
 	float: none !important;
@@ -1972,13 +1975,41 @@ ul.style-step li.active {
 /* End Contact */
 
 /* FAQs */
-.faqs-banner ul {
+.faqs-banner {
 	margin: 0;
-	padding: 0;
-	padding-left: 20px;
+	background-position: center !important;
+}
+.faqs-banner h1 {
+	margin: 0;
+	font-size: 12vmin;
+	font-weight: 600;
+	color: #aa1111;
+	display: inline-block;
+	position: relative;
+	padding-right: 40px;
+}
+.faqs-banner h1 .bd-right {
+	left: 100%;
+	position: absolute;
+	height: 65%;
+	width: 2px;
+	background: #d31b17;
+	top: 14px;
+}
+
+.faqs-banner ul {
+	list-style-type: square;
+	margin: 0;
+	color: #aa1111;
+	font-size: 4.5vmin;
+	line-height: 32px;
+	display: inline-block;
 }
 .faqs-banner ul li {
-	padding: 5px 0;
+}
+.faqs-banner .text-content {
+	width: 100%;
+	padding: 200px 80px 0 200px;
 }
 .faqs ul {
 	list-style: none;
@@ -2589,11 +2620,11 @@ ul.style-step li.active {
 .applyform.step2 .group .group-content .passport-detail {
 	margin-left: -2px;
 	margin-right: -2px;
-	font-size: 13px;
+	font-size: 14px;
 }
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
 }
 .applyform.step2 .group .group-content .passport-detail *[class*="col-"] .row {
 	margin-left: -2px;
@@ -3184,6 +3215,10 @@ ul.style-step li.active {
 	.banner-top .text-content {
 		padding-top: 30px;
 	}
+	.faqs-banner .text-content {
+	width: 100%;
+	padding: 185px 0px 0 0px;
+	}
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -3271,6 +3306,10 @@ ul.style-step li.active {
 	}
 	.banner-top .text-content {
 		padding-top: 30px;
+	}
+	.faqs-banner .text-content {
+	width: 100%;
+	padding: 129px 36px 0px 35px;
 	}
 }
 @media (max-width: 480px) {

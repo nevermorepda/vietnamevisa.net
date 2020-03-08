@@ -107,10 +107,10 @@
 							</div> -->
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Number of visa <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<select id="group_size" name="group_size" class="form-control group_size">
 											<option value="1">1 Applicant</option>
 											<? for ($i=2; $i<=15; $i++) { ?>
@@ -123,10 +123,10 @@
 							</div>
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Type of visa <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<select id="visa_type" name="visa_type" class="form-control visa_type">
 											<option value="e-1ms">1 month single (e-visa)</option>
 											<? foreach ($visa_types as $visa_type) {
@@ -145,10 +145,10 @@
 							</div>
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Purpose of visit <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<select id="visit_purpose" name="visit_purpose" class="form-control visit_purpose">
 											<option value="">Please select...</option>
 											<? foreach ($visit_purposes as $visit_purpose) { ?>
@@ -161,10 +161,10 @@
 							</div>
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Arrival date <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<div class="row">
 											<div class="col-sm-4 col-xs-4">
 												<select id="arrivalyear" name="arrivalyear" class="form-control arrival_year">
@@ -202,10 +202,10 @@
 							</div>
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Arrival airport <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<select id="arrival_port" name="arrival_port" class="form-control arrival_port">
 											<option value="" selected="selected">Please select...</option>
 											<? foreach ($arrival_ports as $arrival_port) {
@@ -222,10 +222,10 @@
 								</div>
 							</div>
 							<div class="row form-group optional wrap_exit_port" style="display: none;">
-								<div class="col-md-4">
+								<div class="col-md-3">
 									<label class="control-label">Exit through checkpoint <span class="required">*</span></label>
 								</div>
-								<div class="col-md-8">
+								<div class="col-md-9">
 									<select id="exit_port" name="exit_port" class="form-control frm-input exit_port">
 										<option value="" selected="selected">Please select...</option>
 									</select>
@@ -283,10 +283,10 @@
 							</script>
 							<div class="form-group optional">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Processing time <span class="required">*</span></label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<div class="radio">
 											<label>
 												<input id="processing_time_normal" note-id="processing-time-normal-note" class="processing_time" type="radio" name="processing_time" value="Normal" <?=($step1->processing_time=="Normal"?"checked='checked'":"")?>/>
@@ -348,11 +348,11 @@
 									<div class="col-md-12">
 										<div class="div"></div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Full package service</label>
 										<p class="help-block red">(Recommended)</p>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox" id="full_package" name="full_package" class="full_package" value="1" <?=($step1->full_package==1?"checked='checked'":"")?>>
@@ -373,10 +373,10 @@
 									<div class="col-md-12">
 										<div class="div"></div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-md-3">
 										<label class="control-label">Upon arrival services</label>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-9">
 										<div id="private_letter">
 											<div class="checkbox">
 												<label>
@@ -430,8 +430,8 @@
 							</div>
 							<div class="form-group optional d-none d-sm-none d-md-block">
 								<div class="row" style="padding-top: 20px; padding-bottom: 20px;">
-									<label class="col-md-4 control-label"></label>
-									<div class="col-md-8">
+									<label class="col-md-3 control-label"></label>
+									<div class="col-md-9">
 										<a class="btn btn-danger btn-next" style="color:#fff;">NEXT <i class="icon-double-angle-right icon-large"></i></a>
 									</div>
 								</div>
