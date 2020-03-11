@@ -42,8 +42,8 @@
 <div class="fee-banner banner-top" style="background: url('<?=IMG_URL?>new-template/VisaFee-banner.png') no-repeat scroll top center transparent;">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-9">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8">
 				<div class="text-content">
 					<h1>VIETNAM <span class="border-text" style="padding: 10px 50px 0px 15px;">VISA FEES</span></h1>
 					<div class="alternative-breadcrumb">
