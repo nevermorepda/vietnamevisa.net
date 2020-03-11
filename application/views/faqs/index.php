@@ -1,5 +1,6 @@
 
-<div class="banner-top faqs-banner" style="background: url('<?=IMG_URL?>new-template/bannerFAQs.png') no-repeat scroll top center transparent;">
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 	<div class="container">
 		<div class="text-content">
 			<h1>
@@ -13,7 +14,7 @@
 		</div>
 	</div>
 </div>
-<div class="slide-wrap">
+<div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-contact">
 		<div class="container">
 			<ul>

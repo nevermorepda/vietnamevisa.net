@@ -1992,8 +1992,14 @@ ul.style-step li.active {
 }
 .faqs-banner {
 	margin: 0;
-	background-position: center !important;
-	min-height: 230px;
+	background-position: right !important;
+	min-height: 298px;
+	position: relative;
+}
+.faqs-banner .flag-faqs {
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
 .faqs-banner h1 {
 	margin: 0;
@@ -2025,7 +2031,7 @@ ul.style-step li.active {
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 130px 0px 0 222px;
+	padding: 175px 0px 0 222px;
 }
 .faqs .widget-search {
 	margin: 30px 0px;
