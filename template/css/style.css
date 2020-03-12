@@ -1065,6 +1065,10 @@ ul.list-embassy li {
 /* End Service */
 .banner-top {
 	min-height: 300px;
+<<<<<<< HEAD
+=======
+	min-height: 240px;
+>>>>>>> 35f853cba8544fbda0b19e2c1e8ab3dafb2a78e8
 	position: relative;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -1915,12 +1919,24 @@ ul.style-step li.active {
 }
 .faqs-banner {
 	margin: 0;
+<<<<<<< HEAD
 	background-position: center !important;
 	min-height: 230px;
+=======
+	background-position: right !important;
+	min-height: 298px;
+	position: relative;
+	overflow: hidden;
+}
+.faqs-banner .flag-faqs {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+>>>>>>> 35f853cba8544fbda0b19e2c1e8ab3dafb2a78e8
 }
 .faqs-banner h1 {
 	margin: 0;
-	font-size: 65px;
+	font-size: 3vw;
 	font-weight: 600;
 	color: #aa1111;
 	display: inline-block;
@@ -1940,7 +1956,7 @@ ul.style-step li.active {
 	list-style-type: square;
 	margin: 0;
 	color: #aa1111;
-	font-size: 26px;
+	font-size: 1.3vw;
 	line-height: 32px;
 	display: inline-block;
 }
@@ -1948,7 +1964,7 @@ ul.style-step li.active {
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 130px 0px 0 222px;
+	padding: 175px 0px 0 210px;
 }
 .faqs .widget-search {
 	margin: 30px 0px;
