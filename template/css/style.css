@@ -104,10 +104,15 @@ h6 {
 } */
 
 .btn-detail {
-	float: right;
-	background-color: #ffffff;
-	border-color: #ffffff;
 	font-weight: 500;
+	border: 1px solid #851919;
+	padding: 5px 15px;
+	color: #851919;
+}
+.btn-detail:hover {
+	border: 1px solid #851919;
+	color: #ffffff;
+	background: #851919;
 }
 /* .show-button {
 	position: relative;
@@ -376,7 +381,7 @@ input.error, select.error, textarea.error, span.error {
 	width: 100%;
 }
 .page-content {
-	padding-bottom: 40px;
+/* 	padding-bottom: 40px; */
 	border-bottom: 1px dotted #ccc;
 }
 .page-title {
@@ -1034,111 +1039,36 @@ ul.list-embassy li {
 
 /* End Confidence */
 /* Service */
-.services {
-	background: url('../images/wizban/service-banner.jpg') no-repeat scroll bottom center transparent;
-	min-height: 350px;
-	position: relative;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;}
+.extra-service-listing .post {
+	display: table;
+	width: 100%;
+	margin-bottom: 70px;
+}
+.extra-service-listing .post .content {
+	display: table-cell;
+	vertical-align: top;
+	padding: 10px;
+}
+.extra-service-listing .post .icon {
+	display: table-cell;
+	width: 60px;
 
-.services-img {
-	background: rgba(0, 0, 0, 0.5);
-	width: 100%;
-	position: absolute;
-	top: 100px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
-.services-img .text .txt-container .value-prop h1 {
-	color: #FFFFFF;
-	font-size: 36px;
-	font-weight: 100;
+.extra-service-listing .post .caption a {
+	vertical-align: middle;
+	padding: 15px 0;
 }
-.services-img .text .txt-container .value-prop h5 {
-	color: #FFFFFF;
-	font-size: 16px;
-	font-weight: 100;
-}
-
-.service-widget {
-	width: 100%;
-	margin-bottom: 15px;
-}
-.service-widget .banner {
-	background: url("../images/service/service-bg.jpg?cr=i") top center transparent;
-	width: 100%;
-	height: 150px;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
-}
-.service-widget .content {
-	border: 1px solid #CCCCCC;
-	border-top: none;
-	padding-top: 10px;
-}
-.service-widget .title {
-	font-size: 16px;
-	font-weight: bold;
-	padding: 15px 15px;
-}
-.service-widget .content ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.service-widget .content ul li {
-	border-bottom: 1px solid #DDDDDD;
-}
-.service-widget .content ul li:last-child {
-	border-bottom: none;
-}
-.service-widget .content ul li a {
-	width: 100%;
-	padding: 9px;
-	line-height: 26px;
-	display: block;
-	color: #000000;
-	text-decoration: none;
-	border-left: 2px solid #FFFFFF;
-}
-.service-widget .content ul li a:hover {
-	background-color: #EFEFEF;
-	border-left: 2px solid #DE4A4A;
-}
-.service-widget .content ul li a i {
-	float: left;
-	display: block;
-	width: 40px;
-	height: 26px;
-	margin-right: 10px;
-}
-.service-widget .content ul li a .passport {
-	background: url("../images/service/icons/passport-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .airport-concierge {
-	background: url("../images/service/icons/airport-concierge-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .car {
-	background: url("../images/service/icons/car-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .hotel {
-	background: url("../images/service/icons/hotel-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .travel {
-	background: url("../images/service/icons/travel-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .flight {
-	background: url("../images/service/icons/flight-2.png?cr=i") no-repeat scroll center center transparent;
+.extra-service-listing .post .caption a:hover {
+	color: #851919;
 }
 
 /* End Service */
 .banner-top {
 	min-height: 300px;
+<<<<<<< HEAD
+=======
 	min-height: 240px;
+>>>>>>> 35f853cba8544fbda0b19e2c1e8ab3dafb2a78e8
 	position: relative;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -1989,6 +1919,10 @@ ul.style-step li.active {
 }
 .faqs-banner {
 	margin: 0;
+<<<<<<< HEAD
+	background-position: center !important;
+	min-height: 230px;
+=======
 	background-position: right !important;
 	min-height: 298px;
 	position: relative;
@@ -1998,6 +1932,7 @@ ul.style-step li.active {
 	position: absolute;
 	left: 0;
 	bottom: 0;
+>>>>>>> 35f853cba8544fbda0b19e2c1e8ab3dafb2a78e8
 }
 .faqs-banner h1 {
 	margin: 0;

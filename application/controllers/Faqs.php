@@ -9,7 +9,7 @@ class Faqs extends CI_Controller {
 	{
 		parent::__construct();
 		
-		$this->_breadcrumb = array_merge($this->_breadcrumb, array("Faqs" => site_url($this->util->slug($this->router->fetch_class()))));
+		$this->_breadcrumb = array_merge($this->_breadcrumb, array("Vietnam Visa Faqs" => site_url($this->util->slug($this->router->fetch_class()))));
 	}
 	
 	public function index($alias=NULL,$id=NULL)
@@ -22,15 +22,18 @@ class Faqs extends CI_Controller {
 		$categories = $this->m_faqs_category->items($info,1);
 		
 		if (!empty($alias)) {
+			$category = $this->m_faqs_category->load($alias);
+			$this->_breadcrumb = array_merge($this->_breadcrumb, array("{$category->name}" => site_url("{$this->util->slug($this->router->fetch_class())}/{$alias}")));
+
 			if(!empty($id)) {
 				$item = $this->m_faqs->load($id);
 				$this->m_faqs->view($item->id);
 				
-				$breadcrumb = array("Vietnam Visa Faqs" => site_url("faqs"), $item->title => '');
+				$this->_breadcrumb = array_merge($this->_breadcrumb, array("{$item->title}" => site_url("{$this->util->slug($this->router->fetch_class())}/{$alias}/{$item->alias}")));
 				
 				$view_data = array();
 				$view_data['item']		= $item;
-				$view_data['breadcrumb']= $breadcrumb;
+				$view_data['breadcrumb']= $this->_breadcrumb;
 				
 				$tmpl_content = array();
 				$tmpl_content['meta']['title'] = $this->util->getMetaTitle($item);
@@ -42,16 +45,17 @@ class Faqs extends CI_Controller {
 				$this->load->view('layout/view', $tmpl_content);
 
 			} else {
-				$category = $this->m_faqs_category->load($alias);
+				
 				$info = new stdClass();
 				$info->catid = $category->id;
 				
 				$items = $this->m_faqs->items($info, 1);
+
 				
-				$this->_breadcrumb = array_merge($this->_breadcrumb, array("{$category->name}" => site_url("{$this->util->slug($this->router->fetch_class())}")));
+				
 				
 				$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
-				$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}"), sizeof($items), 5);
+				$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}/{$alias}"), sizeof($items), 5);
 				
 				$latest_items_info = new stdClass();
 				$latest_items_info->category_id = $category->id;
@@ -73,7 +77,6 @@ class Faqs extends CI_Controller {
 		else {
 			$items = $this->m_faqs->items(null, 1);
 			
-			$breadcrumb = array("Vietnam Visa Faqs" => site_url("{$this->util->slug($this->router->fetch_class())}"));
 			
 			$latest_items_info = new stdClass();
 			$latest_items = $this->m_faqs->items($latest_items_info,1,4,1,'created_date','DESC');
@@ -86,7 +89,7 @@ class Faqs extends CI_Controller {
 			$view_data["pagination"] = $pagination;
 			$view_data["categories"] = $categories;
 			$view_data["latest_items"] = $latest_items;
-			$view_data['breadcrumb']= $breadcrumb;
+			$view_data['breadcrumb']= $this->_breadcrumb;
 			
 			$tmpl_content = array();
 			$tmpl_content['meta']['title'] = "Vietnam Visa Faqs";

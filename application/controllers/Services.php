@@ -22,11 +22,13 @@ class Services extends CI_Controller {
 			$this->load->view('layout/view', $tmpl_content);
 		}
 		else {
+			$breadcrumb = array("Extra Services" => site_url("{$this->util->slug($this->router->fetch_class())}"));
 			$info = new stdClass();
 			$info->catid = 10; // Extra service
 			
 			$view_data = array();
 			$view_data['items'] = $this->m_content->items($info, 1);
+			$view_data['breadcrumb']= $breadcrumb;
 			
 			$tmpl_content = array();
 			$tmpl_content['meta']['title'] = "Extra Services";

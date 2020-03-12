@@ -402,10 +402,10 @@
 								<div class="form-group" style="padding-top: 20px; padding-bottom: 20px;">
 									<div class="text-center">
 										<div class="show-button m-4 d-inline-block">
-											<a class="btn btn-danger" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </a>
+											<button class="btn btn-danger" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </button>
 										</div>
 										<div class="show-button m-4 d-inline-block">
-											<a class="btn btn-danger btn-next" >NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+											<button class="btn btn-danger btn-next" >NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 										</div>
 									</div>
 								</div>

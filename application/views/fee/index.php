@@ -362,7 +362,7 @@
 				</div>
 				<table class="table table-bordered pricing-table">
 					<tr>
-						<th class="text-left" rowspan="2">TYPE FAST TRACK</th>
+						<th class="text-left" rowspan="2">TYPE OF FAST TRACK</th>
 						<th class="text-center" colspan="<?=sizeof($fc_ports)?>"><span style="color:#ff0000;">ARRIVAL AIRPORTS IN VIETNAM</span></th>
 					</tr>
 					<tr>
@@ -384,8 +384,8 @@
 						<? } ?>
 					</tr>
 					<tr>
-						<td class="text-left">FULL SERVICE </td>
-						<td class="text-center" colspan="4">Normal Fast track and Government fees. You do not need to do anything at the airport </td>
+						<td class="text-left">FULL PACKAGE </td>
+						<td class="text-center" colspan="4">Fast track and Government fees. You do not need to do anything at the airport </td>
 					</tr>
 				</table>
 				<!-- <div class="ft-anotate">
