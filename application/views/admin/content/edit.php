@@ -48,6 +48,16 @@
 					</td>
 				</tr>
 				<tr>
+					<td class="table-head text-right" width="10%">Icon</td>
+					<td>
+						<label class="wrap-upload-icon" style="background: url('<?=BASE_URL?><?=!empty($item->icon) ? $item->icon : ''?>') no-repeat">
+							<input type="file" name="icon" id="file-upload-icon" value="<?=!empty($item->name) ? $item->name : ''?>">
+							<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+						</label>
+					</td>
+				</tr>
+
+				<tr>
 					<td class="table-head text-right" width="10%">Thumbnail</td>
 					<td>
 						<label class="wrap-upload-thumb" style="background: url('<?=BASE_URL?><?=!empty($item->thumbnail) ? $item->thumbnail : ''?>') no-repeat">
@@ -114,6 +124,25 @@ $(document).ready(function() {
 					"background-image": "url('"+e.target.result+"')"
 				});
 				$('.wrap-upload-thumb > i').css({
+					"color": "rgba(52, 73, 94, 0.38)"
+				});
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#file-upload-icon").change(function() {
+		readURLicon(this);
+	});
+	
+	function readURLicon(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('.wrap-upload-icon').css({
+					"background-image": "url('"+e.target.result+"')"
+				});
+				$('.wrap-upload-icon > i').css({
 					"color": "rgba(52, 73, 94, 0.38)"
 				});
 			};

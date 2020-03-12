@@ -76,9 +76,7 @@
 							<ul class="dropdown-menu multi-level">
 								<li><a href="<?=site_url("syslog/faqs-categories")?>">FAQs Categories</a></li>
 								<li role="separator" class="divider"></li>
-								<? foreach($faqs_categories as $faqs_category) { ?>
-								<li><a href="<?=site_url("syslog/faqs/{$faqs_category->id}")?>"><?=$faqs_category->name?></a></li>
-								<? } ?>
+								<? gen_faq_category_menu($faqs_categories, $this); ?>
 							</ul>
 						</li>
 						<? if (in_array($this->session->userdata('admin')->id, $admin_id)) { ?>
@@ -286,6 +284,24 @@
 					</li>';
 			} else {
 				echo '<li><a href="'.site_url("syslog/content/{$category->alias}").'">'.$category->name.'</a></li>';
+			}
+		}
+	}
+
+	function gen_faq_category_menu($faqs_categories, $obj) {
+		foreach ($faqs_categories as $faqs_category) {
+			$child_faqs_category_info = new stdClass();
+			$child_faqs_category_info->parent_id = $faqs_category->id;
+			$child_categories = $obj->m_faqs_category->items($child_faqs_category_info);
+			if (!empty($child_categories)) {
+				echo '<li class="dropdown-submenu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$faqs_category->name.'</a>
+						<ul class="dropdown-menu">';
+						gen_faq_category_menu($child_categories, $obj);
+				echo '	</ul>
+					</li>';
+			} else {
+				echo '<li><a href="'.site_url("syslog/faqs/{$faqs_category->alias}").'">'.$faqs_category->name.'</a></li>';
 			}
 		}
 	}

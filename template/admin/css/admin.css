@@ -658,6 +658,21 @@ input:checked + .sw-slider:before {
 	font-size: 100px;
 	color: #34495e;
 }
+.wrap-upload-icon{
+	background: #e9e9e9;
+	text-align: center;
+	cursor: pointer;
+	background-size: cover !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+}
+.wrap-upload-icon input[type="file"] {
+	display: none;
+}
+.wrap-upload-icon i{
+	font-size: 100px;
+	color: #34495e;
+}
 .image-list .item {
 	position: relative;
 	width: 100px;

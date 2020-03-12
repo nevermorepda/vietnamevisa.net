@@ -515,6 +515,7 @@ class Syslog extends CI_Controller {
 				$title			= $this->util->value($this->input->post("title"), "");
 				$alias			= $this->util->value($this->input->post("alias"), "");
 				$catid			= $this->util->value($this->input->post("catid"), 0);
+				$icon 			= !empty($_FILES['icon']['name']) ? explode('.',$_FILES['icon']['name']) : $this->m_content->load($id)->icon;
 				$thumbnail 		= !empty($_FILES['thumbnail']['name']) ? explode('.',$_FILES['thumbnail']['name']) : $this->m_content->load($id)->thumbnail;
 				$meta_title		= $this->util->value($this->input->post("meta_title"), "");
 				$meta_key		= $this->util->value($this->input->post("meta_key"), "");
@@ -532,6 +533,7 @@ class Syslog extends CI_Controller {
 					"title"			=> $title,
 					"alias"			=> $alias,
 					"catid"			=> $catid,
+					"icon"			=> $icon,
 					"thumbnail"		=> $thumbnail,
 					"meta_title"	=> $meta_title,
 					"meta_key"		=> $meta_key,
@@ -541,6 +543,9 @@ class Syslog extends CI_Controller {
 					//"order_num"		=> $order_num,
 					"active"		=> $active
 				);
+				if (!empty($_FILES['icon']['name'])){
+					$data['icon'] = "/files/upload/content/{$id}/{$this->util->slug($icon[0])}.{$icon[1]}";
+				}
 				if (!empty($_FILES['thumbnail']['name'])){
 					$data['thumbnail'] = "/files/upload/content/{$id}/{$this->util->slug($thumbnail[0])}.{$thumbnail[1]}";
 				}
@@ -559,6 +564,7 @@ class Syslog extends CI_Controller {
 					mkdir($path, 0755, true);
 				}
 				$allow_type = 'JPG|PNG|jpg|jpeg|png';
+				$this->util->upload_file($path,'icon',$file_deleted,$allow_type,$this->util->slug($icon[0]).'.'.$icon[1]);
 				$this->util->upload_file($path,'thumbnail',$file_deleted,$allow_type,$this->util->slug($thumbnail[0]).'.'.$thumbnail[1]);
 				$this->create_sitemap();
 				redirect(site_url("syslog/content/{$category->alias}"));

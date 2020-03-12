@@ -104,10 +104,15 @@ h6 {
 } */
 
 .btn-detail {
-	float: right;
-	background-color: #ffffff;
-	border-color: #ffffff;
 	font-weight: 500;
+	border: 1px solid #851919;
+	padding: 5px 15px;
+	color: #851919;
+}
+.btn-detail:hover {
+	border: 1px solid #851919;
+	color: #ffffff;
+	background: #851919;
 }
 /* .show-button {
 	position: relative;
@@ -376,7 +381,7 @@ input.error, select.error, textarea.error, span.error {
 	width: 100%;
 }
 .page-content {
-	padding-bottom: 40px;
+/* 	padding-bottom: 40px; */
 	border-bottom: 1px dotted #ccc;
 }
 .page-title {
@@ -685,7 +690,7 @@ input.error, select.error, textarea.error, span.error {
 }
 .support-online-widget td {
 	padding: 5px 0px;
-	vertical-align: middle;
+	vertical-align: baseline;
 }
 .support-online-widget .content .email a {
 	color: #D40000;
@@ -1034,105 +1039,27 @@ ul.list-embassy li {
 
 /* End Confidence */
 /* Service */
-.services {
-	background: url('../images/wizban/service-banner.jpg') no-repeat scroll bottom center transparent;
-	min-height: 350px;
-	position: relative;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;}
+.extra-service-listing .post {
+	display: table;
+	width: 100%;
+	margin-bottom: 70px;
+}
+.extra-service-listing .post .content {
+	display: table-cell;
+	vertical-align: top;
+	padding: 10px;
+}
+.extra-service-listing .post .icon {
+	display: table-cell;
+	width: 60px;
 
-.services-img {
-	background: rgba(0, 0, 0, 0.5);
-	width: 100%;
-	position: absolute;
-	top: 100px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
-.services-img .text .txt-container .value-prop h1 {
-	color: #FFFFFF;
-	font-size: 36px;
-	font-weight: 100;
+.extra-service-listing .post .caption a {
+	vertical-align: middle;
+	padding: 15px 0;
 }
-.services-img .text .txt-container .value-prop h5 {
-	color: #FFFFFF;
-	font-size: 16px;
-	font-weight: 100;
-}
-
-.service-widget {
-	width: 100%;
-	margin-bottom: 15px;
-}
-.service-widget .banner {
-	background: url("../images/service/service-bg.jpg?cr=i") top center transparent;
-	width: 100%;
-	height: 150px;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
-}
-.service-widget .content {
-	border: 1px solid #CCCCCC;
-	border-top: none;
-	padding-top: 10px;
-}
-.service-widget .title {
-	font-size: 16px;
-	font-weight: bold;
-	padding: 15px 15px;
-}
-.service-widget .content ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.service-widget .content ul li {
-	border-bottom: 1px solid #DDDDDD;
-}
-.service-widget .content ul li:last-child {
-	border-bottom: none;
-}
-.service-widget .content ul li a {
-	width: 100%;
-	padding: 9px;
-	line-height: 26px;
-	display: block;
-	color: #000000;
-	text-decoration: none;
-	border-left: 2px solid #FFFFFF;
-}
-.service-widget .content ul li a:hover {
-	background-color: #EFEFEF;
-	border-left: 2px solid #DE4A4A;
-}
-.service-widget .content ul li a i {
-	float: left;
-	display: block;
-	width: 40px;
-	height: 26px;
-	margin-right: 10px;
-}
-.service-widget .content ul li a .passport {
-	background: url("../images/service/icons/passport-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .airport-concierge {
-	background: url("../images/service/icons/airport-concierge-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .car {
-	background: url("../images/service/icons/car-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .hotel {
-	background: url("../images/service/icons/hotel-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .travel {
-	background: url("../images/service/icons/travel-2.png?cr=i") no-repeat scroll center center transparent;
-}
-.service-widget .content ul li a .flight {
-	background: url("../images/service/icons/flight-2.png?cr=i") no-repeat scroll center center transparent;
+.extra-service-listing .post .caption a:hover {
+	color: #851919;
 }
 
 /* End Service */
@@ -1979,6 +1906,7 @@ ul.style-step li.active {
 	border: 1px solid #851919;
 	padding: 5px 12px;
 	color: #851919;
+	float: right;
 }
 .faqs .btn-rm:hover {
 	border: 1px solid #851919;
@@ -2022,22 +1950,33 @@ ul.style-step li.active {
 	width: 100%;
 	padding: 130px 0px 0 222px;
 }
-.faqs .wrap-search {
-	width: 65%;
-	margin: 30px 100px;
+.faqs .widget-search {
+	margin: 30px 0px;
 }
 .faqs .form-control {
 	border-radius: 0;
 	border: 2px solid #707070;
 	font-weight: 700;
 }
+.faqs .pagi-bot {
+	border: 1px solid #ccc;
+}
 .pagination {
 	margin: 30px 0;
+	display: inline-block;
 }
-.pagination>.active>a, .pagination>.active>a:hover {
-	background-color: #666!important;
-	border-color: #444!important;
+.pagination>li {
+	display: inline-block;
+}
+.pagination>.active>a {
+	background-color: #851919!important;
+	border-color: #851919!important;
 	color: #fff!important;
+}
+.pagination>.active>a:hover {
+	background-color: #fdcfcf!important;
+	border-color: #fdcfcf!important;
+	color: #000000!important;
 }
 .pagination>li>a {
 	padding: 8px 13px;
@@ -2046,7 +1985,14 @@ ul.style-step li.active {
 	color: #666;
 	text-decoration: none;
 	background-color: #fff;
-	border: 1px solid #ddd;
+}
+.pagination>li>a:hover {
+	padding: 8px 13px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #000000;
+	text-decoration: none;
+	background-color: #fdcfcf;
 }
 .faqs .btn-search {
 	padding: 6px 20px;
@@ -2057,6 +2003,7 @@ ul.style-step li.active {
 	background: #851919;
 	border-bottom: none;
 	font-weight: 500;
+	margin-bottom: 30px;
 }
 .faqs .widget-categories .title {
 	padding: 10px;
@@ -2074,6 +2021,8 @@ ul.style-step li.active {
 	padding: 10px 15px;
 	border-bottom: 1px solid #707070;
 }
+.faqs ul li {
+}
 .faqs .widget-categories ul li a{
 	font-weight: 600;
 }
@@ -2081,29 +2030,64 @@ ul.style-step li.active {
 	background: #fdcfcf;
 	color: #851919;
 }
+.faqs .support-online-widget {
+	margin: 0;
+	border: 1px solid #707070;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+.faqs .support-online-widget .title {
+	padding: 10px;
+	background: #851919;
+	color: #fff;
+	height: auto;
+}
+.faqs .support-online-widget .content {
+	padding: 15px;
+}
 .faqs .faqs-infinite {
-	
+	border: 1px solid #ccc;
 }
 .faqs .faqs-infinite .post{
-	padding: 35px 20px 60px 25px;
-	border: 1px solid #cccccc;
-	border-top: none;
+	padding: 10px 20px 10px 25px;
 }
 .faqs .faqs-infinite .post img {
 	vertical-align: baseline;
 	padding-right: 15px;
 }
 .faqs .faqs-infinite .post  .excerpt-container {
-	padding-left: 30px;
+	padding-left: 20px;
 }
 .faqs .faqs-category {
-	border: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 	background: #f9f9f9;
 	padding: 11px 25px;
 	margin: 0;
 } 
 .faqs .faqs-category h3{
 	margin: 0;
+}
+.faqs .faqs-content {
+	padding: 15px 0px;
+}
+.faqs .related-item {
+	padding: 20px;
+	border: 1px solid #ccc;
+	background: #f9f9f9;
+	border-top: none;
+}
+.faqs .related-item h2{
+	padding-bottom: 5px;
+	color: #851919;
+	text-shadow: 2px 2px #bdbdbd;
+}
+.faqs .related-item ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.faqs .related-item ul li{
+	padding: 5px 0;
 }
 /* End FAQs */
 
@@ -3363,6 +3347,10 @@ ul.style-step li.active {
 @media (max-width: 320px) {
 	.slide-contact img {
 		padding-right: 0px;
+	}
+	.faqs .wrap-search {
+		width: 100%;
+		margin: 30px 0px;
 	}
 }
 @media(max-width:33.9em) {
