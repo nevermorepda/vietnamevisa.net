@@ -647,9 +647,9 @@ input.error, select.error, textarea.error, span.error {
 	text-decoration: none;
 }
 
-/* .breadcrumb a.active {
+.breadcrumb a.active {
 	color: #D40000;
-} */
+}
 .breadcrumb .active a {
 	color: #D40000 !important;
 }
@@ -1915,12 +1915,19 @@ ul.style-step li.active {
 }
 .faqs-banner {
 	margin: 0;
-	background-position: center !important;
-	min-height: 230px;
+	background-position: right !important;
+	min-height: 298px;
+	position: relative;
+	overflow: hidden;
+}
+.faqs-banner .flag-faqs {
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
 .faqs-banner h1 {
 	margin: 0;
-	font-size: 65px;
+	font-size: 3vw;
 	font-weight: 600;
 	color: #aa1111;
 	display: inline-block;
@@ -1940,7 +1947,7 @@ ul.style-step li.active {
 	list-style-type: square;
 	margin: 0;
 	color: #aa1111;
-	font-size: 26px;
+	font-size: 1.3vw;
 	line-height: 32px;
 	display: inline-block;
 }
@@ -1948,7 +1955,7 @@ ul.style-step li.active {
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 130px 0px 0 222px;
+	padding: 175px 0px 0 210px;
 }
 .faqs .widget-search {
 	margin: 30px 0px;
@@ -2009,7 +2016,7 @@ ul.style-step li.active {
 	padding: 10px;
 	color: #ffffff;
 }
-.faqs .widget-categories ul {
+.faqs .widget-categories>ul {
 	list-style: none;
 	margin: 0; 
 	padding: 0;
@@ -2017,18 +2024,22 @@ ul.style-step li.active {
 	background: #ffffff;
 	font-size: 14px;
 }
-.faqs .widget-categories ul li{
+.faqs .widget-categories>ul>li{
 	padding: 10px 15px;
 	border-bottom: 1px solid #707070;
 }
-.faqs ul li {
-}
-.faqs .widget-categories ul li a{
+.faqs .widget-categories>ul>li>a{
 	font-weight: 600;
 }
-.faqs .widget-categories ul li:hover{
+.faqs .widget-categories>ul>li:hover{
 	background: #fdcfcf;
 	color: #851919;
+}
+.faqs .widget-categories .list .item .child-category {
+	
+}
+.faqs .widget-categories .list .item .child-category:hover{
+	display: block;
 }
 .faqs .support-online-widget {
 	margin: 0;

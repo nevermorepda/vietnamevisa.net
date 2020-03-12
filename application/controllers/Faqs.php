@@ -34,27 +34,23 @@ class Faqs extends CI_Controller {
 				$view_data = array();
 				$view_data['item']		= $item;
 				$view_data['breadcrumb']= $this->_breadcrumb;
+				$view_data["categories"] = $categories;
 				
 				$tmpl_content = array();
 				$tmpl_content['meta']['title'] = $this->util->getMetaTitle($item);
-				$view_data["categories"] = $categories;
 				$tmpl_content['meta']['keywords'] = $item->meta_key;
 				$tmpl_content['meta']['description'] = $item->meta_desc;
 				$tmpl_content['tabindex']  = "faqs";
 				$tmpl_content['content']   = $this->load->view("faqs/detail", $view_data, TRUE);
 				$this->load->view('layout/view', $tmpl_content);
-
 			} else {
-				
 				$info = new stdClass();
 				$info->catid = $category->id;
 				
 				$items = $this->m_faqs->items($info, 1);
 
-				
-				
-				
 				$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
+				$offset = ($page - 1) * 5;
 				$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}/{$alias}"), sizeof($items), 5);
 				
 				$latest_items_info = new stdClass();
@@ -62,9 +58,11 @@ class Faqs extends CI_Controller {
 				$latest_items = $this->m_faqs->items($latest_items_info,1,4,1,'created_date','DESC');
 				
 				$view_data = array();
-				$view_data["items"] = $this->m_faqs->items($info, 1, 5, ($page - 1) * 5);
+				$view_data["items"] = $this->m_faqs->items($info, 1, 5, $offset);
+				$view_data["offset"] = $offset;
 				$view_data["pagination"] = $pagination;
 				$view_data["categories"] = $categories;
+				$view_data["category"] = $category;
 				$view_data["latest_items"] = $latest_items;
 				$view_data["breadcrumb"] = $this->_breadcrumb;
 				
@@ -76,19 +74,20 @@ class Faqs extends CI_Controller {
 		}
 		else {
 			$items = $this->m_faqs->items(null, 1);
-			
-			
+			$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
+			$offset = ($page - 1) * 5;
 			$latest_items_info = new stdClass();
 			$latest_items = $this->m_faqs->items($latest_items_info,1,4,1,'created_date','DESC');
 			
-			$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
+			
 			$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}"), sizeof($items), 5);
 			
 			$view_data = array();
-			$view_data['items']  = $this->m_faqs->items(null, 1, 5, ($page - 1) * 5);
+			$view_data['items']  = $this->m_faqs->items(null, 1, 5, $offset);
 			$view_data["pagination"] = $pagination;
 			$view_data["categories"] = $categories;
 			$view_data["latest_items"] = $latest_items;
+			$view_data["offset"] = $offset;
 			$view_data['breadcrumb']= $this->_breadcrumb;
 			
 			$tmpl_content = array();

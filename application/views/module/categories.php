@@ -10,14 +10,14 @@
 			$info->parent_id = $category->id;
 			$child_categories = $this->m_faqs_category->items($info,1);
 		?>
-		<li class="item">
+		<li class="itemm">
 			<a class="d-inline-block" href="<?=site_url("faqs/{$category->alias}")?>"><?=$category->name?> </a>
 			<div class="count-items float-right">(<?=$count_items?>)</div>
-			<? foreach ($child_categories as $child_category) { ?>
-			<div>
-				<a class="d-inline-block" href="<?=site_url("faqs/{$child_category->alias}")?>"><?=$child_category->name?> </a>
-			</div>
-			<? } ?>
+			<ul class="child-category">
+				<? foreach ($child_categories as $child_category) { ?>
+				<li><a class="d-inline-block" href="<?=site_url("faqs/{$child_category->alias}")?>"><?=$child_category->name?> </a></li>
+				<? } ?>
+			</ul>
 		</li>
 		<? } ?>
 	</ul>

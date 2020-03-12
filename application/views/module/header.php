@@ -92,7 +92,7 @@
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "visa-fee") ? "active" : "")?>" title="" href="<?=site_url("visa-fee")?>">Visa Fee</a></li>
 				<li class="menu-item-div"></li>
-				<li><a class="" title="" href="./services.html">Extra Services</a></li>
+				<li><a class="<?=(($tabindex == "services") ? "active" : "")?>" title="" href="<?=site_url("services")?>">Extra Services</a></li>
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "faqs") ? "active" : "")?>" title="" href="<?=site_url("faqs")?>">FAQs</a></li>
 				<li class="menu-item-div"></li>

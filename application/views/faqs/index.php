@@ -1,5 +1,6 @@
 
-<div class="banner-top faqs-banner" style="background: url('<?=IMG_URL?>new-template/bannerFAQs.png') no-repeat scroll top center transparent;">
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 	<div class="container">
 		<div class="text-content">
 			<h1>
@@ -13,7 +14,7 @@
 		</div>
 	</div>
 </div>
-<div class="slide-wrap">
+<div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-contact">
 		<div class="container">
 			<ul>
@@ -43,7 +44,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-sm-8 col-xs-12">
 					<div class="faqs-infinite">
-						<div class="faqs-category "><h3 class="font-weight-bold">Vietnam Visa</h3></div>
+						<div class="faqs-category "><h3 class="font-weight-bold"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h3></div>
 						<div class="faqs-content">
 						<? 
 						$i = 0;
@@ -55,7 +56,7 @@
 								<div class="details">
 									<div>
 										<h4 class="entry-title font-weight-bold">
-											<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=($i+1).'. '?><?=$value->title?></a>
+											<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=($offset+1).'. '?><?=$value->title?></a>
 										</h4>
 									</div>
 									<div class="excerpt-container"><?=$value->summary?></div>
@@ -63,7 +64,7 @@
 							</div>
 							<div class="clearfix"><a class="btn-rm" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>">Read more</a></div>
 						</div>
-						<? $i++; } 
+						<? $i++; $offset++;} 
 						?>
 						</div>
 						
