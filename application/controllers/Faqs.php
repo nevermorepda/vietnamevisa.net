@@ -34,6 +34,7 @@ class Faqs extends CI_Controller {
 				$view_data = array();
 				$view_data['item']		= $item;
 				$view_data['breadcrumb']= $this->_breadcrumb;
+				$view_data["alias"] = $alias;
 				$view_data["categories"] = $categories;
 				
 				$tmpl_content = array();
@@ -63,6 +64,7 @@ class Faqs extends CI_Controller {
 				$view_data["pagination"] = $pagination;
 				$view_data["categories"] = $categories;
 				$view_data["category"] = $category;
+				$view_data["alias"] = $alias;
 				$view_data["latest_items"] = $latest_items;
 				$view_data["breadcrumb"] = $this->_breadcrumb;
 				
