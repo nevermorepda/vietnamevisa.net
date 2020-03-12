@@ -67,6 +67,7 @@ class Faqs extends CI_Controller {
 				$view_data["breadcrumb"] = $this->_breadcrumb;
 				
 				$tmpl_content = array();
+				$tmpl_content['tabindex']  = "faqs";
 				$tmpl_content["meta"]["title"] = "Vietnam Visa Faqs";
 				$tmpl_content["content"] = $this->load->view("faqs/index", $view_data, TRUE);
 				$this->load->view("layout/main", $tmpl_content);

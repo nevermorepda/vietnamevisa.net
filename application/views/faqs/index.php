@@ -28,9 +28,9 @@
 <div class="container">
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
-<div class="faqs">
+<div class="faqs cluster-content">
 	<div class="container">
-		<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
+		<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-sm-8">
@@ -47,7 +47,6 @@
 						<div class="faqs-category "><h3 class="font-weight-bold"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h3></div>
 						<div class="faqs-content">
 						<? 
-						$i = 0;
 						foreach ($items as $value) { 
 							$faqs_categories = $this->m_faqs_category->load($value->catid);
 						?>
@@ -64,7 +63,7 @@
 							</div>
 							<div class="clearfix"><a class="btn-rm" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>">Read more</a></div>
 						</div>
-						<? $i++; $offset++;} 
+						<? $offset++;} 
 						?>
 						</div>
 						

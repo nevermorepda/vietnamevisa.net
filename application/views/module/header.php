@@ -94,6 +94,8 @@
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "services") ? "active" : "")?>" title="" href="<?=site_url("services")?>">Extra Services</a></li>
 				<li class="menu-item-div"></li>
+				<li><a class="<?=(($tabindex == "consular") ? "active" : "")?>" title="" href="<?=site_url("consular")?>">Consular Services</a></li>
+				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "faqs") ? "active" : "")?>" title="" href="<?=site_url("faqs")?>">FAQs</a></li>
 				<li class="menu-item-div"></li>
 				<li><a class="<?=(($tabindex == "contact") ? "active" : "")?>" title="" href="<?=site_url("contact")?>">Contact</a></li>

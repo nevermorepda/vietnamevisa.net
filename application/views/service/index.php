@@ -1,18 +1,20 @@
-<div class="banner-top faqs-banner" style="background: url('<?=IMG_URL?>new-template/bannerFAQs.png') no-repeat scroll top center transparent;">
+
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 	<div class="container">
 		<div class="text-content">
 			<h1>
-				<span class="" style="">FAQs</span>
+				<span class="" style="">EXTRA SERVICE</span>
 				<div class="bd-right d-none d-lg-block d-md-block"></div>
 			</h1>
 			<ul>
-				<li>Always listen to our customer </li>
-				<li>Provide helpful and clear information</li>
+				<li>One stop Service </li>
+				<li>Reasonable Fee</li>
 			</ul>
 		</div>
 	</div>
 </div>
-<div class="slide-wrap">
+<div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-contact">
 		<div class="container">
 			<ul>
@@ -29,7 +31,7 @@
 	</div>
 	<div class="cluster-content">
 		<div class="container">
-			<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Extra Services Upon Arrival</h2>
+			<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Extra Services Upon Arrival</h2>
 			<div class="row">
 			<? foreach ($items as $item) { 
 			?>

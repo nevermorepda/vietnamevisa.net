@@ -27,7 +27,7 @@
 <div class="container">
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
-<div class="faqs">
+<div class="faqs cluster-content">
 	<div class="container">
 		<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
 		<div class="cluster-body">
@@ -51,7 +51,7 @@
 										<div class="extract-container">
 											<?=$item->content?>
 											<div class="text-right">
-												<p class="help-block">Written by <span class="font-italic"><?=!empty($item->user_id) ? $this->m_user->load($item->user_id)->fullname : 'visa-vietnam.org.vn'?></span> | <?=date('D, M d, Y',strtotime($item->created_date))?></p>
+												<p class="help-block">Written by <span class="font-italic"><?=!empty($item->user_id) ? $this->m_user->load($item->user_id)->fullname : 'visaevisa.net'?></span> | <?=date('D, M d, Y',strtotime($item->created_date))?></p>
 											</div>
 											<? require_once(APPPATH."views/module/comment.php"); ?>
 										</div>
@@ -71,7 +71,7 @@
 							<?
 								foreach ($relatedItems as $rItem) {
 								?>
-									<li><img class="d-inline-block pr-3" src="<?=IMG_URL?>new-template/icon/icon-faqs.png"><a title="<?=$rItem->title?>" href="<?=site_url("news/view/{$rItem->alias}")?>"><?=$rItem->title?></a></li>
+									<li><img class="d-inline-block pr-3" src="<?=IMG_URL?>new-template/icon/icon-faqs.png"><a title="<?=$rItem->title?>" href="<?=site_url("faqs/view/{$rItem->alias}")?>"><?=$rItem->title?></a></li>
 								<?
 								}
 							?>
