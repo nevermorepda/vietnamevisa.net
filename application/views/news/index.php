@@ -47,10 +47,7 @@
 							<div class="item clearfix">
 								<h2 class="item-head"><a title="<?=$item->title?>" href="<?=site_url("news/view/{$item->alias}")?>"><?=$item->title?></a></h2>
 								<?=$item->summary?>
-								<div class="show-button right">
-									<a title="Read more" class="btn btn-danger" href="<?=site_url("news/view/{$item->alias}")?>">Read more</a>
-								</div>
-								<!-- <span class="right"><a title="Read more" class="btn btn-danger" href="<?=site_url("news/view/{$item->alias}")?>">Read more »</a></span> -->
+								<span class="right"><a title="Read more" class="btn btn-danger" href="<?=site_url("news/view/{$item->alias}")?>">Read more »</a></span>
 							</div>
 						</li>
 						<?	} ?>
@@ -66,4 +63,3 @@
 		</div>
 	</div>
 </div>
-

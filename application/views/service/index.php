@@ -1,56 +1,54 @@
-<div class="services">
+<div class="banner-top faqs-banner" style="background: url('<?=IMG_URL?>new-template/bannerFAQs.png') no-repeat scroll top center transparent;">
 	<div class="container">
-		<div class="alternative-breadcrumb">
-		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+		<div class="text-content">
+			<h1>
+				<span class="" style="">FAQs</span>
+				<div class="bd-right d-none d-lg-block d-md-block"></div>
+			</h1>
+			<ul>
+				<li>Always listen to our customer </li>
+				<li>Provide helpful and clear information</li>
+			</ul>
 		</div>
 	</div>
-	<div class="services-img">
+</div>
+<div class="slide-wrap">
+	<div class="slide-contact">
 		<div class="container">
-			<div class="text">
-				<div class="txt-container">
-					<div class="value-prop center">
-						<h1>Extra Services Upon Arrival</h1>
-						<h5>Full extra service at the airport help the traveler when upon arrival.</h5>
-					</div>
-				</div>
-			</div>
+			<ul>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
+				<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
+			</ul>
 		</div>
 	</div>
 </div>
-
-<div class="container text-center" style="margin-top: 20px">
-	<h2 class="home-heading">EXTRA SERVICES UPON ARRIVAL</h2> 
-	<p class="f20" style="color: #AAA">In order to help Foreigners avoid confusing to choose the required services in their trip, We offer an <b>all-in-one package</b> which covers every little thing the visitor need for their trip.</p>
-</div>
-
-<div class="cluster-content extra-service-listing">
+<div class="extra-service-listing" style="background: url(http://localhost/vietnamevisa.net/template/images/new-template/background.png) no-repeat scroll top center transparent;">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 col-sm-8 col-xs-12">
-				<div class="row">
-				<? foreach ($items as $item) { 
-				?>
-					<div class="col-sm-4">
-						<div class="mb-3">
-							<div class="thumbnail">
-								<a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive full-width" src="<?=BASE_URL.$item->thumbnail?>"/></a>
-								<div class="caption pt-2">
-									<h3 class="title font-weight-bold"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
-									<p><?=word_limiter(strip_tags($item->summary), 30)?></p>
-									<p><a class="btn btn-danger" href="<?=site_url("services/view/{$item->alias}")?>">Read more</a></p>
+		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+	</div>
+	<div class="cluster-content">
+		<div class="container">
+			<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Extra Services Upon Arrival</h2>
+			<div class="row">
+			<? foreach ($items as $item) { 
+			?>
+				<div class="col-sm-6">
+					<div class="mb-3">
+						<div class="post">
+							<div class="icon"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive " src="<?=BASE_URL.$item->icon?>"/></a></div>
+							<div class="content pt-2">
+								<div class="caption ">
+									<h3 class="title font-weight-bold d-inline-block"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
 								</div>
+								<p><?=word_limiter(strip_tags($item->summary), 50)?></p>
+								<div class="clearfix"><a class="btn-detail" href="<?=site_url("services/view/{$item->alias}")?>">Detail</a></div>
 							</div>
 						</div>
 					</div>
-				<? } ?>
 				</div>
-			</div>
-			<div class="col-lg-3 col-sm-4 d-none d-sm-none d-md-block">
-				<? require_once(APPPATH."views/module/support.php"); ?>
-				<? require_once(APPPATH."views/module/confidence.php"); ?>
-				<? require_once(APPPATH."views/module/services.php"); ?>
+			<? } ?>
 			</div>
 		</div>
-		
-	</div>
+</div>
 </div>

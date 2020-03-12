@@ -109,7 +109,7 @@
 								<input type="hidden" id="discount" name="discount" value="<?=$step1->discount?>">
 								<input type="hidden" id="discount_unit" name="discount_unit" value="<?=$step1->discount_unit?>">
 								<div class="row clearfix">
-									<div class="col-lg-8 col-sm-8">
+									<div class="col-lg-9 col-sm-9">
 										<div class="group passport-information">
 											<h2 class="group-heading">Passport Information</h2>
 											<div class="group-content">
@@ -518,6 +518,7 @@
 																	$('.distance-plus').html((res[2]-res[0].distance).toFixed(2)+'km');
 																	$('.review-car-plus-fee > span').html('+ ('+(res[2]-res[0].distance).toFixed(2)+'km) '+' = '+res[1]+' $');
 																	$('.total_price').html(total_visa_fee+res[1]+' $');
+
 																	$('.cnt-car-plus-fee').css('display', 'block');
 																	$('.review-car-plus-fee').css('display', 'block');
 																}
@@ -614,11 +615,11 @@
 													</div>
 													<div class="col-sm-9">
 														<!-- <a class="btn btn-danger btn-1x" style="padding-left: 35px;padding-right: 35px;" href="<?=site_url("apply-e-visa/step1")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK</a> -->
-														<div class="show-button m-4 d-inline-flex">
+														<div class="show-button m-4">
 															<button class="btn btn-danger" href="<?=site_url("apply-e-visa/step1")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK </button>
 														</div>
 														<!-- <button class="btn btn-danger btn-1x btn-next" type="submit">NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button> -->
-														<div class="show-button m-4 d-inline-flex">
+														<div class="show-button m-4">
 															<button class="btn btn-danger" type="submit">NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 														</div>
 													</div>
@@ -626,7 +627,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-4 col-sm-4">
+									<div class="col-lg-3 col-sm-3">
 										<div class="panel-fees">
 											<h3 class="panel-heading" style="padding: 10px;">Visa Fees</h3>
 											<div class="panel-body">
@@ -641,7 +642,7 @@
 													</li>
 													<li class="clearfix">
 														<label>Type of visa:</label>
-														<span class="visa_type_t"><?=$this->util->getVisaType2String($step1->visa_type).' (e-visa)'?></span>
+														<span class="visa_type_t"><?=$this->util->getVisaType2String($step1->visa_type)?></span>
 													</li>
 													<li class="clearfix">
 														<label>Purpose of visit:</label>
@@ -755,7 +756,7 @@
 											</div>
 										</div>
 										<div class="payment-methods">
-											<img class="full-width" alt="" src="<?=IMG_URL?>payment-methods.jpg">
+											<img alt="" src="<?=IMG_URL?>payment-methods.jpg">
 										</div>
 									</div>
 								</div>

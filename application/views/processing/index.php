@@ -92,8 +92,8 @@
 		</div>
 		<div class="different">
 			<div class="container">
-				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">The different between <br>
-					<span style="color: #851919">Vietnam Visa on arrival</span> & <span style="color: #de8c15">Vietnam Electronic Visa</span>
+				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">The Difference Between <br>
+					<span style="color: #851919">Vietnam Visa On Arrival</span> <span style="font-size: 25px;">&</span> <span style="color: #de8c15">Vietnam Electronic Visa</span>
 				</h2>
 				<div class="row">
 					<div class="col-sm-6">
@@ -207,7 +207,7 @@
 					<div class="col-sm-6">
 						<div class="item ">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Lengh of stay:</h5>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Length of stay:</h5>
 							</div>
 							<div class="content">
 								<ul>
@@ -220,7 +220,7 @@
 					<div class="col-sm-6 right" style="border-left: 2px dashed #ccc;">
 						<div class="item ">
 							<div class="title">
-								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Lengh of stay:</h5>
+								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Length of stay:</h5>
 							</div>
 							<div class="content">
 								<ul>
@@ -274,9 +274,9 @@
 							</div>
 							<div class="content">
 								<ul>
-									<li>2-3 working days for normal case</li>
-									<li>4-8 working hours for urgent case</li>
-									<li>NO emergency case</li>
+									<li>3 working days for Normal case</li>
+									<li>1-2 working hours for Urgent case</li>
+									<li>Non-available Emergency case</li>
 								</ul>
 							</div>
 						</div>
