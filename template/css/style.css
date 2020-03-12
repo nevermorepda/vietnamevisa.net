@@ -1932,7 +1932,7 @@ ul.style-step li.active {
 	color: #aa1111;
 	display: inline-block;
 	position: relative;
-	padding-right: 40px;
+	padding-right: 30px;
 }
 .faqs-banner h1 .bd-right {
 	left: 100%;
@@ -1952,10 +1952,13 @@ ul.style-step li.active {
 	display: inline-block;
 }
 .faqs-banner ul li {
+	text-align: left;
 }
 .faqs-banner .text-content {
 	width: 100%;
-	padding: 175px 0px 0 210px;
+	padding-top: 170px;
+	text-align: center;
+	
 }
 .faqs .widget-search {
 	margin: 30px 0px;
