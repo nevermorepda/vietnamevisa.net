@@ -9,7 +9,7 @@ class Consular extends CI_Controller {
 		if (!empty($alias)) {
 			$item = $this->m_content->load($alias);
 		
-			$breadcrumb = array('Consular Services' => site_url('services'), $item->title => '');
+			$breadcrumb = array('Consular Services' => site_url('consular'), $item->title => '');
 			
 			$view_data = array();
 			$view_data['item']  = $item;
@@ -17,7 +17,7 @@ class Consular extends CI_Controller {
 			
 			$tmpl_content = array();
 			$tmpl_content['meta']['title'] = $this->util->getMetaTitle($item);
-			$tmpl_content['tabindex']  = "services";
+			$tmpl_content['tabindex']  = "consular";
 			$tmpl_content['content']   = $this->load->view("consular/detail", $view_data, TRUE);
 			$this->load->view('layout/view', $tmpl_content);
 		}
@@ -32,7 +32,7 @@ class Consular extends CI_Controller {
 			
 			$tmpl_content = array();
 			$tmpl_content['meta']['title'] = "Consular Services";
-			$tmpl_content['tabindex']  = "services";
+			$tmpl_content['tabindex']  = "consular";
 			$tmpl_content['content']   = $this->load->view("consular/index", $view_data, TRUE);
 			$this->load->view('layout/view', $tmpl_content);
 		}

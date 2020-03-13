@@ -42,7 +42,7 @@
 					<li><a title="Terms and Conditions" href="<?=site_url("terms-and-conditions")?>">Terms & Conditions</a></li>
 					<li><a title="Privacy policy" href="<?=site_url("policy")?>">Privacy Policy</a></li>
 					<li><a title="Payment Instruction" href="<?=site_url("payment-instruction")?>">Payment Instruction</a></li>
-					<li><a title="Cancellation and Refund Policy" href="<?=site_url("policy")?>">Cancellation & Refund Policy</a></li>
+					<li><a title="Cancellation and Refund Policy" href="<?=site_url("refund-policy")?>">Cancellation & Refund Policy</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,18 +52,8 @@
 	<div class="container">
 		<div class="text-center">
 			<div class="copyright">
-				<p>&copy; <?=date('Y')?> Vietnam Visa Department. All rights reserved.
-				Full Vietnam visa services online.</p>
-				<?
-					ini_set('default_socket_timeout', 3);
-					$sa_content = file_get_contents('https://www.shopperapproved.com/feeds/schema.php/?siteid=24798&token=sfx0VK6J');
-					$sa_total = substr($sa_content, strpos($sa_content, '<span itemprop="ratingCount">')+strlen('<span itemprop="ratingCount">'), 3);
-					$sa_value = 4.8;
-					$str = str_replace('>5', '5', $sa_content);
-					echo $str;
-				?>
-				<!-- <p style="font-size:13px;">We are pleased to inform that <?=DOMAIN?> is the E-commercial website in Vietnam in processing Vietnam visa. We are not affiliated with the Government. We are offering useful services for helping the Customer to understand visa application, visa processing and visa requirements which is being related to Visa on arrival.
-				Once you use our services, we have a mission to handle visa applications in Vietnam Immigration Department and provide the legal services to you and on time. You can also obtain Vietnam visa by yourself at Vietnam Embassies in your living country or visit the official website for a lower price. - by <a href="<?=BASE_URL?>"><?=DOMAIN?></a></p> -->
+				<p style="font-size:13px;">We are pleased to inform that <?=DOMAIN?> is the E-commercial website in Vietnam in processing Vietnam visa. We are not affiliated with the Government. We are offering useful services for helping the Customer to understand visa application, visa processing and visa requirements which is being related to Visa on arrival.
+				<br>Once you use our services, we have a mission to handle visa applications in Vietnam Immigration Department and provide the legal services to you and on time. You can also obtain Vietnam visa by yourself at Vietnam Embassies in your living country or visit the official website for a lower price. - by <a href="<?=BASE_URL?>"><?=DOMAIN?></a></p>
 			</div>
 		</div>
 	</div>

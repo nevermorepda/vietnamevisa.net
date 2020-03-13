@@ -400,9 +400,6 @@
 					<div class="content clearfix">
 						<p>Smoothly experience of driving with our careful, well-trained and friendly drivers. <br>
 						For the group of 1 to 12 person(s), you will be offered a private car for your group with the appropriate number of seats and fee as:</p>
-						<div class="apply-button m-2" style="display: inline-flex;">
-							<a class="btn btn-danger" href="">MORE DETAIL</a>
-						</div>
 					</div>
 				</div>
 				<table class="table table-bordered pricing-table">

@@ -1,15 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Refund_policy extends CI_Controller {
+class Refund_Policy extends CI_Controller {
 
 	public function index()
 	{
+		$breadcrumb = array("Cancellation & Refund Policy" => site_url("{$this->util->slug($this->router->fetch_class())}"));
 		$this->util->block_ip();
-		$catinfo->alias = "refund-policy";
-		$cat = $this->m_content->getCategory($catinfo);
-		
 		$info = new stdClass();
-		$info->catid = $cat->id;
+		$info->catid = 32;
 		$items = $this->m_content->items($info, 1);
 		
 		if (!empty($items)) {
@@ -21,13 +19,14 @@ class Refund_policy extends CI_Controller {
 		
 		$view_data = array();
 		$view_data['item'] = $item;
+		$view_data['breadcrumb'] = $breadcrumb;
 		
 		$tmpl_content = array();
 		$tmpl_content['meta']['title'] = $this->util->getMetaTitle($item);
 		$tmpl_content['meta']['keywords'] = $item->meta_key;
 		$tmpl_content['meta']['description'] = $item->meta_desc;
-		$tmpl_content['content']   = $this->load->view("content_view", $view_data, TRUE);
-		$this->load->view('layout/colview', $tmpl_content);
+		$tmpl_content['content']   = $this->load->view("content/detail", $view_data, TRUE);
+		$this->load->view('layout/view', $tmpl_content);
 	}
 }
 

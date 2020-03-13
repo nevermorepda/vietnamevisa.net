@@ -1,7 +1,7 @@
 <div class="cluster">
 	<div class="container-fluid">
 		<h1 class="page-title">FAQs Category</h1>
-		<? if (empty($item) || !sizeof($item)) { ?>
+		<? if (empty($item)) { ?>
 		<p class="help-block">Item not found.</p>
 		<? } else { ?>
 		<form id="frm-admin" name="adminForm" action="" method="POST">

@@ -28,9 +28,9 @@
 <div class="container">
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
-<div class="faqs">
+<div class="faqs cluster-content">
 	<div class="container">
-		<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
+		<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-sm-8">
@@ -44,10 +44,9 @@
 			<div class="row">
 				<div class="col-lg-8 col-sm-8 col-xs-12">
 					<div class="faqs-infinite">
-						<div class="faqs-category "><h3 class="font-weight-bold">Vietnam Visa</h3></div>
+						<div class="faqs-category "><h3 class="font-weight-bold"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h3></div>
 						<div class="faqs-content">
 						<? 
-						$i = 0;
 						foreach ($items as $value) { 
 							$faqs_categories = $this->m_faqs_category->load($value->catid);
 						?>
@@ -56,7 +55,7 @@
 								<div class="details">
 									<div>
 										<h4 class="entry-title font-weight-bold">
-											<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=($i+1).'. '?><?=$value->title?></a>
+											<a title="<?=$value->title?>" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>"><?=($offset+1).'. '?><?=$value->title?></a>
 										</h4>
 									</div>
 									<div class="excerpt-container"><?=$value->summary?></div>
@@ -64,7 +63,7 @@
 							</div>
 							<div class="clearfix"><a class="btn-rm" href="<?=site_url("faqs/{$faqs_categories->alias}/{$value->alias}")?>">Read more</a></div>
 						</div>
-						<? $i++; } 
+						<? $offset++;} 
 						?>
 						</div>
 						

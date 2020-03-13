@@ -74,6 +74,12 @@ h6 {
 .text-color-dark-grey {
 	color: #333;
 }
+.m-0 {
+	margin: 0;
+}
+.p-0 {
+	margin: 0;
+}
 .bg-success {
 	background-color: #5cb85c;
 }
@@ -1932,7 +1938,7 @@ ul.style-step li.active {
 	color: #aa1111;
 	display: inline-block;
 	position: relative;
-	padding-right: 40px;
+	padding-right: 30px;
 }
 .faqs-banner h1 .bd-right {
 	left: 100%;
@@ -1947,16 +1953,18 @@ ul.style-step li.active {
 	list-style-type: square;
 	margin: 0;
 	color: #aa1111;
-	font-size: 1.3vw;
+	font-size: 1.1vw;
 	line-height: 32px;
 	display: inline-block;
 }
 .faqs-banner ul li {
+	text-align: left;
 }
 .faqs-banner .text-content {
 	width: 100%;
 	padding-top: 170px;
 	text-align: center;
+	
 }
 .faqs .widget-search {
 	margin: 30px 0px;
@@ -2017,7 +2025,8 @@ ul.style-step li.active {
 	padding: 10px;
 	color: #ffffff;
 }
-.faqs .widget-categories>ul {
+
+.faqs .widget-categories .list{
 	list-style: none;
 	margin: 0; 
 	padding: 0;
@@ -2025,37 +2034,41 @@ ul.style-step li.active {
 	background: #ffffff;
 	font-size: 14px;
 }
-.faqs .widget-categories>ul>li{
+.faqs .widget-categories .list .item{
 	padding: 10px 15px;
+	border-top: 1px solid #707070;
+	position: relative;
+}
+.faqs .widget-categories .list .item:last-child{
 	border-bottom: 1px solid #707070;
 }
-.faqs .widget-categories>ul>li>a{
+.faqs .widget-categories .list .item>a{
 	font-weight: 600;
 }
-.faqs .widget-categories>ul>li:hover{
+.faqs .widget-categories .list .item:hover,
+.faqs .widget-categories .list .item.active,
+.faqs .widget-categories .list .item-child:hover,
+.faqs .widget-categories .list .item-child.active{
 	background: #fdcfcf;
 	color: #851919;
 }
-.faqs .widget-categories .list .item .child-category {
-	
+.faqs .widget-categories .list .item .count-items {
+	position: absolute;
+	right: 20px;
+	top: 10px;
 }
-.faqs .widget-categories .list .item .child-category:hover{
-	display: block;
+.faqs .widget-categories .list .item-child .count-child-items {
+	position: absolute;
+	right: 20px;
+	top: 0px;
 }
-.faqs .support-online-widget {
-	margin: 0;
-	border: 1px solid #707070;
-	font-weight: 500;
-	margin-bottom: 30px;
+.faqs .widget-categories .list .item-child {
+	position: relative;
+	padding-left: 30px;
+	padding-bottom: 10px;
 }
-.faqs .support-online-widget .title {
-	padding: 10px;
-	background: #851919;
-	color: #fff;
-	height: auto;
-}
-.faqs .support-online-widget .content {
-	padding: 15px;
+.faqs .widget-categories .list .item-child:last-child {
+
 }
 .faqs .faqs-infinite {
 	border: 1px solid #ccc;
@@ -3221,9 +3234,48 @@ ul.style-step li.active {
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 5px;
 }
-
-
 /* End Tour */
+
+/* Widget */
+.wg {
+	margin: 0;
+	border: 1px solid #707070;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+.wg .wg_h {
+	padding: 10px;
+	background: #851919;
+	color: #fff;
+	height: auto;
+}
+.wg ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	list-style-image: url(../images/checkmark.png?cr=i);
+	margin-left: 25px;
+}
+.lt1>li {
+	position: relative;
+	margin: 15px;
+}
+.support-online-widget {
+	margin: 0;
+	border: 1px solid #707070;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+.support-online-widget .title {
+	padding: 10px;
+	background: #851919;
+	color: #fff;
+	height: auto;
+}
+.support-online-widget .content {
+	padding: 15px;
+}
+/* ////////////// */
 
 /* Large desktop */
 @media (min-width: 1200px) {
