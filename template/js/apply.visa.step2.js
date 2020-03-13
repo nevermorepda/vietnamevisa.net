@@ -418,7 +418,7 @@ function calServiceFees()
 			}
 			var discount = (result[4] > result[2]) ? result[4] : result[2];
 			discount_fee = result[3] * (discount/100);
-			$(".total_price").html(parseFloat(result[0].toFixed(2))+car_plus_fee+" $");
+			$(".total_price").html(parseFloat(result[0].toFixed(2))+car_plus_fee.toFixed(2)+" $");
 			$("#total_fee").val(result[0].toFixed(2));
 			if (discount_fee != 0)
 			$("#promotion_li").show();
@@ -481,7 +481,7 @@ function _calServiceFees()
 		data: p,
 		dataType: "html",
 		success: function(result) {
-			$(".total_price").html(result+" $");
+			$(".total_price").html(result.toFixed(2)+" $");
 		}
 	});
 	

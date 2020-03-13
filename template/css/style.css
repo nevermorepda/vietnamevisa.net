@@ -647,9 +647,9 @@ input.error, select.error, textarea.error, span.error {
 	text-decoration: none;
 }
 
-/* .breadcrumb a.active {
+.breadcrumb a.active {
 	color: #D40000;
-} */
+}
 .breadcrumb .active a {
 	color: #D40000 !important;
 }
@@ -1065,10 +1065,6 @@ ul.list-embassy li {
 /* End Service */
 .banner-top {
 	min-height: 300px;
-<<<<<<< HEAD
-=======
-	min-height: 240px;
->>>>>>> 35f853cba8544fbda0b19e2c1e8ab3dafb2a78e8
 	position: relative;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -1936,7 +1932,7 @@ ul.style-step li.active {
 	color: #aa1111;
 	display: inline-block;
 	position: relative;
-	padding-right: 30px;
+	padding-right: 40px;
 }
 .faqs-banner h1 .bd-right {
 	left: 100%;
@@ -1956,13 +1952,11 @@ ul.style-step li.active {
 	display: inline-block;
 }
 .faqs-banner ul li {
-	text-align: left;
 }
 .faqs-banner .text-content {
 	width: 100%;
 	padding-top: 170px;
 	text-align: center;
-	
 }
 .faqs .widget-search {
 	margin: 30px 0px;
@@ -2023,7 +2017,7 @@ ul.style-step li.active {
 	padding: 10px;
 	color: #ffffff;
 }
-.faqs .widget-categories ul {
+.faqs .widget-categories>ul {
 	list-style: none;
 	margin: 0; 
 	padding: 0;
@@ -2031,18 +2025,22 @@ ul.style-step li.active {
 	background: #ffffff;
 	font-size: 14px;
 }
-.faqs .widget-categories ul li{
+.faqs .widget-categories>ul>li{
 	padding: 10px 15px;
 	border-bottom: 1px solid #707070;
 }
-.faqs ul li {
-}
-.faqs .widget-categories ul li a{
+.faqs .widget-categories>ul>li>a{
 	font-weight: 600;
 }
-.faqs .widget-categories ul li:hover{
+.faqs .widget-categories>ul>li:hover{
 	background: #fdcfcf;
 	color: #851919;
+}
+.faqs .widget-categories .list .item .child-category {
+	
+}
+.faqs .widget-categories .list .item .child-category:hover{
+	display: block;
 }
 .faqs .support-online-widget {
 	margin: 0;
