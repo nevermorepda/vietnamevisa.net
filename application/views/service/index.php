@@ -39,7 +39,7 @@
 					<div class="mb-3">
 						<div class="post">
 							<div class="icon"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive " src="<?=BASE_URL.$item->icon?>"/></a></div>
-							<div class="content pt-2">
+							<div class="content">
 								<div class="caption ">
 									<h3 class="title font-weight-bold d-inline-block"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
 								</div>

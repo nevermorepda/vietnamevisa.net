@@ -1053,7 +1053,6 @@ ul.list-embassy li {
 .extra-service-listing .post .content {
 	display: table-cell;
 	vertical-align: top;
-	padding: 10px;
 }
 .extra-service-listing .post .icon {
 	display: table-cell;
@@ -1062,7 +1061,6 @@ ul.list-embassy li {
 }
 .extra-service-listing .post .caption a {
 	vertical-align: middle;
-	padding: 15px 0;
 }
 .extra-service-listing .post .caption a:hover {
 	color: #851919;
@@ -1103,8 +1101,8 @@ ul.list-embassy li {
 	z-index: 4;
 }
 .slide-content .slide-text h1 {
-	font-size: 55px;
-	color: #ffffffa3;
+	font-size: 42px;
+	color: #ebc515;
 }
 .slide-content .slide-button {
 	margin-top: 30px;
@@ -1155,6 +1153,17 @@ ul.list-embassy li {
 .slide-content .slide-text {
 	padding-top: 50px;
 }
+.slide-content .slide-text .checklist {
+	list-style-type: square;
+	color: #ff0000;
+	font-size: 20px;
+	border-left: 2px solid;
+}
+.slide-content .slide-text .checklist li p {
+	color: #ffffff;
+	padding: 2px;
+	margin: 0;
+}
 .slide-content .control-owl-slider ul {
 	list-style: none;
 	margin: 0;
@@ -1162,8 +1171,8 @@ ul.list-embassy li {
 	padding-top: 70px;
 }
 .slide-content .control-owl-slider ul li{
-	height: 15px;
-	width: 15px;
+	height: 10px;
+	width: 10px;
 	border-radius: 50%;
 	border: 1px solid #ccc;
 	display: inline-block;
@@ -1192,6 +1201,14 @@ ul.list-embassy li {
 	font-size: 65px;
 	color: rgba(255, 255, 255, 0.7294117647058823);
 }
+.cluster .cluster-body .heading {
+	font-size: 45px;
+	color: #000000;
+	text-shadow: 3px 3px #bdbdbd;
+}
+.cluster-intrud {
+	border-bottom: 1px solid #ccc;
+}
 .cluster .cluster-body .content {
 	padding-bottom: 40px;
 	padding-top: 20px;
@@ -1200,9 +1217,8 @@ ul.list-embassy li {
 	padding-top: 30px;
 }
 .cluster .cluster-body .content-pr .title {
-	font-size: 45px;
+	font-size: 25px;
 	color: #851919;
-	text-shadow: 3px 3px #bdbdbd;
 }
 .cluster .cluster-body .showmore-button {
 	float: right;
@@ -1210,11 +1226,18 @@ ul.list-embassy li {
 	display: inline-flex;
 }
 .cluster .cluster-body .content-pr ul {
-	padding: 0;
-	list-style: none;
+	list-style: square;
+	color: #a82020;
+	border-left: 2px solid;
+	margin: 20px 0px;
 }
 .cluster .cluster-body .content-pr ul li {
 	padding-right: 7px;
+}
+.cluster .cluster-body .content-pr ul li p{
+	color: #000000;
+	padding: 0;
+	margin: 0;
 }
 .cluster .cluster-body .content-pr i {
 	padding-right: 15px;
@@ -1222,25 +1245,6 @@ ul.list-embassy li {
 }
 .cluster .cluster-body .des-pr {
 	position: relative;
-}
-.cluster .cluster-body .des-pr .border-text1{
-	position: absolute;
-	bottom: -15px;
-}
-.cluster .cluster-body .des-pr .border-text2{
-	position: absolute;
-	transform: rotate(90deg);
-}
-.cluster .cluster-body .des-pr .border-text3{
-	position: absolute;
-	transform: rotate(180deg);
-	right: 0px;
-}
-.cluster .cluster-body .des-pr .border-text4{
-	position: absolute;
-	transform: rotate(270deg);
-	right: 0px;
-	bottom: -15px;
 }
 .dispart {
 	border-right: 1px dotted #ccc;
@@ -1278,8 +1282,7 @@ ul.list-embassy li {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	border-top: 1px solid #ccc;
-	/* border-bottom: 1px solid #ccc; */
+	border-bottom: 1px solid #ccc;
 }
 .cluster-our-services .cluster-content img {
 	/* height: 150px; */
@@ -1298,18 +1301,31 @@ ul.list-embassy li {
 .cluster-our-services .cluster-content h3 a:hover {
 	color: #ed1c24;
 }
-.cluster-our-services .cluster-content .summary {
+.cluster-our-services .cluster-content .post {
+	margin-bottom: 20px;
+}
+.cluster-our-services .cluster-content .post .title{
+	position: relative;
+}
+.cluster-our-services .cluster-content .post .title .bg-icon{
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	background: #fff200;
+	z-index: -1;
+	left: -9px;
+	top: -4px;
+}
+.cluster-our-services .cluster-content .post .summary {
 	font-size: 15px;
-	/* margin-bottom: 40px; */
-	padding: 0 12px;
-	margin-top: 15px;
+	padding: 15px 0px;
+	margin: 0;
 }
 .testimonial h2,.shopperapproved h2 {
 	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster {
 	padding: 40px 0;
-	border-top: 1px solid #ccc;
 }
 .about-us-cluster .about-us-content {
 	/* padding: 35px 0; */
@@ -2025,7 +2041,8 @@ ul.style-step li.active {
 	padding: 10px;
 	color: #ffffff;
 }
-.faqs .widget-categories>ul {
+
+.faqs .widget-categories .list{
 	list-style: none;
 	margin: 0; 
 	padding: 0;
@@ -2033,24 +2050,41 @@ ul.style-step li.active {
 	background: #ffffff;
 	font-size: 14px;
 }
-.faqs .widget-categories>ul>li{
+.faqs .widget-categories .list .item{
 	padding: 10px 15px;
-	border-bottom: 1px solid #707070;
+	border-top: 1px solid #707070;
 	position: relative;
 }
-.faqs .widget-categories>ul>li>a{
+.faqs .widget-categories .list .item:last-child{
+	border-bottom: 1px solid #707070;
+}
+.faqs .widget-categories .list .item>a{
 	font-weight: 600;
 }
-.faqs .widget-categories>ul>li:hover,
-.faqs .widget-categories>ul>li.active{
+.faqs .widget-categories .list .item:hover,
+.faqs .widget-categories .list .item.active,
+.faqs .widget-categories .list .item-child:hover,
+.faqs .widget-categories .list .item-child.active{
 	background: #fdcfcf;
 	color: #851919;
 }
-
 .faqs .widget-categories .list .item .count-items {
 	position: absolute;
 	right: 20px;
 	top: 10px;
+}
+.faqs .widget-categories .list .item-child .count-child-items {
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+.faqs .widget-categories .list .item-child {
+	position: relative;
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+.faqs .widget-categories .list .item-child:last-child {
+
 }
 .faqs .faqs-infinite {
 	border: 1px solid #ccc;
