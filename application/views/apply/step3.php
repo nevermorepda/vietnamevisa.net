@@ -14,7 +14,7 @@
 		</div>
 	</div>
 	<div class="slide-wrap d-none d-sm-none d-md-block">
-		<div class="slide-contact">
+		<div class="slide-ex-contact">
 			<div class="container">
 				<ul>
 					<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>

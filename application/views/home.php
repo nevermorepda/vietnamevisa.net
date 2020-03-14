@@ -2,7 +2,7 @@
 	<div class="slide-bar">
 		<div class="slide-wrap">
 			<div id="" class="slide-image owl-carousel owl-theme">
-				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide1.png);"></div>
+				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slidex.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide2.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide3.png);"></div>
 			</div>
@@ -19,10 +19,10 @@
 			<div class="slide-content">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5 col-md-5">
+						<div class="col-sm-10 col-md-8">
 							<div class="slide-text">
 								<h1>VIETNAM VISA EXPERT</h1>
-								<ul class="checklist d-none d-sm-none d-md-block">
+								<ul class="checklist ">
 									<li><p>Professional process and reliable fee</p></li>
 									<li><p>Your best option to get Vietnam visa</p></li>
 									<li><p>Just 4 steps to get Vietnam visa</p></li>
@@ -33,7 +33,7 @@
 								<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
 							</div>
 							<div class="control-owl-slider">
-								<ul>
+								<ul class="d-none d-sm-none d-md-block">
 									<li class="dot icon0 active" data="0"></li>
 									<li class="dot icon1" data="1"></li>
 									<li class="dot icon2" data="2"></li>
