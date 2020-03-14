@@ -6,6 +6,7 @@ define("BASE_URL",				PROTOCOL.DOMAIN);
 define("BASE_URL_HTTPS",		BASE_URL);
 define("TPL_URL",				BASE_URL."/template/");
 define("IMG_URL",				TPL_URL."images/");
+define("DOC_URL",				TPL_URL."document/");
 define("CSS_URL",				TPL_URL."css/");
 define("JS_URL",				TPL_URL."js/");
 

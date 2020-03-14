@@ -1057,6 +1057,7 @@ ul.list-embassy li {
 .extra-service-listing .post .icon {
 	display: table-cell;
 	width: 60px;
+	text-align: center;
 
 }
 .extra-service-listing .post .caption a {
@@ -1068,13 +1069,15 @@ ul.list-embassy li {
 
 /* End Service */
 .banner-top {
-	min-height: 300px;
+	min-height: 298px;
 	position: relative;
+	margin: 0;
+	background-position: right !important;
+	overflow: hidden;
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	background-size: cover !important;
-	background-position: center !important;
 }
 .banner-top h1{
 	font-size: 52px;
@@ -2396,13 +2399,7 @@ ul.style-step li.active {
 }
 /* Hiw-Visa-onarrival */
 .vietnam-visa-on-arrival .slide-wrap, .visa-processing .slide-wrap {
-	background-image: url(https://s3.amazonaws.com/vietnamvisateam/template/images/wizban/how-it-works.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 480px;
-	display: block;
-	color: #fff;
+
 }
 .slide-wrap .slide-content {
 	position: absolute;

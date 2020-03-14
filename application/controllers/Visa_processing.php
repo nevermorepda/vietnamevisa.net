@@ -6,12 +6,16 @@ class Visa_processing extends CI_Controller {
 	{
 		$this->output->cache(CACHE_TIME);
 		$this->util->block_ip();
+
+		$breadcrumb = array('Visa Processing' => site_url('visa-processing'));
+
 		$info = new stdClass();
 		$info->catid = 4; // FAQs
 		$info_evisa = new stdClass();
 		$info_evisa->catid = 32; // FAQs
 		
 		$view_data = array();
+		$view_data['breadcrumb']= $breadcrumb;
 		$view_data['faqs'] = $this->m_content->items($info, 1);
 		$view_data['evisa_faqs'] = $this->m_content->items($info_evisa, 1);
 		$view_data['requirements'] = $this->m_requirement->join_country_items(null,1);

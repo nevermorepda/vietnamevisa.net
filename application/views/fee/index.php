@@ -39,26 +39,22 @@
 	}
 ?>
 
-<div class="fee-banner banner-top" style="background: url('<?=IMG_URL?>new-template/VisaFee-banner.png') no-repeat scroll top center transparent;">
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1>VIETNAM <span class="border-text" style="padding: 10px 50px 0px 15px;">VISA FEES</span></h1>
-					<div class="alternative-breadcrumb">
-					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Reasonable and  Competitive Price</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">No hidden fees</li>
-					</ul>
-				</div>
-			</div>
+		<div class="text-content">
+			<h1>
+				<span class="" style="">VISA FEE</span>
+				<div class="bd-right d-none d-lg-block d-md-block"></div>
+			</h1>
+			<ul>
+				<li>Reasonable and  Competitive Price </li>
+				<li>No hidden fees</li>
+			</ul>
 		</div>
 	</div>
 </div>
-<div class="slide-wrap">
+<div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-contact">
 		<div class="container">
 			<ul>
@@ -68,6 +64,9 @@
 			</ul>
 		</div>
 	</div>
+</div>
+<div class="container">
+	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
 <div class="fees cluster-content">
 	<div class="cluster-body">
