@@ -1249,8 +1249,8 @@ ul.list-embassy li {
 .dispart {
 	border-right: 1px dotted #ccc;
 }
-.dispart:last-child {
-	border: none;
+.dischap {
+	border-bottom: 1px dotted #ccc;
 }
 .cluster-content {
 	padding: 25px 0px;
@@ -1302,7 +1302,7 @@ ul.list-embassy li {
 	color: #ed1c24;
 }
 .cluster-our-services .cluster-content .post {
-	margin-bottom: 20px;
+
 }
 .cluster-our-services .cluster-content .post .title{
 	position: relative;

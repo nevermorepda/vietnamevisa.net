@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
 		$info = new stdClass();
 		$info->catid = 31;
-		$con_services = $this->m_content->items($info,1);
+		$csl_services = $this->m_content->items($info,1);
 		
 		$visa_news_info = new stdClass();
 		$visa_news_info->catid = 2;
@@ -23,7 +23,7 @@ class Home extends CI_Controller {
 
 		$view_data = array();
 		$view_data['ex_services']  = $ex_services;
-		$view_data['con_services']  = $con_services;
+		$view_data['csl_services']  = $csl_services;
 		$view_data['nations'] = $this->m_country->items(NULL, 1);
 		$view_data['visa_news'] = $this->m_content->items($visa_news_info, 1, 8);
 		$view_data['faq_news'] = $this->m_content->items($faqs_news_info, 1, 8);
