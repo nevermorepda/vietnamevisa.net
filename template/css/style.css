@@ -1057,6 +1057,7 @@ ul.list-embassy li {
 .extra-service-listing .post .icon {
 	display: table-cell;
 	width: 60px;
+	text-align: center;
 
 }
 .extra-service-listing .post .caption a {
@@ -1068,13 +1069,15 @@ ul.list-embassy li {
 
 /* End Service */
 .banner-top {
-	min-height: 300px;
+	min-height: 298px;
 	position: relative;
+	margin: 0;
+	background-position: right !important;
+	overflow: hidden;
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	background-size: cover !important;
-	background-position: center !important;
 }
 .banner-top h1{
 	font-size: 52px;
@@ -1119,9 +1122,39 @@ ul.list-embassy li {
 	font-size: 14px;
 	z-index: 1;
 }*/
-.slide-contact {
+.slide-ex-contact{
 	background: #851919;
 	color: #fff;
+	width: 100%;
+	z-index: 4;
+}
+.slide-ex-contact ul {
+	list-style: none;
+	padding: 13px 0;
+	margin: 0;
+	display: inline-flex;
+}
+
+.slide-ex-contact a {
+	color: #fff;
+	font-size: 13px;
+	padding-right: 20px;
+}
+
+.slide-ex-contact img {
+	padding-right: 4px;
+}
+
+.slide-ex-contact i {
+	padding-right: 5px;
+}
+.slide-contact {
+	background: #8519196b;
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	z-index: 4;
+	bottom: 0;
 }
 .slide-contact ul {
 	list-style: none;
@@ -1146,12 +1179,12 @@ ul.list-embassy li {
 
 .slide-image .item{
 	width: 100%;
-	height: 462px;
+	height: 520px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .slide-content .slide-text {
-	padding-top: 50px;
+	padding-top: 50px!important;
 }
 .slide-content .slide-text .checklist {
 	list-style-type: square;
@@ -1168,7 +1201,8 @@ ul.list-embassy li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	padding-top: 70px;
+	margin-top: 100px;
+	position: absolute;
 }
 .slide-content .control-owl-slider ul li{
 	height: 10px;
@@ -1249,11 +1283,11 @@ ul.list-embassy li {
 .dispart {
 	border-right: 1px dotted #ccc;
 }
-.dispart:last-child {
-	border: none;
+.dischap {
+	border-bottom: 1px dotted #ccc;
 }
 .cluster-content {
-	padding: 25px 0px;
+	padding: 25px 0px 70px 0
 }
 .cluster-content:last-child {
 	border: none;
@@ -1302,7 +1336,7 @@ ul.list-embassy li {
 	color: #ed1c24;
 }
 .cluster-our-services .cluster-content .post {
-	margin-bottom: 20px;
+
 }
 .cluster-our-services .cluster-content .post .title{
 	position: relative;
@@ -2396,13 +2430,7 @@ ul.style-step li.active {
 }
 /* Hiw-Visa-onarrival */
 .vietnam-visa-on-arrival .slide-wrap, .visa-processing .slide-wrap {
-	background-image: url(https://s3.amazonaws.com/vietnamvisateam/template/images/wizban/how-it-works.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 480px;
-	display: block;
-	color: #fff;
+
 }
 .slide-wrap .slide-content {
 	position: absolute;
@@ -3321,6 +3349,11 @@ ul.style-step li.active {
 	padding: 185px 0px 0 0px;
 	}
 }
+@media (min-width: 768px) {
+	.slide-content .slide-text {
+		padding-top: 90px;
+	}
+}
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 	.inner {
@@ -3384,14 +3417,14 @@ ul.style-step li.active {
 		padding-right: 0px;
 	}
 	.slide-content .slide-text {
-		padding-top: 10px;
+		padding-top: 30px;
 	}
 	.slide-content .slide-text h1 {
 		font-size: 36px;
 	}
 	.slide-image .item {
 		width: 100%;
-		height: 267px !important;
+		height: 400px !important;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: left;
@@ -3411,6 +3444,11 @@ ul.style-step li.active {
 	.faqs-banner .text-content {
 	width: 100%;
 	padding: 129px 36px 0px 35px;
+	}
+}
+@media (min-width: 576px) {
+	.slide-content .slide-text {
+		padding-top: 30px!important;
 	}
 }
 @media (max-width: 480px) {

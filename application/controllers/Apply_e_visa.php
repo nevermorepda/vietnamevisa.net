@@ -272,6 +272,7 @@ class Apply_e_visa extends CI_Controller {
 	
 	function step1()
 	{
+		redirect(site_url("apply-visa"));
 		$step1 = $this->session->userdata("step1");
 		
 		if ($step1 == null) {
@@ -2139,7 +2140,7 @@ class Apply_e_visa extends CI_Controller {
 				$this->m_visa_booking->update($data, $where);
 
 				$user = $this->m_user->load($booking->user_id);
-				$client_name = $user->fullname;
+				$client_name = $user->user_fullname;
 
 				// Send mail
 				$tpl_data = $this->mail_tpl->visa_data($booking);
@@ -2154,13 +2155,13 @@ class Apply_e_visa extends CI_Controller {
 				$tpl_data["RECEIVER"] = MAIL_INFO;
 				$messageToAdmin  = $this->mail_tpl->visa_payment_failure($tpl_data);
 				
-				$tpl_data["RECEIVER"] = $booking->contact_email;
+				$tpl_data["RECEIVER"] = $booking->primary_email;
 				$messageToClient = $this->mail_tpl->visa_payment_failure($tpl_data);
 				
 				// Send to SALE Department
 				$mail = array(
 					"subject"		=> $vendor_subject." - ".$client_name,
-					"from_sender"	=> $booking->contact_email,
+					"from_sender"	=> $booking->primary_email,
 					"name_sender"	=> $client_name,
 					"to_receiver"	=> MAIL_INFO,
 					"message"		=> $messageToAdmin
@@ -2173,7 +2174,7 @@ class Apply_e_visa extends CI_Controller {
 					"subject"		=> $subject,
 					"from_sender"	=> MAIL_INFO,
 					"name_sender"	=> SITE_NAME,
-					"to_receiver"	=> $booking->contact_email,
+					"to_receiver"	=> $booking->primary_email,
 					"message"		=> $messageToClient
 				);
 				$this->mail->config($mail);

@@ -38,28 +38,10 @@
 		$price_nation = $this->m_visa_fee->search(0);
 	}
 ?>
-
-<div class="fee-banner banner-top" style="background: url('<?=IMG_URL?>new-template/VisaFee-banner.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1>VIETNAM <span class="border-text" style="padding: 10px 50px 0px 15px;">VISA FEES</span></h1>
-					<div class="alternative-breadcrumb">
-					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Reasonable and  Competitive Price</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">No hidden fees</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slide-wrap">
-	<div class="slide-contact">
+<img src="<?=IMG_URL?>new-template/banner/banner-visa-fee.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">VISA FEE</span></h1>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -68,6 +50,9 @@
 			</ul>
 		</div>
 	</div>
+</div>
+<div class="container">
+	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 </div>
 <div class="fees cluster-content">
 	<div class="cluster-body">

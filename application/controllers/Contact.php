@@ -6,11 +6,15 @@ class Contact extends CI_Controller {
 	{
 		$this->util->block_ip();
 		$this->output->cache(CACHE_TIME);
+		$breadcrumb = array('Contact' => site_url('contact'));
+
+		$view_data = array();
+		$view_data['breadcrumb']= $breadcrumb;
 		
 		$tmpl_content = array();
 		$tmpl_content['meta']['title'] = "Contact Us";
 		$tmpl_content['tabindex']  = "contact";
-		$tmpl_content['content']   = $this->load->view("contact", NULL, TRUE);
+		$tmpl_content['content']   = $this->load->view("contact", $view_data, TRUE);
 		$this->load->view('layout/view', $tmpl_content);
 	}
 	

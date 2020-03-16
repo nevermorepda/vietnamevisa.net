@@ -2,7 +2,7 @@
 	<div class="slide-bar">
 		<div class="slide-wrap">
 			<div id="" class="slide-image owl-carousel owl-theme">
-				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide1.png);"></div>
+				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slidex.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide2.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide3.png);"></div>
 			</div>
@@ -19,10 +19,10 @@
 			<div class="slide-content">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5 col-md-5">
+						<div class="col-sm-10 col-md-8">
 							<div class="slide-text">
 								<h1>VIETNAM VISA EXPERT</h1>
-								<ul class="checklist d-none d-sm-none d-md-block">
+								<ul class="checklist ">
 									<li><p>Professional process and reliable fee</p></li>
 									<li><p>Your best option to get Vietnam visa</p></li>
 									<li><p>Just 4 steps to get Vietnam visa</p></li>
@@ -33,7 +33,7 @@
 								<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
 							</div>
 							<div class="control-owl-slider">
-								<ul>
+								<ul class="d-none d-sm-none d-md-block">
 									<li class="dot icon0 active" data="0"></li>
 									<li class="dot icon1" data="1"></li>
 									<li class="dot icon2" data="2"></li>
@@ -140,21 +140,58 @@
 		</div>
 		<div class="cluster-content">
 			<div class="row">
-				<?foreach ($con_services as $con_service) { ?>
-				<div class="col-md-6">
-					<div class="post">
+				<div class="col-md-6 dischap">
+					<div class="post dispart p-3 mb-3">
 						<div class="title">
 							<div class="bg-icon"></div>
-							<img alt="<?=$con_service->title?>" class="img-responsive " src="<?=BASE_URL.$con_service->icon?>"/>
-							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$con_service->alias}")?>"><?=$con_service->title;?></a></h3>
+							<img alt="<?=$csl_services[0]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[0]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[0]->alias}")?>"><?=$csl_services[0]->title;?></a></h3>
 						</div>
-						<p class="summary"><?=word_limiter(strip_tags($con_service->summary), 29);?></p>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[3]->summary), 30);?></p>
 						<div class="clearfix">
-							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$con_service->alias}")?>">Detail</a>
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>">Detail</a>
 						</div>
 					</div>
 				</div>
-				<?}?>
+				<div class="col-md-6 dischap">
+					<div class="post p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[1]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[1]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[1]->alias}")?>"><?=$csl_services[1]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[1]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[1]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post dispart p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[2]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[2]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[2]->alias}")?>"><?=$csl_services[2]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[2]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[2]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[3]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[3]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>"><?=$csl_services[3]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[3]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -166,21 +203,58 @@
 		</div>
 		<div class="cluster-content">
 			<div class="row">
-				<?foreach ($ex_services as $ex_service) { ?>
-				<div class="col-md-6">
-					<div class="post">
+				<div class="col-md-6 dischap">
+					<div class="post dispart p-3 mb-3">
 						<div class="title">
 							<div class="bg-icon"></div>
-							<img alt="<?=$ex_service->title?>" class="img-responsive " src="<?=BASE_URL.$ex_service->icon?>"/>
-							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_service->alias}")?>"><?=$ex_service->title;?></a></h3>
+							<img alt="<?=$ex_services[0]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[0]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[0]->alias}")?>"><?=$ex_services[0]->title;?></a></h3>
 						</div>
-						<p class="summary"><?=word_limiter(strip_tags($ex_service->summary), 29);?></p>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[0]->summary), 30);?></p>
 						<div class="clearfix">
-							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_service->alias}")?>">Detail</a>
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[0]->alias}")?>">Detail</a>
 						</div>
 					</div>
 				</div>
-				<?}?>
+				<div class="col-md-6 dischap">
+					<div class="post p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[1]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[1]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[1]->alias}")?>"><?=$ex_services[1]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[1]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[1]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post dispart p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[2]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[2]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[2]->alias}")?>"><?=$ex_services[2]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[2]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[2]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[3]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[3]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[3]->alias}")?>"><?=$ex_services[3]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[3]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[3]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -215,7 +289,7 @@
 						<div class="title">
 							<h1 class="heading">About Us</h1>
 						</div>
-						<p><a href="<?=BASE_URL?>"><span style="text-decoration: underline;"><?=BASE_URL?></span></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
+						<p><a href="<?=BASE_URL?>"><span style="text-decoration: underline;"><?=SITE_NAME?></span></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
 						<p>Over 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnamevisa.net is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. We work with the vision:</p>
 						<ul>
 							<li>No Hidden Charges</li>

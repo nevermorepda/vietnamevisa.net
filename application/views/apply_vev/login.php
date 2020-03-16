@@ -12,27 +12,10 @@
 	$new_phone				= (!empty($data->new_phone) ? $data->new_phone : "");
 ?>
 
-<div class="banner-top applyform-banner" style="background: url('<?=IMG_URL?>new-template/ApplyVisaForm-banner.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA FORM</span></h1>
-					<div class="alternative-breadcrumb">
-					<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Sed do eiusmod tempor incididunt ut labore et dolore magna </li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slide-wrap">
-	<div class="slide-contact">
+<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -43,10 +26,7 @@
 	</div>
 </div>
 
-<div class="container">
-	<!-- breadcrumb -->
-	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-	<!-- end breadcrumb -->
+<div class="container">>
 	
 	<? if (!empty($agent) && (strtoupper($agent) == "SAFARI")) { ?>
 	<div class="alert alert-success d-none d-sm-none d-md-block" role="alert">Please try with Google Chrome or Mozilla Firefox if you are using Safari browser and cannot Sign In / Sign Up with us.</div>
@@ -62,33 +42,31 @@
 				<li><font class="number">4.</font> Review &amp; Payment</li>
 			</ul>
 		</div> -->
-
-		<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
-		<div class="step-apply text-center">
-			<div class="step active">
-				<div class="line-step line-step1">
-					<span class="step-number"></span>
-				</div>
-				Visa Options
-			</div>
-			<div class="step active">
-				<div class="line-step line-step2">
-					<span class="step-number"></span>
-				</div>
-				Login Account
+		<div class="step-apply ">
+			<div class="step">
+				<div class="line-right"></div>
+				<span class="step-number active">1</span>
 			</div>
 			<div class="step">
-				<div class="line-step line-step3">
-					<span class="step-number"></span>
-				</div>
-				Applicant Details
+				<div class="line-right"></div>
+				<div class="line-left"></div>
+				<span class="step-number active">2</span>
 			</div>
 			<div class="step">
-				<div class="line-step line-step4">
-					<span class="step-number"></span>
-				</div>
-				Review & Payment
+				<div class="line-right"></div>
+				<div class="line-left"></div>
+				<span class="step-number ">3</span>
 			</div>
+			<div class="step">
+				<div class="line-left"></div>
+				<span class="step-number ">4</span>
+			</div>
+		</div>
+		<div class="step-apl-content">
+			<div class="bystep active">Visa Option</div>
+			<div class="bystep active">Account Login</div>
+			<div class="bystep ">Application Details</div>
+			<div class="bystep ">Review & Payment</div>
 		</div>
 
 		<div class="login-form">

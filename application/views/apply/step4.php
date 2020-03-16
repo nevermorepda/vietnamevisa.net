@@ -1,4 +1,21 @@
-
+<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
+		<div class="container">
+			<ul>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
+				<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<!-- breadcrumb -->
+	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+	<!-- end breadcrumb -->
+</div>
 <div class="">
 	<div class="container">
 		<div class="tab-step clearfix">

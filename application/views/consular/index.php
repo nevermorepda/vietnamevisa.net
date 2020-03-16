@@ -1,20 +1,7 @@
-<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
-	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
-	<div class="container">
-		<div class="text-content">
-			<h1>
-				<span class="" style="">CONSULAR SERVICES</span>
-				<div class="bd-right d-none d-lg-block d-md-block"></div>
-			</h1>
-			<ul>
-				<li>Minimal document required</li>
-				<li>Fee consultation</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<img src="<?=IMG_URL?>new-template/banner/banner-consular-services.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">CONSULAR SERVICES</span></h1>
 <div class="slide-wrap d-none d-sm-none d-md-block">
-	<div class="slide-contact">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>

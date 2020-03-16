@@ -10,28 +10,10 @@
 ?>
 
 <script type="text/javascript" src="<?=JS_URL?>apply.visa.step1.js"></script>
-
-<div class="banner-top applyform-banner" style="background: url('<?=IMG_URL?>new-template/ApplyVisaForm-banner.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA</span></h1>
-					<div class="alternative-breadcrumb">
-					<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Safety and reliable procedure </li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Professional staffs</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slide-wrap">
-	<div class="slide-contact">
+<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -41,11 +23,13 @@
 		</div>
 	</div>
 </div>
-<div class="applyform-heading">
-	<div class="container">
-		<!-- breadcrumb -->
+<div class="container">
+	<!-- breadcrumb -->
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 	<!-- end breadcrumb -->
+</div>
+<div class="applyform-heading">
+	<div class="container">
 		<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
 	</div>
 </div>
@@ -442,6 +426,7 @@
 					<div class="col-md-5">
 						<div class="panel-fees">
 							<div class="title text-center">VISA OPTION SUMMARY</div>
+							<div class="text-center pb-2"><i class="fa fa-clock-o" aria-hidden="true"></i><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block; float: none;" class="clock-time"><?= date('H:i:s A')?></span> <span style="float: none;"> <?= date('D, M d, Y - ')?>Vietnam Time (GMT+7)</span></div>
 							<ul>
 								<!-- <li class="clearfix">
 									<label>Passport holder:</label>

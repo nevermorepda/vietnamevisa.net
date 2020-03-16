@@ -45,6 +45,7 @@
 				</div>
 				<div class="top-menu">
 					<ul class="menu-items">
+						<li class="menu-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Vietnam Time (GMT+7):</span> <?= date('D, M d, Y, ')?><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i:s A')?></span></li>
 						<li class="menu-item">
 							<a href="<?=site_url("payment-online")?>" class="po-sign-in"><i style="font-weight: bold;" class="fa fa-usd" aria-hidden="true"></i> Payment Online </a>
 						</li>

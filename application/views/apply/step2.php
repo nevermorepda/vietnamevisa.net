@@ -1,27 +1,9 @@
 <? $nations = $this->m_nation->nation_jion_visa_fee();?>
 <script type="text/javascript" src="<?=JS_URL?>apply.visa.step2.js"></script>
-
-<div class="banner-top applyform-banner" style="background: url('<?=IMG_URL?>new-template/ApplyVisaForm-banner.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA</span></h1>
-					<div class="alternative-breadcrumb">
-					<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Safety and reliable procedure</li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Professional staffs</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slide-wrap">
-	<div class="slide-contact">
+<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -31,11 +13,13 @@
 		</div>
 	</div>
 </div>
-<div class="applyform-heading">
-	<div class="container">
-		<!-- breadcrumb -->
+<div class="container">
+	<!-- breadcrumb -->
 	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 	<!-- end breadcrumb -->
+</div>
+<div class="applyform-heading">
+	<div class="container">
 		<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
 	</div>
 </div>
@@ -91,13 +75,13 @@
 								<div class="group-content">
 									<? for ($cnt=1; $cnt<=$step1->group_size; $cnt++) { ?>
 									<div class="row form-group passport-detail">
-										<div class="col-sm-3">
+										<div class="col-sm-5">
 											<label class="form-label">#<?=$cnt?>. Full name<span class="required">*</span></label>
 											<div>
 												<input type="text" id="fullname_<?=$cnt?>" name="fullname_<?=$cnt?>" class="form-control fullname_<?=$cnt?>" value="<?=!empty($step1->fullname[$cnt]) ? $step1->fullname[$cnt] : ''?>" />
 											</div>
 										</div>
-										<div class="col-sm-1">
+										<div class="col-sm-2">
 											<label class="form-label">Gender<span class="required">*</span></label>
 											<div>
 												<select id="gender_<?=$cnt?>" name="gender_<?=$cnt?>" class="form-control gender_<?=$cnt?>">
@@ -107,7 +91,7 @@
 												<script> $("#gender_<?=$cnt?>").val("<?=$step1->gender[$cnt]?>"); </script>
 											</div>
 										</div>
-										<div class="col-sm-3">
+										<div class="col-sm-5">
 											<label class="form-label">Birth date<span class="required">*</span></label>
 											<div class="row row-sm">
 												<div class="col-sm-4 col-xs-4">
@@ -139,7 +123,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-sm-3">
+										<div class="col-sm-4">
 											<label class="form-label">Nationality<span class="required">*</span></label>
 											<div>
 												<!-- <select id="nationality_<?//=$cnt?>" name="nationality_<?//=$cnt?>" class="form-control nationality nationality_<?//=$cnt?>">
@@ -176,7 +160,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-sm-2">
+										<div class="col-sm-3">
 											<label class="form-label">Passport number<span class="required">*</span></label>
 											<div>
 												<input type="text" id="passportnumber_<?=$cnt?>" name="passportnumber_<?=$cnt?>" class="form-control passportnumber_<?=$cnt?>" value="<?=!empty($step1->passportnumber[$cnt]) ? $step1->passportnumber[$cnt] : ''?>" />
@@ -402,7 +386,8 @@
 								<div class="form-group" style="padding-top: 20px; padding-bottom: 20px;">
 									<div class="text-center">
 										<div class="show-button m-4 d-inline-block">
-											<button class="btn btn-danger" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </button>
+											<a class="btn btn-danger" href="<?=site_url("apply-visa/step1")?>"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp; BACK </a><!-- 
+											<button class="btn btn-danger" onclick="window.location='<?=BASE_URL_HTTPS."/apply-visa/step1.html"?>'"><i class="fa fa-angle-left" aria-hidden="true"></i> BACK </button> -->
 										</div>
 										<div class="show-button m-4 d-inline-block">
 											<button class="btn btn-danger btn-next" >NEXT STEP &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>

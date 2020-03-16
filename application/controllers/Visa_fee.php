@@ -47,6 +47,9 @@ class Visa_fee extends CI_Controller {
 				}
 			}
 		}
+
+		$breadcrumb = array('Visa Fees' => site_url('visa-fee'));
+
 		$view_data = array();
 		$view_data['nationalities'] = $this->m_country->items();
 		$view_data['current_nation'] = !empty($current_nation) ? $current_nation : null;
@@ -54,6 +57,7 @@ class Visa_fee extends CI_Controller {
 		$view_data['business_visa_types'] = $business_visa_types;
 		$view_data['tourist_evisa_types'] = $tourist_evisa_types;
 		$view_data['business_evisa_types'] = $business_evisa_types;
+		$view_data['breadcrumb']= $breadcrumb;
 		
 		$tmpl_content = array();
 		$tmpl_content['tabindex'] = "visa-fee";

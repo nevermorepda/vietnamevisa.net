@@ -237,25 +237,25 @@ function onVisaTypeChanged()
 	var type_of_visa = $(".visa_type :selected").val();
 	
 	if (type_of_visa == "1ms") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(30 days stay, only 1 time entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(30 days stay, only 1 time entry/exit)</span>");
 	}
 	if (type_of_visa == "3ms") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(90 days stay, only 1 time entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(90 days stay, only 1 time entry/exit)</span>");
 	}
 	if (type_of_visa == "1mm") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(28 days stay, multiple entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(28 days stay, multiple entry/exit)</span>");
 	}
 	if (type_of_visa == "3mm") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(80-85 days stay, multiple entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(80-85 days stay, multiple entry/exit)</span>");
 	}
 	if (type_of_visa == "6mm") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(less than 180 days stay, multiple entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(less than 180 days stay, multiple entry/exit)</span>");
 	}
 	if (type_of_visa == "1ym") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(1 year stay, multiple entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(1 year stay, multiple entry/exit)</span>");
 	}
 	if (type_of_visa == "e-1ms") {
-		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/>(30 days stay, only 1 time entry/exit)");
+		$(".visa_type_t").html($(".visa_type :selected").text()+"<br/><span class='font-italic'>(30 days stay, only 1 time entry/exit)</span>");
 	}
 }
 
