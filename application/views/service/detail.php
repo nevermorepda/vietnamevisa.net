@@ -63,19 +63,19 @@
 			</div>
 		</div>
 		<?
-						if ($ctype == $types[0]) {
-							require_once(APPPATH."views/booking/flight.php");
-						}
-						else if ($ctype == $types[1]) {
-							require_once(APPPATH."views/booking/hotel.php");
-						}
-						else if ($ctype == $types[2]) {
-							require_once(APPPATH."views/booking/tour.php");
-						}
-						else if ($ctype == $types[3]) {
-							require_once(APPPATH."views/booking/airport_service.php");
-						}
-					?>
+			if ($ctype == $types[0]) {
+				require_once(APPPATH."views/booking/flight.php");
+			}
+			else if ($ctype == $types[1]) {
+				require_once(APPPATH."views/booking/hotel.php");
+			}
+			else if ($ctype == $types[2]) {
+				require_once(APPPATH."views/booking/tour.php");
+			}
+			else if ($ctype == $types[3]) {
+				require_once(APPPATH."views/booking/airport_service.php");
+			}
+		?>
 	</div>
 </div>
 

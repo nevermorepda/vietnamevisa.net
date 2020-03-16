@@ -12,7 +12,9 @@
 		?>
 		<li class="item <?=($alias == $category->alias) ? 'active' : '' ?>">
 			<a class="d-inline-block" href="<?=site_url("faqs/{$category->alias}")?>"><?=$category->name?> </a>
-			<div class="count-items float-right">(<?=$count_items?>)</div>
+			<?if (empty($child_categories)) {?>
+			<div class="count-items float-right">(<?=$count_items?>)  </div>
+			<? } ?>
 		</li>
 		<?
 		if (!empty($child_categories)) {
@@ -20,11 +22,10 @@
 			$info = new stdClass();
 			$info->catid = $child_category->id;
 			$count_child_items = count($this->m_faqs->items($info,1));?>
-		<li class="item item-child <?=($alias == $child_category->alias) ? 'active' : '' ?>">
+
+		<li class="item-child <?=($alias == $child_category->alias) ? 'active' : '' ?>">
 			<a class="d-inline-block" href="<?=site_url("faqs/{$child_category->alias}")?>"><?=$child_category->name?> </a>
-			<ul class="child-category">
-							</ul>
-			<div class="count-items float-right">(<?=$count_child_items?>)</div>
+			<div class="count-child-items float-right">(<?=$count_child_items?>)</div>
 		</li>
 		<? } } ?>
 		<? } ?>	

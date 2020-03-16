@@ -1,24 +1,20 @@
-	<div class="banner-top applyform-banner" style="background: url('<?=IMG_URL?>new-template/ApplyVisaForm-banner.png') no-repeat scroll top center transparent;">
+	<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+		<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-8">
-					<div class="text-content">
-						<h1>APPLY <span class="border-text" style="padding: 20px 20px 0px 10px;"> VISA</span></h1>
-						<div class="alternative-breadcrumb">
-						<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
-						</div>
-						<ul>
-							<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Safety and reliable procedure</li>
-							<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Professional staffs</li>
-						</ul>
-					</div>
-				</div>
+			<div class="text-content">
+				<h1>
+					<span class="" style="">APPLY VISA</span>
+					<div class="bd-right d-none d-lg-block d-md-block"></div>
+				</h1>
+				<ul>
+					<li>Safety and reliable procedure </li>
+					<li>Professional staffs</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="slide-wrap">
-		<div class="slide-contact">
+	<div class="slide-wrap d-none d-sm-none d-md-block">
+		<div class="slide-ex-contact">
 			<div class="container">
 				<ul>
 					<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -28,11 +24,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="applyform-heading">
-		<div class="container">
-			<!-- breadcrumb -->
+	<div class="container">
+		<!-- breadcrumb -->
 		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 		<!-- end breadcrumb -->
+	</div>
+	<div class="applyform-heading">
+		<div class="container">
 			<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
 		</div>
 	</div>

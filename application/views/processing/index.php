@@ -3,33 +3,34 @@
 	$processing_fee = $this->m_processing_fee->items()[0];
 ?>
 <div class="<?=$this->util->slug($this->router->fetch_class())?>">
-	<div class="banner-top howitworks-banner" style="background: url('<?=IMG_URL?>new-template/HowItWorks-banner.png') no-repeat scroll top center transparent;">
+	<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+		<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-8">
-					<div class="text-content">
-						<h1>HOW <span class="border-text" style="padding: 10px 75px 0px 15px;">IT WORKS</span></h1>
-						<div class="alternative-breadcrumb">
-						<!-- <? require_once(APPPATH."views/module/breadcrumb.php"); ?> -->
-						</div>
-						<ul>
-							<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Online processing, time saving </li>
-							<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">No passport to send-off </li>
-						</ul>
-					</div>
-				</div>
+			<div class="text-content">
+				<h1>
+					<span class="" style="">HOW IT WORKS</span>
+					<div class="bd-right d-none d-lg-block d-md-block"></div>
+				</h1>
+				<ul>
+					<li>Online processing, time saving </li>
+					<li>No passport to send-off</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="slide-contact">
-		<div class="container">
-			<ul>
-				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
-				<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
-				<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
-			</ul>
+	<div class="slide-wrap d-none d-sm-none d-md-block">
+		<div class="slide-ex-contact">
+			<div class="container">
+				<ul>
+					<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
+					<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
+					<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
+				</ul>
+			</div>
 		</div>
+	</div>
+	<div class="container">
+		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 	</div>
 	<div class="howitworks-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 		<div class="process">
@@ -304,7 +305,7 @@
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Eligible ports:</h5>
 							</div>
 							<div class="content">
-								<p>8 airports, 16 land ports, and 9 seaports. Check Eligible Ports <a href=""><span class="font-italic">here</span></a>
+								<p>8 airports, 16 land ports, and 9 seaports. Check Eligible Ports <a href="<?=DOC_URL?>List-of-evisa-port.pdf"><span class="font-italic">here</span></a>
 							</div>
 						</div>
 					</div>

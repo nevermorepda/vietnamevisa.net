@@ -1,147 +1,21 @@
- <!-- <style>
-i.fa-phone {
-	font-size: 15px;
-}
-i.fa-mobile {
-	font-size: 19px;
-	top: 6px;
-}
-i.fa-envelope-o {
-	font-size: 12px;
-	top: 11px;
-}
-i.fa {
-	width: 20px;
-}
-</style>
-<?
-	// var_dump($_COOKIE);
-?>
-<div class="contact">
+
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
 	<div class="container">
-		<div class="alternative-breadcrumb">
-		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-		</div>
-	</div>
-	<div class="contact-us-img">
-		<div class="container">
-			<div class="text">
-				<div class="txt-container">
-					<div class="value-prop center">
-						<h1>Get In Touch!</h1>
-						<h5>Whether you need visa service support, we're here to answer your questions.</h5>
-					</div>
-				</div>
-			</div>
+		<div class="text-content">
+			<h1>
+				<span class="" style="">CONTACT US</span>
+				<div class="bd-right d-none d-lg-block d-md-block"></div>
+			</h1>
+			<ul>
+				<li>Support online 24/7</li>
+				<li>Office available Mon-Friday</li>
+			</ul>
 		</div>
 	</div>
 </div>
-
-<div class="cluster-content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h2 class="home-heading" style="padding-top: 15px; padding-bottom: 15px;">Contact information</h2>
-				<div class="clearfix">
-					<div class="left" style="width: 100px">
-						<p><i class="fa fa-map-marker"></i><strong>Address:</strong></p>
-					</div>
-					<div class="left">
-						<p class="">
-							<b><?=COMPANY?></b><br>
-							<?=ADDRESS?>
-						</p>
-					</div>
-				</div>
-				<div class="clearfix">
-					<div class="left" style="width: 100px">
-						<p><i class="fa fa-phone"></i><strong>Hotline:</strong></p>
-					</div>
-					<div class="left">
-						<span><?=HOTLINE?></span>
-					</div>
-				</div>
-				<div class="clearfix">
-					<div class="left" style="width: 100px">
-						<p><i class="fa fa-envelope-o"></i><strong>Email:</strong></p>
-					</div>
-					<div class="left">
-						<a title="Email" href="mailto:<?=MAIL_INFO?>"><?=MAIL_INFO?></a>
-					</div>
-				</div>
-				<div class="clearfix">
-					<div class="left" style="width: 100px">
-						<p><i class="fa fa-facebook"></i><strong>Facebook:</strong></p>
-					</div>
-					<div class="left">
-						<a target="_blank" title="Email" href="https://www.facebook.com/vietnamvisavs">www.facebook.com/vietnamvisavs</a>
-					</div>
-				</div>
-				<!--<div class="googlemap">
-					<div id="mapcanvas" style="height: 300px; width: 100%;"></div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<h2 class="home-heading" style="padding-top: 15px; padding-bottom: 15px;">Contact form</h2>
-				<form id="contact-form" action="<?=site_url("contact/message")?>" method="POST">
-					<div class="form-group">
-						<label class="form-label">YOUR NAME <span class="required">*</span></label>
-						<input type="text" value="" id="fullname" name="fullname" required="" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="form-label">EMAIL <span class="required">*</span></label>
-						<input type="email" value="" id="email" name="email" required="" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="form-label">PHONE NUMBER</label> <span style="font-size: 12px !important;" class=""> (optional)</span>
-						<input type="text" value="" id="phone" name="phone" class="form-control"><br>
-					</div>
-					<div class="form-group">
-						<label class="form-label">MESSAGE <span class="required">*</span></label>
-						<textarea required="" style="height: 108px;" id="message" name="message" type="text" class="form-control"></textarea>
-					</div>
-					<div class="form-group">
-						<label class="form-label">CAPTCHA <span class="required">*</span></label>
-						<div class="clearfix">
-							<div class="left">
-								<input type="text" style="width: 100px" value="" id="security_code" name="security_code" required="" class="form-control">
-							</div>
-							<div class="left" style="margin-left: 10px; line-height: 30px;">
-								<label class="security-code"><?=$this->util->createSecurityCode()?></label>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="submit" class="btn btn-danger btn-contact" name="submit" value="SEND MESSAGE">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-
-<div class="contact-banner banner-top" style="background: url('<?=IMG_URL?>new-template/ContactUs-banner.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="text-content">
-					<h1><span class="border-text" style="padding: 10px 10px 0px 80px;">CONTACT</span> US</h1>
-					<div class="alternative-breadcrumb">
-					<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-					</div>
-					<ul>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Support online 24/7 </li>
-						<li><img src="<?=IMG_URL?>new-template/icon/icon-top.png">Office available Mon-Friday </li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="slide-wrap">
-	<div class="slide-contact">
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -151,12 +25,14 @@ i.fa {
 		</div>
 	</div>
 </div>
-
+<div class="container">
+	<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+</div>
 <div class="contact cluster-content" style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h2 class="home-sub-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact information</h2>
+				<h2 class="home-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact information</h2>
 				<div class="clearfix">
 					<div class="left" style="width: 100px">
 						<p><i class="fa fa-map-marker"></i><strong>Address:</strong></p>
@@ -164,7 +40,7 @@ i.fa {
 					<div class="left" style="padding-bottom: 15px;">
 						<p class="">
 							<b>VIETNAM VISA DEPARTMENT</b><br>
-							2nd Floor, The One Building, Ba Vi street, Ho Chi Minh City, Viet Nam.
+							<?=ADDRESS?>
 						</p>
 					</div>
 				</div>
@@ -197,7 +73,7 @@ i.fa {
 				</div>-->
 			</div>
 			<div class="col-md-6">
-				<h2 class="home-sub-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact form</h2>
+				<h2 class="home-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact form</h2>
 				<form id="contact-form" action="<?=site_url("contact/message")?>" method="POST">
 					<div class="form-group">
 						<label class="form-label">YOUR NAME <span class="required">*</span></label>

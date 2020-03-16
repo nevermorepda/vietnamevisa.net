@@ -14,7 +14,7 @@
 	</div>
 </div>
 <div class="slide-wrap d-none d-sm-none d-md-block">
-	<div class="slide-contact">
+	<div class="slide-ex-contact">
 		<div class="container">
 			<ul>
 				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
@@ -37,13 +37,13 @@
 				<div class="col-sm-6">
 					<div class="mb-3">
 						<div class="post">
-							<div class="icon"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive " src="<?=BASE_URL.$item->icon?>"/></a></div>
-							<div class="content pt-2">
+							<div class="icon"><a title="<?=$item->title?>" href="<?=site_url("consular/view/{$item->alias}")?>"><img alt="<?=$item->title?>" class="img-responsive " src="<?=BASE_URL.$item->icon?>"/></a></div>
+							<div class="content">
 								<div class="caption ">
-									<h3 class="title font-weight-bold d-inline-block"><a title="<?=$item->title?>" href="<?=site_url("services/view/{$item->alias}")?>"><?=$item->title?></a></h3>
+									<h3 class="title font-weight-bold d-inline-block"><a title="<?=$item->title?>" href="<?=site_url("consular/view/{$item->alias}")?>"><?=$item->title?></a></h3>
 								</div>
 								<p><?=word_limiter(strip_tags($item->summary), 50)?></p>
-								<div class="clearfix"><a class="btn-detail" href="<?=site_url("services/view/{$item->alias}")?>">Detail</a></div>
+								<div class="clearfix"><a class="btn-detail" href="<?=site_url("consular/view/{$item->alias}")?>">Detail</a></div>
 							</div>
 						</div>
 					</div>

@@ -1,3 +1,29 @@
+<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
+	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
+	<div class="container">
+		<div class="text-content">
+			<h1>
+				<span class="" style="">APPLY VISA</span>
+				<div class="bd-right d-none d-lg-block d-md-block"></div>
+			</h1>
+			<ul>
+				<li>Safety and reliable procedure </li>
+				<li>Professional staffs</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="slide-wrap d-none d-sm-none d-md-block">
+	<div class="slide-ex-contact">
+		<div class="container">
+			<ul>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
+				<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 <div class="<?=$this->util->slug($this->router->fetch_class())?>">
 	<div class="slide-bar hidden">
 		<div class="slide-wrap">

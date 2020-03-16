@@ -2,7 +2,7 @@
 	<div class="slide-bar">
 		<div class="slide-wrap">
 			<div id="" class="slide-image owl-carousel owl-theme">
-				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide1.png);"></div>
+				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slidex.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide2.png);"></div>
 				<div class=" item" style="background-image: url(<?=IMG_URL?>new-template/slide3.png);"></div>
 			</div>
@@ -18,28 +18,32 @@
 			
 			<div class="slide-content">
 				<div class="container">
-					<div class="slide-text">
-						<h1>MAIN GATE TO GET<br>VISA TO VIETNAM<br>ONLINE</h1>
-						<!-- <ul class="checklist d-none d-sm-none d-md-block">
-							<li><i class="fa fa-check" aria-hidden="true"></i> <strong>Quick and easy</strong> – Only 4 steps to get the visa to Vietnam</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i> <strong>Accept credit cards</strong> – Low processing rates</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i> <strong>Free 24/7 support</strong> – Call our experts anytime</li>
-							<li><i class="fa fa-check" aria-hidden="true"></i> <strong>Trusted and reliable</strong> – 5,000,000+ travellers worldwide</li>
-						</ul> -->
-					</div>
-					<div class="slide-button">
-						<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
-					</div>
-					<div class="control-owl-slider">
-						<ul>
-							<li class="dot icon0 active" data="0"></li>
-							<li class="dot icon1" data="1"></li>
-							<li class="dot icon2" data="2"></li>
-						</ul>
-						<div class="owl-dots">
-							<div class="owl-dot active"><span></span></div>
-							<div class="owl-dot"><span></span></div>
-							<div class="owl-dot"><span></span></div>
+					<div class="row">
+						<div class="col-sm-10 col-md-8">
+							<div class="slide-text">
+								<h1>VIETNAM VISA EXPERT</h1>
+								<ul class="checklist ">
+									<li><p>Professional process and reliable fee</p></li>
+									<li><p>Your best option to get Vietnam visa</p></li>
+									<li><p>Just 4 steps to get Vietnam visa</p></li>
+									<li><p>Secure and efficient application submission</p></li>
+								</ul>
+							</div>
+							<div class="slide-button">
+								<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
+							</div>
+							<div class="control-owl-slider">
+								<ul class="d-none d-sm-none d-md-block">
+									<li class="dot icon0 active" data="0"></li>
+									<li class="dot icon1" data="1"></li>
+									<li class="dot icon2" data="2"></li>
+								</ul>
+								<div class="owl-dots">
+									<div class="owl-dot active"><span></span></div>
+									<div class="owl-dot"><span></span></div>
+									<div class="owl-dot"><span></span></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -49,7 +53,7 @@
 						loop:false,
 						nav: false,
 						dots: false,
-						autoplay : true,
+						autoplay : false,
 						items:1
 						})
 					$('.control-owl-slider .dot').click(function() {
@@ -68,7 +72,7 @@
 </div>
 
 <!-- Step apply visa -->
-<div class="cluster">
+<div class="cluster cluster-intrud">
 	<div class="container">
 		<div class="cluster-body wow fadeInUp">
 			<div class="wrap-type-visa">
@@ -91,34 +95,101 @@
 						<a href="./vietnam-e-visa.html"><img class="full-width img-responsive" alt="" src="./images/img-visa.png"></a>
 					</div> -->
 					<div class="col-lg-6">
-						<div class="content-pr">
-							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">Vietnam Visa On arrival</a></h1>
+						<div class="des-pr m-4">
+							<h2><a class="heading" title="Vietnam E-visa" href="">Vietnam Visa Online</a></h2>
+							<div class="m-2">
+								<p class="pt-3">We assist for Vietnam Visa with convenient and professional processing:</p>
+								<p>Visa On Arrival (VOA) is a process of obtaining the pre-approved visa letter (visa approval letter) via applying online. The travelers will pick up the actual visa stamp and visa sticker by showing the Approval Letter at international airports in Vietnam upon arrival.</p>
+								<p>Electronic Visa (E-Visa) is another modern type of Vietnam visa online. With this type of visa, you will receive E-Visa via email and you do not have to pay stamping fee upon arrival and enter Vietnam with multiple options of entry ports: land ports, seaports or airports.</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="content-pr">
+					<div class="row">
+						<div class="col-sm-6">
+							<h3><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">VIETNAM VISA ON ARRIVAL</a></h3>
 							<ul>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Pick up visa at Vietnam International airports</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Diverse selection of visa types </li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Most countries can apply </li>
-							</ul>
-							<h1><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">Vietnam Electronic Visa</a></h1>
-							<ul>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Available for 8 airports, 16 landports, 9 seaports and 86 countries</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> Valid for 30 days, and single entry only</li>
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i> No fees upon arrival</li>
+								<li><p>Pick up visa at Vietnam International airports</p></li>
+								<li><p>Diverse selection of visa types</p></li>
+								<li><p>Most countries can apply</p></li>
 							</ul>
 						</div>
-						<div class="showmore-button">
-							<a class="btn btn-danger" href="<?=site_url('visa-processing')?>">SHOW MORE</a>
+						<div class="col-sm-6">
+							<h3><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">VIETNAM ELECTRONIC VISA</a></h3>
+							<ul>
+								<li><p>Available for 8 airports, 16 landports, 9 seaports and 86 countries</p></li>
+								<li><p>Valid for 30 days, and single entry only</p></li>
+								<li><p>No fees upon arrival</p></li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="des-pr">
-					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text1">
-					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text2">
-					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text3">
-					<img src="<?=IMG_URL?>new-template/corner-icon.png" alt="" class="border-text4">
-					<div class="m-4">
-						<p class="pt-3">We assist for Vietnam Visa with convenient and professional processing:</p>
-						<p>Visa On Arrival (VOA) is a process of obtaining the pre-approved visa letter (visa approval letter) via applying online. The travelers will pick up the actual visa stamp and visa sticker by showing the Approval Letter at international airports in Vietnam upon arrival.</p>
-						<p>Electronic Visa (E-Visa) is another modern type of Vietnam visa online. With this type of visa, you will receive E-Visa via email and you do not have to pay stamping fee upon arrival and enter Vietnam with multiple options of entry ports: land ports, seaports or airports.</p>
+				<div class="clearfix">
+					<a class="btn btn-danger float-right" href="<?=site_url('visa-processing')?>">SHOW MORE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="cluster cluster-our-services">
+	<div class="container wow fadeInUp">
+		<div class="title">
+			<h1 class="heading">Consular Services</h1>
+		</div>
+		<div class="cluster-content">
+			<div class="row">
+				<div class="col-md-6 dischap">
+					<div class="post dispart p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[0]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[0]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[0]->alias}")?>"><?=$csl_services[0]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[3]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 dischap">
+					<div class="post p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[1]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[1]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[1]->alias}")?>"><?=$csl_services[1]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[1]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[1]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post dispart p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[2]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[2]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[2]->alias}")?>"><?=$csl_services[2]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[2]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[2]->alias}")?>">Detail</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="post p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$csl_services[3]->title?>" class="img-responsive " src="<?=BASE_URL.$csl_services[3]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>"><?=$csl_services[3]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($csl_services[3]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("consular/view/{$csl_services[3]->alias}")?>">Detail</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -132,55 +203,57 @@
 		</div>
 		<div class="cluster-content">
 			<div class="row">
-				<div class="col-md-4 dispart">
-					<div class="title">
-						<img alt="Airport concierge service" class="lazy" src="<?=IMG_URL?>new-template/icon1.png">
-						<h3><a title="Airport concierge service" href="<?=site_url("services/view/{$services[0]->alias}")?>"><?=$services[0]->title;?></a></h3>
+				<div class="col-md-6 dischap">
+					<div class="post dispart p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[0]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[0]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[0]->alias}")?>"><?=$ex_services[0]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[0]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[0]->alias}")?>">Detail</a>
+						</div>
 					</div>
-					<p class="summary"><?=word_limiter(strip_tags($services[0]->summary), 29);?></p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[0]->alias}")?>">DETAIL</a>
 				</div>
-				<div class="col-md-4 dispart">
-					<div class="title">
-						<img alt="Car pickup service" class="lazy" src="<?=IMG_URL?>new-template/icon3.png">
-						<h3><a title="Car pickup service" href="<?=site_url("services/view/{$services[4]->alias}")?>"><?=$services[4]->title;?></a></h3>
+				<div class="col-md-6 dischap">
+					<div class="post p-3 mb-3">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[1]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[1]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[1]->alias}")?>"><?=$ex_services[1]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[1]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[1]->alias}")?>">Detail</a>
+						</div>
 					</div>
-					<p class="summary"><?=word_limiter(strip_tags($services[4]->summary), 29);?></p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[4]->alias}")?>">DETAIL</a>
 				</div>
-				<div class="col-md-4 dispart">
-					<div class="title">
-						<img alt="Vietnam hotel booking" class="lazy" src="<?=IMG_URL?>new-template/icon2.png">
-						<h3><a title="Vietnam hotel booking" href="<?=site_url("services/view/{$services[3]->alias}")?>"><?=$services[3]->title;?></a></h3>
+				<div class="col-md-6">
+					<div class="post dispart p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[2]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[2]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[2]->alias}")?>"><?=$ex_services[2]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[2]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[2]->alias}")?>">Detail</a>
+						</div>
 					</div>
-					<p class="summary"><?=word_limiter(strip_tags($services[3]->summary), 29);?></p>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[3]->alias}")?>">DETAIL</a>
 				</div>
-			</div>
-		</div>
-		<div class="cluster-content">
-			<div class="row">
-				<div class="col-md-6 dispart">
-					<div class="title">
-						<img alt="Tours" class="lazy" src="<?=IMG_URL?>new-template/icon4.png">
-						<h3><a title="Optional Tours" href="<?=site_url("services/view/{$services[1]->alias}")?>"><?=$services[1]->title;?></a></h3>
+				<div class="col-md-6">
+					<div class="post p-3 mt-5">
+						<div class="title">
+							<div class="bg-icon"></div>
+							<img alt="<?=$ex_services[3]->title?>" class="img-responsive " src="<?=BASE_URL.$ex_services[3]->icon?>"/>
+							<h3><a class="font-weight-bold" title="Airport concierge service" href="<?=site_url("services/view/{$ex_services[3]->alias}")?>"><?=$ex_services[3]->title;?></a></h3>
+						</div>
+						<p class="summary"><?=word_limiter(strip_tags($ex_services[3]->summary), 30);?></p>
+						<div class="clearfix">
+							<a class="btn-detail f13 float-right" href="<?=site_url("services/view/{$ex_services[3]->alias}")?>">Detail</a>
+						</div>
 					</div>
-					<div class="tour-content">
-						<a href="<?=site_url("services/view/{$services[1]->alias}")?>"><img class="img-thumnail img-responsive img-pr pr-3" alt="" src="<?=IMG_URL?>new-template/thumb-optiontours.png"></a>
-						<?=word_limiter(strip_tags($services[1]->summary), 29);?>
-					</div>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[1]->alias}")?>">DETAIL</a>
-				</div>
-				<div class="col-md-6 dispart">
-					<div class="title">
-						<img alt="Consular services" class="lazy" src="<?=IMG_URL?>new-template/icon/icon-11.png">
-						<h3><a title="Vietnam discovery tours" href="<?=site_url("services/view/{$services[2]->alias}")?>"><?=$services[2]->title;?></a></h3>
-					</div>
-					<div class="tour-content">
-						<a href="<?=site_url("services/view/{$services[2]->alias}")?>"><img class="img-thumnail img-responsive img-pr pr-3" alt="" src="<?=IMG_URL?>new-template/icon/icon-12.png"></a>
-						<?=word_limiter(strip_tags($services[2]->summary), 29);?>
-					</div>
-					<a class="btn btn-light btn-detail" href="<?=site_url("services/view/{$services[2]->alias}")?>">DETAIL</a>
 				</div>
 			</div>
 		</div>

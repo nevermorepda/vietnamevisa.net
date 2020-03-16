@@ -21,10 +21,10 @@ class M_faqs extends M_db
 		}
 
 		if (!is_null($orderby) && !is_null($sortby)) {
-			$sql .= " ORDER BY {$this->_table}.{$orderby} {$sortby}, {$this->_table}.created_date DESC";
+			$sql .= " ORDER BY {$orderby} {$sortby}, updated_date DESC";
 		}
 		else {
-			$sql .= " ORDER BY {$this->_table}.updated_date DESC";
+			$sql .= " ORDER BY order_num ASC, created_date DESC";
 		}
 
 		if (!is_null($limit)) {

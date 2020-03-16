@@ -1,3 +1,28 @@
+<div class="banner-top faqs-banner" style="background: url('<?=IMG_URL?>new-template/bannerFAQs.png') no-repeat scroll top center transparent;">
+	<div class="container">
+		<div class="text-content">
+			<h1>
+				<span class="" style="">FAQs</span>
+				<div class="bd-right d-none d-lg-block d-md-block"></div>
+			</h1>
+			<ul>
+				<li>Always listen to our customer </li>
+				<li>Provide helpful and clear information</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="slide-wrap">
+	<div class="slide-ex-contact">
+		<div class="container">
+			<ul>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-vn.png"><a href="" title="Contact hotline"><?=HOTLINE?></a></li>
+				<li><img src="<?=IMG_URL?>new-template/flag/flag-usa.png"><a href="" title="Contact hotline"><?=HOTLINE_US?></a></li>
+				<li><a href="" title="Contact hotline"><i class="fa fa-envelope-o" aria-hidden="true"></i><?=MAIL_INFO?></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 <div class="clearfix">
 	<div class="container">
 		<div class="row clearfix">

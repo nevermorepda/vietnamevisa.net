@@ -2,13 +2,17 @@
 	<div class="container-fluid">
 		<div class="tool-bar clearfix">
 			<h1 class="page-title">
+				<?if(!empty($category)) { ?>
 				<?=$category->name?>
+				<? }?>
 				<div class="pull-right">
 					<ul class="action-icon-list">
 						<li><a href="#" class="btn-unpublish"><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
 						<li><a href="#" class="btn-publish"><i class="fa fa-eye" aria-hidden="true"></i> Show</a></li>
 						<li><a href="#" class="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></li>
+						<?if(!empty($category)) { ?>
 						<li><a href="<?=site_url("syslog/content/{$category->id}/add")?>"><i class="fa fa-plus" aria-hidden="true"></i> Add</a></li>
+						<? }?>
 					</ul>
 				</div>
 			</h1>
