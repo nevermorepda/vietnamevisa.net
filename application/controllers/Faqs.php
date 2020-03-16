@@ -52,7 +52,7 @@ class Faqs extends CI_Controller {
 
 				$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
 				$offset = ($page - 1) * 5;
-				$pagination = $this->util->pagination(site_url("{   $this->util->slug($this->router->fetch_class())}/{$alias}"), sizeof($items), 5);
+				$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}/{$alias}"), sizeof($items), 5);
 				
 				$latest_items_info = new stdClass();
 				$latest_items_info->category_id = $category->id;

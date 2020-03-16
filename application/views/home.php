@@ -289,7 +289,7 @@
 						<div class="title">
 							<h1 class="heading">About Us</h1>
 						</div>
-						<p><a href="<?=BASE_URL?>"><span style="text-decoration: underline;"><?=BASE_URL?></span></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
+						<p><a href="<?=BASE_URL?>"><span style="text-decoration: underline;"><?=SITE_NAME?></span></a> is a reliable portal for Vietnam Visa with Tourist and Business purpose. We provide the service with the fastest, easiest and most economical way to get a visa to Vietnam.</p>
 						<p>Over 10-year-experience in Vietnam visa service and enthusiastic visa team, Vietnamevisa.net is always proud of our excellent services for the clients who would like to avoid the long visa procedures at their local Vietnam's Embassies. We work with the vision:</p>
 						<ul>
 							<li>No Hidden Charges</li>

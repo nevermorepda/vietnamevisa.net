@@ -1287,7 +1287,7 @@ ul.list-embassy li {
 	border-bottom: 1px dotted #ccc;
 }
 .cluster-content {
-	padding: 25px 0px;
+	padding: 25px 0px 70px 0
 }
 .cluster-content:last-child {
 	border: none;
