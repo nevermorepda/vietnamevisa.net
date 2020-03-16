@@ -15,6 +15,10 @@ class M_faqs extends M_db
 			if (!empty($info->catid)) {
 				$sql .= " AND catid = '{$info->catid}'";
 			}
+			if(!empty($info->search_text)){
+				$search_text = trim(strtoupper($info->search_text));
+				$sql .= " AND (UPPER(title) LIKE '%{$search_text}%' OR UPPER(content) LIKE '%$search_text%')";
+			}
 		}
 		if (!is_null($active)) {
 			$sql .= " AND active = '{$active}'";
