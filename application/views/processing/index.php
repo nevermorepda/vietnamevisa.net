@@ -157,7 +157,7 @@
 							<div class="title d-table-cell">
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon1.png" alt="">Purpose of Visit:</h5>
 							</div>
-							<div class="content d-table-cell">Tourist/Busines</div>
+							<div class="content d-table-cell">Tourist/Business</div>
 						</div>
 					</div>
 					<div class="col-sm-6 right" style="border-left: 2px dashed #ccc;">
@@ -165,7 +165,7 @@
 							<div class="title d-table-cell">
 								<h5><img src="<?=IMG_URL?>new-template/icon/list-icon2.png" alt="">Purpose of Visit:</h5>
 							</div>
-							<div class="content d-table-cell">Tourist/Busines</div>
+							<div class="content d-table-cell">Tourist/Business</div>
 						</div>
 					</div>
 				</div>
@@ -250,7 +250,7 @@
 								<ul>
 									<li>1-2 working days for normal case</li>
 									<li>4-8 working hours for urgent case</li>
-									<li>30 mins for emergency case</li>
+									<li>30 minutes for emergency case</li>
 								</ul>
 							</div>
 						</div>
@@ -263,7 +263,7 @@
 							<div class="content">
 								<ul>
 									<li>3 working days for Normal case</li>
-									<li>1-2 working hours for Urgent case</li>
+									<li>1-2 working days for Urgent case</li>
 									<li>Non-available Emergency case</li>
 								</ul>
 							</div>

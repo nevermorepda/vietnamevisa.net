@@ -309,7 +309,7 @@
 											</label>
 											<div id="processing_time_emergency-note" class="processing-option none">
 												<div class="processing-note">
-													Similar to Urgent option except it only takes <span class="red">30 minutes</span>. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Emergency")->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately. You are subject to pay stamping fee at the airports. (You can apply supper urgent case on weekend/holiday for arrival date is next Monday or next business day.)
+													It only takes <span class="red">30 minutes</span> for the processing (Since we get the essential documents for Emergency Cases from you and depend on your application time and arrival time). You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately.
 												</div>
 											</div>
 										</div>
@@ -369,7 +369,9 @@
 												</label>
 											</div>
 											<div class="processing-note">
-												Normally, The Vietnam Immigration Department process a lot of applications. It is common and legal to get an visa approval letter with several names of applicants applying at the same time. If you feel uncomfortable with this kind of shared letter, we offer you to apply for visa on arrival with the option of “Private Letter” to get your approval letter for only yourself or your group without other strange names on it. Each application will pay extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get private visa approval letter. Please notice that if you don’t choose “Private letter” option, you will receive shared  approval letter and we can’t change anything after your application is processed.
+												<p class="mb-1">The Vietnam Immigration Department normally processes a lot of applications and it is common and legal to get a visa approval letter with several names of applicants applying at the same time.</p>
+												<p class="mb-1">In case, you want to keep your information in secret, you can ask for the option “Private Letter” to get your approval letter with only yourself or your group information. Each application will pay an extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get the private visa approval letter.</p>
+												<p class="mb-1">Please notice that if you do not choose the “Private letter” option, you will receive a shared approval letter and you cannot change anything after your application is processed.</p>
 											</div>
 										</div>
 										<div class="checkbox cb_fast_checkin">

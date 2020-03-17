@@ -157,13 +157,25 @@
 				</p>
 			</div>
 			<? } ?>
+			
 		</div>
 		<div class="e-visa-fee">
 			<div class="container">
 				<div class="title">
 					<h2 class="home-sub-heading shadow-text">VIETNAM ELECTRONIC VISA</h2>
-					<h4 class="sub-title">(available at airports, land ports and seaports for 86 countries)</h4>
+					<h4 class="sub-title">(available at airports, land ports and seaports for 80 countries)</h4>
 				</div>
+				<? if (!sizeof($tourist_evisa_types) && !sizeof($business_evisa_types)) { ?>
+				<div class="alert alert-warning">
+					<p>Dear customer,</p>
+					<p>Thanks for your concern, <br>
+					Vietnam Electronic Visa is not available for <?=$current_nation->name?>.<br>
+					Please check <a href="<?=DOC_URL?>LIST-OF-ELIGIBLE-COUNTRIES-FOR-EVISA.pdf"><span class="red font-italic" style="text-decoration-line: underline; text-decoration-style: solid;">here</span></a> about Eligible Countries for Electronic Visa.<br>
+					Best regards, <br>
+					Vietnam Evisa Team.
+					</p>
+				</div>
+				<? } ?>
 				<? if (sizeof($tourist_evisa_types) && sizeof($business_evisa_types)) { ?>
 				<table class="table table-bordered pricing-table">
 					<tr>

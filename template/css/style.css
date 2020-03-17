@@ -1181,7 +1181,9 @@ ul.list-embassy li {
 	width: 100%;
 	height: 520px;
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: scroll;
 }
 .slide-content .slide-text {
 	padding-top: 50px!important;
