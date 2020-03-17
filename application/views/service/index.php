@@ -17,7 +17,7 @@
 	</div>
 	<div class="cluster-content">
 		<div class="container">
-			<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Extra Services Upon Arrival</h2>
+			<h2 class="home-heading text-center" style="padding-bottom: 50px;">Extra Services Upon Arrival</h2>
 			<div class="row">
 			<? foreach ($items as $item) { 
 			?>

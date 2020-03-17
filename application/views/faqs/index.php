@@ -17,7 +17,7 @@
 </div>
 <div class="faqs cluster-content">
 	<div class="container">
-		<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
+		<h2 class="home-heading text-center" style="padding-bottom: 50px;">Frequently Asked Questions</h2>
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-sm-8">

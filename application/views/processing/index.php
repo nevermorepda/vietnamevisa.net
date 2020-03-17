@@ -22,7 +22,7 @@
 	<div class="howitworks-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
 		<div class="process">
 			<div class="container">
-				<h2 class="home-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Application Process</h2>
+				<h2 class="home-heading text-center" style="padding-bottom: 30px;">Application Process</h2>
 				<div class="row">
 					<div class="col-sm-6 col-lg-3 col-md-6">
 						<div class="box-step p-3" style="border: 5px solid #ffcd0e;">
@@ -80,7 +80,7 @@
 		</div>
 		<div class="different">
 			<div class="container">
-				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">The Difference Between <br>
+				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px;">The Difference Between <br>
 					<span style="color: #851919">Vietnam Visa On Arrival</span> <span style="font-size: 25px;">&</span> <span style="color: #de8c15">Vietnam Electronic Visa</span>
 				</h2>
 				<div class="row">

@@ -1238,7 +1238,6 @@ ul.list-embassy li {
 .cluster .cluster-body .heading {
 	font-size: 45px;
 	color: #000000;
-	text-shadow: 3px 3px #bdbdbd;
 }
 .cluster-intrud {
 	border-bottom: 1px solid #ccc;
@@ -1309,7 +1308,6 @@ ul.list-embassy li {
 	font-size: 45px;
 	font-weight: 100;
 	margin-top: 10px;
-	text-shadow: 3px 3px #bdbdbd;
 }
 .cluster-our-services {
 	/* background: url(https://s3.amazonaws.com/vietnamvisateam/template/images/bg-why.jpg); */
@@ -1356,7 +1354,6 @@ ul.list-embassy li {
 	margin: 0;
 }
 .testimonial h2,.shopperapproved h2 {
-	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster {
 	padding: 40px 0;
@@ -1367,7 +1364,6 @@ ul.list-embassy li {
 .about-us-cluster .about-us-content .heading{
 	font-size: 45px;
 	padding-bottom: 20px;
-	text-shadow: 3px 3px #bdbdbd;
 }
 .about-us-cluster .about-us-images {
 }
@@ -2171,7 +2167,7 @@ ul.style-step li.active {
 	display: inline-flex;
 }
 .shadow-text {
-	text-shadow: 3px 2px #bdbdbd;
+	/* text-shadow: 3px 2px #bdbdbd; */
 }
 .fee-banner ul {
 	margin: 0;
