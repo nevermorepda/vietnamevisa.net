@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h2 class="home-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact information</h2>
+				<h2 class="home-heading" style="padding-bottom: 15px;">Contact information</h2>
 				<div class="clearfix">
 					<div class="left" style="width: 100px">
 						<p><i class="fa fa-map-marker"></i><strong>Address:</strong></p>
@@ -59,7 +59,7 @@
 				</div>-->
 			</div>
 			<div class="col-md-6">
-				<h2 class="home-heading" style="padding-bottom: 15px; text-shadow: 3px 3px #bdbdbd;">Contact form</h2>
+				<h2 class="home-heading" style="padding-bottom: 15px;">Contact form</h2>
 				<form id="contact-form" action="<?=site_url("contact/message")?>" method="POST">
 					<div class="form-group">
 						<label class="form-label">YOUR NAME <span class="required">*</span></label>

@@ -11,7 +11,7 @@
 		</div>
 	</div>
 </div>
-<div class="extra-service-listing" style="background: url(http://localhost/vietnamevisa.net/template/images/new-template/background.png) no-repeat scroll top center transparent;">
+<div class="extra-service-listing" style="background: url(<?=IMG_URL?>new-template/background.png) no-repeat scroll top center transparent;">
 	<div class="container">
 		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
 	</div>

@@ -20,7 +20,7 @@
 </div>
 <div class="applyform-heading">
 	<div class="container">
-		<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+		<h2 class="home-heading text-center" style="">Vietnam Visa Application Form</h2>
 	</div>
 </div>
 <div class="applyform-content cluster-content">

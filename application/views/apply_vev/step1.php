@@ -37,7 +37,7 @@
 			<li><font class="number">4.</font> Completed</li>
 		</ul>
 	</div> -->
-	<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+	<h2 class="home-sub-heading text-center" style="padding-bottom: 30px;">Vietnam Visa Application Form</h2>
 	<div class="step-apply text-center">
 		<div class="step active">
 			<div class="line-step line-step1">
