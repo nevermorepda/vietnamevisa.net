@@ -76,17 +76,21 @@ class Faqs extends CI_Controller {
 			}
 		}
 		else {
-			$items = $this->m_faqs->items(null, 1);
+			$info = new stdClass();
+			if(isset($_GET) && !empty($_GET['search_text'])){
+				$info->search_text = $_GET['search_text'];
+			}
+
+			$items = $this->m_faqs->items($info, 1);
 			$page = (!empty($_GET["page"]) ? max($_GET["page"], 1) : 1);
 			$offset = ($page - 1) * 5;
 			$latest_items_info = new stdClass();
 			$latest_items = $this->m_faqs->items($latest_items_info,1,4,1,'created_date','DESC');
 			
-			
 			$pagination = $this->util->pagination(site_url("{$this->util->slug($this->router->fetch_class())}"), sizeof($items), 5);
 			
 			$view_data = array();
-			$view_data['items']  = $this->m_faqs->items(null, 1, 5, $offset);
+			$view_data['items']  = $this->m_faqs->items($info, 1, 5, $offset);
 			$view_data["pagination"] = $pagination;
 			$view_data["categories"] = $categories;
 			$view_data["latest_items"] = $latest_items;
