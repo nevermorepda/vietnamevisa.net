@@ -79,6 +79,14 @@
 								<? gen_faq_category_menu($faqs_categories, $this); ?>
 							</ul>
 						</li>
+						<li class="dropdown <?=((in_array($method, array('useful', 'useful-categories')))?'active':'')?>">
+							<a href="<?=site_url("syslog/useful")?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Useful Information<span class="caret"></span></a>
+							<ul class="dropdown-menu multi-level">
+								<li><a href="<?=site_url("syslog/useful-categories")?>">Useful Categories</a></li>
+								<li role="separator" class="divider"></li>
+								<? gen_useful_category_menu($useful_categories, $this); ?>
+							</ul>
+						</li>
 						<? if (in_array($this->session->userdata('admin')->id, $admin_id)) { ?>
 						<li class="<?=(($method=='agents')?'active':'')?>">
 							<a href="<?=site_url("syslog/agents")?>" class="dropdown-toggle" >Agents <span class="caret"></span></a>
@@ -302,6 +310,24 @@
 					</li>';
 			} else {
 				echo '<li><a href="'.site_url("syslog/faqs/{$faqs_category->alias}").'">'.$faqs_category->name.'</a></li>';
+			}
+		}
+	}
+
+	function gen_useful_category_menu($useful_categories, $obj) {
+		foreach ($useful_categories as $useful_category) {
+			$child_useful_category_info = new stdClass();
+			$child_useful_category_info->parent_id = $useful_category->id;
+			$child_categories = $obj->m_useful_category->items($child_useful_category_info);
+			if (!empty($child_categories)) {
+				echo '<li class="dropdown-submenu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$useful_category->name.'</a>
+						<ul class="dropdown-menu">';
+						gen_faq_category_menu($child_categories, $obj);
+				echo '	</ul>
+					</li>';
+			} else {
+				echo '<li><a href="'.site_url("syslog/useful/{$useful_category->alias}").'">'.$useful_category->name.'</a></li>';
 			}
 		}
 	}

@@ -10,21 +10,8 @@
 ?>
 
 <script type="text/javascript" src="<?=JS_URL?>apply.visa.step1.js"></script>
-<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
-	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
-	<div class="container">
-		<div class="text-content">
-			<h1>
-				<span class="" style="">APPLY VISA</span>
-				<div class="bd-right d-none d-lg-block d-md-block"></div>
-			</h1>
-			<ul>
-				<li>Safety and reliable procedure </li>
-				<li>Professional staffs</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
 <div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-ex-contact">
 		<div class="container">
@@ -43,7 +30,7 @@
 </div>
 <div class="applyform-heading">
 	<div class="container">
-		<h2 class="home-heading text-center" style="text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
+		<h2 class="home-heading text-center" style="">Vietnam Visa Application Form</h2>
 	</div>
 </div>
 <div class="applyform-content cluster-content">
@@ -322,7 +309,7 @@
 											</label>
 											<div id="processing_time_emergency-note" class="processing-option none">
 												<div class="processing-note">
-													Similar to Urgent option except it only takes <span class="red">30 minutes</span>. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Emergency")->rush_fee?> $</b>/person. You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately. You are subject to pay stamping fee at the airports. (You can apply supper urgent case on weekend/holiday for arrival date is next Monday or next business day.)
+													It only takes <span class="red">30 minutes</span> for the processing (Since we get the essential documents for Emergency Cases from you and depend on your application time and arrival time). You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately.
 												</div>
 											</div>
 										</div>
@@ -382,7 +369,9 @@
 												</label>
 											</div>
 											<div class="processing-note">
-												Normally, The Vietnam Immigration Department process a lot of applications. It is common and legal to get an visa approval letter with several names of applicants applying at the same time. If you feel uncomfortable with this kind of shared letter, we offer you to apply for visa on arrival with the option of “Private Letter” to get your approval letter for only yourself or your group without other strange names on it. Each application will pay extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get private visa approval letter. Please notice that if you don’t choose “Private letter” option, you will receive shared  approval letter and we can’t change anything after your application is processed.
+												<p class="mb-1">The Vietnam Immigration Department normally processes a lot of applications and it is common and legal to get a visa approval letter with several names of applicants applying at the same time.</p>
+												<p class="mb-1">In case, you want to keep your information in secret, you can ask for the option “Private Letter” to get your approval letter with only yourself or your group information. Each application will pay an extra fee amount of <b id="note-letter-fee" style="color:red"></b> to get the private visa approval letter.</p>
+												<p class="mb-1">Please notice that if you do not choose the “Private letter” option, you will receive a shared approval letter and you cannot change anything after your application is processed.</p>
 											</div>
 										</div>
 										<div class="checkbox cb_fast_checkin">
@@ -439,6 +428,7 @@
 					<div class="col-md-5">
 						<div class="panel-fees">
 							<div class="title text-center">VISA OPTION SUMMARY</div>
+							<div class="text-center pb-2"><i class="fa fa-clock-o" aria-hidden="true"></i><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block; float: none;" class="clock-time"><?= date('H:i:s A')?></span> <span style="float: none;"> <?= date('D, M d, Y - ')?>Vietnam Time (GMT+7)</span></div>
 							<ul>
 								<!-- <li class="clearfix">
 									<label>Passport holder:</label>

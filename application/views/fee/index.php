@@ -38,22 +38,8 @@
 		$price_nation = $this->m_visa_fee->search(0);
 	}
 ?>
-
-<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
-	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
-	<div class="container">
-		<div class="text-content">
-			<h1>
-				<span class="" style="">VISA FEE</span>
-				<div class="bd-right d-none d-lg-block d-md-block"></div>
-			</h1>
-			<ul>
-				<li>Reasonable and  Competitive Price </li>
-				<li>No hidden fees</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<img src="<?=IMG_URL?>new-template/banner/banner-visa-fee.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">VISA FEE</span></h1>
 <div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-ex-contact">
 		<div class="container">
@@ -171,13 +157,25 @@
 				</p>
 			</div>
 			<? } ?>
+			
 		</div>
 		<div class="e-visa-fee">
 			<div class="container">
 				<div class="title">
 					<h2 class="home-sub-heading shadow-text">VIETNAM ELECTRONIC VISA</h2>
-					<h4 class="sub-title">(available at airports, land ports and seaports for 86 countries)</h4>
+					<h4 class="sub-title">(available at airports, land ports and seaports for 80 countries)</h4>
 				</div>
+				<? if (!sizeof($tourist_evisa_types) && !sizeof($business_evisa_types)) { ?>
+				<div class="alert alert-warning">
+					<p>Dear customer,</p>
+					<p>Thanks for your concern, <br>
+					Vietnam Electronic Visa is not available for <?=$current_nation->name?>.<br>
+					Please check <a href="<?=DOC_URL?>LIST-OF-ELIGIBLE-COUNTRIES-FOR-EVISA.pdf"><span class="red font-italic" style="text-decoration-line: underline; text-decoration-style: solid;">here</span></a> about Eligible Countries for Electronic Visa.<br>
+					Best regards, <br>
+					Vietnam Evisa Team.
+					</p>
+				</div>
+				<? } ?>
 				<? if (sizeof($tourist_evisa_types) && sizeof($business_evisa_types)) { ?>
 				<table class="table table-bordered pricing-table">
 					<tr>

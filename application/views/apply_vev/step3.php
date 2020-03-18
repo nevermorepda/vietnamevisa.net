@@ -24,21 +24,8 @@
 		</div>
 	</div>
 
-	<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
-		<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
-		<div class="container">
-			<div class="text-content">
-				<h1>
-					<span class="" style="">APPLY VISA</span>
-					<div class="bd-right d-none d-lg-block d-md-block"></div>
-				</h1>
-				<ul>
-					<li>Safety and reliable procedure </li>
-					<li>Professional staffs</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<img src="<?=IMG_URL?>new-template/banner/banner-apply-online.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+	<h1 class="hidden"><span class="" style="">APPLY VISA</span></h1>
 	<div class="slide-wrap d-none d-sm-none d-md-block">
 		<div class="slide-ex-contact">
 			<div class="container">
@@ -50,47 +37,44 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="container">
+		<!-- breadcrumb -->
+		<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
+		<!-- end breadcrumb -->
+	</div>
+	<div class="applyform-heading">
+		<div class="container">
+			<h2 class="home-heading text-center" style="">Vietnam Visa Application Form</h2>
+		</div>
+	</div>
 	<div class="visa-form">
 		<div class="applyform-content cluster-content">
 			<div class="container">
-				<? require_once(APPPATH."views/module/breadcrumb.php"); ?>
-				<!-- <div class="tab-step clearfix">
-					<h1 class="note">Vietnam E-Visa Application Form</h1>
-					<ul class="style-step d-none d-sm-none d-md-block">
-						<li class="active"><a style="color: #fff;" href="<?=site_url('apply-e-visa')?>"><font class="number">1.</font> Visa Options</a></li>
-						<li class="active"><font class="number">2.</font> Login Account</li>
-						<li class="active"><a style="color: #fff;" href="<?=site_url('apply-e-visa/step2')?>"><font class="number">3.</font> Applicant Details</a></li>
-						<li class="active"><font class="number">4.</font> Review & Payment</li>
-					</ul>
-				</div> -->
-
-				<h2 class="home-sub-heading text-center" style="padding-bottom: 30px; text-shadow: 3px 3px #bdbdbd;">Vietnam Visa Application Form</h2>
-				<div class="step-apply text-center">
-					<div class="step active">
-						<div class="line-step line-step1">
-							<span class="step-number"></span>
-						</div>
-						Visa Options
+				<div class="step-apply ">
+					<div class="step">
+						<div class="line-right"></div>
+						<span class="step-number active">1</span>
 					</div>
-					<div class="step active">
-						<div class="line-step line-step2">
-							<span class="step-number"></span>
-						</div>
-						Login Account
+					<div class="step">
+						<div class="line-right"></div>
+						<div class="line-left"></div>
+						<span class="step-number active">2</span>
 					</div>
-					<div class="step active">
-						<div class="line-step line-step3">
-							<span class="step-number"></span>
-						</div>
-						Applicant Details
+					<div class="step">
+						<div class="line-right"></div>
+						<div class="line-left"></div>
+						<span class="step-number active">3</span>
 					</div>
-					<div class="step active">
-						<div class="line-step line-step4">
-							<span class="step-number"></span>
-						</div>
-						Review & Payment
+					<div class="step">
+						<div class="line-left"></div>
+						<span class="step-number active">4</span>
 					</div>
+				</div>
+				<div class="step-apl-content">
+					<div class="bystep active">Visa Option</div>
+					<div class="bystep active">Account Login</div>
+					<div class="bystep active">Application Details</div>
+					<div class="bystep active">Review & Payment</div>
 				</div>
 				
 				<div class="form-apply" style="margin-top: 20px;">
@@ -358,9 +342,10 @@
 											</li>
 											<? } ?>
 											<li class="total clearfix">
-												<br>
+												<div class="left_edge"></div>
+												<div class="right_edge"></div>
 												<div class="clearfix">
-													<label class="pull-left text-color-red">TOTAL FEE:</label>
+													<label class="pull-left total_fee ">TOTAL FEE:</label>
 													<div class="pull-right subtotal-price">
 														<div class="price-block">
 															<span class="price total_price"><?=$step1->total_fee?> $</span>
@@ -377,9 +362,15 @@
 											</li>
 										</ul>
 									</div>
-								</div>
-								<div class="payment-methods">
-									<img alt="" src="<?=IMG_URL?>payment-methods.jpg">
+									<div class="payment-methods">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-american-express.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-mastercard.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-paypal.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-visa.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-UnionPay.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-JCB.png">
+										<img alt="" src="<?=IMG_URL?>/payment-icon/icon-payment-discover.png">
+									</div>
 								</div>
 							</div>
 						</div>

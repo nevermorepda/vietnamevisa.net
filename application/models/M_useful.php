@@ -1,16 +1,16 @@
 <?php
-class M_faqs extends M_db
+class M_useful extends M_db
 {
 	public function __construct()
 	{
 		parent::__construct();
 		
-		$this->_table = "vs_faqs";
+		$this->_table = "vs_useful";
 	}
 	
 	function items($info=NULL, $active=NULL, $limit=NULL, $offset=NULL, $orderby=NULL, $sortby=NULL)
 	{
-		$sql  = "SELECT * FROM vs_faqs WHERE 1 = 1";
+		$sql  = "SELECT * FROM vs_useful WHERE 1 = 1";
 		if (!is_null($info)) {
 			if (!empty($info->catid)) {
 				$sql .= " AND catid = '{$info->catid}'";
@@ -44,7 +44,7 @@ class M_faqs extends M_db
 
 	function getRelatedItems($excluded_id=0, $limit=NULL, $offset=NULL)
 	{
-		$sql_1   = "SELECT * FROM vs_faqs WHERE id = '{$excluded_id}' AND active = '1'";
+		$sql_1   = "SELECT * FROM vs_useful WHERE id = '{$excluded_id}' AND active = '1'";
 		$query_1 = $this->db->query($sql_1);
 		$row_1   = $query_1->row();
 		
@@ -52,7 +52,7 @@ class M_faqs extends M_db
 			$keywords	= explode(',', $row_1->keywords);
 			$likes		= array();
 			
-			$sql  = "SELECT * FROM vs_faqs WHERE 1 = 1";
+			$sql  = "SELECT * FROM vs_useful WHERE 1 = 1";
 			$sql .= " AND id <> '{$excluded_id}'";
 			$sql .= " AND catid = '{$row_1->catid}'";
 			$sql .= " AND lang  = '{$row_1->lang}'";
@@ -85,12 +85,12 @@ class M_faqs extends M_db
 	
 	function getNewerItems($excluded_id=0, $limit=NULL, $offset=NULL)
 	{
-		$sql_1   = "SELECT * FROM vs_faqs WHERE id = '{$excluded_id}' AND active = '1'";
+		$sql_1   = "SELECT * FROM vs_useful WHERE id = '{$excluded_id}' AND active = '1'";
 		$query_1 = $this->db->query($sql_1);
 		$row_1   = $query_1->row();
 		
 		if (!empty($row_1)) {
-			$sql  = "SELECT * FROM vs_faqs WHERE 1 = 1";
+			$sql  = "SELECT * FROM vs_useful WHERE 1 = 1";
 			$sql .= " AND id <> '{$excluded_id}'";
 			$sql .= " AND catid = '{$row_1->catid}'";
 			$sql .= " AND lang  = '{$row_1->lang}'";
@@ -113,12 +113,12 @@ class M_faqs extends M_db
 	
 	function getOlderItems($excluded_id=0, $limit=NULL, $offset=NULL)
 	{
-		$sql_1   = "SELECT * FROM vs_faqs WHERE id = '{$excluded_id}' AND active = '1'";
+		$sql_1   = "SELECT * FROM vs_useful WHERE id = '{$excluded_id}' AND active = '1'";
 		$query_1 = $this->db->query($sql_1);
 		$row_1   = $query_1->row();
 		
 		if (!empty($row_1)) {
-			$sql  = "SELECT * FROM vs_faqs WHERE 1 = 1";
+			$sql  = "SELECT * FROM vs_useful WHERE 1 = 1";
 			$sql .= " AND id <> '{$excluded_id}'";
 			$sql .= " AND catid = '{$row_1->catid}'";
 			$sql .= " AND lang  = '{$row_1->lang}'";

@@ -1,19 +1,6 @@
 
-<div class="banner-top faqs-banner d-none d-sm-none d-md-block" style="background: url('<?=IMG_URL?>new-template/banner-faqs.png') no-repeat scroll top center transparent;">
-	<img src="<?=IMG_URL?>new-template/flag-faqs.png" class="img-responsive flag-faqs" alt="flag-faqs">
-	<div class="container">
-		<div class="text-content">
-			<h1>
-				<span class="" style="">FAQs</span>
-				<div class="bd-right d-none d-lg-block d-md-block"></div>
-			</h1>
-			<ul>
-				<li>Always listen to our customer </li>
-				<li>Provide helpful and clear information</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<img src="<?=IMG_URL?>new-template/banner/banner-FAQs.png" class="img-responsive full-width d-none d-sm-none d-lg-block d-md-none" alt="">
+<h1 class="hidden"><span class="" style="">FAQS</span></h1>
 <div class="slide-wrap d-none d-sm-none d-md-block">
 	<div class="slide-ex-contact">
 		<div class="container">
@@ -30,7 +17,7 @@
 </div>
 <div class="faqs cluster-content">
 	<div class="container">
-		<h2 class="home-heading text-center" style="padding-bottom: 50px; text-shadow: 3px 3px #bdbdbd;">Frequently Asked Questions</h2>
+		<h2 class="home-heading text-center" style="padding-bottom: 50px;">Frequently Asked Questions</h2>
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-sm-8">
