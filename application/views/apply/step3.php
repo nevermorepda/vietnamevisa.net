@@ -113,7 +113,7 @@
 										<tr>
 											<td>Visa on Arrival - <?=$this->m_visa_type->load($step1->visa_type)->name?></td>
 											<td class="text-center"><?=$step1->group_size?></td>
-											<td class="text-center">(<?
+											<td class="text-center">$(<?
 												$str = "";
 												$i = 0;
 												foreach ($step1->arr_service_fee as $service_fee) {
@@ -126,15 +126,15 @@
 													$i++;
 												}
 												echo $str;
-												?>) $</td>
-											<td class="text-center"><?=$step1->total_service_fee?> $</td>
+												?>)</td>
+											<td class="text-center">$<?=$step1->total_service_fee?></td>
 										</tr>
 										<? if ($step1->processing_time != "Normal") { ?>
 											<tr>
 												<td>Processing time - <?=$step1->processing_time?></td>
 												<td class="text-center"><?=$step1->group_size?></td>
-												<td class="text-center"><?=$step1->rush_fee?> $</td>
-												<td class="text-center"><?=$step1->rush_fee*$step1->group_size?> $</td>
+												<td class="text-center">$<?=$step1->rush_fee?></td>
+												<td class="text-center">$<?=$step1->rush_fee*$step1->group_size?></td>
 											</tr>
 										<? } ?>
 										<?
@@ -143,8 +143,8 @@
 												<tr>
 													<td>Private letter</td>
 													<td class="text-center">-</td>
-													<td class="text-center"><?=$step1->private_visa_fee?> $</td>
-													<td class="text-center"><?=$step1->private_visa_fee?> $</td>
+													<td class="text-center">$<?=$step1->private_visa_fee?> </td>
+													<td class="text-center">$<?=$step1->private_visa_fee?> </td>
 												</tr>
 												<?
 											}
@@ -153,36 +153,36 @@
 											<tr>
 												<td>Visa stamping fee</td>
 												<td class="text-center"><?=$step1->group_size?></td>
-												<td class="text-center"><?=$step1->stamp_fee?> $</td>
-												<td class="text-center"><?=$step1->stamp_fee*$step1->group_size?> $</td>
+												<td class="text-center">$<?=$step1->stamp_fee?> $</td>
+												<td class="text-center">$<?=$step1->stamp_fee*$step1->group_size?> </td>
 											</tr>
 											<tr>
 												<td>Airport fast check-in</td>
 												<td class="text-center"><?=$step1->group_size?></td>
-												<td class="text-center"><?=$step1->full_package_fc_fee?> $</td>
-												<td class="text-center"><?=$step1->full_package_fc_fee*$step1->group_size?> $</td>
+												<td class="text-center">$<?=$step1->full_package_fc_fee?> </td>
+												<td class="text-center">$<?=$step1->full_package_fc_fee*$step1->group_size?> </td>
 											</tr>
 										<? } ?>
 										<? if ($step1->fast_checkin) { ?>
 											<tr>
 												<td><?=(($step1->fast_checkin==2) ? "VIP" : "Airport")?> fast check-in</td>
 												<td class="text-center"><?=$step1->group_size?></td>
-												<td class="text-center"><?=$step1->fast_checkin_fee?> $</td>
-												<td class="text-center"><?=$step1->fast_checkin_total_fee?> $</td>
+												<td class="text-center">$<?=$step1->fast_checkin_fee?> </td>
+												<td class="text-center">$<?=$step1->fast_checkin_total_fee?> </td>
 											</tr>
 										<? } ?>
 										<? if ($step1->car_pickup) {$distance_plus = $step1->car_distance-$step1->car_distance_default; ?>
 											<tr>
 												<td>Car pick-up (<?=$step1->car_type?>, <?=$step1->num_seat?> seats)</td>
 												<td class="text-center">1</td>
-												<td class="text-center"><?=$step1->car_fee?> $ <?=!empty($step1->car_plus_fee) ? "+ {$step1->car_plus_fee} $({$distance_plus}km)" : ''?></td>
-												<td class="text-center"><?
+												<td class="text-center">$<?=$step1->car_fee?> <?=!empty($step1->car_plus_fee) ? "+ $ {$step1->car_plus_fee} ({$distance_plus}km)" : ''?></td>
+												<td class="text-center">$<?
 													if (!empty($step1->car_plus_fee)) {
 														echo $step1->car_total_fee + $step1->car_plus_fee;
 													} else {
 														echo $step1->car_total_fee;
 													}
-												?> $</td>
+												?></td>
 											</tr>
 										<? } ?>
 										<? if ($step1->vip_discount) { ?>
@@ -190,7 +190,7 @@
 												<td>VIP discount</td>
 												<td class="text-center">-</td>
 												<td class="text-center">- <?=$step1->vip_discount?>%</td>
-												<td class="text-center">- <?=($step1->total_service_fee * $step1->vip_discount/100)?> $</td>
+												<td class="text-center">- $<?=($step1->total_service_fee * $step1->vip_discount/100)?></td>
 											</tr>
 										<? } ?>
 										<? if (!empty($step1->discount) || !empty($step1->member_discount)) { 
@@ -210,12 +210,12 @@
 												<td><?=$title_discount?></td>
 												<td class="text-center">-</td>
 												<td class="text-center">- <?=$discount?><?=$step1->discount_unit?></td>
-												<td class="text-center">- <?=$discount_fee?> $</td>
+												<td class="text-center">- $<?=$discount_fee?> </td>
 											</tr>
 										<? } ?>
 										<tr>
 											<td class="total" colspan="3">Total</td>
-											<td class="text-center total"><?=$step1->total_fee?> $</td>
+											<td class="text-center total">$<?=$step1->total_fee?> </td>
 										</tr>
 									</table>
 								<!-- <img style="position: absolute;right: 0;bottom: 0;" src="<?=IMG_URL?>private-letter.png" alt="private-letter"> -->

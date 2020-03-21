@@ -133,6 +133,7 @@
 		</div>
 	</div>
 </div>
+<? if (!empty($csl_services)) { ?>
 <div class="cluster cluster-our-services">
 	<div class="container wow fadeInUp">
 		<div class="title">
@@ -196,6 +197,8 @@
 		</div>
 	</div>
 </div>
+<? } ?>
+<? if (!empty($ex_services)) { ?>
 <div class="cluster cluster-our-services">
 	<div class="container wow fadeInUp">
 		<div class="title">
@@ -259,7 +262,7 @@
 		</div>
 	</div>
 </div>
-
+<? } ?>
 <!-- <div class="shopperapproved d-block d-sm-block d-md-none">
 	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
 		<h2 class="home-sub-heading">Testimonial</h2>
@@ -298,7 +301,10 @@
 							<li>Prompt Support via chat, email, or phone</li>
 							<li>Fast And Secure</li>
 						</ul>
+<<<<<<< HEAD
 						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on... </p>
+=======
+>>>>>>> 3db3db451e98c568a45104c712eaf5383dc6e9a9
 						<div class="showmore-button">
 							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
 						</div>

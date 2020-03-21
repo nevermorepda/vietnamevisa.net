@@ -247,7 +247,7 @@
 											</div>
 										</div>
 									</div>
-									<p class="cnt-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>>Your distance <strong class="total-distance"><?=$step1->car_distance?>km</strong> <span class="text-color-red">(<strong class="distance-fee"><?=$step1->car_total_fee?>$</strong> for cover <strong class="distance"><?=$step1->car_distance_default?>km</strong>)</span>. You have to pay an additional <strong class="car-plus-fee text-color-red"><?=$step1->car_plus_fee?>$</strong> for the remaining <strong class="distance-plus"><?=$step1->car_distance-$step1->car_distance_default?>km</strong>.</p>
+									<p class="cnt-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>>Your distance is <strong class="total-distance"><?=$step1->car_distance?>km</strong> <span class="text-color-red">(the fee <strong class="distance-fee">$<?=$step1->car_total_fee?></strong> cover for <strong class="distance"><?=$step1->car_distance_default?>km</strong>)</span>. ou need to pay an additional $<strong class="car-plus-fee"><?=$step1->car_plus_fee?></strong> for the remaining <strong class="distance-plus"><?=$step1->car_distance-$step1->car_distance_default?>km</strong>.</p>
 								</div>
 							</div>
 							<script type="text/javascript">
@@ -427,9 +427,9 @@
 									</li>
 									<li class="clearfix">
 										<label>Visa service fee:</label>
-										<span class="total_visa_price_t price pointer" data-toggle="collapse" id="cal-service-fee-detail" data-target="#service-fee-detail" stt="0"><?=$step1->service_fee*$step1->group_size?> $ <i class="fa fa-chevron-circle-down"></i></span>
+										<span class="total_visa_price_t price pointer" data-toggle="collapse" id="cal-service-fee-detail" data-target="#service-fee-detail" stt="0">$<?=$step1->service_fee*$step1->group_size?> <i class="fa fa-chevron-circle-down"></i></span>
 										<div id="service-fee-detail" class="service-fee-detail text-right collapse">
-											<span class="total_visa_price price"><?=$step1->service_fee." $ x ".$step1->group_size." ".($step1->group_size>1?"people":"person")." = ".$step1->service_fee*$step1->group_size?> $</span>
+											<span class="total_visa_price price">$<?=$step1->service_fee." x ".$step1->group_size." ".($step1->group_size>1?"people":"person")." = $".$step1->service_fee*$step1->group_size?></span>
 										</div>
 									</li>
 									<li class="clearfix" id="processing_time_li" style="display: <?=(($step1->processing_time != 'Normal')?'block':'none')?>">
@@ -437,17 +437,17 @@
 											<label>Processing time:</label>
 											<span class="processing_note_t"><?=$step1->processing_time?></span>
 										</div>
-										<span class="processing_t price"><?=$step1->rush_fee." $ x ".$step1->group_size." application".($step1->group_size>1?"s":"")." = ".$step1->rush_fee*$step1->group_size?> $</span>
+										<span class="processing_t price">$<?=$step1->rush_fee." x ".$step1->group_size." application".($step1->group_size>1?"s":"")." = $".$step1->rush_fee*$step1->group_size?></span>
 									</li>
 									<li class="clearfix" id="private_visa_li" style="display: <?=(!empty($step1->private_visa)?'block':'none')?>">
 										<label>Private letter:</label>
-										<span class="private_visa_t price"><?=$step1->private_visa_fee?> $</span>
+										<span class="private_visa_t price">$<?=$step1->private_visa_fee?></span>
 									</li>
 									<li class="clearfix" id="full_package_li" style="display: <?=(!empty($step1->full_package)?'block':'none')?>">
 										<label>Full package service:</label>
 										<div class="full_package_services">
-											<div><label>1. Visa stamping fee</label><span class='price'><?=$step1->stamp_fee?> $ x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = <?=$step1->stamp_fee*$step1->group_size?> $</span></div>
-											<div><label>2. Airport fast check-in</label><span class='price'><?=$step1->full_package_fc_fee?> $ x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = <?=$step1->full_package_fc_fee*$step1->group_size?> $</span></div>
+											<div><label>1. Visa stamping fee</label><span class='price'>$<?=$step1->stamp_fee?> x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = $<?=$step1->stamp_fee*$step1->group_size?> </span></div>
+											<div><label>2. Airport fast check-in</label><span class='price'>$<?=$step1->full_package_fc_fee?> x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = $<?=$step1->full_package_fc_fee*$step1->group_size?> </span></div>
 										</div>
 									</li>
 									<li class="clearfix" id="extra_service_li" style="display: <?=(($step1->fast_checkin||$step1->car_pickup)?'block':'none')?>">
@@ -457,32 +457,32 @@
 												$serviceCnt = 1;
 												if ($step1->fast_checkin==1) {
 											?>
-												<div><label><?=($serviceCnt++)?>. Airport fast check-in</label><span class='price'><?=$step1->fast_checkin_fee?> $ x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = <?=$step1->fast_checkin_fee*$step1->group_size?> $</span></div>
+												<div><label><?=($serviceCnt++)?>. Airport fast check-in</label><span class='price'>$<?=$step1->fast_checkin_fee?> x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = $<?=$step1->fast_checkin_fee*$step1->group_size?> </span></div>
 											<?
 												}
 												if ($step1->fast_checkin==2) {
 											?>
-												<div><label><?=($serviceCnt++)?>. VIP fast check-in</label><span class='price'><?=$step1->fast_checkin_fee?> $ x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = <?=$step1->fast_checkin_fee*$step1->group_size?> $</span></div>
+												<div><label><?=($serviceCnt++)?>. VIP fast check-in</label><span class='price'>$<?=$step1->fast_checkin_fee?> x <?=$step1->group_size?> applicant<?=($step1->group_size>1?"s":"")?> = $<?=$step1->fast_checkin_fee*$step1->group_size?> </span></div>
 											<?	
 												}
 												if ($step1->car_pickup) {
 											?>
-												<div><label><?=($serviceCnt++)?>. Car pick-up</label><span class='price'>(<?=$step1->car_type?>, <?=$step1->num_seat?> seats) = <?=$step1->car_total_fee?> $</span></div>
+												<div><label><?=($serviceCnt++)?>. Car pick-up</label><span class='price'>(<?=$step1->car_type?>, <?=$step1->num_seat?> seats) = $<?=$step1->car_total_fee?> </span></div>
 											<?
 												}
 											?>
 										</div>
-										<div class="review-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>><span class='price'>+ (<?=$step1->car_distance-$step1->car_distance_default?>km) = <?=$step1->car_plus_fee?> $</span></div>
+										<div class="review-car-plus-fee" <?=empty($step1->car_plus_fee) ? 'style="display: none;"' : ''?>><span class='price'>+ (<?=$step1->car_distance-$step1->car_distance_default?>km) = $<?=$step1->car_plus_fee?> </span></div>
 									</li>
 									<li class="clearfix" id="vipsave_li" style="display: <?=(!empty($step1->vip_discount)?'block':'none')?>">
 										<label>VIP discount:</label>
-										<span class="vipsave_t price">- <?=round($step1->total_service_fee * $step1->vip_discount/100)?> $</span>
+										<span class="vipsave_t price">- $<?=round($step1->total_service_fee * $step1->vip_discount/100)?> </span>
 									</li>
 									<li class="clearfix" id="promotion_li" style="background-color: #F8F8F8; display: <?=(!empty($step1->discount)?'block':'none')?>">
 										<div class="clearfix" id="promotion_box_succed" style="display: <?=(!empty($step1->discount) || !empty($step1->member_discount))?'block':'none'?>">
 											<label class="left">Promotion discount:</label>
 											<!--<span class="promotion_t price">- <?=(($step1->discount_unit == "USD") ? $step1->discount : round($step1->total_service_fee * $step1->discount/100))?> $</span>-->
-											<span class="promotion_t price">- <?=(($step1->discount_unit == "USD") ? $step1->discount : $step1->total_service_fee * $step1->discount/100)?> $</span>
+											<span class="promotion_t price">- $<?=(($step1->discount_unit == "USD") ? $step1->discount : $step1->total_service_fee * $step1->discount/100)?> </span>
 										</div>
 									</li>
 									<li class="total clearfix">
@@ -492,7 +492,7 @@
 											<label class="total_fee pull-left">Total fee:</label>
 											<div class="pull-right subtotal-price">
 												<div class="price-block">
-													<span class="price total_price"><?=$step1->total_fee?> $</span>
+													<span class="price total_price">$<?=$step1->total_fee?> </span>
 													<input type="hidden" id="total_fee" value="<?=$step1->total_fee?>">
 												</div>
 											</div>

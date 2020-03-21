@@ -421,18 +421,18 @@ function calServiceFees()
 			var total = 0;
 			
 			if ($("#private_visa").is(":checked")) {
-				$(".private_visa_t").html(private_fee+" $");
+				$(".private_visa_t").html("$"+private_fee);
 				total += private_fee;
 			}
 			
 			var serviceList = "";
 			var serviceCnt  = 1;
 			if (parseInt($("#fast_checkin").val()) == 1) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(checkin_fee*group_size)+" $</span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>$"+checkin_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(checkin_fee*group_size)+" </span></div>";
 				total += checkin_fee * group_size;
 			}
 			if (parseInt($("#car_pickup").val()) == 1) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = "+car_fee+" $</span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = $"+car_fee+" </span></div>";
 				total += car_fee;
 			}
 			$(".extra_services").html(serviceList);
@@ -493,11 +493,11 @@ function calServiceFees()
 			}
 			var discount = (result[4] > result[2]) ? result[4] : result[2];
 			discount_fee = result[3] * (discount/100);
-			$(".total_price").html(parseFloat(result[0].toFixed(2))+car_plus_fee+" $");
+			$(".total_price").html("$"+parseFloat(result[0]+car_plus_fee).toFixed(2));
 			$("#total_fee").val(result[0].toFixed(2));
 			if (discount_fee != 0)
 			$("#promotion_li").show();
-			$(".promotion_t").html("- "+discount_fee.toFixed(2)+" $");
+			$(".promotion_t").html("- $"+discount_fee.toFixed(2));
 		}
 	});
 }

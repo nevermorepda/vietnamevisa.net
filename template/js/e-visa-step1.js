@@ -698,18 +698,18 @@ function calServiceFees()
 			var total = 0;
 			
 			if ($("#private_visa").is(":checked")) {
-				$(".private_visa_t").html(private_fee+" $");
+				$(".private_visa_t").html("$"+private_fee);
 				total += private_fee;
 			}
 			
 			var serviceList = "";
 			var serviceCnt  = 1;
 			if ($("#fast_checkin").is(":checked")) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(checkin_fee*group_size)+" $</span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>$"+checkin_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(checkin_fee*group_size)+"</span></div>";
 				total += checkin_fee * group_size;
 			}
 			if ($("#car_pickup").is(":checked")) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = "+car_fee+" $</span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = $"+car_fee+" </span></div>";
 				total += car_fee;
 			}
 			$(".extra_services").html(serviceList);
@@ -722,8 +722,8 @@ function calServiceFees()
 			var serviceList = "";
 			var serviceCnt  = 1;
 			if ($("#full_package").is(":checked")) {
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Government fee</label><span class='price'>"+stamp_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(stamp_fee*group_size)+" $</span></div>";
-				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>"+package_checkin_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(package_checkin_fee*group_size)+" $</span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Government fee</label><span class='price'>$"+stamp_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(stamp_fee*group_size)+" </span></div>";
+				serviceList += "<div class='clearfix'><label>"+(serviceCnt++)+". Fast check-in</label><span class='price'>$"+package_checkin_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(package_checkin_fee*group_size)+" </span></div>";
 				total += (stamp_fee + package_checkin_fee) * group_size;
 			}
 			$(".full_package_services").html(serviceList);
@@ -733,22 +733,22 @@ function calServiceFees()
 				$("#full_package_li").hide();
 			}
 			
-			var total_visa_price_txt = service_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(service_fee*group_size)+" $";
+			var total_visa_price_txt = "$"+service_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(service_fee*group_size);
 			
 			$("#processing_time_li").hide();
 			$(".processing_time").each(function(index) {
 				if($(this).is(":checked") && $(this).val() == "Urgent") {
-					$(".processing_t").html(rush_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(rush_fee*group_size)+" $");
+					$(".processing_t").html("$"+rush_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(rush_fee*group_size));
 					$("#processing_time_li").show();
 					$('.tl_process').html('Urgent fee: ');
 				}
 				if($(this).is(":checked") && $(this).val() == "Emergency") {
-					$(".processing_t").html(rush_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(rush_fee*group_size)+" $");
+					$(".processing_t").html("$"+rush_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(rush_fee*group_size));
 					$("#processing_time_li").show();
 					$('.tl_process').html('Emergency fee: ')
 				}
 				if($(this).is(":checked") && $(this).val() == "Holiday") {
-					$(".processing_t").html(rush_fee+" $ x "+group_size+" "+((group_size>1)?"people":"person")+" = "+(rush_fee*group_size)+" $");
+					$(".processing_t").html("$"+rush_fee+" x "+group_size+" "+((group_size>1)?"people":"person")+" = $"+(rush_fee*group_size));
 					$("#processing_time_li").show();
 					$('.tl_process').html('Holiday fee: ')
 				}
@@ -774,17 +774,17 @@ function calServiceFees()
 				}
 				if (discount_fee > 0) {
 					$("#promotion_li").show();
-					$(".promotion_t").html("- "+discount_fee.toFixed(2)+" $ "+"("+tlt_code+")");
+					$(".promotion_t").html("- $"+discount_fee.toFixed(2)+"("+tlt_code+")");
 					total = total - discount_fee.toFixed(2);
 				}
 			}
 
-			$(".stamping_fee").html(stamp_fee + " $ x "+group_size+" person = "+stamp_fee*group_size+" $");
-			$(".service_fee").html(service_fee + " $ x "+group_size+" person = "+service_fee*group_size+" $");
+			$(".stamping_fee").html("$"+stamp_fee + " x "+group_size+" person = $"+stamp_fee*group_size);
+			$(".service_fee").html("$"+service_fee + " x "+group_size+" person = $"+service_fee*group_size);
 			
 			if (service_fee > 0) {
 				$(".total_visa_price").html(total_visa_price_txt);
-				$(".total_price").html(total.toFixed(2)+' $');
+				$(".total_price").html("$"+total.toFixed(2));
 			} else {
 				$(".total_visa_price").html("...");
 				$(".total_price").html("...");

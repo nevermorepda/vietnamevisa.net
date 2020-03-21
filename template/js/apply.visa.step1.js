@@ -744,19 +744,19 @@ function calServiceFees()
 			var total = 0;
 			
 			if ($("#private_visa").is(":checked")) {
-				$(".private_visa_t").html(private_fee+" $");
+				$(".private_visa_t").html("$"+private_fee);
 				total += private_fee;
 			}
-			$('#note-letter-fee').html(private_fee+" $");
+			$('#note-letter-fee').html("$"+private_fee);
 			
 			var service_list = "";
 			var service_cnt  = 1;
 			if ($("#fast_checkin").is(":checked")) {
-				service_list += "<div><label>"+(service_cnt++)+". Airport fast check-in</label><span class='price'>"+checkin_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(checkin_fee*group_size)+" $</span></div>";
+				service_list += "<div><label>"+(service_cnt++)+". Airport fast check-in</label><span class='price'>$"+checkin_fee+" x "+group_size+" applicant"+((group_size>1)?"s":"")+" = $"+(checkin_fee*group_size)+"</span></div>";
 				total += checkin_fee * group_size;
 			}
 			if ($("#car_pickup").is(":checked")) {
-				service_list += "<div><label>"+(service_cnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = "+car_fee+" $</span></div>";
+				service_list += "<div><label>"+(service_cnt++)+". Car pick-up</label><span class='price'>("+car_type+", "+num_seat+" seats)"+" = $"+car_fee+"</span></div>";
 				total += car_fee;
 			}
 			$(".extra_services").html(service_list);
@@ -769,8 +769,8 @@ function calServiceFees()
 			var service_list = "";
 			var service_cnt  = 1;
 			if ($("#full_package").is(":checked")) {
-				service_list += "<div><label>"+(service_cnt++)+". Visa stamping fee</label><span class='price'>"+stamp_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(stamp_fee*group_size)+" $</span></div>";
-				service_list += "<div><label>"+(service_cnt++)+". Airport fast check-in</label><span class='price'>"+package_checkin_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(package_checkin_fee*group_size)+" $</span></div>";
+				service_list += "<div><label>"+(service_cnt++)+". Visa stamping fee</label><span class='price'>$"+stamp_fee+" x "+group_size+" applicant"+((group_size>1)?"s":"")+" = $"+(stamp_fee*group_size)+"</span></div>";
+				service_list += "<div><label>"+(service_cnt++)+". Airport fast check-in</label><span class='price'>$"+package_checkin_fee+" x "+group_size+" applicant"+((group_size>1)?"s":"")+" = $"+(package_checkin_fee*group_size)+"</span></div>";
 				total += (stamp_fee + package_checkin_fee) * group_size;
 			}
 			$(".full_package_services").html(service_list);
@@ -780,10 +780,10 @@ function calServiceFees()
 				$("#full_package_li").hide();
 			}
 			
-			var total_visa_price_txt = service_fee+" $ x "+group_size+" applicant"+((group_size>1)?"s":"")+" = "+(service_fee*group_size)+" $";
+			var total_visa_price_txt = "$"+service_fee+" x "+group_size+" applicant"+((group_size>1)?"s":"")+" = $"+(service_fee*group_size);
 			    
 			if (processing_time == "Urgent" || processing_time == "Emergency" || processing_time == "Holiday") {
-				$(".processing_t").html(rush_fee+" $ x "+group_size+" person"+((group_size>1)?"s":"")+" = "+(rush_fee*group_size)+" $");
+				$(".processing_t").html("$"+rush_fee+" x "+group_size+" person"+((group_size>1)?"s":"")+" = $"+(rush_fee*group_size));
 				$("#processing_time_li").show();
 			} else {
 				$(".processing_t").html();
@@ -811,7 +811,7 @@ function calServiceFees()
 				if (discount_fee > 0) {
 					$("#vipsave_li").hide();
 					$("#promotion_li").show();
-					$(".promotion_t").html("- "+discount_fee.toFixed(2)+" $ "+"("+tlt_code+")");
+					$(".promotion_t").html("- $"+discount_fee.toFixed(2)+" ("+tlt_code+")");
 					total = total - discount_fee.toFixed(2);
 				}
 				else {
@@ -820,7 +820,7 @@ function calServiceFees()
 						var vipsave = (service_fee*group_size) * parseFloat(vipdiscount)/100;
 						if (vipsave) {
 							$("#vipsave_li").show();
-							$(".vipsave_t").html("- "+vipsave+" $");
+							$(".vipsave_t").html("- $"+vipsave);
 							total = total - vipsave;
 						}
 					}
@@ -830,14 +830,14 @@ function calServiceFees()
 				total += 25 * group_size;
 				$('.stamping_fee_note').hide();
 				$('.processing_fee_note').hide();
-				$('.total_visa_stamping_price').html('25 $ x '+group_size+' applicants = '+25*group_size+' $');
+				$('.total_visa_stamping_price').html('$25 x '+group_size+' applicants = $'+25*group_size);
 			} else {
 				$('.total_visa_stamping_price').html('');
 				$('.stamping_fee_note').show();
 				$('.processing_fee_note').show();
 			}
 			$(".total_visa_price").html(total_visa_price_txt);
-			$(".total_price").html(total.toFixed(2)+" $");
+			$(".total_price").html("$"+total.toFixed(2));
 
 		}
 	});

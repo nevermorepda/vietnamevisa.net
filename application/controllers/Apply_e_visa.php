@@ -408,11 +408,11 @@ class Apply_e_visa extends CI_Controller {
 			} else if (empty($nationality) && $count < sizeof($nationalities)) {
 				$service_fee_detail .= '<div class="text-right"><strong>Other Nationality</strong></div>';
 			}
-			$service_fee_detail .= '<div class="price text-right">'.$visa_fee->service_fee.' USD x '.$count.' '.($count>1?"people":"person").' = '.($visa_fee->service_fee * $count).' USD</div>';
+			$service_fee_detail .= '<div class="price text-right">$'.$visa_fee->service_fee.' x '.$count.' '.($count>1?"people":"person").' = $'.($visa_fee->service_fee * $count).'</div>';
 			$service_fee_detail .= '</div>';
 			$total_service_fee += $visa_fee->service_fee * $count;
 		}
-		$service_fee = $service_fee . ' USD <i class="fa fa-chevron-circle-down"></i>';
+		$service_fee = '$'.$service_fee . ' <i class="fa fa-chevron-circle-down"></i>';
 		$nation_fee = array($service_fee, $service_fee_detail,$total_service_fee);
 
 		$result = array($visa_service_fee,$nation_fee);
@@ -538,10 +538,10 @@ class Apply_e_visa extends CI_Controller {
 			} else if (empty($nationality) && $count < sizeof($nationalities)) {
 				$service_fee_detail .= '<div class="text-right"><strong>Other Nationality</strong></div>';
 			}
-			$service_fee_detail .= '<div class="price text-right">'.$visa_fee->service_fee.' USD x '.$count.' '.($count>1?"people":"person").' = '.($visa_fee->service_fee * $count).' USD</div>';
+			$service_fee_detail .= '<div class="price text-right">$'.$visa_fee->service_fee.' x '.$count.' '.($count>1?"people":"person").' = $'.($visa_fee->service_fee * $count).'</div>';
 			$service_fee_detail .= '</div>';
 		}
-		$service_fee = $service_fee . ' USD <i class="fa fa-chevron-circle-down"></i>';
+		$service_fee = '$'.$service_fee . ' <i class="fa fa-chevron-circle-down"></i>';
 		$result = array($service_fee, $service_fee_detail);
 		echo json_encode($result);
 	}
