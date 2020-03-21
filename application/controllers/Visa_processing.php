@@ -4,7 +4,7 @@ class Visa_processing extends CI_Controller {
 
 	public function index()
 	{
-		$this->output->cache(CACHE_TIME);
+		// $this->output->cache(CACHE_TIME);
 		$this->util->block_ip();
 
 		$breadcrumb = array('Visa Processing' => site_url('visa-processing'));

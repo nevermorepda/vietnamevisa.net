@@ -17,6 +17,8 @@
 	$tour_categories = $this->m_category_tour->items();
 
 	$faqs_categories = $this->m_faqs_category->items($category_info);
+
+	$useful_categories = $this->m_useful_category->items($category_info);
 ?>
 <div class="header">
 	<div class="header-top">
