@@ -4,7 +4,7 @@ class Vietnam_embassies extends CI_Controller {
 
 	public function index($nation=null)
 	{
-		$this->output->cache(CACHE_TIME*4);
+		// $this->output->cache(CACHE_TIME*4);
 		$this->util->block_ip();
 		if (!empty($nation)) {
 			$info = new stdClass();

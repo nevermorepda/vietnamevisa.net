@@ -82,4 +82,8 @@ $route['tours/(:any)/(:any)'] = "tours/index/$1/$2";
 $route['faqs/(:any)/(:any)'] = "faqs/index/$1/$2";
 $route['faqs/(:any)'] = "faqs/index/$1";
 $route['faqs'] = "faqs/index";
+$route['useful-information/(:any)/(:any)'] = "useful-information/index/$1/$2";
+$route['useful-information/(:any)'] = "useful-information/index/$1";
+$route['useful-information'] = "useful-information/index";
+
 

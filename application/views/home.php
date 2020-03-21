@@ -119,7 +119,7 @@
 						<div class="col-sm-6">
 							<h3><a class="title" title="Vietnam E-visa" href="<?=site_url('vietnam-e-visa')?>">VIETNAM ELECTRONIC VISA</a></h3>
 							<ul>
-								<li><p>Available for 8 airports, 16 landports, 9 seaports and 86 countries</p></li>
+								<li><p>Available for 8 airports, 16 landports, 9 seaports and 80 countries</p></li>
 								<li><p>Valid for 30 days, and single entry only</p></li>
 								<li><p>No fees upon arrival</p></li>
 							</ul>
@@ -298,7 +298,7 @@
 							<li>Prompt Support via chat, email, or phone</li>
 							<li>Fast And Secure</li>
 						</ul>
-						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on </p>
+						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on... </p>
 						<div class="showmore-button">
 							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
 						</div>

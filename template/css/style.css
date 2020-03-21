@@ -776,7 +776,80 @@ input.error, select.error, textarea.error, span.error {
 
 /* End Item List */
 /* Embassy List */
+.embassy-region {
+	
+}
+.embassy-region .title {
+	background: #851919;
+	color: #fff;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+.embassy-region .list {
+	border: 1px solid #eee;
+	padding: 15px;
+	max-height: 500px;
+	overflow: overlay;
+}
+.embassy-region .list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 0;
+	background-color: #F5F5F5;
+}
 
+.embassy-region .list::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.embassy-region .list::-webkit-scrollbar-thumb
+{
+	border-radius: 0;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #851919;
+}
+.embassy-region .list >.item {
+	list-style: none;
+	font-size: 15px;
+	font-weight: bold;
+}
+.embassy-region .list > .item>a {
+	position: relative;
+	display: block;
+	padding-left: 12px;
+	cursor: pointer;
+}
+.embassy-region .list > .item>a:hover {
+	color: #851919;
+}
+.embassy-region .list > .item>a i {
+	position: absolute;
+	left: 0;
+	top: 4px;
+}
+.embassy-region .list .item .sub-list {
+	list-style: none;
+	font-size: 15px;
+	font-weight: initial;
+	padding-left: 30px;
+}
+.embassy-region .list .item .sub-list .sub-item {
+	
+}
+.embassy-region .list .item .sub-list .sub-item a {
+	display: block;
+}
+.embassy-region .list .item .sub-list .sub-item a.active {
+	color: red;
+}
+.embassy-region .list .item a i.rotate {
+	-ms-transform: rotate(20deg);
+	transform: rotate(90deg);
+}
 .embassy .embassy-banner {
 	background: url("//d20eakrm1ybs3f.cloudfront.net/vietnam-evisa.org/template/images/wizban/embassy-bg.jpg?cr=i") no-repeat scroll bottom center transparent;
 	min-height: 300px;
@@ -2163,6 +2236,170 @@ ul.style-step li.active {
 	padding: 5px 0;
 }
 /* End FAQs */
+
+/*////////////////Useful//////////////*/
+.useful {
+}
+.useful .btn-rm {
+	font-size: 14px;
+	color: #851919;
+}
+.useful .btn-rm:hover {
+	border: 1px solid #851919;
+	color: #ffffff;
+	background: #851919;
+}
+
+.useful .pagi-bot {
+}
+.pagination {
+	margin: 30px 0;
+	display: inline-block;
+}
+.pagination>li {
+	display: inline-block;
+}
+.pagination>.active>a {
+	background-color: #851919!important;
+	border-color: #851919!important;
+	color: #fff!important;
+}
+.pagination>.active>a:hover {
+	background-color: #fdcfcf!important;
+	border-color: #fdcfcf!important;
+	color: #000000!important;
+}
+.pagination>li>a {
+	padding: 8px 13px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #666;
+	text-decoration: none;
+	background-color: #fff;
+}
+.pagination>li>a:hover {
+	padding: 8px 13px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #000000;
+	text-decoration: none;
+	background-color: #fdcfcf;
+}
+
+.useful .widget-categories {
+	margin: 0;
+	border: 1px solid #707070;
+	background: #851919;
+	border-bottom: none;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+.useful .widget-categories .title {
+	padding: 10px;
+	color: #ffffff;
+}
+
+.useful .widget-categories .list{
+	list-style: none;
+	margin: 0; 
+	padding: 0;
+	border-radius: 0;
+	background: #ffffff;
+	font-size: 14px;
+}
+.useful .widget-categories .list .item{
+	padding: 10px 15px;
+	border-top: 1px solid #707070;
+	position: relative;
+}
+.useful .widget-categories .list .item:last-child{
+	border-bottom: 1px solid #707070;
+}
+.useful .widget-categories .list .item>a{
+	font-weight: 600;
+}
+.useful .widget-categories .list .item:hover,
+.useful .widget-categories .list .item.active,
+.useful .widget-categories .list .item-child:hover,
+.useful .widget-categories .list .item-child.active{
+	background: #fdcfcf;
+	color: #851919;
+}
+.useful .widget-categories .list .item .count-items {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+.useful .widget-categories .list .item-child .count-child-items {
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+.useful .widget-categories .list .item-child {
+	position: relative;
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+.useful .widget-categories .list .item-child:last-child {
+
+}
+.useful .useful-infinite {
+}
+.useful .useful-infinite .post{
+	background: #ffffff;
+	padding-bottom: 35px;
+	margin-bottom: 64px;
+	box-shadow: 0 3.5px 10px 0 rgba(0,0,0,.16);
+	height: 475px;
+}
+.useful .useful-infinite .post img {
+	width: 100%;
+	vertical-align: middle;
+	margin-top: 2px;
+	height: 200px;
+	object-fit: cover;
+}
+.useful .useful-infinite .post  .excerpt-container {
+	height: 130px;
+}
+.useful .useful-infinite .details {
+	padding:15px;
+}
+.useful .useful-infinite .details .title{
+	height: 50px;
+}
+.faqs .faqs-category {
+	border-bottom: 1px solid #cccccc;
+	background: #f9f9f9;
+	padding: 11px 25px;
+	margin: 0;
+} 
+.faqs .faqs-category h3{
+	margin: 0;
+}
+.useful .useful-content {
+	padding: 15px 0px;
+}
+.faqs .related-item {
+	padding: 20px;
+	border: 1px solid #ccc;
+	background: #f9f9f9;
+	border-top: none;
+}
+.faqs .related-item h2{
+	padding-bottom: 5px;
+	color: #851919;
+	text-shadow: 2px 2px #bdbdbd;
+}
+.faqs .related-item ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.faqs .related-item ul li{
+	padding: 5px 0;
+}
+/**/
 
 /* Visa-fee */
 .btn-checkfee {

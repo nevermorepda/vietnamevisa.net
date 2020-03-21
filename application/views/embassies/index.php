@@ -15,51 +15,80 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="pagination center">
+		<!-- <div class="pagination center">
 		<?
-			$char = "A";
-			do {
+			// $char = "A";
+			// do {
 				?>
-				<a title="<?=$char?>" href="#eb_<?=$char?>"><?=$char?></a>
+				<a title="<?//=$char?>" href="#eb_<?//=$char?>"><?//=$char?></a>
 				<?
-			} while ($char++ < "Z");
+			//} while ($char++ < "Z");
 		?>
-		</div>
+		</div> -->
 		
-		<div class="nations clearfix">
+		<!-- <div class="nations clearfix">
 			<?
-				$char = "A";
-				do {
+				// $char = "A";
+				// do {
 					?>
-					<div class="row embassies" id="eb_<?=$char?>">
-						<div class="col-sm-1 col-xs-2 number"><?=$char?></div>
+					<div class="row embassies" id="eb_<?//=$char?>">
+						<div class="col-sm-1 col-xs-2 number"><?//=$char?></div>
 						<div class="col-sm-11 col-xs-10">
 							<ul class="row list">
 							<?
-							if (!empty($nations) && sizeof($nations)) {
-								foreach ($nations as $nation) {
-									if (substr($nation->name, 0, 1) == $char) {
-										$info = new stdClass();
-										$info->nation = $nation->name;
-										$embassies = $this->m_embassy->items($info, 1);
+							// if (!empty($nations) && sizeof($nations)) {
+							// 	foreach ($nations as $nation) {
+							// 		if (substr($nation->name, 0, 1) == $char) {
+							// 			$info = new stdClass();
+							// 			$info->nation = $nation->name;
+							// 			$embassies = $this->m_embassy->items($info, 1);
 									?>
 									<li class="col-sm-3 col-xs-6">
-										<a title="Vietnam embassy in <?=$nation->name?>" href="<?=site_url("vietnam-embassies/view/{$nation->alias}")?>"><?=$nation->name?></a>
-										<? if (!empty($embassies)) { ?>
-										<img class="png" alt="Vietnam embassy in <?=$nation->name?>" title="Vietnam embassy in <?=$nation->name?>" src="<?=IMG_URL?>stick.png" />
-										<? } ?>
+										<a title="Vietnam embassy in <?//=$nation->name?>" href="<?//=site_url("vietnam-embassies/view/{$nation->alias}")?>"><?//=$nation->name?></a>
+										<?// if (!empty($embassies)) { ?>
+										<img class="png" alt="Vietnam embassy in <?//=$nation->name?>" title="Vietnam embassy in <?//=$nation->name?>" src="<?//=IMG_URL?>stick.png" />
+										<?// } ?>
 									</li>
 									<?
-									}
-								}
-							}
+									//}
+								//}
+						//	}
 							?>
 							</ul>
 						</div>
 					</div>
 					<?
-				} while ($char++ < "Z");
+				//} while ($char++ < "Z");
 			?>
+		</div> -->
+		<?
+			$regions = array();
+			foreach ($nations as $nation) {
+				if (!in_array($nation->region, $regions)) {
+					$regions[] = $nation->region;
+				}
+			}
+			sort($regions);
+		?>
+		<? foreach ($regions as $region) { ?>
+		<div class="nations clearfix">
+			<div class="row embassies" id="eb_A">
+				<div class="col-sm-3 col-xs-2 number"><?=$region?></div>
+				<div class="col-sm-9 col-xs-10">
+					<ul class="row list">
+						<? 
+						$info = new stdClass();
+						$info->region = $region;
+						$countries = $this->m_country->items($info, 1);
+						foreach ($countries as $country) { ?>
+						<li class="col-sm-3 col-xs-6">
+							<a title="Vietnam embassy in <?=$country->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($country->name)}")?>"><?=$country->name?></a>
+						</li>
+						<? } ?>
+					</ul>
+				</div>
+			</div>
 		</div>
+		<? } ?>
 	</div>
 </div>

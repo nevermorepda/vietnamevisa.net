@@ -25,6 +25,9 @@ class M_country extends M_db
 			if (!empty($info->type)) {
 				$sql .= " AND type = '{$info->type}'";
 			}
+			if (!empty($info->region)) {
+				$sql .= " AND region = '{$info->region}'";
+			}
 		}
 		$sql .= " ORDER BY {$this->_table}.name ASC";
 		$query = $this->db->query($sql);

@@ -341,12 +341,17 @@
 											$info = new stdClass();
 											$info->region = $region;
 											$region_items = $this->m_requirement->join_country_items($info,1);
+											
 										?>
 										<tr>
 											<td width="100px"><?=$region?></td>
 											<td>
-												<?if(!empty($region_items)) {  $c = count($region_items); foreach ($region_items as $key => $region_item) { ?>
-													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
+												<?if(!empty($region_items)) {  $c = count($region_items); foreach ($region_items as $key => $region_item) { 
+													if ($region_item->citizen == "China") {
+												$dem++;
+												}
+											?>
+													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?if ($region_item->citizen == "China") { ?><span class="red">*</span><? }?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
 												<? } } else {
 													echo 'N/A';
 												} ?>
@@ -354,6 +359,9 @@
 										</tr>
 										<? } ?>
 									</table>
+									<?if ($dem==1) { ?>
+										<span class="font-italic f13">Note: <span class="red">(*)</span> not apply to Chinese e-passport holders.</span>
+									<?}?>
 								</div>
 							</div>
 						</div>
@@ -384,8 +392,12 @@
 										<tr>
 											<td width="100px"><?=$region?></td>
 											<td>
-												<?if(!empty($region_items)) { $c = count($region_items); foreach ($region_items as $key => $region_item) { ?>
-													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
+												<?if(!empty($region_items)) { $c = count($region_items); foreach ($region_items as $key => $region_item) { 
+													if ($region_item->citizen == "China") {
+														$dem++;
+														}
+												?>
+													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?if ($region_item->citizen == "China") { ?><span class="red">*</span><? }?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
 												<? } } else {
 													echo 'N/A';
 												} ?>
@@ -393,6 +405,9 @@
 										</tr>
 										<? } ?>
 									</table>
+									<?if ($dem==1) { ?>
+										<span class="font-italic f13">Note: <span class="red">(*)</span> not apply to Chinese e-passport holders.</span>
+									<?}?>
 								</div>
 							</div>
 						</div>

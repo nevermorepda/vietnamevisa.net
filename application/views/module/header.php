@@ -45,7 +45,7 @@
 				</div>
 				<div class="top-menu">
 					<ul class="menu-items">
-						<li class="menu-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Vietnam Time (GMT+7):</span> <?= date('D, M d, Y, ')?><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i:s A')?></span></li>
+						<li class="menu-item font-weight-bold"><i class="fa fa-clock-o" aria-hidden="true"></i> <?= date('M dS, Y ')?><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i')?></span> (Vietnam Time)</li>
 						<li class="menu-item">
 							<a href="<?=site_url("payment-online")?>" class="po-sign-in"><i style="font-weight: bold;" class="fa fa-usd" aria-hidden="true"></i> Payment Online </a>
 						</li>
@@ -144,17 +144,16 @@
 								</ul>
 							</li> -->
 							<li class="item-menu">
-								<a title=""><span class="glyphicon glyphicon-send"></span> Apply Vietnam Visa</a>
-								<ul class="sub-menu">
-									<li><a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-visa")?>">Visa On Arrival</a></li>
-									<li><a class="<?=(($tabindex == "apply-e-visa") ? "active" : "")?>" title="" href="<?=site_url("apply-e-visa")?>">E-Visa</a></li>
-								</ul>
+								<a class="<?=(($tabindex == "apply-visa") ? "active" : "")?>" href="<?=site_url("apply-visa")?>" title=""><span class="glyphicon glyphicon-send"></span> Apply Vietnam Visa</a>
 							</li>
 							<li>
 								<a title="" href="<?=site_url("visa-fee")?>"><span class="glyphicon glyphicon-usd"></span> Visa Fees</a>
 							</li>
 							<li>
 								<a title="" href="<?=site_url("services")?>"><span class="glyphicon glyphicon-cog"></span> Extra Services</a>
+							</li>
+							<li>
+								<a title="" href="<?=site_url("faqs")?>"><span class="glyphicon glyphicon-question-sign"></span> FAQs</a>
 							</li>
 							<li>
 								<a title="" href="<?=site_url("faqs")?>"><span class="glyphicon glyphicon-question-sign"></span> FAQs</a>
@@ -297,7 +296,7 @@ $(document).ready(function(){
 			var str = now.toUTCString().replace( / GMT$/, "" );
 
 			var ampm = (now.getUTCHours() >= 12) ? "PM" : "AM";
-				$('.clock-time').html(now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds() + ' ' + ampm);
+				$('.clock-time').html(now.getUTCHours() + ':' + now.getUTCMinutes());
 		}, 1000);
 	}
 
