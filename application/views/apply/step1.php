@@ -274,42 +274,33 @@
 										<div class="radio">
 											<label>
 												<input id="processing_time_normal" note-id="processing-time-normal-note" class="processing_time" type="radio" name="processing_time" value="Normal" <?=($step1->processing_time=="Normal"?"checked='checked'":"")?>/>
-												<strong>Normal (Guaranteed <span class="process-date"><?=((strtoupper($country_name)=='VIET NAM')?'1-2 working days':'1-2 working days')?></span>)</strong>
+												<strong>Normal (Guaranteed <span class="process-date note-normal"><?=((strtoupper($country_name)=='VIET NAM')?'1-2 working days':'1-2 working days')?></span>)</strong>
 											</label>
 											<div id="processing-time-normal-note" class="processing-option none">
 												<div class="processing-note">
-													We guarantee delivery of approval letter in <?=((strtoupper($country_name)=='VIET NAM')?'1-2 working days':'1-2 working days')?> by email.
+													We guarantee delivery of approval letter in <span class="note-normal"><?=((strtoupper($country_name)=='VIET NAM')?'1-2 working days':'1-2 working days')?></span> by email.
 												</div>
 											</div>
 										</div>
-										<script type="text/javascript">
-											$('.visa_type').change(function(event) {
-												var val = $(this).val();
-												if (val == '3ms' || val == '3mm')
-													$('.process-date').html('3-5 working days');
-												else
-													$('.process-date').html('1-2 working days');
-											});
-										</script>
 										<div class="radio" style="margin-top: 5px">
 											<label>
 												<input id="processing_time_urgent" note-id="processing-time-urgent-note" class="processing_time" type="radio" name="processing_time" value="Urgent" <?=($step1->processing_time=="Urgent"?"checked='checked'":"")?>/>
-												<strong>Urgent (Guaranteed 4-8 working hours)</strong>
+												<strong>Urgent (Guaranteed <span class="note-urgent">4-8 working hours</span>)</strong>
 											</label>
 											<div id="processing-time-urgent-note" class="processing-option none">
 												<div class="processing-note">
-													It is effective for who needs visa in emergency. We will send the approval letter by email in <span class="red">4 to 8 hours</span>. If you apply on a Saturday, Sunday or holiday, it will be processed the next business day. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Urgent")->rush_fee?> $</b>/person.
+													It is effective for who needs visa in emergency. We will send the approval letter by email in <span class="red"><span class="note-urgent">4 to 8 hours</span>. If you apply on a Saturday, Sunday or holiday, it will be processed the next business day. The extra charge is from <b><?=$this->m_visa_fee->cal_visa_fee("1ms", 1, "Urgent")->rush_fee?> $</b>/person.
 												</div>
 											</div>
 										</div>
 										<div class="radio emergency_process" style="margin-top: 5px">
 											<label>
 												<input id="processing_time_emergency" note-id="processing_time_emergency-note" class="processing_time" type="radio" name="processing_time" value="Emergency" <?=($step1->processing_time=="Emergency"?"checked='checked'":"")?>/>
-												<span class="red"><strong>Emergency (Within 30 minutes)</strong></span>
+												<strong class="red">Emergency (Within <span class="note-emergency">30 minutes</span>)</strong>
 											</label>
 											<div id="processing_time_emergency-note" class="processing-option none">
 												<div class="processing-note">
-													It only takes <span class="red">30 minutes</span> for the processing (Since we get the essential documents for Emergency Cases from you and depend on your application time and arrival time). You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately.
+													It only takes <span class="red note-emergency">30 minutes</span> for the processing (Since we get the essential documents for Emergency Cases from you and depend on your application time and arrival time). You should call our hotline <a class="red" title="hotline" href="tel:<?=HOTLINE?>"><?=HOTLINE?></a> to confirm the application has been received and acknowledged to process immediately.
 												</div>
 											</div>
 										</div>
