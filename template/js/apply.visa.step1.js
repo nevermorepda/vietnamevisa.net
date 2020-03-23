@@ -13,10 +13,25 @@ $(document).ready(function() {
 	$(".visa_type").change(function(){
 		genVisitOptions();
 		updatePanel();
+		var val = $(this).val();
+		if (val == '3ms' || val == '3mm')
+			$('.process-date').html('3-5 working days');
+		else
+			$('.process-date').html('1-2 working days');
 	});
 	$(".visit_purpose").change(function(){
 		checkProcessingTime();
 		updatePanel();
+		var val = $(this).val();
+		if (val == 'For business'){
+			$('.note-normal').html('3-4 working days');
+			$('.note-urgent').html('1-2 working days');
+			$('.note-emergency').html('4 working hours');
+		} else {
+			$('.note-normal').html('1-2 working days');
+			$('.note-urgent').html('4-8 working hours');
+			$('.note-emergency').html('30 minutes');
+		}
 	});
 	$(".arrival_port").change(function(){
 		if (parseInt($('option:selected', '#arrival_port').attr('cate-id')) == 1) {
