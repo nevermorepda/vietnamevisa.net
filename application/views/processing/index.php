@@ -351,7 +351,7 @@
 												$dem++;
 												}
 											?>
-													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?if ($region_item->citizen == "China") { ?><span class="red">*</span><? }?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
+													<a href="<?=site_url("visa-requirements/{$region_item->alias}");?>"><?=$region_item->citizen;?><?=($key < ($c-1)) ? ', ' : '' ?> </a> 
 												<? } } else {
 													echo 'N/A';
 												} ?>
@@ -359,9 +359,6 @@
 										</tr>
 										<? } ?>
 									</table>
-									<?if ($dem==1) { ?>
-										<span class="font-italic f13">Note: <span class="red">(*)</span> not apply to Chinese e-passport holders.</span>
-									<?}?>
 								</div>
 							</div>
 						</div>

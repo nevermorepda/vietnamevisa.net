@@ -32,7 +32,7 @@
 												<div class="excerpt-container"><?=word_limiter(strip_tags($value->summary), 20)?></div>
 											</div>
 										</div>
-										<div class="clearfix p-3"><a class="btn-rm" href="<?=site_url("useful-information/{$useful_categories->alias}/{$value->alias}")?>">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+										<div class="clearfix"><a class="btn-rm" href="<?=site_url("useful-information/{$useful_categories->alias}/{$value->alias}")?>">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
 									</div>
 								</div>
 								<? $offset++;} 

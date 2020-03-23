@@ -419,7 +419,7 @@
 					<div class="col-md-5">
 						<div class="panel-fees">
 							<div class="title text-center">VISA OPTION SUMMARY</div>
-							<div class="text-center pb-2"><i class="fa fa-clock-o" aria-hidden="true"></i><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block; float: none;" class="clock-time"><?= date('H:i:s A')?></span> <span style="float: none;"> <?= date('D, M d, Y - ')?>Vietnam Time (GMT+7)</span></div>
+							<div class="pl-3 pb-2"><i class="fa fa-clock-o" aria-hidden="true"></i> <?= date('M dS, Y ')?><div style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i A')?></div> (Vietnam Time)</div>
 							<ul>
 								<!-- <li class="clearfix">
 									<label>Passport holder:</label>

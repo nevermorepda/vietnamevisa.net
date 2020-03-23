@@ -45,7 +45,7 @@
 				</div>
 				<div class="top-menu">
 					<ul class="menu-items">
-						<li class="menu-item font-weight-bold"><i class="fa fa-clock-o" aria-hidden="true"></i> <?= date('M dS, Y ')?><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i')?></span> (Vietnam Time)</li>
+						<li class="menu-item font-weight-bold"><i class="fa fa-clock-o" aria-hidden="true"></i> <?= date('M dS, Y ')?><span style="font-size: 12px; padding: 2px 5px 3px; background: #ececec; border-radius: 2px; display: inline-block;" class="clock-time"><?= date('H:i A')?></span> (Vietnam Time)</li>
 						<li class="menu-item">
 							<a href="<?=site_url("payment-online")?>" class="po-sign-in"><i style="font-weight: bold;" class="fa fa-usd" aria-hidden="true"></i> Payment Online </a>
 						</li>
@@ -296,7 +296,7 @@ $(document).ready(function(){
 			var str = now.toUTCString().replace( / GMT$/, "" );
 
 			var ampm = (now.getUTCHours() >= 12) ? "PM" : "AM";
-				$('.clock-time').html(now.getUTCHours() + ':' + now.getUTCMinutes());
+				$('.clock-time').html(now.getUTCHours() + ':' + now.getUTCMinutes() + ' ' + ampm);
 		}, 1000);
 	}
 

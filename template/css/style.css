@@ -2246,6 +2246,7 @@ ul.style-step li.active {
 .useful .btn-rm {
 	font-size: 14px;
 	color: #851919;
+	padding:0 15px;
 }
 .useful .btn-rm:hover {
 	border: 1px solid #851919;
@@ -2350,10 +2351,9 @@ ul.style-step li.active {
 }
 .useful .useful-infinite .post{
 	background: #ffffff;
-	padding-bottom: 35px;
 	margin-bottom: 64px;
 	box-shadow: 0 3.5px 10px 0 rgba(0,0,0,.16);
-	height: 475px;
+	height: 445px;
 }
 .useful .useful-infinite .post img {
 	width: 100%;
@@ -2362,14 +2362,12 @@ ul.style-step li.active {
 	height: 200px;
 	object-fit: cover;
 }
-.useful .useful-infinite .post  .excerpt-container {
-	height: 130px;
+.useful .useful-infinite .post .excerpt-container {
 }
 .useful .useful-infinite .details {
 	padding:15px;
 }
 .useful .useful-infinite .details .title{
-	height: 50px;
 }
 .faqs .faqs-category {
 	border-bottom: 1px solid #cccccc;
