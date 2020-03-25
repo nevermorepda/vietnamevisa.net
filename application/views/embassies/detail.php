@@ -55,20 +55,20 @@
 			<div class="embassy-region">
 				<div class="title">REGIONS</div>
 				<ul class="list">
-					<? foreach ($regions as $region) { 
+					<? $i=0; foreach ($regions as $region) { 
 						$info = new stdClass();
 						$info->region = $region;
 						$countries = $this->m_country->items($info, 1);
 					?>
-					<li class="item" stt="<?=($nation->region != $region) ? '0' : '1' ?>">
+					<li class="item" num="<?=$i?>" stt="<?=($nation->region != $region) ? '0' : '1' ?>" child-stt="0">
 						<a><i class="fa fa-caret-right transition <?=($nation->region != $region) ? '' : 'rotate' ?>"></i><?=$region?></a>
-						<ul class="sub-list" <?=($nation->region != $region) ? 'style="display: none;"' : '' ?>>
-							<? foreach ($countries as $countrie) { ?>
-							<li class="sub-item"><a href="<?=site_url("vietnam-embassies/view/{$countrie->alias}")?>" class="<?=($countrie->alias == $nation->alias) ? 'active' : ''?>"><?=$countrie->name?></a></li>
-							<? } ?>
-						</ul>
 					</li>
-					<? } ?>
+					<ul class="sub-list sub-list-<?=$i?>" <?=($nation->region != $region) ? 'style="display: none;"' : '' ?>>
+						<? foreach ($countries as $countrie) { ?>
+						<li class="sub-item"><a href="<?=site_url("vietnam-embassies/view/{$countrie->alias}")?>" class="<?=($countrie->alias == $nation->alias) ? 'active' : ''?>"><?=$countrie->name?></a></li>
+						<? } ?>
+					</ul>
+					<? $i++;} ?>
 				</ul>
 			</div>
 		</div>
@@ -76,15 +76,13 @@
 			$(document).ready(function() {
 				$('.item').click(function(event) {
 					var st = $(this).attr('stt');
-					// $('.sub-list').css('display', 'none');
-					// $('.fa-caret-right').removeClass('rotate');
-					// $('.item').attr('stt', '0');
+					var num = $(this).attr('num');
 					if (parseInt(st) == 0) {
-						$(this).find('.sub-list').css('display', 'block');
+						$('.sub-list-'+num).css('display', 'block');
 						$(this).attr('stt','1');
 						$(this).find('.fa-caret-right').addClass('rotate');
 					} else {
-						$(this).find('.sub-list').css('display', 'none');
+						$('.sub-list-'+num).css('display', 'none');
 						$(this).attr('stt','0');
 						$(this).find('.fa-caret-right').removeClass('rotate');
 					}
