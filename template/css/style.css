@@ -115,7 +115,7 @@ h6 {
 	color: #851919;
 }
 .content-hover:hover {
-	color: #232222;
+	color: red;
 }
 .btn-detail {
 	font-weight: 500;
