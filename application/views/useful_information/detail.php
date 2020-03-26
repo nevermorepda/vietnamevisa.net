@@ -4,7 +4,7 @@
 </div>
 <div class="faqs cluster-content">
 	<div class="container">
-		<h2 class="home-heading">Vietnam Visa</h2>
+		<h2 class="home-heading"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h2>
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-lg-8 col-sm-8 col-xs-12">

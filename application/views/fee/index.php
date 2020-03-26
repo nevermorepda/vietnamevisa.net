@@ -163,7 +163,10 @@
 			<div class="container">
 				<div class="title">
 					<h2 class="home-sub-heading shadow-text">VIETNAM ELECTRONIC VISA</h2>
-					<h4 class="sub-title">(available at airports, land ports and seaports for 80 countries)</h4>
+					<h4 class="sub-title d-inline-block">(available at airports, land ports and seaports for 80 countries)</h4>
+					<div class="clearfix d-inline-block">
+						<a class="btn btn-danger" href="<?=site_url("useful-information/vietnam-visa/vietnam-electronic-visa")?>" style=" font-size: 12px; padding: 5px 10px;">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
 				</div>
 				<? if (!sizeof($tourist_evisa_types) && !sizeof($business_evisa_types)) { ?>
 				<div class="alert alert-warning">
@@ -207,7 +210,10 @@
 			<div class="container">
 				<div class="title clearfix">
 					<h2 class="home-sub-heading shadow-text">VIETNAM VISA ON ARRIVAL</h2>
-					<h4 class="sub-title">(available at International Airport Only for most of countries)</h4>
+					<h4 class="sub-title d-inline-block">(available at International Airport Only for most of countries)</h4>
+					<div class="clearfix d-inline-block">
+						<a class="btn btn-danger" href="<?=site_url("useful-information/vietnam-visa/vietnam-visa-on-arrival")?>" style=" font-size: 12px; padding: 5px 10px;">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
 				</div>
 				<div class="wrap-service-type">
 					<div class="heading clearfix">
@@ -218,7 +224,7 @@
 					</div>
 				</div>
 				<?
-				$normal_pr_time = "24-48 working hours";
+				$normal_pr_time = "3-4 working days";
 				$can_rush = TRUE;
 				if ($document_required) {
 					$normal_pr_time = "5-7 working days";
@@ -237,8 +243,8 @@
 					</tr>
 					<tr>
 						<th class="sub-heading text-center" colspan="<?=$col_number_service-2?>">NORMAL PROCESSING <br>(<?=$normal_pr_time?>)</th>
-						<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">URGENT <br>(4-8 working hours)</th>
-						<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">EMERGENCY <br>(1-4 working hours)</th>
+						<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">URGENT <br>(1-2 working days)</th>
+						<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">EMERGENCY <br>(4 working hours)</th>
 						<th class="sub-heading text-center red" rowspan="<?=$row_number_service-1?>">HOLIDAY FEE <br>(weekend + holiday)</th>
 					</tr>
 					<?

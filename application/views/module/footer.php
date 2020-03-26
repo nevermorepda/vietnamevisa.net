@@ -1,6 +1,10 @@
 <?	$visa_news_info = new stdClass();
 	$visa_news_info->catid = 2;
 	$visa_news = $this->m_content->items($visa_news_info, 1, 3);
+
+	$info = new stdClass();
+	$info->parent_id = 0;
+	$useful_categories = $this->m_useful_category->items($info,1);
 ?>
 <div class="footer">
 	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
@@ -26,13 +30,13 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-6">
-				<h3 class="fnav-title"><a href="">USEFUL INFORMATION</a></h3>
+				<h3 class="fnav-title"><a href="<?=site_url("useful-information")?>">USEFUL INFORMATION</a></h3>
 				<ul class="fnav-links">
-					<li><a title="Vietnam Visa" href="<?=site_url("useful-information")?>">Vietnam Visa</a></li>
-					<li><a title="Embassy list" href="<?=site_url("vietnam-embassies")?>">Vietnam Embassy List</a></li>
-					<li><a title="Visa News" href="#">Visa News</a></li>
-					<li><a title="Travel Tips" href="#">Vietnam Travel Tips</a></li>
-					<li><a title="Consultant Services Guideline" href="#">Consular Service Guideline</a></li>
+					<li><a title="Vietnam Visa" href="<?=site_url("useful-information/{$useful_categories[0]->alias}")?>"><?=$useful_categories[0]->name?></a></li>
+					<li><a title="Embassy list" href="<?=site_url("vietnam-embassies")?>">VIETNAM EMBASSY LIST</a></li>
+					<li><a title="Visa News" href="<?=site_url("useful-information/{$useful_categories[2]->alias}")?>"><?=$useful_categories[2]->name?></a></li>
+					<li><a title="Travel Tips" href="<?=site_url("useful-information/{$useful_categories[3]->alias}")?>"><?=$useful_categories[3]->name?></a></li>
+					<li><a title="Consultant Services Guideline" href="<?=site_url("useful-information/{$useful_categories[4]->alias}")?>"><?=$useful_categories[4]->name?></a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 col-sm-6 col-xs-6">
