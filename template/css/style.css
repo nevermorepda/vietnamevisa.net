@@ -834,19 +834,19 @@ input.error, select.error, textarea.error, span.error {
 	left: 0;
 	top: 4px;
 }
-.embassy-region .list .item .sub-list {
+.embassy-region .list .sub-list {
 	list-style: none;
 	font-size: 15px;
 	font-weight: initial;
 	padding-left: 30px;
 }
-.embassy-region .list .item .sub-list .sub-item {
+.embassy-region .list .sub-list .sub-item {
 	
 }
-.embassy-region .list .item .sub-list .sub-item a {
+.embassy-region .list .sub-list .sub-item a {
 	display: block;
 }
-.embassy-region .list .item .sub-list .sub-item a.active {
+.embassy-region .list .sub-list .sub-item a.active {
 	color: red;
 }
 .embassy-region .list .item a i.rotate {
