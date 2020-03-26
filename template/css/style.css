@@ -111,7 +111,12 @@ h6 {
 	font-size: 14px;
 	z-index: 1;
 } */
-
+.content-hover {
+	color: #851919;
+}
+.content-hover:hover {
+	color: #232222;
+}
 .btn-detail {
 	font-weight: 500;
 	border: 1px solid #851919;
