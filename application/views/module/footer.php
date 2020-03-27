@@ -33,7 +33,7 @@
 				<h3 class="fnav-title"><a href="<?=site_url("useful-information")?>">USEFUL INFORMATION</a></h3>
 				<ul class="fnav-links">
 					<li><a title="Vietnam Visa" href="<?=site_url("useful-information/{$useful_categories[0]->alias}")?>"><?=$useful_categories[0]->name?></a></li>
-					<li><a title="Embassy list" href="<?=site_url("vietnam-embassies")?>">VIETNAM EMBASSY LIST</a></li>
+					<li><a title="Embassy list" href="<?=site_url("vietnam-embassies")?>"><?=$useful_categories[1]->name?></a></li>
 					<li><a title="Visa News" href="<?=site_url("useful-information/{$useful_categories[2]->alias}")?>"><?=$useful_categories[2]->name?></a></li>
 					<li><a title="Travel Tips" href="<?=site_url("useful-information/{$useful_categories[3]->alias}")?>"><?=$useful_categories[3]->name?></a></li>
 					<li><a title="Consultant Services Guideline" href="<?=site_url("useful-information/{$useful_categories[4]->alias}")?>"><?=$useful_categories[4]->name?></a></li>

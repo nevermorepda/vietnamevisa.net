@@ -333,7 +333,7 @@ function genVisaTypeOptions()
 						msg += "<li>Flight ticket</li>";
 						msg += "<li>Hotel booking or staying address in Vietnam</li>";
 						msg += "</ul>";
-						msg += "<p>The Vietnam Immigration Department will check your status within 2 days. Then we will inform the result for you. If your visa application is approved, we will send you the notification including the visa letter.</p>";
+						msg += "<p>It averagely takes 7 - 10 days to process since we receive all the required documents. If your visa application is approved by Vietnam Immigration Department, we will send you the notification including the visa letter by email. </p>";
 					messageBox("INFO", "About Vietnam visa for "+result[1]+" nationality", msg);
 				}
 			}

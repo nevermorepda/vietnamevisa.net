@@ -80,9 +80,17 @@
 						$info = new stdClass();
 						$info->region = $region;
 						$countries = $this->m_country->items($info, 1);
-						foreach ($countries as $country) { ?>
+						foreach ($countries as $country) { 
+
+						$info = new stdClass();
+						$info->nation = $country->name;
+						$embassies = $this->m_embassy->items($info, 1);
+						?>
 						<li class="col-sm-3 col-xs-6">
 							<a title="Vietnam embassy in <?=$country->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($country->name)}")?>"><?=$country->name?></a>
+							<? if (!empty($embassies)) { ?>
+							<img class="png" alt="Vietnam embassy in <?=$country->name?>" title="Vietnam embassy in <?=$country->name?>" src="<?=IMG_URL?>stick.png" />
+							<? } ?>
 						</li>
 						<? } ?>
 					</ul>

@@ -28,12 +28,12 @@
 			<p>At present, there is no information about the Embassy of Vietnam in <?=$nation->name?>. </p>
 			<p>- Visit the nearest Vietnam Embassy in the neighboring country to apply for a visa by yourself, or </p>
 			<p>- Apply online at <a title="<?=SITE_NAME?>" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>"><?=SITE_NAME?></a> for a Vietnam visa on arrival (picked up at the arrival airport in Vietnam) </p>
-			<p>--&gt;</p>
+			<p></p>
 			<? if (!empty($requirement)) {?>
-			<p><a title="<?=$requirement->title?>" href="<?=site_url("visa-requirements/".$nation->alias)?>"><?=$requirement->title?></a></p>
+			<p>--&gt; <a style="color: #004B91;" title="<?=$requirement->title?>" href="<?=site_url("visa-requirements/".$nation->alias)?>"><?=$requirement->title?></a></p>
 			<? } ?>
 			<? if (!empty($tips)) {?>
-			<p><a title="<?=$tips[0]->title?>" href="<?=site_url("vietnam-visa-tips/view/{$tips[0]->alias}")?>"><?=$tips[0]->title?></a></p>
+			<p>--&gt; <a style="color: #004B91;" title="<?=$tips[0]->title?>" href="<?=site_url("vietnam-visa-tips/view/{$tips[0]->alias}")?>"><?=$tips[0]->title?></a></p>
 			<? } ?>
 			<div style="margin-top:20px;">
 				<p>If you have any queries or comments, kindly <a title="contact us" href="<?=site_url("contact")?>">contact us</a> to get support.</p>

@@ -165,7 +165,7 @@
 					<h2 class="home-sub-heading shadow-text">VIETNAM ELECTRONIC VISA</h2>
 					<h4 class="sub-title d-inline-block">(available at airports, land ports and seaports for 80 countries)</h4>
 					<div class="clearfix d-inline-block">
-						<a class="btn btn-danger" href="<?=site_url("useful-information/vietnam-visa/vietnam-electronic-visa")?>" style=" font-size: 12px; padding: 5px 10px;">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+						<a class="btn btn-rm" href="<?=site_url("useful-information/vietnam-visa/vietnam-electronic-visa")?>" style=" font-size: 12px; padding: 5px 10px; color: #851919;">_Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</div>
 				<? if (!sizeof($tourist_evisa_types) && !sizeof($business_evisa_types)) { ?>
@@ -212,7 +212,7 @@
 					<h2 class="home-sub-heading shadow-text">VIETNAM VISA ON ARRIVAL</h2>
 					<h4 class="sub-title d-inline-block">(available at International Airport Only for most of countries)</h4>
 					<div class="clearfix d-inline-block">
-						<a class="btn btn-danger" href="<?=site_url("useful-information/vietnam-visa/vietnam-visa-on-arrival")?>" style=" font-size: 12px; padding: 5px 10px;">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+						<a class="btn btn-rm" href="<?=site_url("useful-information/vietnam-visa/vietnam-visa-on-arrival")?>" style=" font-size: 12px; padding: 5px 10px; color: #851919;">_Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</div>
 				<div class="wrap-service-type">
