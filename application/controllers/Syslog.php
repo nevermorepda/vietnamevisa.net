@@ -1808,7 +1808,7 @@ class Syslog extends CI_Controller {
 			if ($task == "save") {
 				$nation_id			= $this->util->value($this->input->post("nation_id"), 0);
 				$title				= $this->util->value($this->input->post("title"), "");
-				$alias				= $this->util->value($this->input->post("alias"), "");
+				// $alias				= $this->util->value($this->input->post("alias"), "");
 				$meta_title			= $this->util->value($this->input->post("meta_title"), "");
 				$meta_key			= $this->util->value($this->input->post("meta_key"), "");
 				$meta_desc			= $this->util->value($this->input->post("meta_desc"), "");
@@ -1819,11 +1819,12 @@ class Syslog extends CI_Controller {
 				if (empty($alias)) {
 					$alias = $this->util->slug($title);
 				}
-				
+				$nation = $this->m_country->load($nation_id);
 				$data = array (
 					"nation_id"			=> $nation_id,
 					"title"				=> $title,
-					"alias"				=> $alias,
+					"alias"				=> $nation->alias,
+					"citizen"			=> $nation->name,
 					//"meta_title"		=> $meta_title,
 					//"meta_key"		=> $meta_key,
 					//"meta_desc"		=> $meta_desc,
@@ -1936,11 +1937,12 @@ class Syslog extends CI_Controller {
 				if (empty($alias)) {
 					$alias = $this->util->slug($title);
 				}
-				
+				// $nation = $this->m_country->load($nation_id);
 				$data = array (
-					"nation_id"		=> $nation_id,
+					"nation_id"		=> 0,
 					"title"			=> $title,
 					"alias"			=> $alias,
+					"nation"		=> $nation_id,
 					//"meta_title"	=> $meta_title,
 					//"meta_key"		=> $meta_key,
 					//"meta_desc"		=> $meta_desc,

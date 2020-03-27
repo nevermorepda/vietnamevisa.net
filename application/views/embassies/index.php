@@ -80,11 +80,70 @@
 						$info = new stdClass();
 						$info->region = $region;
 						$countries = $this->m_country->items($info, 1);
-						foreach ($countries as $country) { ?>
+						$c = count($countries);
+						$c_col = round($c/4);
+
+						?>
 						<li class="col-sm-3 col-xs-6">
-							<a title="Vietnam embassy in <?=$country->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($country->name)}")?>"><?=$country->name?></a>
+							<? for ($i=0; $i < $c_col; $i++) { 
+								if (!empty($countries[$i])) {
+									$info = new stdClass();
+									$info->nation = $countries[$i]->name;
+									$embassies = $this->m_embassy->items($info, 1);
+							?>
+							<div style="display: block">
+								<a title="Vietnam embassy in <?=$countries[$i]->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($countries[$i]->name)}")?>"><?=$countries[$i]->name?></a>
+								<? if (!empty($embassies)) { ?>
+								<img class="png" alt="Vietnam embassy in <?=$countries[$i]->name?>" title="Vietnam embassy in <?=$countries[$i]->name?>" src="<?=IMG_URL?>stick.png" />
+								<? } ?>
+							</div>
+							<? } } ?>
 						</li>
-						<? } ?>
+						<li class="col-sm-3 col-xs-6">
+							<? for ($i=$c_col; $i < $c_col*2; $i++) { 
+								if (!empty($countries[$i])) {
+									$info = new stdClass();
+									$info->nation = $countries[$i]->name;
+									$embassies = $this->m_embassy->items($info, 1);
+							?>
+							<div style="display: block">
+								<a title="Vietnam embassy in <?=$countries[$i]->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($countries[$i]->name)}")?>"><?=$countries[$i]->name?></a>
+								<? if (!empty($embassies)) { ?>
+								<img class="png" alt="Vietnam embassy in <?=$countries[$i]->name?>" title="Vietnam embassy in <?=$countries[$i]->name?>" src="<?=IMG_URL?>stick.png" />
+								<? } ?>
+							</div>
+							<? } } ?>
+						</li>
+						<li class="col-sm-3 col-xs-6">
+							<? for ($i=$c_col*2; $i < $c_col*3; $i++) { 
+								if (!empty($countries[$i])) {
+									$info = new stdClass();
+									$info->nation = $countries[$i]->name;
+									$embassies = $this->m_embassy->items($info, 1);
+							?>
+							<div style="display: block">
+								<a title="Vietnam embassy in <?=$countries[$i]->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($countries[$i]->name)}")?>"><?=$countries[$i]->name?></a>
+								<? if (!empty($embassies)) { ?>
+								<img class="png" alt="Vietnam embassy in <?=$countries[$i]->name?>" title="Vietnam embassy in <?=$countries[$i]->name?>" src="<?=IMG_URL?>stick.png" />
+								<? } ?>
+							</div>
+							<? } } ?>
+						</li>
+						<li class="col-sm-3 col-xs-6">
+							<? for ($i=$c_col*3; $i < $c_col*4; $i++) { 
+								if (!empty($countries[$i])) {
+									$info = new stdClass();
+									$info->nation = $countries[$i]->name;
+									$embassies = $this->m_embassy->items($info, 1);
+							?>
+							<div style="display: block">
+								<a title="Vietnam embassy in <?=$countries[$i]->name?>" href="<?=site_url("vietnam-embassies/view/{$this->util->slug($countries[$i]->name)}")?>"><?=$countries[$i]->name?></a>
+								<? if (!empty($embassies)) { ?>
+								<img class="png" alt="Vietnam embassy in <?=$countries[$i]->name?>" title="Vietnam embassy in <?=$countries[$i]->name?>" src="<?=IMG_URL?>stick.png" />
+								<? } ?>
+							</div>
+							<? } } ?>
+						</li>
 					</ul>
 				</div>
 			</div>
