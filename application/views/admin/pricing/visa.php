@@ -1,5 +1,5 @@
 <?
-	$regions = array("Default", "Asia", "Australasia", "Europe", "North America", "South America", "Middle East", "Caribbean", "Africa");
+	$regions = array("Default", "Africa", "America", "Asia", "Australasia", "Europe");
 	
 	$nation = new stdClass();
 	$nation->region = "Default";
