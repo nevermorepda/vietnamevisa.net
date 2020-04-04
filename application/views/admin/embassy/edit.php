@@ -20,11 +20,11 @@
 					<td>
 						<select id="nation_id" name="nation_id" class="form-control">
 							<? foreach ($nations as $nation) { ?>
-							<option value="<?=$nation->id?>"><?=$nation->name?></option>
+							<option value="<?=$nation->name?>"><?=$nation->name?></option>
 							<? } ?>
 						</select>
 						<script type="text/javascript">
-							$("#nation_id").val("<?=$item->nation_id?>");
+							$("#nation_id").val("<?=$item->nation?>");
 						</script>
 					</td>
 				</tr>

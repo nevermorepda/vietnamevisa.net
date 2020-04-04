@@ -12,22 +12,6 @@
 		<div class="col-sm-9 embassy-l">
 			<h1 class="page-title"><?=$item->title?></h1>
 			<div><?=$item->content?></div>
-			<p>--&gt;</p>
-			<? if (!empty($requirement)) {?>
-			<p><a title="<?=$requirement->title?>" href="<?=site_url("visa-requirements/".$nation->alias)?>"><?=$requirement->title?></a></p>
-			<? } ?>
-			<? if (!empty($tips)) {?>
-			<p><a title="<?=$tips[0]->title?>" href="<?=site_url("vietnam-visa-tips/view/{$tips[0]->alias}")?>"><?=$tips[0]->title?></a></p>
-			<? } ?>
-		</div>
-	<?
-		} else {
-	?>
-		<div class="col-sm-9 embassy-l">
-			<h1 class="page-title">Vietnam Embassy in <?=$nation->name?></h1>
-			<p>At present, there is no information about the Embassy of Vietnam in <?=$nation->name?>. </p>
-			<p>- Visit the nearest Vietnam Embassy in the neighboring country to apply for a visa by yourself, or </p>
-			<p>- Apply online at <a title="<?=SITE_NAME?>" href="<?=BASE_URL_HTTPS."/apply-visa.html"?>"><?=SITE_NAME?></a> for a Vietnam visa on arrival (picked up at the arrival airport in Vietnam) </p>
 			<p></p>
 			<? if (!empty($requirement)) {?>
 			<p>--&gt; <a style="color: #004B91;" title="<?=$requirement->title?>" href="<?=site_url("visa-requirements/".$nation->alias)?>"><?=$requirement->title?></a></p>
@@ -35,9 +19,20 @@
 			<? if (!empty($tips)) {?>
 			<p>--&gt; <a style="color: #004B91;" title="<?=$tips[0]->title?>" href="<?=site_url("vietnam-visa-tips/view/{$tips[0]->alias}")?>"><?=$tips[0]->title?></a></p>
 			<? } ?>
-			<div style="margin-top:20px;">
-				<p>If you have any queries or comments, kindly <a title="contact us" href="<?=site_url("contact")?>">contact us</a> to get support.</p>
-			</div>
+		</div>
+	<?
+		} else {
+	?>
+		<div class="col-sm-9 embassy-l">
+			<h1 class="page-title">Vietnam Embassy in <?=$nation->name?></h1>
+			<p>We regret to inform that there is no Vietnam Embassy/Consulate in <span class="font-weight-bold red"><?=$nation->name?></span> at the present.  </p>
+			<p>Please contact the <span class="font-weight-bold" style="color: #004B91;">Vietnam Embassy</span>  or Vietnam Consulate in other countries during business hours for visa issue.</p>
+			<p><span class="font-weight-bold">Citizens or residents in <span class="red"> <?=$nation->name?></span> can apply for a visa to Vietnam</span> by:</p>
+			<p><span class="font-weight-bold">Apply a <span class="font-weight-bold" style="color: #004B91;">Vietnam Visa Online</span> from <span class="red"> <?=$nation->name?></span> with us: </span>(The processing time is 02 working days or 4 hours under Urgent service, the visa fees depend on the type of visa that you wish to apply for)</p>
+			<p>For any further information about Vietnam visa, feel free to contact us at:<br>
+				- Email: <span class="red"><?=MAIL_INFO?></span><br>
+				- Phone number: <span class="red"><?=HOTLINE?></span><br>
+				- Website: <span class="red"><?=SITE_NAME?></span></p>
 		</div>
 	<?
 		}

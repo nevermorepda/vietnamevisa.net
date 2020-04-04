@@ -5,11 +5,7 @@
 </div>
 <div class="useful cluster-content">
 	<div class="container">
-<<<<<<< HEAD
 		<h2 class="home-heading"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h2>
-=======
-		<h2 class="home-heading"><?=!empty($category->name) ? $category->name : 'VIETNAM VISA'?></h2>
->>>>>>> 4d01e04df141a1798e94fe36068fec7fb0c6e014
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
@@ -29,7 +25,7 @@
 											<div class="details">
 												<div class="title">
 													<h4 class="entry-title font-weight-bold">
-														<a title="<?=$value->title?>" href="<?=site_url("useful-information/{$useful_categories->alias}/{$value->alias}")?>"><?=($offset+1).'. '?><?=$value->title?></a>
+														<a title="<?=$value->title?>" href="<?=site_url("useful-information/{$useful_categories->alias}/{$value->alias}")?>"><?=$value->title?></a>
 													</h4>
 												</div>
 
@@ -39,8 +35,7 @@
 										<div class="clearfix"><a class="btn-rm" href="<?=site_url("useful-information/{$useful_categories->alias}/{$value->alias}")?>">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
 									</div>
 								</div>
-								<? $offset++;} 
-								?>
+								<? } ?>
 							</div>
 						</div>
 					</div>

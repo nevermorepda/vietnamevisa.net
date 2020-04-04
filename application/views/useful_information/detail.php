@@ -4,11 +4,7 @@
 </div>
 <div class="faqs cluster-content">
 	<div class="container">
-<<<<<<< HEAD
-		<h2 class="home-heading"><?=!empty($category->alias) ? $category->name : "Vietnam Visa"?></h2>
-=======
 		<h2 class="home-heading"><?=!empty($cate->name) ? $cate->name : 'VIETNAM VISA'?></h2>
->>>>>>> 4d01e04df141a1798e94fe36068fec7fb0c6e014
 		<div class="cluster-body">
 			<div class="row">
 				<div class="col-lg-8 col-sm-8 col-xs-12">
@@ -36,7 +32,7 @@
 					if (sizeof($relatedItems)) {
 					?>
 						<div class="related-item">
-							<h2>RELATED QUESTIONS</h2>
+							<h2>RELATED TOPIC</h2>
 							<ul>
 							<?
 								foreach ($relatedItems as $rItem) {

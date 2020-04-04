@@ -111,7 +111,12 @@ h6 {
 	font-size: 14px;
 	z-index: 1;
 } */
-
+.content-hover {
+	color: #851919;
+}
+.content-hover:hover {
+	color: red;
+}
 .btn-detail {
 	font-weight: 500;
 	border: 1px solid #851919;
@@ -2353,7 +2358,7 @@ ul.style-step li.active {
 	background: #ffffff;
 	margin-bottom: 64px;
 	box-shadow: 0 3.5px 10px 0 rgba(0,0,0,.16);
-	height: 445px;
+	height: 460px;
 }
 .useful .useful-infinite .post img {
 	width: 100%;

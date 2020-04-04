@@ -11,14 +11,14 @@ class Vietnam_embassies extends CI_Controller {
 			$info->nation = $nation;
 			$items = $this->m_embassy->items($info, 1);
 			
-			$nation = $this->m_nation->load($nation);
+			$nation = $this->m_country->load($nation);
 			
 			$breadcrumb = array('Vietnam Embassies' => site_url('vietnam-embassies'), 'Vietnam Embassy in '.$nation->name => '');
 			
 			$view_data = array();
 			$view_data['breadcrumb']= $breadcrumb;
 			$view_data['nation']	= $nation;
-			$view_data['nations']	= $this->m_nation->items();
+			$view_data['nations']	= $this->m_country->items();
 			$view_data['item']		= (!empty($items) ? $items[0] : null);
 			
 			$tmpl_content = array();
@@ -28,7 +28,7 @@ class Vietnam_embassies extends CI_Controller {
 		}
 		else {
 			$view_data = array();
-			$view_data['nations'] = $this->m_nation->items();
+			$view_data['nations'] = $this->m_country->items();
 			
 			$tmpl_content = array();
 			$tmpl_content['meta']['title'] = "Vietnam Embassy Worldwide";

@@ -459,36 +459,3 @@
 		</div>
 	</div>
 </div>
-<div class="faqs cluster-content"  style="background: url('<?=IMG_URL?>new-template/background.png') no-repeat scroll top center transparent;">
-	<div class="container">
-		<h2 class="home-sub-heading" style="padding-bottom: 30px;">More question about eVisa to Vietnam</h2>
-		<ul>
-			<? $i = 0;
-			foreach ($evisa_faqs as $evisa_faq) { ?>
-			<li>
-				<h3 class="click-faqs" status="0" data-index="<?=$evisa_faq->id?>" id="faqs-<?=$evisa_faq->id?>" ><a class="collapsed" rel="nofollow" title="<?=$evisa_faq->title?>" data-toggle="collapse" aria-expanded="false" aria-controls="collapse"><?=($i+1)?>. <?=$evisa_faq->title?></a></h3>
-				<div class="collapse" id="detail<?=$evisa_faq->id?>">
-					<p><?=$evisa_faq->content?></p>
-				</div>
-			</li>
-			<? $i++; } ?>
-		</ul>
-	</div>
-</div>
-<script>
-	$(document).ready(function() {
-		$('.click-faqs').click(function() {
-			var faqsIndex = parseInt($(this).data('index'));
-			$('#detail' + faqsIndex).slideToggle();
-			var stt = parseInt($(this).attr('status'));
-			if (stt == 0) {
-				$(this).attr('status',1);
-				$(this).addClass('collapsed')
-			} else {
-				$(this).attr('status',0);
-				$(this).removeClass('collapsed')
-			}
-		});
-	});
-</script>
-
