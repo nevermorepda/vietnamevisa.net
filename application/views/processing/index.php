@@ -23,7 +23,7 @@
 		<div class="process">
 			<div class="container">
 				<h2 class="home-heading text-center" style="padding-bottom: 30px;">Application Process</h2>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-sm-6 col-lg-3 col-md-6">
 						<div class="box-step p-3" style="border: 5px solid #ffcd0e;">
 							<div class="step-numb" style="color: #ffcd0e;">1</div>
@@ -68,6 +68,90 @@
 								<h3>Get visa stamp</h3>
 							</div>
 							<div class="step-content">
+								<p>Present your visa letter at check-in point to get Vietnam Visa Stamp upon arrival.</p>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-md-6 border-process">
+						<div class="step-box">
+							<div class="box-left">
+								<div class="box-img">
+									<span class="step-mobile d-block d-sm-block d-md-none">1</span>
+									<img src="<?=IMG_URL?>step/step1.png" alt="Apply Online">
+								</div>
+							</div>
+							<div class="box-right">
+								<h5 class="title">Apply Online</h5>
+								<p>Fill out online visa application form by providing your passport information.</p>
+							</div>
+							<div class="box-num d-none d-sm-none d-md-block">
+								<div class="num">1</div>
+								<div class="arrow arrow-right"><i class="fa fa-caret-left" aria-hidden="true"></i><div class="line">---</div></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 border-process"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 border-process"></div>
+					<div class="col-md-6 right border-process">
+						<div class="step-box">
+							<div class="box-num d-none d-sm-none d-md-block">
+								<div class="num">2</div>
+								<div class="arrow arrow-left"><div class="line">---</div><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+							</div>
+							<div class="box-left">
+								<div class="box-img">
+									<span class="step-mobile d-block d-sm-block d-md-none">2</span>
+									<img src="<?=IMG_URL?>step/step2.png" alt="Apply Online">
+								</div>
+							</div>
+							<div class="box-right">
+								<h5 class="title">Payment online</h5>
+								<p>Make payment for our visa service via Online Payment Gates.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 border-process">
+						<div class="step-box">
+							<div class="box-left">
+								<div class="box-img">
+									<span class="step-mobile d-block d-sm-block d-md-none">3</span>
+									<img src="<?=IMG_URL?>step/step3.png" alt="Apply Online">
+								</div>
+							</div>
+							<div class="box-right">
+								<h5 class="title">Receive Visa Letter</h5>
+								<p>You will get the Approval Letter or Electronic Visa via email as the confirmation.</p>
+							</div>
+							<div class="box-num d-none d-sm-none d-md-block">
+								<div class="num">3</div>
+								<div class="arrow arrow-right"><i class="fa fa-caret-left" aria-hidden="true"></i><div class="line">---</div></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 border-process"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 border-process"></div>
+					<div class="col-md-6 right border-process">
+						<div class="step-box">
+							<div class="box-num d-none d-sm-none d-md-block">
+								<div class="num">4</div>
+								<div class="arrow arrow-left"><div class="line">---</div><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+							</div>
+							<div class="box-left">
+								<div class="box-img">
+									<span class="step-mobile d-block d-sm-block d-md-none">4</span>
+									<img src="<?=IMG_URL?>step/step4.png" alt="Apply Online">
+								</div>
+							</div>
+							<div class="box-right">
+								<h5 class="title">Get visa stamp</h5>
 								<p>Present your visa letter at check-in point to get Vietnam Visa Stamp upon arrival.</p>
 							</div>
 						</div>

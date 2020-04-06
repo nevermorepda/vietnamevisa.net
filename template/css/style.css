@@ -3109,7 +3109,99 @@ ul.style-step li.active {
 	left: -45px;
 	-webkit-text-stroke: 3px white;
 	paint-order: stroke fill;
-	font-family: Impact;;
+	font-family: Impact;
+}
+.process .border-process:last-child {
+	border-right:none;
+}
+.step-box {
+	display: table;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.step-box .box-num {
+	display: table-cell;
+	width: 70px;
+	position: relative;
+}
+.step-box .box-num .num {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 18px;
+	background: #d1d1d1;
+	color: #212529;
+	border-radius: 50%;
+	padding: 3px;
+	position: absolute;
+	right: 15px;
+	top: 30px;
+	font-weight: bold;
+}
+.step-box .box-num .arrow {
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	top: 30px;
+}
+.step-box .box-num .arrow.arrow-left {
+	left: -15px;
+}
+.step-box .box-num .arrow.arrow-right {
+	right: -15px;
+}
+.step-box .box-num .arrow i {
+	font-size: 36px;
+	color: #d1d1d1;
+}
+.step-box .box-num .arrow .line {
+	border-top: 1.5px dashed #d1d1d1;
+	display: inline;
+	color: transparent;
+}
+.step-box .box-left {
+	display: table-cell;
+	width: 120px;
+}
+.step-box .box-left .box-img {
+	width: 90px;
+	height: 90px;
+	border: 1.5px solid #b1b1b1;
+	border-radius: 50%;
+	position: relative;
+}
+.step-box .box-left .box-img .step-mobile {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: #d1d1d1;
+	color: #212529;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 50%;
+	left: -2px;
+	top: -2px;
+	font-weight: bold;
+}
+.step-box .box-left .box-img img {
+	padding: 20px;
+	width: 90px;
+	height: 90px;
+	object-fit: contain;
+}
+.step-box .box-right {
+	display: table-cell;
+	vertical-align: middle;
+}
+.step-box .box-right .title {
+	color: #851919;
+	font-size: 20px;
+	font-weight: bold;
+}
+.step-box .box-right p {
+	margin: 0;
 }
 /* End Howitworks */
 
@@ -3567,13 +3659,18 @@ ul.style-step li.active {
 	.header-sm {
 		display: none;
 	}
-
+	.process .border-process {
+		border-right: 1.5px #d1d1d1 dashed;
+	}
 
 }
 /* Portrait desktop */
 @media (min-width: 992px) {
 	.header-sm {
 		display: none;
+	}
+	.process .border-process {
+		border-right: 1.5px #d1d1d1 dashed;
 	}
 }
 
@@ -3593,6 +3690,9 @@ ul.style-step li.active {
 @media (min-width: 768px) {
 	.slide-content .slide-text {
 		padding-top: 90px;
+	}
+	.process .border-process {
+		border-right: 1.5px #d1d1d1 dashed;
 	}
 }
 /* Landscape phone to portrait tablet */
