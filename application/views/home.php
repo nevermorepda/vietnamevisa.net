@@ -30,7 +30,7 @@
 								</ul>
 							</div>
 							<div class="slide-button">
-								<a class="btn btn-danger" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
+								<a class="btn btn-danger f13" href="<?=site_url("apply-visa")?>">APPLY NOW</a>
 							</div>
 							<div class="control-owl-slider">
 								<ul class="d-none d-sm-none d-md-block">
@@ -301,7 +301,7 @@
 							<li>Prompt Support via chat, email, or phone</li>
 							<li>Fast And Secure</li>
 						</ul>
-						<p> It is legitimated and supported by the Vietnamese Immigration Department. Please take a view about our previous client’s experiences on... </p>
+						<p>... </p>
 						<div class="showmore-button">
 							<a class="btn btn-danger" href="<?=site_url('about-us')?>">SHOW MORE</a>
 						</div>
